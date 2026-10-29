@@ -17,13 +17,25 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          enablement: true
+          node-version: "24"
+      - name: Verify game
+        run: |
+          node --check world.js
+          node --check game.js
+          node --check farm.js
+          node tests/world.test.cjs
+      - name: Prepare static site
+        run: |
+          mkdir -p _site
+          cp index.html style.css world.js game.js farm.js _site/
+          cp -R assets _site/assets
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
