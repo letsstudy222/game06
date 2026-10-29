@@ -1,6 +1,9 @@
 'use strict';
 const canvas = document.querySelector('#garden'), ctx = canvas.getContext('2d');
 ctx.imageSmoothingEnabled = false;
+ctx.scale(2, 2);
+const gardenArt = new Image();
+gardenArt.src = 'assets/garden-detailed.png';
 const W=480,H=320, landscape=document.createElement('canvas');landscape.width=W;landscape.height=H;
 const g=landscape.getContext('2d');
 let seed=417;function rand(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}
@@ -37,28 +40,113 @@ for(const [x,y] of [[63,242],[304,180],[422,147],[179,290]]){rect(g,x,y,11,6,'#7
 buildGarden();
 let form=3,night=false,paused=matchMedia('(prefers-reduced-motion: reduce)').matches,time=0,last=0,mode='idle',modeUntil=0,target={x:248,y:210},pet={x:248,y:210},particles=[],destination=null;
 const status=document.querySelector('#status'), palettes={1:{body:'#eea33b',light:'#ffd676',wing:'#d96b2e',dark:'#713629',tail:'#b84028'},2:{body:'#bb392c',light:'#f6b948',wing:'#e16c30',dark:'#522c31',tail:'#8c2430'},3:{body:'#fff0bd',light:'#fff9df',wing:'#e9bd58',dark:'#654234',tail:'#ae3033'}};
-function phoenix(t){const p=palettes[form],x=Math.round(pet.x),y=Math.round(pet.y+Math.sin(t*3)*2-(mode==='fly'?10:0)),flap=Math.sin(t*(mode==='fly'?12:6));
-ctx.fillStyle='#314c3438';ctx.beginPath();ctx.ellipse(x,pet.y+15,form===1?8:15,3,0,0,Math.PI*2);ctx.fill();
-ctx.save();ctx.translate(x,y);const scale=form===1?.8:form===2?1:1.2;ctx.scale(scale,scale);if(target.x<pet.x-1)ctx.scale(-1,1);
-// Tail plumes independently sway below the body.
-for(let i=0;i<3;i++){let sway=Math.sin(t*4+i)*3;poly(ctx,[[-5+i*4,4],[-10+i*6+sway,17],[-17+i*10+sway,25],[-6+i*6+sway,21],[3+i*3,5]],p.dark);poly(ctx,[[-4+i*4,5],[-8+i*6+sway,17],[-14+i*10+sway,23],[-5+i*6+sway,19],[1+i*3,6]],p.tail);rect(ctx,-7+i*6+sway,15,2,5,p.wing)}
-for(const side of [-1,1]){ctx.save();ctx.scale(side,1);let lift=flap*6;poly(ctx,[[2,-5],[9,-10],[18,-19-lift],[20,-9-lift],[17,0],[11,6],[4,5]],p.dark);poly(ctx,[[3,-5],[10,-8],[17,-16-lift],[17,-7-lift],[14,1],[8,4],[4,3]],p.wing);poly(ctx,[[5,-4],[11,-5],[16,-12-lift],[14,-3],[10,1],[5,2]],p.body);rect(ctx,15,-14-lift,2,5,p.tail);ctx.restore()}
-poly(ctx,[[-5,-8],[4,-10],[8,-4],[7,7],[3,12],[-3,11],[-7,4]],p.dark);poly(ctx,[[-4,-7],[3,-8],[6,-3],[5,6],[2,9],[-2,8],[-5,3]],p.body);rect(ctx,-3,-5,3,9,p.light);
-poly(ctx,[[0,-10],[-2,-16],[1,-15],[3,-20],[5,-15],[8,-17],[7,-11]],p.tail);rect(ctx,0,-13,8,8,p.dark);rect(ctx,1,-13,7,6,p.body);rect(ctx,5,-12,3,2,p.dark);rect(ctx,6,-12,1,1,'#e27b32');poly(ctx,[[8,-10],[12,-7],[8,-7]],'#e5a746');rect(ctx,0,10,2,3,'#cf913f');rect(ctx,4,9,2,3,'#cf913f');ctx.restore();
+function phoenix(t) {
+  const p = palettes[form];
+  const x = Math.round(pet.x);
+  const y = Math.round(pet.y + Math.sin(t * 3) * 1.5 - (mode === 'fly' ? 10 : 0));
+  const flap = Math.sin(t * (mode === 'fly' ? 10 : 4.5));
+  const adult = form === 3;
+  ctx.fillStyle = '#1e352733';
+  ctx.beginPath();
+  ctx.ellipse(x, pet.y + 19, adult ? 19 : 12, 4, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.save();
+  ctx.translate(x, y);
+  const size = form === 1 ? .62 : form === 2 ? .82 : 1;
+  ctx.scale(size, size);
+  if (target.x < pet.x - 1) ctx.scale(-1, 1);
+
+  // Five independent, tapered tail feathers with golden inner vanes.
+  for (let i = 0; i < (adult ? 5 : 3); i++) {
+    const spread = i - (adult ? 2 : 1);
+    const sway = Math.sin(t * 3.4 + i * .7) * 3;
+    const endX = spread * 10 + sway - 5;
+    const endY = 38 - Math.abs(spread) * 3;
+    poly(ctx, [[-3+spread,4], [spread*5-7,17], [endX-5,endY-5], [endX-6,endY+4], [endX+1,endY], [spread*6+4,19], [4+spread,6]], '#542a32');
+    poly(ctx, [[-2+spread,5], [spread*5-5,17], [endX-3,endY-5], [endX-4,endY+1], [endX,endY-2], [spread*6+2,18], [3+spread,6]], p.tail);
+    poly(ctx, [[spread,8], [spread*5-1,19], [endX-2,endY-1], [endX+1,endY-8], [spread*5+2,18]], p.wing);
+    poly(ctx, [[spread,9], [spread*5,18], [endX-1,endY-6], [spread*5+2,17]], p.light);
+  }
+
+  // Articulated wings: each primary feather is a separate outlined shape.
+  for (const side of [-1, 1]) {
+    ctx.save();
+    ctx.scale(side, 1);
+    ctx.translate(4, -5);
+    ctx.rotate((flap * .11 + .06) * (mode === 'fly' ? 1.6 : 1));
+    poly(ctx, [[0,0], [8,-10], [18,-15], [30,-26], [26,-7], [19,4], [9,10], [0,6]], p.dark);
+    const count = adult ? 7 : 5;
+    for (let j = count - 1; j >= 0; j--) {
+      const rootX = 4 + j * 1.7, rootY = 5 - j * 2;
+      const tipX = 14 + j * 2.8;
+      const tipY = 7 - j * 5.4 - flap * (j + 1) * .5;
+      poly(ctx, [[rootX-3,rootY-3], [tipX-3,tipY-5], [tipX+5,tipY-13], [tipX+3,tipY+1], [tipX-3,tipY+7], [rootX-3,rootY+4]], p.dark);
+      poly(ctx, [[rootX-1,rootY-2], [tipX-1,tipY-4], [tipX+3,tipY-10], [tipX+1,tipY], [tipX-3,tipY+5], [rootX-2,rootY+2]], p.tail);
+      poly(ctx, [[rootX,rootY-2], [tipX-1,tipY-3], [tipX+1,tipY-6], [tipX-1,tipY], [tipX-4,tipY+3], [rootX-1,rootY+2]], p.wing);
+      poly(ctx, [[rootX,rootY-2], [tipX-2,tipY-2], [tipX,tipY-4], [tipX-3,tipY+1], [rootX-1,rootY+1]], p.body);
+    }
+    // Overlapping shoulder coverts catch the light.
+    for (let j = 3; j >= 0; j--) {
+      const dx=2+j*3, dy=-j*3;
+      poly(ctx, [[dx-3,dy-4],[dx+4,dy-8],[dx+2,dy+2],[dx-3,dy+6]], p.wing);
+      poly(ctx, [[dx-2,dy-4],[dx+2,dy-6],[dx,dy+1],[dx-2,dy+3]], p.light);
+    }
+    ctx.restore();
+  }
+
+  // Curved breast, a ruff of layered feathers, and hooked eagle profile.
+  poly(ctx,[[-5,-12],[2,-15],[9,-9],[10,0],[5,10],[0,15],[-7,9],[-10,0]],p.dark);
+  poly(ctx,[[-4,-12],[2,-13],[7,-8],[8,0],[3,9],[0,12],[-5,7],[-7,0]],p.wing);
+  poly(ctx,[[-3,-12],[2,-12],[5,-7],[5,1],[1,9],[-3,7],[-5,0]],p.body);
+  poly(ctx,[[-2,-10],[1,-10],[2,-4],[0,5],[-3,3]],p.light);
+  for(let i=0;i<4;i++) {
+    poly(ctx,[[-5+i*2,-8+i*4],[1+i,-6+i*4],[-3+i,0+i*4],[-4+i,-3+i*4]],i%2?p.wing:p.light);
+  }
+  // Swept solar crest.
+  for(let i=0;i<4;i++) {
+    poly(ctx,[[0,-15],[-9-i*3,-20-i*2],[-6-i*2,-28-i],[0,-23-i],[5,-21],[7,-15]],p.tail);
+    poly(ctx,[[1,-16],[-7-i*3,-21-i*2],[-5-i*2,-25-i],[1,-21-i],[5,-19]],p.wing);
+  }
+  poly(ctx,[[-2,-20],[3,-25],[9,-23],[12,-18],[10,-11],[5,-9],[-2,-13]],p.dark);
+  poly(ctx,[[-1,-20],[4,-23],[8,-21],[10,-17],[8,-12],[4,-11],[-1,-14]],p.body);
+  poly(ctx,[[0,-20],[4,-22],[8,-20],[5,-18],[0,-16]],p.light);
+  poly(ctx,[[5,-18],[10,-19],[9,-16],[6,-15]],p.dark);
+  rect(ctx,7,-18,2,1,'#df6934'); rect(ctx,8,-18,1,1,'#fff3aa');
+  poly(ctx,[[10,-17],[16,-14],[16,-10],[13,-12],[9,-12]],'#785130');
+  poly(ctx,[[10,-16],[14,-14],[15,-12],[12,-13],[10,-13]],'#f0bf52');
+  for(const xx of [-3,4]) {
+    rect(ctx,xx,10,2,5,'#b87935');
+    poly(ctx,[[xx,13],[xx+3,14],[xx+5,17],[xx+2,16],[xx+1,17],[xx-2,16],[xx-3,17],[xx-3,15]],'#60412f');
+    rect(ctx,xx-2,14,5,1,'#efc76a');
+  }
+  ctx.restore();
 }
 function burst(){for(let i=0;i<60;i++)particles.push({x:pet.x,y:pet.y,vx:(Math.random()-.5)*40,vy:-10-Math.random()*35,life:1+Math.random(),max:2});}
 function render(timestamp){const dt=Math.min((timestamp-last)/1000||0,.05);last=timestamp;if(!paused){time+=dt;if(time>modeUntil)mode='idle';if(mode==='fly'){target.x=245+Math.cos(time*1.3)*68;target.y=198+Math.sin(time*1.8)*33}pet.x+=(target.x-pet.x)*Math.min(1,dt*2);pet.y+=(target.y-pet.y)*Math.min(1,dt*2);for(const p of particles){p.x+=p.vx*dt;p.y+=p.vy*dt;p.life-=dt}particles=particles.filter(p=>p.life>0)}
-ctx.drawImage(landscape,0,0);
+ctx.drawImage(gardenArt.complete && gardenArt.naturalWidth ? gardenArt : landscape,0,0,W,H);
 // Water ripples and chimney smoke.
-for(let i=0;i<5;i++){rect(ctx,351+(i*17)%64+Math.sin(time+i)*3,224+i*6,7,1,night?'#77aaa7':'#a5ccc0')}
-for(let i=0;i<3;i++){const phase=(time*.35+i/3)%1;ctx.globalAlpha=(1-phase)*.35;rect(ctx,163+Math.sin(phase*6)*4,43-phase*26,4+phase*6,4+phase*5,'#f7f1da')}ctx.globalAlpha=1;
+for(let i=0;i<5;i++){rect(ctx,351+(i*17)%64+Math.sin(time+i)*3,183+i*10,5,0.5,night?'#77aaa7':'#a5ccc080')}
+for(let i=0;i<3;i++){const phase=(time*.35+i/3)%1;ctx.globalAlpha=(1-phase)*.35;rect(ctx,175+Math.sin(phase*6)*4,14-phase*20,4+phase*6,4+phase*5,'#f7f1da')}ctx.globalAlpha=1;
 if(destination){ctx.strokeStyle='#fff1bd';ctx.globalAlpha=.6;ctx.strokeRect(destination.x-4,destination.y-2,8,4);ctx.globalAlpha=1}
-if(mode==='flare'){ctx.fillStyle='#ffd98338';ctx.beginPath();ctx.arc(pet.x,pet.y,24+Math.sin(time*12)*4,0,Math.PI*2);ctx.fill()}
+if(mode==='flare'){
+const glow=ctx.createRadialGradient(pet.x,pet.y,2,pet.x,pet.y,44);
+glow.addColorStop(0,'#fff5bd99');glow.addColorStop(.4,'#ffb33b55');glow.addColorStop(1,'#ff6a1600');
+ctx.fillStyle=glow;ctx.fillRect(pet.x-44,pet.y-44,88,88);
+ctx.save();ctx.translate(pet.x,pet.y+17);ctx.scale(1,.35);ctx.rotate(time*.7);
+ctx.strokeStyle='#ffe5a0';ctx.lineWidth=.7;ctx.setLineDash([3,5]);ctx.beginPath();ctx.arc(0,0,30,0,Math.PI*2);ctx.stroke();
+ctx.setLineDash([]);ctx.strokeStyle='#efb54b99';ctx.beginPath();ctx.arc(0,0,25,0,Math.PI*2);ctx.stroke();ctx.restore();
+}
 phoenix(time);
 for(const p of particles){ctx.globalAlpha=Math.min(1,p.life);rect(ctx,p.x,p.y,2,2,p.life>.7?'#ffdf83':'#e88c45')}ctx.globalAlpha=1;
+// Windborne petals, pollen and butterflies give the painted garden depth.
+for(let i=0;i<16;i++){
+const px=(i*43+time*(2+i%3))%W,py=75+(i*37+Math.sin(time*.55+i)*8)%220;
+ctx.globalAlpha=.25+(i%4)*.1;
+rect(ctx,px,py,1.3,.7,i%3?'#ffe9b4':'#f3b1bd');
+}ctx.globalAlpha=1;
 // Foreground grasses, occasional butterflies, night lanterns.
 for(let i=0;i<4;i++){let x=75+i*83+Math.sin(time*.6+i)*9,y=180+Math.sin(time+i)*7+i*20;rect(ctx,x,y,2,1,'#f6ddb2');rect(ctx,x-1,y-Math.round(Math.sin(time*10+i)),1,2,'#e4b381')}
-if(night){rect(ctx,0,0,W,H,'#18274888');ctx.fillStyle='#ffcd7b';for(const x of [119,165]){ctx.shadowColor='#ffc768';ctx.shadowBlur=12;ctx.fillRect(x,100,6,10)}ctx.shadowBlur=0;for(let i=0;i<20;i++){ctx.globalAlpha=.25+Math.sin(time*2+i)*.25;rect(ctx,60+(i*43)%360+Math.sin(time+i)*3,100+(i*29)%180,1,1,'#ffedaa')}ctx.globalAlpha=1}
+if(night){rect(ctx,0,0,W,H,'#18274888');ctx.fillStyle='#ffcd7b';for(const [x,y] of [[117,83],[188,74],[150,83]]){ctx.shadowColor='#ffc768';ctx.shadowBlur=12;ctx.fillRect(x,y,3,5)}ctx.shadowBlur=0;for(let i=0;i<20;i++){ctx.globalAlpha=.25+Math.sin(time*2+i)*.25;rect(ctx,60+(i*43)%360+Math.sin(time+i)*3,100+(i*29)%180,1,1,'#ffedaa')}ctx.globalAlpha=1}
 requestAnimationFrame(render)}requestAnimationFrame(render);
 function speak(message){status.textContent=message}
 canvas.addEventListener('pointerdown',e=>{const r=canvas.getBoundingClientRect();const scale=Math.max(r.width/W,r.height/H);const x=(e.clientX-r.left-(r.width-W*scale)/2)/scale,y=(e.clientY-r.top-(r.height-H*scale)/2)/scale;if(x<45||x>435||y<143||y>303||(x>315&&y>185&&y<270)){speak('Hãy chọn một khoảng cỏ hoặc lối đi trong vườn.');return}target={x,y};destination={x,y};mode='idle';speak('Nhật Diệm đang bay đến nơi bạn gọi.');tone(660)});
