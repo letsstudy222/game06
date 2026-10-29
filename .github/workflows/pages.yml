@@ -26,12 +26,15 @@ jobs:
           node --check world.js
           node --check game.js
           node --check farm.js
+          for file in src/*/*.js scripts/*.cjs; do node --check "$file"; done
           node tests/world.test.cjs
+          node tests/content.test.cjs
       - name: Prepare static site
         run: |
           mkdir -p _site
           cp index.html style.css world.js game.js farm.js _site/
           cp -R assets _site/assets
+          cp -R src _site/src
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

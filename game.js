@@ -2,9 +2,9 @@
 const canvas = document.querySelector("#garden"),
   ctx = canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
-ctx.scale(3, 3);
+
 const gardenArt = new Image();
-gardenArt.src = "assets/garden-detailed.png?v=3";
+gardenArt.src = TinyFarm.Content.maps[TinyFarm.Content.defaultMap].art;
 const W = 480,
   H = 320,
   landscape = document.createElement("canvas");
@@ -322,409 +322,14 @@ function buildGarden() {
   }
 }
 buildGarden();
-let form = 3,
-  night = false,
+let night = false,
   paused = false,
   time = 0,
-  last = 0,
-  mode = "idle",
-  modeUntil = 0,
-  target = { x: 248, y: 210 },
-  pet = { x: 248, y: 210 },
-  particles = [],
-  destination = null;
-const status = document.querySelector("#status"),
-  palettes = {
-    1: {
-      body: "#eea33b",
-      light: "#ffd676",
-      wing: "#d96b2e",
-      dark: "#713629",
-      tail: "#b84028",
-    },
-    2: {
-      body: "#bb392c",
-      light: "#f6b948",
-      wing: "#e16c30",
-      dark: "#522c31",
-      tail: "#8c2430",
-    },
-    3: {
-      body: "#fff0bd",
-      light: "#fff9df",
-      wing: "#e9bd58",
-      dark: "#654234",
-      tail: "#ae3033",
-    },
-  };
-function phoenix(t) {
-  const p = palettes[form];
-  const x = Math.round(pet.x);
-  const y = Math.round(
-    pet.y + Math.sin(t * 3) * 1.5 - (mode === "fly" ? 10 : 0),
-  );
-  const flap = Math.sin(t * (mode === "fly" ? 10 : 4.5));
-  const adult = form === 3;
-  ctx.fillStyle = "#1e352733";
-  ctx.beginPath();
-  ctx.ellipse(x, pet.y + 10, adult ? 10 : 7, 2, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.save();
-  ctx.translate(x, y);
-  const size = form === 1 ? 0.34 : form === 2 ? 0.42 : 0.5;
-  ctx.scale(size, size);
-  if (target.x < pet.x - 1) ctx.scale(-1, 1);
-
-  // Five independent, tapered tail feathers with golden inner vanes.
-  for (let i = 0; i < (adult ? 5 : 3); i++) {
-    const spread = i - (adult ? 2 : 1);
-    const sway = Math.sin(t * 3.4 + i * 0.7) * 3;
-    const endX = spread * 10 + sway - 5;
-    const endY = 38 - Math.abs(spread) * 3;
-    poly(
-      ctx,
-      [
-        [-3 + spread, 4],
-        [spread * 5 - 7, 17],
-        [endX - 5, endY - 5],
-        [endX - 6, endY + 4],
-        [endX + 1, endY],
-        [spread * 6 + 4, 19],
-        [4 + spread, 6],
-      ],
-      "#542a32",
-    );
-    poly(
-      ctx,
-      [
-        [-2 + spread, 5],
-        [spread * 5 - 5, 17],
-        [endX - 3, endY - 5],
-        [endX - 4, endY + 1],
-        [endX, endY - 2],
-        [spread * 6 + 2, 18],
-        [3 + spread, 6],
-      ],
-      p.tail,
-    );
-    poly(
-      ctx,
-      [
-        [spread, 8],
-        [spread * 5 - 1, 19],
-        [endX - 2, endY - 1],
-        [endX + 1, endY - 8],
-        [spread * 5 + 2, 18],
-      ],
-      p.wing,
-    );
-    poly(
-      ctx,
-      [
-        [spread, 9],
-        [spread * 5, 18],
-        [endX - 1, endY - 6],
-        [spread * 5 + 2, 17],
-      ],
-      p.light,
-    );
-  }
-
-  // Articulated wings: each primary feather is a separate outlined shape.
-  for (const side of [-1, 1]) {
-    ctx.save();
-    ctx.scale(side, 1);
-    ctx.translate(4, -5);
-    ctx.rotate((flap * 0.11 + 0.06) * (mode === "fly" ? 1.6 : 1));
-    poly(
-      ctx,
-      [
-        [0, 0],
-        [8, -10],
-        [18, -15],
-        [30, -26],
-        [26, -7],
-        [19, 4],
-        [9, 10],
-        [0, 6],
-      ],
-      p.dark,
-    );
-    const count = adult ? 7 : 5;
-    for (let j = count - 1; j >= 0; j--) {
-      const rootX = 4 + j * 1.7,
-        rootY = 5 - j * 2;
-      const tipX = 14 + j * 2.8;
-      const tipY = 7 - j * 5.4 - flap * (j + 1) * 0.5;
-      poly(
-        ctx,
-        [
-          [rootX - 3, rootY - 3],
-          [tipX - 3, tipY - 5],
-          [tipX + 5, tipY - 13],
-          [tipX + 3, tipY + 1],
-          [tipX - 3, tipY + 7],
-          [rootX - 3, rootY + 4],
-        ],
-        p.dark,
-      );
-      poly(
-        ctx,
-        [
-          [rootX - 1, rootY - 2],
-          [tipX - 1, tipY - 4],
-          [tipX + 3, tipY - 10],
-          [tipX + 1, tipY],
-          [tipX - 3, tipY + 5],
-          [rootX - 2, rootY + 2],
-        ],
-        p.tail,
-      );
-      poly(
-        ctx,
-        [
-          [rootX, rootY - 2],
-          [tipX - 1, tipY - 3],
-          [tipX + 1, tipY - 6],
-          [tipX - 1, tipY],
-          [tipX - 4, tipY + 3],
-          [rootX - 1, rootY + 2],
-        ],
-        p.wing,
-      );
-      poly(
-        ctx,
-        [
-          [rootX, rootY - 2],
-          [tipX - 2, tipY - 2],
-          [tipX, tipY - 4],
-          [tipX - 3, tipY + 1],
-          [rootX - 1, rootY + 1],
-        ],
-        p.body,
-      );
-    }
-    // Overlapping shoulder coverts catch the light.
-    for (let j = 3; j >= 0; j--) {
-      const dx = 2 + j * 3,
-        dy = -j * 3;
-      poly(
-        ctx,
-        [
-          [dx - 3, dy - 4],
-          [dx + 4, dy - 8],
-          [dx + 2, dy + 2],
-          [dx - 3, dy + 6],
-        ],
-        p.wing,
-      );
-      poly(
-        ctx,
-        [
-          [dx - 2, dy - 4],
-          [dx + 2, dy - 6],
-          [dx, dy + 1],
-          [dx - 2, dy + 3],
-        ],
-        p.light,
-      );
-    }
-    ctx.restore();
-  }
-
-  // Curved breast, a ruff of layered feathers, and hooked eagle profile.
-  poly(
-    ctx,
-    [
-      [-5, -12],
-      [2, -15],
-      [9, -9],
-      [10, 0],
-      [5, 10],
-      [0, 15],
-      [-7, 9],
-      [-10, 0],
-    ],
-    p.dark,
-  );
-  poly(
-    ctx,
-    [
-      [-4, -12],
-      [2, -13],
-      [7, -8],
-      [8, 0],
-      [3, 9],
-      [0, 12],
-      [-5, 7],
-      [-7, 0],
-    ],
-    p.wing,
-  );
-  poly(
-    ctx,
-    [
-      [-3, -12],
-      [2, -12],
-      [5, -7],
-      [5, 1],
-      [1, 9],
-      [-3, 7],
-      [-5, 0],
-    ],
-    p.body,
-  );
-  poly(
-    ctx,
-    [
-      [-2, -10],
-      [1, -10],
-      [2, -4],
-      [0, 5],
-      [-3, 3],
-    ],
-    p.light,
-  );
-  for (let i = 0; i < 4; i++) {
-    poly(
-      ctx,
-      [
-        [-5 + i * 2, -8 + i * 4],
-        [1 + i, -6 + i * 4],
-        [-3 + i, 0 + i * 4],
-        [-4 + i, -3 + i * 4],
-      ],
-      i % 2 ? p.wing : p.light,
-    );
-  }
-  // Swept solar crest.
-  for (let i = 0; i < 4; i++) {
-    poly(
-      ctx,
-      [
-        [0, -15],
-        [-9 - i * 3, -20 - i * 2],
-        [-6 - i * 2, -28 - i],
-        [0, -23 - i],
-        [5, -21],
-        [7, -15],
-      ],
-      p.tail,
-    );
-    poly(
-      ctx,
-      [
-        [1, -16],
-        [-7 - i * 3, -21 - i * 2],
-        [-5 - i * 2, -25 - i],
-        [1, -21 - i],
-        [5, -19],
-      ],
-      p.wing,
-    );
-  }
-  poly(
-    ctx,
-    [
-      [-2, -20],
-      [3, -25],
-      [9, -23],
-      [12, -18],
-      [10, -11],
-      [5, -9],
-      [-2, -13],
-    ],
-    p.dark,
-  );
-  poly(
-    ctx,
-    [
-      [-1, -20],
-      [4, -23],
-      [8, -21],
-      [10, -17],
-      [8, -12],
-      [4, -11],
-      [-1, -14],
-    ],
-    p.body,
-  );
-  poly(
-    ctx,
-    [
-      [0, -20],
-      [4, -22],
-      [8, -20],
-      [5, -18],
-      [0, -16],
-    ],
-    p.light,
-  );
-  poly(
-    ctx,
-    [
-      [5, -18],
-      [10, -19],
-      [9, -16],
-      [6, -15],
-    ],
-    p.dark,
-  );
-  rect(ctx, 7, -18, 2, 1, "#df6934");
-  rect(ctx, 8, -18, 1, 1, "#fff3aa");
-  poly(
-    ctx,
-    [
-      [10, -17],
-      [16, -14],
-      [16, -10],
-      [13, -12],
-      [9, -12],
-    ],
-    "#785130",
-  );
-  poly(
-    ctx,
-    [
-      [10, -16],
-      [14, -14],
-      [15, -12],
-      [12, -13],
-      [10, -13],
-    ],
-    "#f0bf52",
-  );
-  for (const xx of [-3, 4]) {
-    rect(ctx, xx, 10, 2, 5, "#b87935");
-    poly(
-      ctx,
-      [
-        [xx, 13],
-        [xx + 3, 14],
-        [xx + 5, 17],
-        [xx + 2, 16],
-        [xx + 1, 17],
-        [xx - 2, 16],
-        [xx - 3, 17],
-        [xx - 3, 15],
-      ],
-      "#60412f",
-    );
-    rect(ctx, xx - 2, 14, 5, 1, "#efc76a");
-  }
-  ctx.restore();
-}
-function burst() {
-  for (let i = 0; i < 60; i++)
-    particles.push({
-      x: pet.x,
-      y: pet.y,
-      vx: (Math.random() - 0.5) * 40,
-      vy: -10 - Math.random() * 35,
-      life: 1 + Math.random(),
-      max: 2,
-    });
-}
+  last = 0;
+const viewport = new TinyFarm.Viewport(canvas);
+const companion = TinyFarm.createPet(TinyFarm.Content.defaultPet);
+TinyFarm.viewport = viewport;
+TinyFarm.companion = companion;
 function render(timestamp) {
   const dt = Math.min((timestamp - last) / 1000 || 0, 0.05);
   last = timestamp;
@@ -733,20 +338,11 @@ function render(timestamp) {
   if (running) {
     time += dt;
     farm.step(dt);
-    if (time > modeUntil) mode = "idle";
-    if (mode === "fly") {
-      target.x = farm.player().x + 16 + Math.cos(time * 1.3) * 18;
-      target.y = farm.player().y - 8 + Math.sin(time * 1.8) * 10;
-    }
-    pet.x += (target.x - pet.x) * Math.min(1, dt * 3);
-    pet.y += (target.y - pet.y) * Math.min(1, dt * 3);
-    for (const p of particles) {
-      p.x += p.vx * dt;
-      p.y += p.vy * dt;
-      p.life -= dt;
-    }
-    particles = particles.filter((p) => p.life > 0);
+    companion.update(dt, time, farm.player());
   }
+  viewport.follow(farm?.player() || { x: 230, y: 170 });
+  viewport.begin(ctx);
+
   ctx.drawImage(
     gardenArt.complete && gardenArt.naturalWidth ? gardenArt : landscape,
     0,
@@ -767,7 +363,7 @@ function render(timestamp) {
     );
   }
   ctx.globalAlpha = 1;
-  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (TinyFarm.Settings.get("motion")) {
     for (let i = 0; i < 3; i++) {
       const phase = (time * 0.25 + i / 3) % 1;
       ctx.globalAlpha = (1 - phase) * 0.2;
@@ -794,31 +390,7 @@ function render(timestamp) {
   }
   ctx.globalAlpha = 1;
   farm?.drawActors(ctx, time);
-  if (mode === "flare") {
-    const glow = ctx.createRadialGradient(pet.x, pet.y, 2, pet.x, pet.y, 28);
-    glow.addColorStop(0, "#fff5bd99");
-    glow.addColorStop(0.4, "#ffb33b55");
-    glow.addColorStop(1, "#ff6a1600");
-    ctx.fillStyle = glow;
-    ctx.fillRect(pet.x - 28, pet.y - 28, 56, 56);
-    ctx.save();
-    ctx.translate(pet.x, pet.y + 10);
-    ctx.scale(1, 0.35);
-    ctx.rotate(time * 0.7);
-    ctx.strokeStyle = "#ffe5a0";
-    ctx.lineWidth = 0.5;
-    ctx.setLineDash([2, 3]);
-    ctx.beginPath();
-    ctx.arc(0, 0, 16, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.restore();
-  }
-  phoenix(time);
-  for (const p of particles) {
-    ctx.globalAlpha = Math.min(1, p.life);
-    rect(ctx, p.x, p.y, 1, 1, p.life > 0.7 ? "#ffdf83" : "#e88c45");
-  }
-  ctx.globalAlpha = 1;
+  companion.render(ctx);
   farm?.drawAtmosphere(ctx, time);
   requestAnimationFrame(render);
 }

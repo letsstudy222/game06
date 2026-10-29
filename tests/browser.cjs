@@ -15,20 +15,34 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
     errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   const snap = () => page.evaluate(() => FarmGame.snapshot());
+  async function openTab(name) {
+    if (await page.locator(".journal").isHidden())
+      await page.locator("#journal-toggle").click();
+    await page.locator("#tab-" + name).click();
+  }
   async function clickMap(x, y) {
-    await page.locator("canvas").scrollIntoViewIfNeeded();
-    const at = await page.locator("canvas").evaluate(
-      (c, { x, y }) => {
-        const r = c.getBoundingClientRect(),
-          cover = getComputedStyle(c).objectFit === "cover",
-          k = (cover ? Math.max : Math.min)(r.width / 480, r.height / 320);
-        return {
-          x: r.left + (r.width - 480 * k) / 2 + x * k,
-          y: r.top + (r.height - 320 * k) / 2 + y * k,
-        };
-      },
-      { x, y },
-    );
+    if (await page.locator(".journal").isVisible())
+      await page.locator("#journal-close").click();
+    const view = await page.evaluate(() => FarmGame.view());
+    if (y - view.camera.y > 214 || y - view.camera.y < 60) {
+      const r = await page.locator("#minimap").boundingBox();
+      await page.mouse.click(
+        r.x + (x / 480) * r.width,
+        r.y + (y / 320) * r.height,
+      );
+      await page.waitForFunction(
+        ({ x, y }) => {
+          const p = FarmGame.snapshot().player;
+          return Math.hypot(p.x - x, p.y - y) < 7;
+        },
+        { x, y },
+        { timeout: 18000 },
+      );
+    }
+    const at = await page.evaluate(({ x, y }) => FarmGame.toScreen(x, y), {
+      x,
+      y,
+    });
     await page.mouse.click(at.x, at.y);
   }
   async function waitPlot(index, key, value) {
@@ -89,6 +103,7 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
     await waitPlot(i, "watered", true);
   }
   assert.equal((await snap()).seeds.radish, 3);
+  await openTab("quests");
   await page.locator('[data-claim="first"]').click();
   assert.equal((await snap()).coins, 160);
   console.log(
@@ -149,7 +164,7 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
   await close();
   console.log("PASS fishing minigame awards a fish");
   // Pet spell is limited to once per day; save survives reload.
-  await page.locator("#tab-pet").click();
+  await openTab("pet");
   await page.locator("#pet-power").click();
   const e = (await snap()).energy;
   await page.locator("#pet-power").click();
@@ -157,16 +172,20 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
   await page.locator('[data-form="2"]').click();
   await page.locator("#fly").click();
   await page.locator("#flare").click();
+  if (await page.locator(".journal").isHidden())
+    await page.locator("#journal-toggle").click();
   await page.locator("#save").click();
   const persisted = await snap();
   await page.reload();
-  await page.locator("#start-game").click();
+  await page.locator("#continue-game").click();
   const reloaded = await snap();
   for (const k of ["day", "coins", "bag", "plots", "petForm"])
     assert.deepEqual(reloaded[k], persisted[k]);
   console.log("PASS pet power limit, forms and local save round trip");
   // Keyboard, collisions, blur key release, pause and accessible help.
-  await page.locator("canvas").focus();
+  if (await page.locator(".journal").isVisible())
+    await page.locator("#journal-close").click();
+  await page.locator("#garden").focus();
   const pos = (await snap()).player;
   await page.keyboard.down("ArrowDown");
   await page.waitForTimeout(250);
@@ -192,14 +211,14 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
     fullPage: true,
   });
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.locator("#tab-bag").click();
+  await openTab("bag");
   assert.equal(
     await page.evaluate(
       () => document.documentElement.scrollWidth > innerWidth,
     ),
     false,
   );
-  await page.locator("#tab-quests").click();
+  await openTab("quests");
   await page.screenshot({
     path: "/tmp/nhatdiem-game-mobile.png",
     fullPage: true,
@@ -220,14 +239,7 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
     () => gardenArt.complete && gardenArt.naturalWidth > 0,
   );
   await m.locator('[data-tool="hoe"]').tap();
-  const tap = await m.locator("canvas").evaluate((c) => {
-    const r = c.getBoundingClientRect(),
-      k = Math.max(r.width / 480, r.height / 320);
-    return {
-      x: r.left + (r.width - 480 * k) / 2 + 83 * k,
-      y: r.top + (r.height - 320 * k) / 2 + 177 * k,
-    };
-  });
+  const tap = await m.evaluate(() => FarmGame.toScreen(83, 177));
   await m.touchscreen.tap(tap.x, tap.y);
   await m.waitForFunction(
     () => FarmGame.snapshot().plots[0].tilled,

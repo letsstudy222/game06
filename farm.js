@@ -1,37 +1,12 @@
 (function () {
   "use strict";
   const { World, CROPS, ITEMS, PRICES, QUESTS, KEY } = FarmRules;
-  const farmerArt = new Image();
-  farmerArt.src = "assets/farmer-walk.png?v=3";
-  const anArt = new Image();
-  anArt.src = "assets/an-gardener.png?v=3";
-  // Measured alpha bounds, not an assumed grid: generated sheets have uneven gutters.
-  const farmerFrames = [
-    [
-      [138, 26, 195, 287],
-      [404, 23, 189, 284],
-      [663, 26, 192, 285],
-      [925, 24, 191, 282],
-    ],
-    [
-      [150, 326, 182, 284],
-      [406, 327, 185, 282],
-      [674, 328, 181, 281],
-      [935, 326, 178, 283],
-    ],
-    [
-      [130, 633, 187, 277],
-      [391, 629, 183, 283],
-      [662, 632, 186, 280],
-      [927, 631, 182, 281],
-    ],
-    [
-      [153, 924, 165, 291],
-      [415, 925, 164, 286],
-      [676, 926, 166, 289],
-      [938, 929, 165, 284],
-    ],
-  ];
+  const farmerSprite = new TinyFarm.SpriteActor(
+    TinyFarm.Content.characters.farmer,
+  );
+  const anSprite = new TinyFarm.SpriteActor(TinyFarm.Content.characters.an);
+  const farmerArt = farmerSprite.image,
+    anArt = anSprite.image;
   const $ = (s) => document.querySelector(s);
   const modal = $("#modal");
   let world,
@@ -46,6 +21,21 @@
     else badSave = true;
   }
   const s = world.s;
+  const hud = new TinyFarm.GameplayHUD({
+    companion,
+    viewport,
+    art: gardenArt,
+    onMapTarget(point) {
+      if (booted && !paused && !modal.open) {
+        if (walkable(point.x, point.y)) go(point);
+        else
+          notify(
+            "Vị trí trên bản đồ nhỏ bị chắn. Hãy chọn lối đi hoặc bãi cỏ.",
+          );
+      }
+    },
+  });
+
   let replacingSave = false;
   let booted = false,
     tool = "hand",
@@ -64,140 +54,17 @@
     fishing = null,
     lastBiteFrame = 0,
     lastMelody = 0;
-  const keys = new Set(),
-    reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const TOOLS = {
-    hand: "Bàn tay",
-    hoe: "Cuốc đất",
-    seed: "Gieo hạt",
-    water: "Bình tưới",
-    rod: "Cần câu",
-  };
-  const PLOTS = Array.from({ length: 12 }, (_, i) => ({
-    x: 83 + (i % 4) * 27,
-    y: 177 + Math.floor(i / 4) * 20,
-  }));
-  const GATHERS = [
-    { x: 278, y: 123 },
-    { x: 364, y: 124 },
-    { x: 190, y: 260 },
-    { x: 277, y: 250 },
-    { x: 303, y: 265 },
-    { x: 70, y: 149 },
-  ];
-  const PLACES = [
-    {
-      id: "home",
-      x: 157,
-      y: 109,
-      name: "Mái nhà của bạn",
-      icon: "home",
-      approach: { x: 157, y: 126 },
-    },
-    {
-      id: "shop",
-      x: 251,
-      y: 130,
-      name: "Quầy nông sản",
-      icon: "bag",
-      approach: { x: 250, y: 142 },
-    },
-    {
-      id: "an",
-      x: 274,
-      y: 142,
-      name: "An · Người hàng xóm",
-      icon: "heart",
-      approach: { x: 270, y: 150 },
-    },
-    {
-      id: "pond",
-      x: 325,
-      y: 209,
-      name: "Bến câu cá",
-      icon: "fish",
-      approach: { x: 316, y: 213 },
-    },
-    {
-      id: "shrine",
-      x: 329,
-      y: 267,
-      name: "Đài Bình Minh",
-      icon: "star",
-      approach: { x: 321, y: 266 },
-    },
-  ];
-  const polygons = [
-    [
-      [215, 45],
-      [244, 45],
-      [244, 310],
-      [215, 310],
-    ],
-    [
-      [51, 127],
-      [330, 127],
-      [330, 151],
-      [51, 151],
-    ],
-    [
-      [145, 103],
-      [165, 103],
-      [165, 139],
-      [145, 139],
-    ],
-    [
-      [68, 164],
-      [206, 164],
-      [206, 239],
-      [68, 239],
-    ],
-    [
-      [201, 145],
-      [245, 145],
-      [245, 275],
-      [201, 275],
-    ],
-    [
-      [242, 142],
-      [309, 142],
-      [309, 242],
-      [242, 242],
-    ],
-    [
-      [245, 115],
-      [391, 115],
-      [391, 138],
-      [245, 138],
-    ],
-    [
-      [302, 201],
-      [337, 201],
-      [337, 218],
-      [302, 218],
-    ],
-    [
-      [177, 241],
-      [219, 241],
-      [219, 276],
-      [177, 276],
-    ],
-    [
-      [239, 239],
-      [307, 239],
-      [340, 252],
-      [340, 279],
-      [290, 279],
-      [268, 263],
-      [239, 263],
-    ],
-    [
-      [55, 141],
-      [218, 141],
-      [218, 169],
-      [55, 169],
-    ],
-  ];
+  const keys = new Set();
+  let reducedMotion = !TinyFarm.Settings.get("motion");
+  document.addEventListener("tinyfarm:settings", () => {
+    reducedMotion = !TinyFarm.Settings.get("motion");
+  });
+  const TOOLS = TinyFarm.Content.tools;
+  const activeMap = TinyFarm.Content.maps[TinyFarm.Content.defaultMap];
+  const PLOTS = activeMap.plots,
+    GATHERS = activeMap.gathers,
+    PLACES = activeMap.places,
+    polygons = activeMap.walkable;
   function inside(x, y, p) {
     let hit = false;
     for (let i = 0, j = p.length - 1; i < p.length; j = i++) {
@@ -211,7 +78,7 @@
     return polygons.some((p) => inside(x, y, p));
   }
   if (!walkable(s.player.x, s.player.y))
-    Object.assign(s.player, { x: 230, y: 170 });
+    Object.assign(s.player, activeMap.spawn);
   const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
   const GRID = 5,
     COLS = 96,
@@ -319,8 +186,10 @@
     notify(message);
     tone(f);
     actionTime = 0.45;
+    updateUI();
   }
   function switchTab(name) {
+    hud.setDrawer(true);
     for (const b of document.querySelectorAll("[data-tab]")) {
       const on = b.dataset.tab === name;
       b.setAttribute("aria-selected", String(on));
@@ -329,6 +198,7 @@
     }
     dirty = true;
     updateUI();
+    $("#tab-" + name).focus();
   }
   function selectTool(name) {
     if (!TOOLS[name]) return;
@@ -342,22 +212,8 @@
     actionKind = name;
     tone(350);
   }
-  function icon(name, color = "#81905d") {
-    if (["radish", "carrot", "pumpkin", "fruit", "wood"].includes(name)) {
-      const art = {
-        radish:
-          '<path fill="#e89ba5" d="M7 10q10-6 11 2t-7 9L6 15Z"/><path stroke="#739253" d="M11 10V3m0 4L6 3m5 4 6-5"/>',
-        carrot:
-          '<path fill="#e9a059" d="m7 9 11 2-8 11Z"/><path stroke="#719250" d="m12 9-3-7m4 7 5-7m-6 5 7-2"/><path stroke="#b77941" d="m8 13 5 1m-4 3 3 1"/>',
-        pumpkin:
-          '<path fill="#df9349" d="M12 7C1 1 0 22 12 21 24 22 23 1 12 7"/><path stroke="#b7763e" d="M12 7c-6 1-6 13 0 14m0-14c6 1 6 13 0 14"/><path stroke="#7a9153" d="m12 7 1-5 4 1"/>',
-        fruit:
-          '<path fill="#ce7157" d="M12 8C0 0 1 23 12 21 23 23 24 0 12 8"/><path stroke="#6a8c4b" d="M12 8V2c5-1 7 1 7 1l-6 3"/>',
-        wood: '<path fill="#b08a55" d="m4 9 13-5 5 11-13 6Z"/><ellipse fill="#d1af72" stroke="#80623f" cx="7" cy="15" rx="5" ry="6"/><ellipse fill="none" stroke="#a17e4d" cx="7" cy="15" rx="2" ry="3"/><path stroke="#765b39" d="m10 9 8-3m-6 7 7-3"/>',
-      };
-      return `<svg viewBox="0 0 24 24" style="color:${color};stroke-width:1.5">${art[name]}</svg>`;
-    }
-    return `<svg style="color:${color}"><use href="#i-${name}"/></svg>`;
+  function icon(name) {
+    return TinyFarm.PixelIcons.markup(name);
   }
   function updateHUD() {
     $("#coins").textContent = Math.floor(s.coins).toLocaleString("vi-VN");
@@ -374,13 +230,8 @@
         : s.minute >= 1140
           ? "Đêm dịu"
           : "Trời trong";
-    $("#weather-icon use").setAttribute(
-      "href",
-      world.weather === "rain"
-        ? "#i-rain"
-        : s.minute >= 1140
-          ? "#i-moon"
-          : "#i-sun",
+    $("#weather-icon").innerHTML = TinyFarm.PixelIcons.markup(
+      world.weather === "rain" ? "rain" : s.minute >= 1140 ? "moon" : "sun",
     );
     $("#seed-count").textContent = s.seeds[s.chosenSeed] + " hạt";
     $("#friendship").textContent = `An · ${s.stats.friendship} điểm thân thiết`;
@@ -394,6 +245,7 @@
       : near && dist(s.player, near.approach || near) < 22
         ? `E · ${near.label || near.name}`
         : "Chạm để đi · Chạm vật để tương tác";
+    hud.update(s, world);
   }
   function updateUI() {
     if (!dirty) return;
@@ -500,10 +352,7 @@
       const summary = world.sleep();
       s.player.x = 230;
       s.player.y = 148;
-      pet.x = 255;
-      pet.y = 143;
-      target.x = 255;
-      target.y = 143;
+      companion.teleport(255, 143);
       dirty = true;
       save();
       updateUI();
@@ -682,13 +531,7 @@
     }
   }
   function mapPoint(e) {
-    const r = canvas.getBoundingClientRect(),
-      cover = getComputedStyle(canvas).objectFit === "cover";
-    const scale = (cover ? Math.max : Math.min)(r.width / W, r.height / H);
-    return {
-      x: (e.clientX - r.left - (r.width - W * scale) / 2) / scale,
-      y: (e.clientY - r.top - (r.height - H * scale) / 2) / scale,
-    };
+    return viewport.toWorld(e.clientX, e.clientY);
   }
   function targetAt(point) {
     const plot = PLOTS.findIndex(
@@ -738,7 +581,7 @@
   function togglePause() {
     paused = !paused;
     keys.clear();
-    $("#pause").textContent = paused ? "▷" : "Ⅱ";
+    $("#pause").textContent = paused ? ">" : "II";
     $("#pause").setAttribute("aria-pressed", String(paused));
     $("#pause").setAttribute("aria-label", paused ? "Tiếp tục" : "Tạm dừng");
     updateHUD();
@@ -752,6 +595,12 @@
       }
       return;
     }
+    if (e.code === "Escape" && !hud.drawer.hidden) {
+      e.preventDefault();
+      hud.setDrawer(false);
+      canvas.focus({ preventScroll: true });
+      return;
+    }
     if (["INPUT", "SELECT", "TEXTAREA", "BUTTON"].includes(e.target.tagName))
       return;
     if (
@@ -763,6 +612,11 @@
     if (e.repeat && ["KeyE", "Space", "Escape", "KeyI"].includes(e.code))
       return;
     if (e.code === "Escape") {
+      if (!hud.drawer.hidden) {
+        hud.setDrawer(false);
+        canvas.focus({ preventScroll: true });
+        return;
+      }
       togglePause();
       return;
     }
@@ -791,6 +645,7 @@
     if (/^Digit[1-5]$/.test(e.code))
       selectTool(Object.keys(TOOLS)[Number(e.code.slice(-1)) - 1]);
     if (e.code === "KeyI") switchTab("bag");
+    if (e.code === "KeyQ") $("#pet-power").click();
   });
   document.addEventListener("keyup", (e) => keys.delete(e.code));
   window.addEventListener("blur", () => {
@@ -872,9 +727,7 @@
         $("#modal-title").textContent = "Bình minh đã trở lại!";
         b.disabled = true;
         b.textContent = "Đài Bình Minh đã được khôi phục";
-        mode = "flare";
-        modeUntil = time + 4;
-        burst();
+        companion.play("flare", time, 4);
       }
     }
     if (b.id === "reel") {
@@ -929,39 +782,20 @@
   $("#pause").addEventListener("click", togglePause);
   $("#pet-power").addEventListener("click", () => {
     finish(world.pet(), 880);
-    burst();
-    mode = "flare";
-    modeUntil = time + 3;
+    companion.play("flare", time, 3);
   });
   $("#fly").addEventListener("click", () => {
-    mode = "fly";
-    modeUntil = time + 8;
+    companion.play("fly", time, 8);
     tone(770);
     notify("Nhật Diệm sải cánh quanh bạn.");
   });
   $("#flare").addEventListener("click", () => {
-    mode = "flare";
-    modeUntil = time + 3;
-    burst();
+    companion.play("flare", time, 3);
     tone(440);
   });
   $("#sound").addEventListener("click", () => {
-    sound = !sound;
-    const b = $("#sound");
-    b.setAttribute("aria-pressed", String(sound));
-    b.setAttribute("aria-label", sound ? "Tắt âm thanh" : "Bật âm thanh");
-    if (sound) {
-      try {
-        audio =
-          audio || new (window.AudioContext || window.webkitAudioContext)();
-        audio.resume();
-        tone(660);
-      } catch {
-        sound = false;
-        b.setAttribute("aria-pressed", "false");
-        notify("Trình duyệt này chưa hỗ trợ âm thanh.");
-      }
-    }
+    TinyFarm.Settings.set("sound", !TinyFarm.Settings.get("sound"));
+    tone(660);
   });
   $("#fullscreen").addEventListener("click", async () => {
     try {
@@ -974,13 +808,8 @@
     }
   });
   function syncPet() {
-    form = s.petForm;
-    const files = {
-      1: "phoenix-1.png",
-      2: "phoenix-2-v2.png",
-      3: "phoenix-3-v2.png",
-    };
-    $("#portrait").src = "assets/" + files[form];
+    const form = s.petForm;
+    companion.setForm(form);
     for (const b of document.querySelectorAll("[data-form]")) {
       const on = Number(b.dataset.form) === form;
       b.classList.toggle("selected", on);
@@ -1038,38 +867,98 @@
       }
     }
   });
-  $("#start-game").textContent = s.started
-    ? "Trở về khu vườn →"
-    : "Bước vào thung lũng →";
-  if (s.started)
-    $("#welcome-save").textContent =
-      `Tiếp tục ngày ${s.day} · ${s.coins} vàng · Tiến trình lưu tại máy.`;
-  $("#start-game").addEventListener("click", () => {
+  function enterGame() {
     const first = !s.started;
     booted = true;
     s.started = true;
-    $("#welcome").hidden = true;
+    paused = false;
+    $("#pause").textContent = "II";
+    $("#pause").setAttribute("aria-pressed", "false");
+    $("#pause").setAttribute("aria-label", "Tạm dừng");
+    applySound();
+    titleScreen.hide();
+    hud.setDrawer(false);
+    viewport.fit();
     canvas.focus({ preventScroll: true });
     save();
+    updateUI();
     if (first)
       notify(
-        "Mừng bạn về Ban Mai! Chọn cuốc (2), rồi chạm một ô đất bên trái để bắt đầu.",
+        "Mừng bạn về Tiny Farm! Chọn cuốc (2), rồi chạm một ô đất để bắt đầu.",
       );
     if (badSave)
       notify(
-        "Không đọc được bản lưu cũ. Chưa ghi đè tệp xuất của bạn; có thể nhập lại trong Hướng dẫn.",
+        "Không đọc được bản lưu trước. Có thể nhập tệp sao lưu trong Hướng dẫn.",
       );
     if (!storageOK)
-      notify(
-        "Trình duyệt chặn lưu tự động. Bạn có thể xuất bản lưu trong Hướng dẫn.",
+      notify("Trình duyệt chặn lưu tự động. Hãy xuất bản lưu trong Hướng dẫn.");
+  }
+  const titleScreen = new TinyFarm.TitleScreen({
+    companion,
+    art: gardenArt,
+    canContinue: () => s.started,
+    state: () => s,
+    onStart() {
+      if (s.started) confirmReset();
+      else enterGame();
+    },
+    onContinue() {
+      if (s.started) enterGame();
+    },
+    onSettings: settingsDialog,
+    onQuit() {
+      openDialog(
+        "Thoát Tiny Farm",
+        '<p>Đây là phiên bản web. Để thoát hẳn, đóng thẻ trình duyệt hoặc cửa sổ đang mở game. Nếu đang ở chế độ toàn màn hình, nhấn Esc để trở về.</p><button data-close class="wide-button">Quay lại màn hình chính</button>',
+        "PHIÊN BẢN TRÌNH DUYỆT",
       );
+    },
   });
+  $("#return-title").addEventListener("click", () => {
+    save();
+    booted = false;
+    keys.clear();
+    route = [];
+    pending = null;
+    hud.setDrawer(false);
+    titleScreen.show();
+  });
+  $("#settings").addEventListener("click", settingsDialog);
+  $("#pet-shortcut").addEventListener("click", () => $("#pet-power").click());
+  $("#quick-eat").addEventListener("click", () => finish(world.eat()));
+  $("#quick-bag").addEventListener("click", () => switchTab("bag"));
+  function settingsDialog() {
+    openDialog(
+      "Cài đặt",
+      `<p>Thay đổi được áp dụng ngay và lưu trên trình duyệt này.</p><div class="settings-options"><label><span>Âm thanh <small>Tiếng thao tác và giai điệu trong vườn</small></span><input data-setting="sound" type="checkbox" ${TinyFarm.Settings.get("sound") ? "checked" : ""}></label><label><span>Hiệu ứng chuyển động <small>Phấn hoa, khói, hiệu ứng trang trí</small></span><input data-setting="motion" type="checkbox" ${TinyFarm.Settings.get("motion") ? "checked" : ""}></label><label><span>Hiện bản đồ nhỏ <small>Vị trí người chơi và linh thú theo thời gian thực</small></span><input data-setting="showMinimap" type="checkbox" ${TinyFarm.Settings.get("showMinimap") ? "checked" : ""}></label></div><p class="small-note">Trên máy tính, chế độ toàn màn hình giúp mở rộng khung chơi. Bạn có thể thay đổi kích thước cửa sổ bất cứ lúc nào.</p><button data-close class="wide-button">Xong</button>`,
+      "TINY FARM · CÀI ĐẶT",
+    );
+  }
+  document.addEventListener("change", (e) => {
+    if (e.target.dataset.setting)
+      TinyFarm.Settings.set(e.target.dataset.setting, e.target.checked);
+  });
+  function applySound() {
+    sound = TinyFarm.Settings.get("sound");
+    const b = $("#sound");
+    b.setAttribute("aria-pressed", String(sound));
+    b.setAttribute("aria-label", sound ? "Tắt âm thanh" : "Bật âm thanh");
+    if (sound) {
+      try {
+        audio =
+          audio || new (window.AudioContext || window.webkitAudioContext)();
+        audio.resume().catch(() => {});
+      } catch {
+        sound = false;
+        b.setAttribute("aria-pressed", "false");
+        notify("Trình duyệt này chưa hỗ trợ âm thanh.");
+      }
+    }
+  }
+  document.addEventListener("tinyfarm:settings", applySound);
   syncPet();
   updateUI();
-  pet.x = s.player.x + 25;
-  pet.y = s.player.y - 8;
-  target.x = pet.x;
-  target.y = pet.y;
+  companion.teleport(s.player.x + 24, s.player.y - 4);
   function move(dx, dy) {
     const old = { x: s.player.x, y: s.player.y };
     if (walkable(s.player.x + dx, s.player.y)) s.player.x += dx;
@@ -1120,10 +1009,6 @@
         if (dist(s.player, hit.approach || hit) < 14) interact(hit);
       }
     }
-    if (mode !== "fly") {
-      target.x = s.player.x + 25;
-      target.y = s.player.y - 7;
-    }
     world.tick(dt);
     night = s.minute >= 1140;
     if (s.minute >= 1439) {
@@ -1153,8 +1038,8 @@
     c.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2);
     c.fill();
   }
-  function tinyText(c, text, x, y, color = "#fff3cd", size = 3.5) {
-    c.font = `${size}px "Be Vietnam Pro",sans-serif`;
+  function tinyText(c, text, x, y, color = "#fff3cd", size = 6) {
+    c.font = `${size}px "TinyPixel",monospace`;
     c.textAlign = "center";
     c.textBaseline = "middle";
     c.fillStyle = "#1b3429aa";
@@ -1491,25 +1376,14 @@
     const bob = Math.abs(walk) > 0.7 ? -1 : 0;
     oval(c, x, y, 5, 1.5, "#213c3144");
     if (isNPC && anArt.complete && anArt.naturalWidth) {
-      c.drawImage(anArt, 410, 100, 414, 1075, x - 5.4, y - 28, 10.8, 28);
+      anSprite.draw(c, x, y);
       return;
     }
     if (!isNPC && farmerArt.complete && farmerArt.naturalWidth) {
-      const row = { down: 0, left: 1, right: 2, up: 3 }[facing] ?? 0;
-      const frame = moving && !reducedMotion ? Math.floor(stepTime * 2) % 4 : 1;
-      const [sx, sy, sw, sh] = farmerFrames[row][frame],
-        k = 27 / 290;
-      c.drawImage(
-        farmerArt,
-        sx,
-        sy,
-        sw,
-        sh,
-        x - (sw * k) / 2,
-        y - sh * k,
-        sw * k,
-        sh * k,
-      );
+      farmerSprite.draw(c, x, y, {
+        facing,
+        frame: moving && !reducedMotion ? Math.floor(stepTime * 2) % 4 : 1,
+      });
       if (actionTime > 0) {
         c.save();
         c.translate(x + 5, y - 8);
@@ -1641,7 +1515,7 @@
       near.id !== "plot"
     ) {
       const name = near.id === "gather" ? near.name : near.name;
-      tinyText(c, name, near.x, near.y - 27, "#fff1c9", 3.2);
+      tinyText(c, name, near.x, near.y - 27, "#fff1c9", 6);
     }
     if (actionTime > 0 && actionKind === "water" && selectedPlot >= 0) {
       const at = PLOTS[selectedPlot];
@@ -1764,7 +1638,7 @@
         : p.tilled
           ? "Đất đã cuốc"
           : "Ô đất trống";
-      tinyText(c, text, at.x, at.y - 15, "#fff4d0", 3.1);
+      tinyText(c, text, at.x, at.y - 15, "#fff4d0", 6);
     }
   }
   window.FarmGame = {
@@ -1776,7 +1650,10 @@
     drawAtmosphere,
     // Read-only snapshots are useful for diagnostics and browser regression tests.
     snapshot: () => JSON.parse(JSON.stringify(s)),
+    view: () => viewport.snapshot(),
+    toScreen: (x, y) => viewport.toScreen(x, y),
     assetsReady: () =>
+      companion.ready() &&
       farmerArt.complete &&
       farmerArt.naturalWidth > 0 &&
       anArt.complete &&

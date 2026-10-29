@@ -20,7 +20,7 @@ const { World, KEY } = require("../world.js");
     const page = await context.newPage();
     page.on("pageerror", (e) => errors.push(e.message));
     await page.goto(base);
-    await page.locator("#start-game").click();
+    await page.locator("#continue-game").click();
     await page.waitForFunction(
       () => gardenArt.complete && gardenArt.naturalWidth > 0,
     );
@@ -67,6 +67,7 @@ const { World, KEY } = require("../world.js");
   assert.equal(await end.evaluate(() => FarmGame.snapshot().coins), 50);
   assert.equal(await end.evaluate(() => FarmGame.snapshot().bag.wood), 0);
   await end.locator("#close-modal").click();
+  await end.locator("#journal-toggle").click();
   await end.locator('[data-claim="village"]').click();
   assert.equal(await end.evaluate(() => FarmGame.snapshot().coins), 250);
   await end.screenshot({
@@ -133,11 +134,12 @@ const { World, KEY } = require("../world.js");
     buffer: Buffer.from(JSON.stringify(importState)),
   });
   await imported.waitForFunction(() => window.FarmGame?.snapshot().day === 12);
-  await imported.locator("#start-game").click();
+  await imported.locator("#continue-game").click();
   assert.equal(await imported.evaluate(() => FarmGame.snapshot().coins), 777);
   assert.equal(await imported.evaluate(() => FarmGame.snapshot().bag.wood), 9);
   const belt = await imported.locator(".toolbelt").boundingBox();
   assert(belt.y + belt.height <= 768, "Laptop tools stay within viewport");
+  await imported.locator("#journal-toggle").click();
   await imported.locator("#tab-quests").focus();
   await imported.keyboard.press("ArrowRight");
   assert.equal(
@@ -167,6 +169,11 @@ const { World, KEY } = require("../world.js");
   console.log("PASS explicit new-game reset survives pagehide autosave");
   for (const width of [320, 360, 390, 768]) {
     await imported.setViewportSize({ width, height: 844 });
+    await imported.waitForFunction(
+      () => document.documentElement.scrollWidth <= innerWidth,
+      {},
+      { timeout: 2000 },
+    );
     assert.equal(
       await imported.evaluate(
         () => document.documentElement.scrollWidth > innerWidth,
