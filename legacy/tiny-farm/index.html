@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#263c30" />
+    <meta
+      name="description"
+      content="Một nông trại nhỏ, một người bạn Phượng Hoàng. Trồng cây, câu cá và mang bình minh trở lại thung lũng."
+    />
+    <title>Tiny Farm · Phượng Hoàng Nhật Diệm</title>
+    <link rel="preload" as="image" href="assets/garden-detailed.png" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css?v=4" />
+  </head>
+  <body>
+    <svg
+      class="svg-library"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <symbol id="i-leaf" viewBox="0 0 24 24">
+          <path d="M19 4C6 2 2 9 7 15s14 0 12-11Z" />
+          <path d="M4 21 16 8M8 16v-5m4 1h5" />
+        </symbol>
+        <symbol id="i-hoe" viewBox="0 0 24 24">
+          <path d="m5 21 12-15M9 3l11 8 2-4L12 0Z" />
+        </symbol>
+        <symbol id="i-water" viewBox="0 0 24 24">
+          <path
+            d="M5 10h10v10H5zM8 10V6a3 3 0 0 1 6 0v4M15 14l6-5 2 3-7 7M5 13H2v5h3M21 15v2m-2 0v2"
+          />
+        </symbol>
+        <symbol id="i-seed" viewBox="0 0 24 24">
+          <path
+            d="M12 20V9m0 6C4 15 3 10 3 7c6 0 9 2 9 8Zm0-4c0-5 3-8 9-8 0 6-3 8-9 8ZM4 21h16"
+          />
+        </symbol>
+        <symbol id="i-hand" viewBox="0 0 24 24">
+          <path
+            d="M7 13V5a2 2 0 0 1 4 0v7-9a2 2 0 0 1 4 0v9-7a2 2 0 0 1 4 0v9-5a2 2 0 0 1 4 0v6c0 5-3 8-8 8-3 0-5-1-7-4l-5-6a2 2 0 0 1 3-3l1 2Z"
+            transform="translate(-1 0) scale(.95)"
+          />
+        </symbol>
+        <symbol id="i-fish" viewBox="0 0 24 24">
+          <path
+            d="M4 12c5-9 12-7 17 0-5 7-12 9-17 0Zm0 0L1 7v10l3-5Zm9-5 2-4 3 5m-4 9 2 4 3-6"
+          />
+          <circle cx="17" cy="11" r=".7" />
+        </symbol>
+        <symbol id="i-bag" viewBox="0 0 24 24">
+          <path d="M5 8h14l2 13H3L5 8Zm3 0V5a4 4 0 0 1 8 0v3M8 13h8m-8 4h8" />
+        </symbol>
+        <symbol id="i-home" viewBox="0 0 24 24">
+          <path d="m2 11 10-9 10 9M5 9v12h14V9M10 21v-8h5v8M16 4V2h3v5" />
+        </symbol>
+        <symbol id="i-book" viewBox="0 0 24 24">
+          <path
+            d="M12 5c-4-3-7-3-10-2v16c4-1 6-1 10 2 4-3 6-3 10-2V3c-3-1-6-1-10 2Zm0 0v16M5 7l4 1m-4 3 4 1m6-4 4-1m-4 5 4-1"
+          />
+        </symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="4" />
+          <path
+            d="M12 0v4m0 16v4M0 12h4m16 0h4M3 3l3 3m12 12 3 3M3 21l3-3M18 6l3-3"
+          />
+        </symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24">
+          <path d="M20 16A9 9 0 0 1 8 3a9 9 0 1 0 12 13Z" />
+        </symbol>
+        <symbol id="i-star" viewBox="0 0 24 24">
+          <path d="m12 1 3 7 8 3-8 3-3 9-3-9-8-3 8-3Z" />
+        </symbol>
+        <symbol id="i-audio" viewBox="0 0 24 24">
+          <path
+            d="m3 9 5 0 6-6v18l-6-6H3V9Zm14-2c3 3 3 7 0 10m3-13c5 5 5 11 0 16"
+          />
+        </symbol>
+        <symbol id="i-expand" viewBox="0 0 24 24">
+          <path d="M3 9V3h6m6 0h6v6M3 15v6h6m12-6v6h-6" />
+        </symbol>
+        <symbol id="i-rain" viewBox="0 0 24 24">
+          <path
+            d="M5 14a4 4 0 0 1-1-8 6 6 0 0 1 11-2 5 5 0 0 1 3 10M7 17l-2 4m8-4-2 4m8-4-2 4"
+          />
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24">
+          <path d="M12 21 3 12C-3 5 6-2 12 5c6-7 15 0 9 7Z" />
+        </symbol>
+      </defs>
+    </svg>
+    <header class="masthead">
+      <a class="brand" href="./"
+        ><svg><use href="#i-star" /></svg
+        ><span>TINY FARM<small>THUNG LŨNG BAN MAI</small></span></a
+      >
+      <span class="edition">MỘT MÁI NHÀ NHỎ. MỘT CUỘC ĐỜI MỚI.</span>
+      <nav class="header-actions" aria-label="Cài đặt">
+        <button
+          id="return-title"
+          class="icon-button"
+          aria-label="Về màn hình chính"
+          title="Màn hình chính"
+        >
+          <svg><use href="#i-home" /></svg></button
+        ><button
+          id="journal-toggle"
+          class="icon-button"
+          aria-label="Mở sổ tay"
+          aria-expanded="false"
+          title="Sổ tay"
+        >
+          <svg><use href="#i-book" /></svg></button
+        ><button
+          id="settings"
+          class="icon-button"
+          aria-label="Cài đặt"
+          title="Cài đặt"
+        >
+          <span
+            class="pixel-icon"
+            style="--icon-index: 12"
+            aria-hidden="true"
+          ></span></button
+        ><span id="save-status">Đã lưu tại máy</span
+        ><button
+          id="sound"
+          class="icon-button"
+          aria-label="Bật âm thanh"
+          aria-pressed="false"
+        >
+          <svg><use href="#i-audio" /></svg></button
+        ><button id="fullscreen" class="icon-button" aria-label="Toàn màn hình">
+          <svg><use href="#i-expand" /></svg></button
+        ><button id="help" class="icon-button" aria-label="Hướng dẫn chơi">
+          ?
+        </button>
+      </nav>
+    </header>
+    <main class="game-shell">
+      <section class="world" aria-label="Nông trại tương tác">
+        <canvas
+          id="garden"
+          width="480"
+          height="270"
+          tabindex="0"
+          aria-label="Bản đồ nông trại. Dùng WASD hoặc phím mũi tên để đi, E để tương tác; hoặc chạm bản đồ."
+        ></canvas>
+        <div class="world-top">
+          <button id="pet-shortcut" class="pet-hud" title="Q · Gọi sương sớm">
+            <canvas
+              id="hud-pet"
+              width="48"
+              height="48"
+              aria-label="Nhật Diệm, linh thú Legend"
+            ></canvas>
+            <div class="pet-hud-data">
+              <strong>Nhật Diệm <small>LEGEND</small></strong
+              ><span class="hud-bar-label"
+                >TL <b id="hud-energy">100/100</b></span
+              ><span class="hud-bar energy"><i id="hud-energy-fill"></i></span
+              ><span class="hud-bar-label"
+                >Sương <b id="skill-value">1 / 1</b></span
+              ><span class="hud-bar magic"><i id="skill-fill"></i></span
+              ><span
+                id="hud-level"
+                title="Cấp đồng hành tăng theo thu hoạch, câu cá và thân thiết"
+                >Lv. 1</span
+              >
+            </div>
+          </button>
+          <div class="calendar-plaque">
+            <div>
+              <span id="weather-icon" class="weather-icon"></span
+              ><strong id="calendar">Xuân · Ngày 1</strong>
+            </div>
+            <span id="clock">07:00</span
+            ><span id="weather-label">Trời trong</span>
+          </div>
+        </div>
+        <div class="meters">
+          <div class="coin-meter">
+            <span class="coin">G</span><strong id="coins">100</strong>
+          </div>
+          <div class="energy-meter">
+            <span>THỂ LỰC</span>
+            <div class="meter-track"><i id="energy-fill"></i></div>
+            <strong id="energy">100 / 100</strong>
+          </div>
+        </div>
+        <nav class="landmarks" aria-label="Đi tới địa điểm">
+          <button data-travel="home" title="Đi về nhà" aria-label="Đi về nhà">
+            <svg><use href="#i-home" /></svg></button
+          ><button
+            data-travel="shop"
+            title="Quầy của An"
+            aria-label="Đi tới quầy hàng"
+          >
+            <svg><use href="#i-bag" /></svg></button
+          ><button data-travel="an" title="Gặp An" aria-label="Đi gặp An">
+            <svg><use href="#i-heart" /></svg></button
+          ><button
+            data-travel="pond"
+            title="Bến câu"
+            aria-label="Đi tới bến câu"
+          >
+            <svg><use href="#i-fish" /></svg></button
+          ><button
+            data-travel="shrine"
+            title="Đài Bình Minh"
+            aria-label="Đi tới Đài Bình Minh"
+          >
+            <svg><use href="#i-star" /></svg>
+          </button>
+        </nav>
+        <div class="minimap-panel">
+          <canvas
+            id="minimap"
+            width="96"
+            height="64"
+            aria-label="Bản đồ nhỏ, chạm để đi tới vị trí"
+            tabindex="0"
+          ></canvas
+          ><span id="map-caption">Ban Mai</span>
+        </div>
+        <div id="context-hint" class="context-hint">
+          Chạm để đi · E để tương tác
+        </div>
+        <div id="floating-text" aria-hidden="true"></div>
+        <div id="toasts" class="toasts" role="status" aria-live="polite"></div>
+        <div class="world-bottom">
+          <span class="coordinates">BAN MAI <i>◆</i> 01</span
+          ><button
+            id="pause"
+            class="pause-button"
+            aria-pressed="false"
+            aria-label="Tạm dừng"
+          >
+            II
+          </button>
+        </div>
+        <div class="toolbelt">
+          <div class="toolbelt-title">
+            <span>DỤNG CỤ</span><small id="tool-name">Bàn tay</small>
+          </div>
+          <div class="tools" role="toolbar" aria-label="Chọn dụng cụ">
+            <button
+              data-tool="hand"
+              aria-pressed="true"
+              class="active"
+              title="Bàn tay (1)"
+            >
+              <kbd>1</kbd><svg><use href="#i-hand" /></svg
+              ><span>Bàn tay</span></button
+            ><button data-tool="hoe" aria-pressed="false" title="Cuốc đất (2)">
+              <kbd>2</kbd><svg><use href="#i-hoe" /></svg
+              ><span>Cuốc</span></button
+            ><button data-tool="seed" aria-pressed="false" title="Gieo hạt (3)">
+              <kbd>3</kbd><svg><use href="#i-seed" /></svg><span>Hạt giống</span
+              ><b class="slot-count" data-count="seed">6</b></button
+            ><button
+              data-tool="water"
+              aria-pressed="false"
+              title="Bình tưới (4)"
+            >
+              <kbd>4</kbd><svg><use href="#i-water" /></svg
+              ><span>Bình tưới</span></button
+            ><button data-tool="rod" aria-pressed="false" title="Cần câu (5)">
+              <kbd>5</kbd><svg><use href="#i-fish" /></svg><span>Cần câu</span>
+            </button>
+          </div>
+          <div class="quick-items">
+            <button
+              id="quick-eat"
+              title="Ăn táo: hồi 25 thể lực"
+              aria-label="Ăn một quả táo"
+            >
+              <span class="pixel-icon" style="--icon-index: 5"></span
+              ><b class="slot-count" data-count="fruit">2</b></button
+            ><button
+              id="quick-bag"
+              title="Gỗ trong túi"
+              aria-label="Mở túi vật liệu"
+            >
+              <span class="pixel-icon" style="--icon-index: 6"></span
+              ><b class="slot-count" data-count="wood">0</b>
+            </button>
+          </div>
+          <div class="seed-select-wrap">
+            <label for="seed-choice">HẠT ĐANG CHỌN</label
+            ><select id="seed-choice">
+              <option value="radish">Củ cải</option>
+              <option value="carrot">Cà rốt</option>
+              <option value="pumpkin">Bí ngô</option></select
+            ><span id="seed-count">6 hạt</span>
+          </div>
+          <button id="home" class="home-button">
+            <svg><use href="#i-home" /></svg
+            ><span>Về nhà<small>Nghỉ &amp; sang ngày mới</small></span>
+          </button>
+        </div>
+        <div id="transition" class="transition" aria-hidden="true"></div>
+      </section>
+      <aside class="journal" hidden aria-label="Sổ tay nông trại">
+        <div class="journal-header">
+          <button
+            id="journal-close"
+            class="icon-button"
+            aria-label="Đóng sổ tay"
+          >
+            ×</button
+          ><span class="eyebrow">SỔ TAY BAN MAI</span
+          ><svg><use href="#i-leaf" /></svg>
+        </div>
+        <div class="journal-tabs" role="tablist" aria-label="Sổ tay">
+          <button
+            id="tab-quests"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-quests"
+            data-tab="quests"
+          >
+            <svg><use href="#i-book" /></svg>Nhật ký</button
+          ><button
+            id="tab-bag"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-bag"
+            data-tab="bag"
+          >
+            <svg><use href="#i-bag" /></svg>Túi đồ</button
+          ><button
+            id="tab-pet"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-pet"
+            data-tab="pet"
+          >
+            <svg><use href="#i-star" /></svg>Linh thú
+          </button>
+        </div>
+        <section
+          id="panel-quests"
+          role="tabpanel"
+          aria-labelledby="tab-quests"
+          class="journal-panel"
+        >
+          <div class="chapter-label">CHƯƠNG I · NƠI TA THUỘC VỀ</div>
+          <h1>Gieo một hạt mầm,<br /><em>đón một bình minh.</em></h1>
+          <p class="journal-intro">
+            Một khu vườn cũ đang chờ bàn tay bạn. Hãy mang hơi ấm trở lại thung
+            lũng.
+          </p>
+          <div id="quests" class="quests"></div>
+          <div class="field-note">
+            <span>GHI CHÚ TỪ AN</span>
+            <p id="daily-tip">
+              Cuốc đất → gieo hạt → tưới nước. Về nhà ngủ, cây sẽ lớn khi bình
+              minh tới.
+            </p>
+          </div>
+        </section>
+        <section
+          id="panel-bag"
+          role="tabpanel"
+          aria-labelledby="tab-bag"
+          class="journal-panel"
+          hidden
+        >
+          <div class="chapter-label">NHỮNG ĐIỀU BẠN GÓP NHẶT</div>
+          <h2>Chiếc túi nhỏ</h2>
+          <p class="journal-intro">Hạt mầm hôm nay, mùa màng ngày mai.</p>
+          <div id="inventory"></div>
+          <button id="eat" class="wide-button secondary">
+            Ăn một quả táo · +25 thể lực</button
+          ><button id="sell" class="wide-button">Ghé quầy bán nông sản</button>
+          <p class="small-note">Gỗ được giữ lại để sửa Đài Bình Minh.</p>
+        </section>
+        <section
+          id="panel-pet"
+          role="tabpanel"
+          aria-labelledby="tab-pet"
+          class="journal-panel"
+          hidden
+        >
+          <div class="pet-portrait">
+            <canvas
+              id="portrait"
+              width="32"
+              height="32"
+              aria-label="Phượng Hoàng Nhật Diệm, pixel art"
+            ></canvas
+            ><span>LEGEND · HỆ HỎA</span>
+          </div>
+          <h2>Phượng Hoàng<br /><em>Nhật Diệm</em></h2>
+          <p class="journal-intro">
+            Người bạn mang hơi ấm tới khu vườn. Gọi sương sớm một lần mỗi ngày
+            để tưới toàn bộ cây và hồi 10 thể lực.
+          </p>
+          <div class="forms">
+            <button data-form="1" aria-pressed="false">I · Mới nở</button
+            ><button data-form="2" aria-pressed="false">II · Tiến hóa</button
+            ><button data-form="3" aria-pressed="true" class="selected">
+              III · Trưởng thành
+            </button>
+          </div>
+          <button id="pet-power" class="wide-button">Gọi sương sớm</button>
+          <div class="pet-actions">
+            <button id="fly">Bay lượn</button
+            ><button id="flare">Nhật diệm</button>
+          </div>
+          <p id="pet-note" class="small-note">Phép sương đang sẵn sàng.</p>
+        </section>
+        <div class="journal-footer">
+          <svg><use href="#i-heart" /></svg
+          ><span id="friendship">An · 0 điểm thân thiết</span
+          ><button id="save" aria-label="Lưu tiến trình ngay">Lưu</button>
+        </div>
+      </aside>
+    </main>
+    <footer class="page-footer">
+      <span><i></i> TINY FARM · THUNG LŨNG BAN MAI</span
+      ><span
+        >WASD di chuyển <b>·</b> E tương tác <b>·</b> 1–5 dụng cụ <b>·</b> I túi
+        đồ</span
+      >
+    </footer>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <div class="modal-top">
+        <span id="modal-eyebrow" class="eyebrow">THUNG LŨNG BAN MAI</span
+        ><button id="close-modal" class="icon-button" aria-label="Đóng">
+          ×
+        </button>
+      </div>
+      <h2 id="modal-title"></h2>
+      <div id="modal-body"></div>
+    </dialog>
+    <section id="welcome" class="welcome" aria-label="Màn hình chính Tiny Farm">
+      <div class="title-stage">
+        <canvas
+          id="title-scene"
+          width="480"
+          height="270"
+          aria-hidden="true"
+        ></canvas>
+        <div class="title-logo">
+          <canvas
+            id="title-phoenix"
+            width="48"
+            height="40"
+            aria-hidden="true"
+          ></canvas>
+          <h1>Tiny Farm</h1>
+          <p>Phượng Hoàng Nhật Diệm</p>
+        </div>
+        <nav class="title-menu" aria-label="Menu chính">
+          <button id="start-game">Bắt đầu</button
+          ><button id="continue-game" disabled>Tiếp tục</button
+          ><button id="title-settings">Cài đặt</button
+          ><button id="quit-game">Thoát game</button>
+        </nav>
+        <p id="welcome-save" class="welcome-save">
+          Một khu vườn mới đang chờ bạn
+        </p>
+        <span class="title-version">TINY FARM · CHƯƠNG I</span>
+      </div>
+    </section>
+    <script src="world.js?v=4"></script>
+    <script src="src/config/content.js?v=4"></script>
+    <script src="src/ui/settings.js?v=4"></script>
+    <script src="src/ui/pixel-icons.js?v=4"></script>
+    <script src="src/engine/viewport.js?v=4"></script>
+    <script src="src/characters/sprite-actor.js?v=4"></script>
+    <script src="src/pets/phoenix.js?v=4"></script>
+    <script src="src/ui/gameplay-hud.js?v=4"></script>
+    <script src="src/ui/title-screen.js?v=4"></script>
+    <script src="game.js?v=4"></script>
+    <script src="farm.js?v=4"></script>
+  </body>
+</html>

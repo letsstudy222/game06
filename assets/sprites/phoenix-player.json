@@ -1,0 +1,43 @@
+{
+  "frameWidth": 32,
+  "frameHeight": 32,
+  "columns": 4,
+  "rows": 5,
+  "origin": [
+    16,
+    22
+  ],
+  "animations": {
+    "idle": {
+      "row": 0,
+      "frames": 4,
+      "fps": 4,
+      "loop": true
+    },
+    "move": {
+      "row": 1,
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+    },
+    "fly": {
+      "row": 2,
+      "frames": 4,
+      "fps": 8,
+      "loop": true
+    },
+    "attack": {
+      "row": 3,
+      "frames": 4,
+      "fps": 14,
+      "loop": false
+    },
+    "fire": {
+      "row": 4,
+      "frames": 4,
+      "fps": 10,
+      "loop": false
+    }
+  },
+  "source": "Extended from the existing hand-authored Phoenix Legend art; no concept sheet extraction."
+}

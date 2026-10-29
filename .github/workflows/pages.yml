@@ -1,4 +1,4 @@
-name: Publish garden
+name: Publish island
 on:
   push:
     branches: [main]
@@ -21,20 +21,19 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "24"
-      - name: Verify game
+      - name: Verify island
         run: |
-          node --check world.js
-          node --check game.js
-          node --check farm.js
-          for file in src/*/*.js scripts/*.cjs; do node --check "$file"; done
-          node tests/world.test.cjs
-          node tests/content.test.cjs
-      - name: Prepare static site
+          for file in src/island/*.mjs scripts/*.cjs; do node --check "$file"; done
+          node tests/island.test.mjs
+      - name: Prepare island-only site
         run: |
-          mkdir -p _site
-          cp index.html style.css world.js game.js farm.js _site/
-          cp -R assets _site/assets
-          cp -R src _site/src
+          mkdir -p _site/src/island _site/src/engine _site/assets/sprites _site/assets/fonts
+          cp index.html style.css _site/
+          cp src/island/*.mjs _site/src/island/
+          cp src/engine/pixel-art.js _site/src/engine/
+          cp assets/sprites/phoenix-player.png assets/sprites/phoenix-player.json _site/assets/sprites/
+          cp assets/fonts/VT323-Regular.ttf assets/fonts/VT323-OFL.txt _site/assets/fonts/
+          cp assets/favicon.svg _site/assets/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
