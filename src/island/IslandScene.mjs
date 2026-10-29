@@ -5,11 +5,15 @@ export class IslandScene {
   constructor(island, assets) {
     this.island = island;
     this.assets = assets;
-    this.world = assets.get("world");
+    this.world = assets.get("terrain");
     this.sprite = assets.get("phoenix");
     this.props = assets.get("props");
     this.meta = assets.manifest;
-    this.ground = new WorldLayer(this.world, island.width, island.height, 160);
+    this.ground = new WorldLayer(
+      this.world,
+      island,
+      assets.manifest.environment,
+    );
     this.idleCache = new Map();
     this.prepareIdle();
   }
@@ -81,19 +85,20 @@ export class IslandScene {
     const env = this.meta.environment,
       def = env.definitions.find((p) => p.id === id);
     if (!def) return;
-    const i = def.frame;
+    const [sx, sy, w, h] = def.rect,
+      origin = def.origin;
     ctx.save();
     ctx.globalAlpha = alpha;
     ctx.drawImage(
       this.props,
-      (i % 2) * 96,
-      Math.floor(i / 2) * 96,
-      96,
-      96,
-      Math.round(x - env.origin[0] * scale),
-      Math.round(y - env.origin[1] * scale),
-      96 * scale,
-      96 * scale,
+      sx,
+      sy,
+      w,
+      h,
+      Math.round(x - origin[0] * scale),
+      Math.round(y - origin[1] * scale),
+      w * scale,
+      h * scale,
     );
     ctx.restore();
   }
@@ -108,18 +113,22 @@ export class IslandScene {
     c.clearRect(0, 0, w, h);
     // ResponsiveLayout guarantees the viewport stays inside the authored world.
     c.translate(-cam.renderX, -cam.renderY);
-    this.ground.draw(c, { x: cam.renderX, y: cam.renderY }, w, h);
+    this.ground.draw(c, { x: cam.renderX, y: cam.renderY }, w, h, time);
     this.drawAmbient(state);
-    for (const r of this.island.rocks) this.prop(c, r.asset, r.x, r.y);
-    for (const b of this.island.bushes) this.prop(c, b.asset, b.x, b.y);
-    for (const b of this.island.hazards) this.prop(c, b.asset, b.x, b.y);
-    for (const p of this.island.props) this.prop(c, p.asset, p.x, p.y);
-    const layers = this.island.trees.map((t) => ({
+    const layers = [
+      ...this.island.rocks,
+      ...this.island.bushes,
+      ...this.island.hazards,
+      ...this.island.props,
+      ...this.island.trees,
+    ].map((t) => ({
       y: t.y,
       draw: () => {
         const p = state.player,
-          behind = p.y < t.y && p.y > t.y - 80 && Math.abs(p.x - t.x) < 38;
-        this.prop(c, t.asset, t.x, t.y, behind ? 0.55 : 1, t.size);
+          canopy = ["palm", "broadleaf"].includes(t.asset),
+          behind =
+            canopy && p.y < t.y && p.y > t.y - 70 && Math.abs(p.x - t.x) < 38;
+        this.prop(c, t.asset, t.x, t.y, behind ? 0.48 : 1, t.size || 1);
       },
     }));
     layers.push({ y: state.player.y, draw: () => this.drawPlayer(state) });
@@ -282,7 +291,7 @@ export class IslandScene {
   }
   drawShrine(state) {
     const c = this.ctx,
-      s = this.island.shrine;
+      s = this.island.shrine.visual || this.island.shrine;
     if (state.shrineActivated) {
       for (let i = 0; i < 16; i++) {
         const a = (i * Math.PI) / 8 + state.time * 0.25,

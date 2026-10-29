@@ -44,9 +44,12 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
     async function assertLayout() {
       const v = await view();
       assert(Number.isInteger(v.scale));
-      assert(v.width <= 960 && v.height <= 640);
+      assert(v.width <= v.world.width && v.height <= v.world.height);
       assert(v.camera.x >= 0 && v.camera.y >= 0);
-      assert(v.camera.x + v.width <= 960 && v.camera.y + v.height <= 640);
+      assert(
+        v.camera.x + v.width <= v.world.width &&
+          v.camera.y + v.height <= v.world.height,
+      );
       assert.equal(
         await page.evaluate(
           () =>
@@ -214,7 +217,11 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
       await page.locator("[data-setting=zoom]").selectOption("1");
       assert.equal(
         (await view()).scale,
-        Math.max(1, Math.ceil(width / 960), Math.ceil(height / 640)),
+        Math.max(
+          1,
+          Math.ceil(width / (await view()).world.width),
+          Math.ceil(height / (await view()).world.height),
+        ),
       );
       await page.locator("#edit-layout").tap();
       assert.equal((await snapshot()).paused, true);

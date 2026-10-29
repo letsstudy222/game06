@@ -16,6 +16,9 @@ const revision = crypto
       read("index.html") +
       read("style.css"),
   )
+  .update(fs.readFileSync(path.join(root, "assets/tiles/dawn/manifest.json")))
+  .update(fs.readFileSync(path.join(root, "assets/tiles/dawn/terrain.png")))
+  .update(fs.readFileSync(path.join(root, "assets/tiles/dawn/objects.png")))
   .digest("hex")
   .slice(0, 12);
 fs.rmSync(out, { recursive: true, force: true });
@@ -29,9 +32,9 @@ for (const file of [
   "assets/favicon.svg",
   "assets/fonts/VT323-Regular.ttf",
   "assets/fonts/VT323-OFL.txt",
-  "assets/production/manifest.json",
-  "assets/production/dawn/world.png",
-  "assets/production/dawn/props.png",
+  "assets/tiles/dawn/manifest.json",
+  "assets/tiles/dawn/terrain.png",
+  "assets/tiles/dawn/objects.png",
   "assets/production/phoenix/atlas.png",
 ])
   copy(file);
@@ -46,6 +49,10 @@ for (const name of modules) {
 fs.writeFileSync(
   path.join(out, "index.html"),
   read("index.html")
+    .replace(
+      "assets/tiles/dawn/terrain.png",
+      "assets/tiles/dawn/terrain.png?v=" + revision,
+    )
     .replace(/style\.css\?v=[^"']+/g, "style.css?v=" + revision)
     .replace(
       /src\/island\/main\.mjs\?v=[^"']+/g,
@@ -54,6 +61,6 @@ fs.writeFileSync(
 );
 for (const name of ["meadow", "forest", "ruins", "beach", "fire"])
   copy("artifacts/dawn-" + name + ".png", "screenshots/dawn-" + name + ".png");
-for (const name of ["ui-before", "ui-after"])
+for (const name of ["ui-before", "ui-after", "tilemap"])
   copy("artifacts/" + name, "screenshots/" + name);
 console.log("Static Pages package ready:", revision);

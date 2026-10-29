@@ -63,6 +63,14 @@ async function start() {
       scale: layout.plan.scale,
       camera: state.camera.snapshot(),
       input: layout.mode,
+      world: {
+        width: state.island.width,
+        height: state.island.height,
+        tileSize: state.island.tilemap.tileSize,
+        columns: state.island.tilemap.columns,
+        rows: state.island.tilemap.rows,
+        drawCalls: scene.ground.drawCount,
+      },
     }),
     settings: () => structuredClone(settings.value),
   };

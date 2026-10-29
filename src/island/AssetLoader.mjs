@@ -5,11 +5,17 @@ export class AssetLoader {
     this.manifest = null;
   }
   async load(onProgress = () => {}) {
-    const response = await fetch(this.manifestURL);
+    const revision = new URL(import.meta.url).searchParams.get("v");
+    const versioned = (url) => {
+      const result = new URL(url, document.baseURI);
+      if (revision) result.searchParams.set("v", revision);
+      return result.href;
+    };
+    const response = await fetch(versioned(this.manifestURL));
     if (!response.ok) throw new Error("Thiếu manifest asset");
     this.manifest = await response.json();
     const definitions = [
-      ["world", this.manifest.environment.world],
+      ["terrain", this.manifest.environment.tiles],
       ["props", this.manifest.environment.props],
       ["phoenix", this.manifest.phoenix.image],
     ];
@@ -17,7 +23,7 @@ export class AssetLoader {
     await Promise.all(
       definitions.map(async ([id, url]) => {
         const image = new Image();
-        image.src = url;
+        image.src = versioned(url);
         try {
           await image.decode();
         } catch {
@@ -27,11 +33,11 @@ export class AssetLoader {
         onProgress(++loaded, definitions.length);
       }),
     );
-    const world = this.get("world"),
+    const terrain = this.get("terrain"),
       hero = this.get("phoenix");
     if (
-      world.naturalWidth !== this.manifest.environment.worldSize[0] ||
-      world.naturalHeight !== this.manifest.environment.worldSize[1] ||
+      terrain.naturalWidth !== this.manifest.environment.tilesSize[0] ||
+      terrain.naturalHeight !== this.manifest.environment.tilesSize[1] ||
       hero.naturalWidth !==
         this.manifest.phoenix.frameSize * this.manifest.phoenix.columns
     )

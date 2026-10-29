@@ -1,0 +1,536 @@
+{
+  "version": 2,
+  "environment": {
+    "kind": "tilemap",
+    "tileSize": 32,
+    "tiles": "assets/tiles/dawn/terrain.png",
+    "props": "assets/tiles/dawn/objects.png",
+    "columns": 8,
+    "tilesSize": [
+      256,
+      288
+    ],
+    "tileDefinitions": {
+      "deep_0": {
+        "frame": 0
+      },
+      "deep_1": {
+        "frame": 1
+      },
+      "deep_2": {
+        "frame": 2
+      },
+      "deep_3": {
+        "frame": 3
+      },
+      "shallow_0": {
+        "frame": 4
+      },
+      "shallow_1": {
+        "frame": 5
+      },
+      "shallow_2": {
+        "frame": 6
+      },
+      "shallow_3": {
+        "frame": 7
+      },
+      "grass_0": {
+        "frame": 8
+      },
+      "grass_1": {
+        "frame": 9
+      },
+      "grass_2": {
+        "frame": 10
+      },
+      "grass_3": {
+        "frame": 11
+      },
+      "sand_0": {
+        "frame": 12
+      },
+      "sand_1": {
+        "frame": 13
+      },
+      "sand_2": {
+        "frame": 14
+      },
+      "shore_0": {
+        "frame": 15
+      },
+      "grassEdge_0": {
+        "frame": 16
+      },
+      "path_0": {
+        "frame": 17
+      },
+      "shore_1": {
+        "frame": 18
+      },
+      "grassEdge_1": {
+        "frame": 19
+      },
+      "path_1": {
+        "frame": 20
+      },
+      "shore_2": {
+        "frame": 21
+      },
+      "grassEdge_2": {
+        "frame": 22
+      },
+      "path_2": {
+        "frame": 23
+      },
+      "shore_3": {
+        "frame": 24
+      },
+      "grassEdge_3": {
+        "frame": 25
+      },
+      "path_3": {
+        "frame": 26
+      },
+      "shore_4": {
+        "frame": 27
+      },
+      "grassEdge_4": {
+        "frame": 28
+      },
+      "path_4": {
+        "frame": 29
+      },
+      "shore_5": {
+        "frame": 30
+      },
+      "grassEdge_5": {
+        "frame": 31
+      },
+      "path_5": {
+        "frame": 32
+      },
+      "shore_6": {
+        "frame": 33
+      },
+      "grassEdge_6": {
+        "frame": 34
+      },
+      "path_6": {
+        "frame": 35
+      },
+      "shore_7": {
+        "frame": 36
+      },
+      "grassEdge_7": {
+        "frame": 37
+      },
+      "path_7": {
+        "frame": 38
+      },
+      "shore_8": {
+        "frame": 39
+      },
+      "grassEdge_8": {
+        "frame": 40
+      },
+      "path_8": {
+        "frame": 41
+      },
+      "shore_9": {
+        "frame": 42
+      },
+      "grassEdge_9": {
+        "frame": 43
+      },
+      "path_9": {
+        "frame": 44
+      },
+      "shore_10": {
+        "frame": 45
+      },
+      "grassEdge_10": {
+        "frame": 46
+      },
+      "path_10": {
+        "frame": 47
+      },
+      "shore_11": {
+        "frame": 48
+      },
+      "grassEdge_11": {
+        "frame": 49
+      },
+      "path_11": {
+        "frame": 50
+      },
+      "shore_12": {
+        "frame": 51
+      },
+      "grassEdge_12": {
+        "frame": 52
+      },
+      "path_12": {
+        "frame": 53
+      },
+      "shore_13": {
+        "frame": 54
+      },
+      "grassEdge_13": {
+        "frame": 55
+      },
+      "path_13": {
+        "frame": 56
+      },
+      "shore_14": {
+        "frame": 57
+      },
+      "grassEdge_14": {
+        "frame": 58
+      },
+      "path_14": {
+        "frame": 59
+      },
+      "shore_15": {
+        "frame": 60
+      },
+      "grassEdge_15": {
+        "frame": 61
+      },
+      "path_15": {
+        "frame": 62
+      },
+      "floor_0": {
+        "frame": 63
+      },
+      "floor_1": {
+        "frame": 64
+      },
+      "floor_2": {
+        "frame": 65
+      },
+      "moss_0": {
+        "frame": 66
+      },
+      "moss_1": {
+        "frame": 67
+      },
+      "rim": {
+        "frame": 68
+      },
+      "cliff": {
+        "frame": 69
+      },
+      "cliffFoot": {
+        "frame": 70
+      },
+      "stairs": {
+        "frame": 71
+      }
+    },
+    "definitions": [
+      {
+        "id": "palm",
+        "frame": 0,
+        "rect": [
+          0,
+          0,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "broadleaf",
+        "frame": 1,
+        "rect": [
+          96,
+          0,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "boulder",
+        "frame": 2,
+        "rect": [
+          192,
+          0,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "bush",
+        "frame": 3,
+        "rect": [
+          288,
+          0,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "flowers",
+        "frame": 4,
+        "rect": [
+          0,
+          96,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "pillar",
+        "frame": 5,
+        "rect": [
+          96,
+          96,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "brokenPillar",
+        "frame": 6,
+        "rect": [
+          192,
+          96,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "fragment",
+        "frame": 7,
+        "rect": [
+          288,
+          96,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "altar",
+        "frame": 8,
+        "rect": [
+          0,
+          192,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "brazier",
+        "frame": 9,
+        "rect": [
+          96,
+          192,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "shell",
+        "frame": 10,
+        "rect": [
+          192,
+          192,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "log",
+        "frame": 11,
+        "rect": [
+          288,
+          192,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      },
+      {
+        "id": "bramble",
+        "frame": 12,
+        "rect": [
+          0,
+          288,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          88
+        ]
+      }
+    ],
+    "origin": [
+      48,
+      88
+    ],
+    "palette": [
+      "#23667b",
+      "#3a9ea5",
+      "#2b7589",
+      "#70c1b5",
+      "#709b55",
+      "#8dab5e",
+      "#dec68e",
+      "#638e52",
+      "#c6ad77",
+      "#c0dcd0",
+      "#eed8a4",
+      "#bca676",
+      "#9c8c65",
+      "#3c6750",
+      "#a8b7a6",
+      "#455f63",
+      "#7e9590",
+      "#355851",
+      "#597c60",
+      "#5a604f",
+      "#c3cbb0",
+      "#73745a",
+      "#9b8e69",
+      "#b4a274",
+      "#837f60",
+      "#656b53",
+      "#a99c73",
+      "#555e4f",
+      "#4b8954",
+      "#80b65d",
+      "#a1c570",
+      "#594e43",
+      "#8b714d",
+      "#b29560",
+      "#f8e4b3",
+      "#e2bb73",
+      "#c77f82",
+      "#b4a4cb",
+      "#d9834c"
+    ]
+  },
+  "phoenix": {
+    "image": "assets/production/phoenix/atlas.png",
+    "frameSize": 96,
+    "columns": 2,
+    "posesPerDirection": 2,
+    "directions": {
+      "down": {
+        "row": 0,
+        "origin": [
+          48,
+          72
+        ]
+      },
+      "left": {
+        "row": 1,
+        "origin": [
+          45,
+          72
+        ]
+      },
+      "right": {
+        "row": 1,
+        "origin": [
+          45,
+          72
+        ],
+        "mirror": true
+      },
+      "up": {
+        "row": 2,
+        "origin": [
+          48,
+          52
+        ]
+      }
+    },
+    "bounds": [
+      [
+        19,
+        18,
+        79,
+        75
+      ],
+      [
+        17,
+        17,
+        78,
+        75
+      ],
+      [
+        29,
+        19,
+        91,
+        74
+      ],
+      [
+        30,
+        28,
+        94,
+        74
+      ],
+      [
+        17,
+        16,
+        83,
+        84
+      ],
+      [
+        15,
+        19,
+        81,
+        84
+      ]
+    ]
+  }
+}

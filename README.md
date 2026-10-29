@@ -26,7 +26,13 @@ npm run test:browser
 npm run test:ui
 ```
 
-Giữ HTTP server ở cổng 8000 khi chạy browser test. Có thể đặt `GAME_URL` hoặc `CHROMIUM_PATH`; hệ thống Linux tự dùng `/usr/bin/chromium` nếu có. 21 kiểm tra logic và cấu hình UI kiểm chứng đường đi bốn khu, va chạm, sáu trạng thái, chiến đấu, HP, đền, camera, phân mảnh bản đồ và tính toàn vẹn atlas. Browser test điều khiển bằng bàn phím thật qua bốn khu, chụp ảnh, kiểm tra HUD, trợ giúp/tạm dừng, sát thương và kích thước 320–1920px; không dịch chuyển nhân vật để giả lập hành trình.
+Giữ HTTP server ở cổng 8000 khi chạy browser test. Có thể đặt `GAME_URL` hoặc `CHROMIUM_PATH`; hệ thống Linux tự dùng `/usr/bin/chromium` nếu có. 22 kiểm tra logic, tilemap và cấu hình UI kiểm chứng đường đi bốn khu, va chạm, sáu trạng thái, chiến đấu, HP, đền, camera, phân mảnh bản đồ và tính toàn vẹn atlas. Browser test điều khiển bằng bàn phím thật qua bốn khu, chụp ảnh, kiểm tra HUD, trợ giúp/tạm dừng, sát thương và kích thước 320–1920px; không dịch chuyển nhân vật để giả lập hành trình.
+
+## Tilemap 0.8 — Fantasy Island × Mystic Ruins
+
+Đảo đầu tiên hiện dựng từ tile 32×32 trên grid 40×28, 72 terrain tile và 13 prop sprite dùng chung palette. Không dùng tranh nền whole-world. Nước/bờ/cỏ/đường/vách/cầu thang/đền là các ô và lớp riêng; collision đọc cùng grid.
+
+[Chi tiết tile logic, asset giữ/thay, ảnh gameplay và giới hạn](docs/tilemap-island.md).
 
 ## Giao diện mobile RPG
 
@@ -37,8 +43,8 @@ Joystick trái, cụm đánh/lửa/bay phải; giữ nút cánh để bay. Menu 
 ## Cấu trúc và tài liệu
 
 - `src/island/`: runtime hiện tại, tách loader/camera/cảnh/nhân vật/kỹ năng/HUD/dữ liệu đảo.
-- `assets/production/`: master gốc và ảnh runtime đã chuẩn hóa. Website chỉ tải ảnh runtime.
-- `scripts/normalize-production.cjs`: dựng lại atlas/palette từ master bằng Canvas; chạy `npm run art:build` khi HTTP server đang hoạt động.
+- `assets/tiles/dawn/`: terrain/object atlas pixel và manifest môi trường. `assets/production/phoenix/`: giữ atlas nhân vật.
+- `scripts/build-tileset.cjs`: source art tile/props gốc; `npm run art:build` dựng PNG tái lập bằng Node, không cần server.
 - `artifacts/dawn-*.png`: ảnh gameplay thật từ lần kiểm tra trình duyệt.
 - [Kiến trúc và cách thêm đảo](docs/architecture.md).
 - [Nguồn hình ảnh và giới hạn hoạt ảnh](docs/art-provenance.md).
@@ -46,7 +52,7 @@ Joystick trái, cụm đánh/lửa/bay phải; giữ nút cánh để bay. Menu 
 
 ## Phạm vi hiện tại
 
-Đồ họa môi trường và nhân vật được tạo mới từ tham chiếu Phượng Hoàng của dự án, có alpha/palette/anchor riêng; không dùng ảnh mockup chứa UI làm màn chơi. Nền được vẽ sẵn và dựng theo vùng nhìn, props/nhân vật/hiệu ứng/HUD là các lớp riêng.
+Đồ họa môi trường và nhân vật được tạo mới từ tham chiếu Phượng Hoàng của dự án, có alpha/palette/anchor riêng; không dùng ảnh mockup chứa UI làm màn chơi. Mặt đất được dựng từng tile trong vùng nhìn, props/nhân vật/hiệu ứng/HUD là các lớp riêng.
 
 Có sáu trạng thái chạy thật, nhưng nguồn nhân vật mới chỉ có sáu pose (hai pose mỗi hướng trước/trái/sau; hướng phải lật gương). Đánh và trúng đòn dùng pose cùng chuyển động/hiệu ứng; chưa phải bộ frame vẽ riêng đầy đủ cho từng hành động. Chưa có lưu tiến trình đảo, nhiệm vụ, NPC hoặc hệ thống đảo thứ hai. Không coi bản này là một game thương mại đã hoàn thiện toàn bộ nội dung.
 

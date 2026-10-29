@@ -31,16 +31,44 @@ export function segmentDistance(p, a, b) {
   return Math.hypot(p.x - a[0] - dx * t, p.y - a[1] - dy * t);
 }
 export function canOccupy(island, p, radius = 5) {
-  const onLand = (point) =>
-    island.walkable
-      ? island.walkable.some((poly) => inside(point, poly)) ||
-        (island.corridors || []).some((r) =>
-          r.points.some(
-            (b, i) =>
-              i > 0 && segmentDistance(point, r.points[i - 1], b) <= r.radius,
-          ),
+  const onLand = (point) => {
+    if (island.tilemap) {
+      const m = island.tilemap,
+        s = m.tileSize,
+        x = Math.floor(point.x / s),
+        y = Math.floor(point.y / s),
+        kind = m.ground[y]?.[x];
+      if (
+        !kind ||
+        ["deep", "shallow", "cliff", "cliffFoot", "rim"].includes(kind)
+      )
+        return false;
+      // Shore art has a three-pixel inset; body samples respect that same edge.
+      if (kind === "sand") {
+        const water = (a, b) =>
+          !m.ground[b]?.[a] || ["deep", "shallow"].includes(m.ground[b][a]);
+        const px = point.x - x * s,
+          py = point.y - y * s;
+        if (
+          (px < 3 && water(x - 1, y)) ||
+          (px > s - 3 && water(x + 1, y)) ||
+          (py < 3 && water(x, y - 1)) ||
+          (py > s - 3 && water(x, y + 1))
         )
+          return false;
+      }
+      return true;
+    }
+    return island.walkable
+      ? island.walkable.some((poly) => inside(point, poly)) ||
+          (island.corridors || []).some((r) =>
+            r.points.some(
+              (b, i) =>
+                i > 0 && segmentDistance(point, r.points[i - 1], b) <= r.radius,
+            ),
+          )
       : inside(point, island.coast);
+  };
   if (
     ![
       [0, 0],

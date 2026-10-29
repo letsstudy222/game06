@@ -149,7 +149,9 @@ const { chromium } = require("playwright");
   await page.waitForTimeout(140);
   assert.deepEqual(await snap(), frozen);
   await page.keyboard.press("Escape");
-  await travel({ x: 383, y: 130 });
+  await travel(map.checkpoints.cliff);
+  await page.screenshot({ path: "artifacts/tilemap/cliffs.png" });
+  await travel(map.checkpoints.forest);
   assert.equal((await snap()).region, "Lối rừng ánh sớm");
   await shot("dawn-forest");
   console.log("PASS authored forest trail reached with real keyboard movement");
@@ -165,7 +167,7 @@ const { chromium } = require("playwright");
   console.log(
     "PASS ruins reachable, proximity prompt and actual shrine interaction",
   );
-  await travel({ x: 500, y: 460 });
+  await travel(map.checkpoints.beach);
   assert.equal((await snap()).region, "Bãi biển phía Nam");
   await shot("dawn-beach");
   console.log(
@@ -182,8 +184,8 @@ const { chromium } = require("playwright");
     assert(
       v.camera.x >= 0 &&
         v.camera.y >= 0 &&
-        v.camera.x + v.width <= 960 &&
-        v.camera.y + v.height <= 640,
+        v.camera.x + v.width <= map.width &&
+        v.camera.y + v.height <= map.height,
     );
     assert(
       await page.locator("#island").evaluate((c) => {
@@ -252,7 +254,7 @@ const { chromium } = require("playwright");
   }
   assert(
     !requests.some((u) =>
-      /world-master|props-master|phoenix\/master|phoenix-player|legacy\/|garden-detailed|farmer-walk|reference_/.test(
+      /production\/dawn\/|production\/manifest|world-master|props-master|phoenix\/master|phoenix-player|legacy\/|garden-detailed|farmer-walk|reference_/.test(
         u,
       ),
     ),

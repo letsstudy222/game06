@@ -19,10 +19,10 @@ const read = (n) => JSON.parse(fs.readFileSync(new URL(n, import.meta.url)));
 function tick(g, seconds, input = idle) {
   for (let t = 0; t < seconds; t += 1 / 60) g.update(1 / 60, input);
 }
-test("all four authored zones are connected by traversable corridors", () => {
+test("all four authored zones are connected by walkable tile routes and stairs", () => {
   assert.throws(() => getIsland("missing"));
   assert(canOccupy(map, map.spawn, 7));
-  for (const goal of [{ x: 500, y: 460 }, { x: 383, y: 130 }, map.shrine])
+  for (const goal of Object.values(map.checkpoints))
     assert(route(map, map.spawn, goal).length > 0, JSON.stringify(goal));
 });
 test("movement is normalized and idle/move transitions preserve facing", () => {
@@ -40,7 +40,7 @@ test("movement is normalized and idle/move transitions preserve facing", () => {
 test("cliffs, water, rocks and trunks block even a long movement step", () => {
   let p = moveWithCollision(map, map.spawn, 1000, 0, 7);
   assert(canOccupy(map, p, 7));
-  assert(p.x < 900);
+  assert(p.x < map.width);
   const rock = map.rocks[0];
   p = moveWithCollision(map, { x: rock.x - 30, y: rock.y }, 70, 0, 7);
   assert(p.x < rock.x);
@@ -153,20 +153,20 @@ test("camera interpolates, clamps, and rounds only at render boundaries", () => 
   c.follow(map.spawn, 0, true);
   const x = c.x;
   c.follow({ x: 900, y: 600 }, 0.016);
-  assert(c.x > x && c.x < 320);
+  assert(c.x > x && c.x < map.width - 640);
   assert(Number.isInteger(c.renderX));
   for (let i = 0; i < 1000; i++) c.follow({ x: 2000, y: 2000 }, 0.05);
-  assert(c.x <= 320 && c.y <= 280);
-  c.resize(390, 844, map.spawn);
+  assert(c.x <= map.width - 640 && c.y <= map.height - 360);
+  c.resize(390, map.height + 100, map.spawn);
   assert.equal(c.y, 0);
 });
-test("chunk culling covers the camera and never reads beyond production ground art", () => {
-  const l = new WorldLayer(null, 960, 640, 160),
-    chunks = l.chunks({ x: 300, y: 250 }, 640, 360);
-  assert(chunks.length > 0 && chunks.length < 24);
+test("tile culling covers the camera and never reads beyond the authored grid", () => {
+  const l = new WorldLayer(null, map, {}),
+    chunks = l.visibleTiles({ x: 300, y: 250 }, 640, 360);
+  assert(chunks.length > 0 && chunks.length < 400);
   for (const r of chunks) {
     assert(r.x >= 0 && r.y >= 0);
-    assert(r.x + r.width <= 960 && r.y + r.height <= 640);
+    assert(r.x + r.width <= map.width && r.y + r.height <= map.height);
   }
 });
 test("frame delta is bounded and another island can use the same controller", () => {
@@ -211,24 +211,55 @@ test("production hero frames have real alpha and safe gutters, no clipped concep
   assert(meta.phoenix.directions.up);
   assert(meta.phoenix.directions.right.mirror);
 });
-test("environment uses a shared 128-color production palette with clean prop alpha", () => {
-  for (const file of ["dawn/world.png", "dawn/props.png"]) {
-    const image = decode(
-        new URL("../assets/production/" + file, import.meta.url),
-      ),
-      colors = new Set();
-    for (let i = 0; i < image.data.length; i += 4) {
-      assert([0, 255].includes(image.data[i + 3]));
-      if (image.data[i + 3])
-        colors.add(
-          (image.data[i] << 16) | (image.data[i + 1] << 8) | image.data[i + 2],
-        );
+test("new environment atlas is a reusable 32px tile set with a shared pixel palette", () => {
+  const manifest = read("../assets/tiles/dawn/manifest.json"),
+    env = manifest.environment;
+  assert.equal(env.kind, "tilemap");
+  assert.equal(env.tileSize, 32);
+  assert(Object.keys(env.tileDefinitions).length >= 70);
+  for (const key of [
+    "grass_0",
+    "grass_1",
+    "path_15",
+    "shore_3",
+    "deep_0",
+    "shallow_3",
+    "rim",
+    "cliff",
+    "cliffFoot",
+    "stairs",
+    "floor_0",
+    "moss_0",
+  ])
+    assert(env.tileDefinitions[key], key);
+  const palette = new Set(env.palette);
+  assert(palette.size <= 64);
+  for (const file of ["terrain.png", "objects.png"]) {
+    const p = decode(new URL("../assets/tiles/dawn/" + file, import.meta.url));
+    for (let i = 0; i < p.data.length; i += 4) {
+      assert([0, 255].includes(p.data[i + 3]));
+      if (p.data[i + 3])
+        assert(palette.has("#" + p.data.subarray(i, i + 3).toString("hex")));
     }
-    assert(colors.size <= 128);
   }
-  const source = fs.readFileSync(
-    new URL("../src/island/IslandScene.mjs", import.meta.url),
-    "utf8",
+  assert(env.definitions.some((p) => p.id === "altar"));
+  assert(env.definitions.some((p) => p.id === "palm"));
+});
+test("visible solid tiles and collision share one grid, with stairs as the only terrace passage", () => {
+  const blocked = new Set(["deep", "shallow", "rim", "cliff", "cliffFoot"]);
+  for (let y = 0; y < map.tilemap.rows; y++)
+    for (let x = 0; x < map.tilemap.columns; x++)
+      if (blocked.has(map.tilemap.ground[y][x]))
+        assert(!canOccupy(map, { x: x * 32 + 16, y: y * 32 + 16 }, 0));
+  for (let y = 13; y <= 16; y++)
+    assert(canOccupy(map, { x: 20 * 32 + 16, y: y * 32 + 16 }, 7));
+  assert(!canOccupy(map, { x: 18 * 32 + 16, y: 14 * 32 + 16 }, 7));
+  assert(
+    !fs
+      .readFileSync(
+        new URL("../src/island/WorldLayer.mjs", import.meta.url),
+        "utf8",
+      )
+      .includes("world.png"),
   );
-  assert(!/PixelSurface|function tree|function rock|ellipse\(/.test(source));
 });

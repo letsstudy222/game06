@@ -1,4 +1,6 @@
-# Nguồn đồ họa và quy trình production
+# Nguồn đồ họa và quy trình production 0.6 (lịch sử)
+
+Môi trường hiện tại từ 0.8 đã thay bằng tile/prop pixel gốc; xem [tilemap-island.md](tilemap-island.md). Nguồn Phoenix bên dưới vẫn được giữ nguyên. Các world/props master dưới đây không còn là tài nguyên runtime.
 
 Tất cả môi trường/props/Phoenix mới được tạo bằng công cụ image generation trong phiên làm việc này. Không lấy tài sản Stardew Valley hoặc game thương mại khác. Thiết kế Phượng Hoàng tham chiếu hình có sẵn của dự án `assets/phoenix-3-v2.png`: thân ngà, cánh vàng, đuôi đỏ rượu. Tài liệu này ghi nguồn kỹ thuật, không xác nhận quyền pháp lý của hình tham chiếu do người dùng cung cấp.
 
