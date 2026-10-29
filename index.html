@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#263c30"><title>Nhật Diệm · Khu vườn linh thú</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><a class="brand" href="./"><span class="brand-icon">✦</span><span>NHẬT DIỆM<small>KHU VƯỜN LINH THÚ</small></span></a><div class="chapter">CHƯƠNG 01 <span> / </span> MỘT KHỞI ĐẦU RỰC RỠ</div><button id="sound" aria-pressed="false" title="Bật âm thanh">♫ <span>Âm thanh</span></button></header>
+  <main>
+    <section class="world" aria-label="Khu vườn pixel tương tác">
+      <canvas id="garden" width="480" height="320" aria-label="Phượng Hoàng đang bay trong nông trại. Chạm vào bãi cỏ để dẫn đường."></canvas>
+      <div class="world-top"><div class="location"><span>⌂</span><div>Thung lũng Ban Mai<small>MÙA XUÂN · NGÀY 01</small></div></div><button id="day" title="Đổi ngày và đêm">☀ <span>08:30</span></button></div>
+      <div class="world-label"><i></i> NƠI MỌI HUYỀN THOẠI BẮT ĐẦU</div>
+      <div class="hint">✧ Chạm vào bãi cỏ để gọi Nhật Diệm tới</div>
+      <button id="pause" aria-label="Tạm dừng hoạt ảnh" aria-pressed="false">Ⅱ</button>
+    </section>
+    <aside>
+      <div class="eyebrow"><span class="live-dot"></span> LINH THÚ ĐỒNG HÀNH <span class="number">001</span></div>
+      <div class="portrait"><div class="orbit"></div><img id="portrait" src="assets/phoenix-3-v2.png" alt="Phượng Hoàng Nhật Diệm trưởng thành"><span class="rarity">✦ LEGEND</span></div>
+      <h1>Phượng Hoàng<br><em>Nhật Diệm</em></h1>
+      <p class="description">Một đốm lửa nhỏ, một bình minh mới.<br>Người bạn mang hơi ấm đến khu vườn.</p>
+      <div class="stats"><span>HỆ <b>♨ Hỏa</b></span><span>HÌNH THÁI <b id="form-label">III · Trưởng thành</b></span></div>
+      <div class="section-label">HÀNH TRÌNH TRƯỞNG THÀNH</div>
+      <div class="forms" aria-label="Chọn hình thái"><button data-form="1" aria-pressed="false"><span>I</span>Mới nở</button><button data-form="2" aria-pressed="false"><span>II</span>Tiến hóa</button><button data-form="3" class="selected" aria-pressed="true"><span>III</span>Trưởng thành</button></div>
+      <div class="section-label actions-label">MỘT CHÚT PHÉP MÀU</div>
+      <div class="actions"><button id="fly">↗ <span>Bay lượn</span></button><button id="flare">✺ <span>Nhật diệm</span></button></div>
+      <p id="status" role="status">Nhật Diệm đang tận hưởng buổi sáng.</p>
+    </aside>
+  </main>
+  <footer><span><i></i> BẢN THỬ NGHIỆM · VƯỜN LINH THÚ</span><span>Nuôi dưỡng những điều kỳ diệu <b>✦</b></span></footer>
+  <script src="game.js"></script>
+</body>
+</html>
