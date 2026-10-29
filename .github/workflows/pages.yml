@@ -1,4 +1,4 @@
-name: Publish island
+name: Publish Dawn Island
 on:
   push:
     branches: [main]
@@ -27,13 +27,15 @@ jobs:
           node tests/island.test.mjs
       - name: Prepare island-only site
         run: |
-          mkdir -p _site/src/island _site/src/engine _site/assets/sprites _site/assets/fonts
+          mkdir -p _site/src/island _site/assets/production/dawn _site/assets/production/phoenix _site/assets/fonts _site/screenshots
           cp index.html style.css _site/
           cp src/island/*.mjs _site/src/island/
-          cp src/engine/pixel-art.js _site/src/engine/
-          cp assets/sprites/phoenix-player.png assets/sprites/phoenix-player.json _site/assets/sprites/
+          cp assets/production/manifest.json _site/assets/production/
+          cp assets/production/dawn/world.png assets/production/dawn/props.png _site/assets/production/dawn/
+          cp assets/production/phoenix/atlas.png _site/assets/production/phoenix/
           cp assets/fonts/VT323-Regular.ttf assets/fonts/VT323-OFL.txt _site/assets/fonts/
           cp assets/favicon.svg _site/assets/
+          cp artifacts/dawn-{meadow,forest,ruins,beach,fire}.png _site/screenshots/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

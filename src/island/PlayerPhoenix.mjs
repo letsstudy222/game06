@@ -4,7 +4,7 @@ export class PlayerPhoenix {
   constructor(spawn) {
     this.x = spawn.x;
     this.y = spawn.y;
-    this.radius = 5;
+    this.radius = 7;
     this.hp = 100;
     this.maxHp = 100;
     this.facing = { x: 1, y: 0 };
@@ -44,7 +44,7 @@ export class PlayerPhoenix {
     this.y = next.y;
     if (
       this.animation.complete ||
-      !["attack", "fire"].includes(this.animation.name)
+      !["attack", "fire", "hurt"].includes(this.animation.name)
     )
       this.animation.set(this.hovering ? "fly" : this.moving ? "move" : "idle");
     this.animation.update(dt);
@@ -55,6 +55,7 @@ export class PlayerPhoenix {
     this.hp = Math.max(0, this.hp - amount);
     this.invulnerable = 1;
     this.sinceDamage = 0;
+    this.animation.set("hurt", true);
     return true;
   }
   respawn(spawn) {

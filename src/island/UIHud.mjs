@@ -48,15 +48,7 @@ export class UIHud {
     this.actions.focus();
   }
   drawIcons() {
-    const hover = document.querySelector("#hover canvas").getContext("2d");
-    hover.fillStyle = "#6c8b59";
-    hover.fillRect(2, 7, 4, 2);
-    hover.fillRect(5, 5, 3, 2);
-    hover.fillRect(9, 5, 3, 2);
-    hover.fillRect(12, 7, 3, 2);
-    hover.fillRect(7, 7, 2, 6);
-    hover.fillStyle = "#bd9c4e";
-    hover.fillRect(6, 3, 4, 2);
+    this.scene.portrait(document.querySelector("#hover canvas"));
     const attack = document.querySelector("#attack canvas").getContext("2d");
     for (let i = 0; i < 8; i++) {
       attack.fillStyle = i % 2 ? "#a17d46" : "#e0b960";
@@ -84,8 +76,7 @@ export class UIHud {
     document
       .querySelector(".hp-track")
       .setAttribute("aria-valuenow", String(Math.ceil(p.hp)));
-    document.querySelector("#island-index").textContent =
-      this.state.island.label;
+    document.querySelector("#island-index").textContent = this.state.region();
     document.querySelector("#island-name").textContent = this.state.island.name;
     document
       .querySelector("#hover")
@@ -115,10 +106,9 @@ export class UIHud {
       this.state.paused ? "Tiếp tục" : "Tạm dừng",
     );
     this.pauseButton.textContent = this.state.paused ? ">" : "II";
-    const c = document.querySelector("#portrait").getContext("2d");
-    c.imageSmoothingEnabled = false;
-    c.clearRect(0, 0, 32, 32);
-    if (this.scene.ready())
-      c.drawImage(this.scene.sprite, 0, 0, 32, 32, 0, 0, 32, 32);
+    document.querySelector("#interaction").hidden = !(
+      this.state.snapshot().nearShrine && !this.state.paused
+    );
+    this.scene.portrait(document.querySelector("#portrait"));
   }
 }

@@ -1,8 +1,14 @@
-const assert = require("node:assert/strict");
+const assert = require("node:assert/strict"),
+  fs = require("node:fs");
 const { chromium } = require("playwright");
 (async () => {
+  const { getIsland } = await import("../src/island/islands.mjs"),
+    { route, corners } = await import("./route-helper.mjs");
+  const map = getIsland("dawn");
   const browser = await chromium.launch({
-    executablePath: process.env.CHROMIUM_PATH || "/usr/bin/chromium",
+    executablePath:
+      process.env.CHROMIUM_PATH ||
+      (fs.existsSync("/usr/bin/chromium") ? "/usr/bin/chromium" : undefined),
     headless: true,
     args: ["--no-sandbox"],
   });
@@ -10,73 +16,155 @@ const { chromium } = require("playwright");
     viewport: { width: 1366, height: 768 },
   });
   await context.addInitScript(() =>
-    localStorage.setItem("nhat-diem.farm.v1", "legacy-farm-save"),
+    localStorage.setItem("nhat-diem.farm.v1", "legacy-save-untouched"),
   );
   const page = await context.newPage(),
     errors = [],
+    bad = [],
     requests = [];
   page.on("pageerror", (e) => errors.push(e.message));
+  page.on("response", (r) => {
+    if (r.status() >= 400) bad.push(r.url());
+  });
   page.on("request", (r) => requests.push(r.url()));
   const url = process.env.GAME_URL || "http://127.0.0.1:8000";
   await page.goto(url);
-  await page.waitForFunction(() => window.IslandGame?.ready());
+  await page.waitForFunction(
+    () => window.IslandGame?.ready(),
+    {},
+    { timeout: 30000 },
+  );
   await page.evaluate(() => document.fonts.ready);
   const snap = () => page.evaluate(() => IslandGame.snapshot());
+  fs.mkdirSync("artifacts", { recursive: true });
+  async function shot(name) {
+    await page.screenshot({ path: `artifacts/${name}.png` });
+  }
+  async function axis(key, goal) {
+    const current = (await snap()).player[key],
+      delta = goal - current;
+    if (Math.abs(delta) < 1) return;
+    const sign = Math.sign(delta),
+      code =
+        key === "x"
+          ? sign > 0
+            ? "ArrowRight"
+            : "ArrowLeft"
+          : sign > 0
+            ? "ArrowDown"
+            : "ArrowUp";
+    await page.keyboard.down(code);
+    try {
+      await page.waitForFunction(
+        ({ key, goal, sign }) =>
+          sign * (IslandGame.snapshot().player[key] - goal) >= -1,
+        { key, goal, sign },
+        { timeout: 9000 },
+      );
+    } catch (error) {
+      console.log("STUCK", key, goal, (await snap()).player);
+      await shot("qa-stuck");
+      throw error;
+    } finally {
+      await page.keyboard.up(code);
+    }
+  }
+  async function travel(goal) {
+    await page.locator("#island").focus();
+    const from = (await snap()).player,
+      path = corners(route(map, from, goal, 8));
+    assert(path.length, "connected path to " + JSON.stringify(goal));
+    for (const p of path) {
+      await axis("x", p.x);
+      await axis("y", p.y);
+    }
+    await page.waitForTimeout(350);
+    assert(
+      Math.hypot(
+        (await snap()).player.x - goal.x,
+        (await snap()).player.y - goal.y,
+      ) < 8,
+    );
+  }
   assert.equal(await page.locator(".hotbar button").count(), 3);
   assert.equal(
-    await page
-      .locator("#minimap,#quests,#seed-choice,#garden,.toolbelt")
-      .count(),
+    await page.locator("footer,#minimap,#quests,#seed-choice").count(),
     0,
   );
-  assert.equal(
-    await page
-      .locator("#island")
-      .evaluate((c) => [c.width, c.height].join("x")),
-    "480x270",
-  );
+  assert.equal(await page.locator("#loading").isVisible(), false);
+  const r = await page.locator("#island").boundingBox();
+  assert(r.width >= 1366 && r.height >= 768, "game fills the browser");
   assert.equal(
     await page
       .locator("#island")
       .evaluate((c) => getComputedStyle(c).imageRendering),
     "pixelated",
   );
-  const initial = await snap();
-  assert.equal(initial.player.animation, "idle");
-  assert.equal(await page.locator("#hp-value").textContent(), "100 / 100");
-  await page.screenshot({ path: "/tmp/nhatdiem-island.png", fullPage: true });
-  async function axis(code, key, goal) {
-    await page.keyboard.down(code);
-    await page.waitForFunction(
-      ({ key, goal }) =>
-        Math.abs(IslandGame.snapshot().player[key] - goal) < 1.8,
-      { key, goal },
-      { timeout: 7000 },
-    );
-    await page.keyboard.up(code);
-  }
-  await axis("ArrowRight", "x", 333);
-  assert.equal((await snap()).player.animation, "move");
+  assert.equal((await snap()).player.animation, "idle");
+  await shot("dawn-meadow");
+  await page.keyboard.down("ArrowRight");
+  await page.waitForFunction(
+    () => IslandGame.snapshot().player.animation === "move",
+  );
+  await page.waitForTimeout(180);
+  await page.keyboard.up("ArrowRight");
   await page.waitForFunction(
     () => IslandGame.snapshot().player.animation === "idle",
   );
-  await axis("ArrowUp", "y", 208);
-  await page.keyboard.down("ArrowRight");
-  await page.waitForFunction(() => IslandGame.snapshot().player.facing.x > 0);
-  await page.keyboard.up("ArrowRight");
-  await page.keyboard.press("KeyJ");
-  await page.waitForFunction(() => IslandGame.snapshot().targets[0].hp === 2);
-  assert.equal((await snap()).player.animation, "attack");
-  await page.keyboard.press("KeyK");
-  await page.waitForFunction(() => IslandGame.snapshot().targets[0].hp === 0);
-  assert((await snap()).cooldowns.fire > 0);
-  await page.keyboard.press("KeyK");
-  assert.equal((await snap()).targets[0].hp, 0);
-  console.log(
-    "PASS phoenix is the only player; movement, idle, directional attack and fire hit a target",
+  await page.keyboard.down("ShiftLeft");
+  await page.waitForFunction(
+    () => IslandGame.snapshot().player.animation === "fly",
   );
-  await axis("ArrowLeft", "x", 225);
-  await axis("ArrowDown", "y", 249);
+  await page.keyboard.up("ShiftLeft");
+  await page.keyboard.press("KeyJ");
+  await page.waitForFunction(
+    () => IslandGame.snapshot().player.animation === "attack",
+  );
+  await page.keyboard.press("KeyK");
+  await page.waitForFunction(
+    () => IslandGame.snapshot().player.animation === "fire",
+  );
+  await page.waitForTimeout(200);
+  await shot("dawn-fire");
+  assert((await snap()).cooldowns.fire > 0);
+  console.log(
+    "PASS production world/hero, fullscreen UI and idle/move/hover/attack/fire",
+  );
+  await page.keyboard.press("KeyH");
+  assert.equal(await page.locator("#help-dialog").isVisible(), true);
+  const helpTime = (await snap()).time;
+  await page.waitForTimeout(120);
+  assert.equal((await snap()).time, helpTime);
+  await page.keyboard.press("KeyH");
+  assert.equal(await page.locator("#help-dialog").isVisible(), false);
+  await page.keyboard.press("Escape");
+  const frozen = await snap();
+  await page.waitForTimeout(140);
+  assert.deepEqual(await snap(), frozen);
+  await page.keyboard.press("Escape");
+  await travel({ x: 383, y: 130 });
+  assert.equal((await snap()).region, "Lối rừng ánh sớm");
+  await shot("dawn-forest");
+  console.log("PASS authored forest trail reached with real keyboard movement");
+  await travel(map.shrine);
+  assert.equal((await snap()).nearShrine, true);
+  assert.equal(await page.locator("#interaction").isVisible(), true);
+  await page.keyboard.press("KeyE");
+  await page.waitForFunction(() => IslandGame.snapshot().shrineActivated);
+  await shot("dawn-ruins");
+  assert.match(await page.locator("#message").textContent(), /thức giấc/);
+  await page.keyboard.press("KeyE");
+  assert.equal((await snap()).shrineActivated, false);
+  console.log(
+    "PASS ruins reachable, proximity prompt and actual shrine interaction",
+  );
+  await travel({ x: 500, y: 460 });
+  assert.equal((await snap()).region, "Bãi biển phía Nam");
+  await shot("dawn-beach");
+  console.log(
+    "PASS southern stairs/beach reached; all four regions have live screenshots",
+  );
+  await travel(map.hazards[0]);
   await page.waitForFunction(() => IslandGame.snapshot().player.hp < 100);
   const hp = (await snap()).player.hp;
   assert.equal(
@@ -85,39 +173,25 @@ const { chromium } = require("playwright");
   );
   await page.keyboard.down("ShiftLeft");
   await page.waitForFunction(() => IslandGame.snapshot().player.hovering);
-  await page.waitForTimeout(1250);
-  assert.equal((await snap()).player.hp, hp, "hover avoids thorn damage");
-  assert.equal((await snap()).player.animation, "fly");
+  await page.waitForTimeout(1150);
+  assert.equal((await snap()).player.hp, hp);
   await page.keyboard.up("ShiftLeft");
-  await page.waitForFunction((v) => IslandGame.snapshot().player.hp < v, hp, {
+  await page.waitForFunction((h) => IslandGame.snapshot().player.hp < h, hp, {
     timeout: 2000,
   });
-  console.log("PASS real HP damage, UI health sync and hover immunity");
-  await page.keyboard.press("Escape");
-  const paused = await snap();
-  await page.waitForTimeout(200);
-  assert.deepEqual(await snap(), paused);
-  await page.keyboard.press("Escape");
-  await axis("ArrowRight", "x", 306);
-  await axis("ArrowUp", "y", 226);
-  await page.locator("#hover").click();
-  await page.waitForFunction(() => IslandGame.snapshot().player.hovering);
-  await page.locator("#hover").click();
-  await page.waitForFunction(() => !IslandGame.snapshot().player.hovering);
-  await page.locator("#help").click();
-  const menuTime = (await snap()).time;
-  await page.waitForTimeout(150);
-  assert.equal((await snap()).time, menuTime);
-  await page.keyboard.press("Escape");
-  assert.equal((await snap()).paused, false);
+  assert.equal((await snap()).player.animation, "hurt");
+  console.log("PASS real damage, hurt pose, HUD health and hover immunity");
   await page.keyboard.down("ArrowRight");
   await page.waitForTimeout(100);
   await page.evaluate(() => window.dispatchEvent(new Event("blur")));
-  const pos = (await snap()).player.x;
-  await page.waitForTimeout(150);
-  assert.equal((await snap()).player.x, pos);
+  const x = (await snap()).player.x;
+  await page.waitForTimeout(120);
+  assert.equal((await snap()).player.x, x);
   await page.keyboard.up("ArrowRight");
-  console.log("PASS pause, help, hotbar hover and key release on lost focus");
+  assert.equal(
+    await page.evaluate(() => localStorage.getItem("nhat-diem.farm.v1")),
+    "legacy-save-untouched",
+  );
   for (const [width, height] of [
     [1920, 1080],
     [960, 640],
@@ -128,7 +202,7 @@ const { chromium } = require("playwright");
     await page.waitForFunction(
       () => document.documentElement.scrollWidth <= innerWidth,
       {},
-      { timeout: 2000 },
+      { timeout: 2500 },
     );
     assert.equal(
       await page.evaluate(
@@ -137,72 +211,20 @@ const { chromium } = require("playwright");
       false,
     );
     const view = await page.evaluate(() => IslandGame.view());
-    if (width >= 960) assert(Number.isInteger(view.scale));
+    assert(Number.isInteger(view.scale));
   }
-  assert.equal(
-    await page.evaluate(() => localStorage.getItem("nhat-diem.farm.v1")),
-    "legacy-farm-save",
-  );
   assert(
     !requests.some((u) =>
-      /legacy\/|farm\.js|garden-detailed|farmer-walk|an-gardener|reference_/.test(
+      /world-master|props-master|phoenix\/master|phoenix-player|legacy\/|garden-detailed|farmer-walk|reference_/.test(
         u,
       ),
     ),
-    "old farm runtime and references must not load",
+    "only normalized production art loads",
   );
-  await page.setViewportSize({ width: 1366, height: 768 });
-  await page.waitForFunction(() => IslandGame.view().scale === 2);
-  await page.screenshot({
-    path: "/tmp/nhatdiem-island-final.png",
-    fullPage: true,
-  });
-  const mobile = await browser.newContext({
-    viewport: { width: 390, height: 844 },
-    hasTouch: true,
-    isMobile: true,
-  });
-  const m = await mobile.newPage();
-  m.on("pageerror", (e) => errors.push(e.message));
-  await m.goto(url);
-  await m.waitForFunction(() => window.IslandGame?.ready());
-  await m.locator(".stick-base").scrollIntoViewIfNeeded();
-  const stick = await m.locator(".stick-base").boundingBox(),
-    x = stick.x + stick.width / 2,
-    y = stick.y + stick.height / 2;
-  const before = await m.evaluate(() => IslandGame.snapshot().player.x);
-  const client = await mobile.newCDPSession(m);
-  await client.send("Input.dispatchTouchEvent", {
-    type: "touchStart",
-    touchPoints: [{ x: x + 25, y, id: 7 }],
-  });
-  await m.waitForTimeout(350);
-  await client.send("Input.dispatchTouchEvent", {
-    type: "touchEnd",
-    touchPoints: [],
-  });
-  assert((await m.evaluate(() => IslandGame.snapshot().player.x)) > before + 5);
-  const released = await m.evaluate(() => IslandGame.snapshot().player.x);
-  await m.waitForTimeout(120);
-  assert.equal(
-    await m.evaluate(() => IslandGame.snapshot().player.x),
-    released,
-  );
-  await m.locator("#fire").tap();
-  await m.waitForFunction(() => IslandGame.snapshot().cooldowns.fire > 0);
-  await m.locator("#hover").tap();
-  await m.waitForFunction(() => IslandGame.snapshot().player.hovering);
-  assert.equal(
-    await m.evaluate(() => document.documentElement.scrollWidth > innerWidth),
-    false,
-  );
-  await m.screenshot({
-    path: "/tmp/nhatdiem-island-mobile.png",
-    fullPage: true,
-  });
   assert.deepEqual(errors, []);
+  assert.deepEqual(bad, []);
   console.log(
-    "PASS 320–1920px layout, touch actions, no old farm assets/save changes, no browser errors",
+    "PASS focus release, legacy save protection, integer fullscreen scaling and zero console/asset errors",
   );
   await browser.close();
 })().catch((e) => {

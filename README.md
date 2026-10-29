@@ -1,98 +1,46 @@
-# Nhật Diệm · Đảo Bình Minh
+# Phượng Hoàng Nhật Diệm — Dawn Island
 
-Prototype phiêu lưu pixel 2D chạy trên web, giữ **HTML/CSS/JavaScript/Canvas**, không thêm framework hoặc dependency runtime. Người chơi điều khiển trực tiếp **Phượng Hoàng Nhật Diệm (Legend)** trên một hòn đảo nhỏ, không có nhân vật nông dân hay pet phụ.
+Pixel adventure chạy trực tiếp bằng HTML/CSS, ES modules và Canvas 2D. Phượng Hoàng Legend là nhân vật điều khiển trên đảo gồm đồng cỏ, rừng phía Bắc, đền cổ và biển phía Nam. Đây là vertical slice khám phá; mã nông trại cũ được lưu trong `legacy/tiny-farm/`.
 
-**Chơi:** https://letsstudy222.github.io/game06/?v=5
+## Chạy thử
 
-## Chạy local
-
-Từ thư mục repository, dùng Python 3:
+Từ thư mục repository, chạy:
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Mở `http://127.0.0.1:8000`. Windows có thể thay `python3` bằng `py`. Cần phục vụ qua HTTP vì game dùng ES modules native; không mở thẳng `index.html` bằng `file://`. Không cần npm install hoặc build.
+Mở trình duyệt tại `http://127.0.0.1:8000`. Không mở bằng `file://` vì trò chơi tải ES modules và manifest qua HTTP. Không cần bundler hoặc dịch vụ backend.
 
-## Điều khiển
+WASD/phím mũi tên: di chuyển; J/Space: đánh; K: tích tụ và phóng lửa; Shift: lướt bay; E: tương tác bệ đá khi đến gần; H: trợ giúp; Esc: tạm dừng. Có nút chạm cho thiết bị di động. Bụi gai gây sát thương; bay tránh gai nhưng không xuyên địa hình. Trạng thái đền đặt lại khi tải lại trang.
 
-| Phím           | Hành động                                   |
-| -------------- | ------------------------------------------- |
-| WASD / Mũi tên | Di chuyển trên đảo                          |
-| Giữ Shift      | Bay thấp / hover, nhanh hơn và tránh gai đá |
-| J / Space      | Vũ kích về hướng đang nhìn                  |
-| K              | Phóng lửa, hồi chiêu 1,8 giây               |
-| Esc            | Tạm dừng / tiếp tục                         |
-| Nút `?`        | Hướng dẫn ngắn, tạm dừng trong lúc đọc      |
+## Kiểm tra
 
-Hotbar chỉ có ba hành động, có thể click/tap; nút Hover bật/tắt cho người dùng cảm ứng. Thiết bị cảm ứng có cần điều khiển nhỏ dưới khung game. Tối ưu chính cho bàn phím desktop.
-
-### Những gì có thể thử
-
-- Di chuyển tự do trong vùng đất; nước, đá và gốc cây có va chạm. Bay thấp không cho vượt nước hay đá.
-- Idle, move, fly, basic attack, fire skill là năm trạng thái animation riêng. Hướng dọc dùng cùng silhouette nghiêng, hướng trái/phải được lật từ sprite gốc; bộ art bốn hướng độc lập chưa có.
-- Ba bia đá để thử đòn: Vũ kích gây 1 sát thương, lửa gây 3; bia tự xuất hiện lại sau 9 giây. Không có nhiệm vụ hay phần thưởng.
-- Hai cụm gai tím gây mất 12 HP khi chạm đất; có 1 giây bảo vệ giữa các lần trúng. Hover tránh gai. Sau 4 giây không bị thương, HP hồi dần; hết HP hồi sinh ở bãi cỏ.
-- Tạm dừng, mở hướng dẫn hoặc chuyển tab không làm game chạy ngầm. Thả input khi mất focus để tránh nhân vật tự đi.
-
-Bản mẫu **bắt đầu lại khi tải lại trang**, chưa có save/load cho phiêu lưu. Không đọc, xóa hoặc ghi đè bản lưu nông trại cũ `nhat-diem.farm.v1`.
-
-## Thay đổi giao diện và mã nguồn
-
-Màn hình mới chỉ có chân dung/tên/Legend và HP phía trên trái; tên đảo phía trên phải; ba ô hành động phía dưới. Đã bỏ ruộng, hạt giống, cuốc, bình tưới, cửa hàng, NPC, minimap và bảng nhiệm vụ khỏi runtime. Giao diện nông trại được chuyển vào `legacy/tiny-farm/`, không đóng gói lên Pages.
-
-| File / module                                       | Trách nhiệm                                                    |
-| --------------------------------------------------- | -------------------------------------------------------------- |
-| `index.html`, `style.css`                           | Khung gameplay, HUD tối giản, hướng dẫn và responsive          |
-| `src/island/main.mjs`                               | Khởi tạo, input bàn phím/cảm ứng, loop, scale và pause         |
-| `PlayerPhoenix.mjs`                                 | Player chính, hướng nhìn, di chuyển, hover, HP và hồi sinh     |
-| `IslandScene.mjs`                                   | Vẽ đảo/cache terrain, chiều sâu cây/player, sprite và hiệu ứng |
-| `UIHud.mjs`                                         | HUD đọc state thật; không sở hữu luật di chuyển hay sát thương |
-| `SkillSystem.mjs`                                   | Hồi chiêu, hit cone, projectile, sát thương và bia thử         |
-| `AnimationController.mjs`                           | Frame, loop và trạng thái one-shot                             |
-| `GameState.mjs`                                     | State của phiên chơi, điều phối update, camera, chọn đảo       |
-| `islands.mjs`, `geometry.mjs`                       | Dữ liệu map/spawn/vật thể, polygon và va chạm                  |
-| `scripts/generate-player-atlas.cjs`                 | Sinh atlas mở rộng từ đồ họa Nhật Diệm đã có                   |
-| `tests/island.test.mjs`, `tests/island.browser.cjs` | Kiểm thử logic, asset và thao tác thực tế                      |
-
-Các module `.mjs` chạy trực tiếp bằng browser ES modules và Node.js 24, không cần bundler. Map, player, skill và animation không phụ thuộc DOM; chỉ scene/HUD/main dùng browser APIs.
-
-## Asset Nhật Diệm
-
-Dùng lại silhouette, màu trắng ngà–vàng, viền đậm và đuôi đỏ rượu của Phượng Hoàng Legend đã dựng ở phiên trước, **không đổi sang sprite nhân vật khác**. Atlas player mới `assets/sprites/phoenix-player.png` có 20 frame 32×32 trong lưới 4×5, origin `[16,22]`, alpha thật. Hàng idle giữ đúng pixel từ atlas gốc; các hàng khác mở rộng chuyển động/đòn từ cùng nguồn art. Không cắt ảnh concept có nền ô cờ.
-
-Metadata tại `assets/sprites/phoenix-player.json`; trạng thái/fps tại `AnimationController.mjs`. Để thay art, giữ frame size/origin này hoặc sửa đồng bộ metadata, animation controller và source rectangles trong scene. Bản này có silhouette trái/phải; muốn đủ bốn hướng có thể bổ sung các dải directional frame vào atlas mà không đổi luật skill.
-
-Nền đảo được vẽ/cache riêng từ dữ liệu bằng mã pixel, không dùng ảnh nông trại/mockup cũ. Font local VT323 kèm OFL. Canvas logic 480×270, nearest-neighbor; scale nguyên 1×/2×/3× khi cửa sổ đủ lớn, co vừa ở màn hình nhỏ.
-
-## Kiểm thử và xuất bản
+Node.js 24 trở lên:
 
 ```sh
-node scripts/generate-player-atlas.cjs
-node tests/island.test.mjs
+npm ci
+npm test
+npx playwright install chromium
+npm run test:browser
 ```
 
-13 kiểm thử logic cho đi/diagonal speed, nước/đá, hover, animation, attack/fire, cooldown, projectile, HP, hồi sinh, pause, registry đảo và atlas. Suite cũng xác minh idle giữ nguyên pixel đồ họa Nhật Diệm hiện có và PNG khớp nguồn.
+Giữ HTTP server ở cổng 8000 khi chạy browser test. Có thể đặt `GAME_URL` hoặc `CHROMIUM_PATH`; hệ thống Linux tự dùng `/usr/bin/chromium` nếu có. 16 kiểm tra logic kiểm chứng đường đi bốn khu, va chạm, sáu trạng thái, chiến đấu, HP, đền, camera, phân mảnh bản đồ và tính toàn vẹn atlas. Browser test điều khiển bằng bàn phím thật qua bốn khu, chụp ảnh, kiểm tra HUD, trợ giúp/tạm dừng, sát thương và kích thước 320–1920px; không dịch chuyển nhân vật để giả lập hành trình.
 
-Kiểm thử trình duyệt cần Playwright + Chromium có sẵn trong môi trường phát triển và server local đang chạy:
+## Cấu trúc và tài liệu
 
-```sh
-GAME_URL=http://127.0.0.1:8000 CHROMIUM_PATH=/usr/bin/chromium node tests/island.browser.cjs
-```
-
-Suite dùng bàn phím và sự kiện cảm ứng thật để thử di chuyển, đánh bia, lửa, hover/gai/HP, pause, hướng dẫn, mất focus và resize 320–1920px. Ảnh kiểm tra trong `/tmp/nhatdiem-island*.png`.
-
-Workflow `.github/workflows/pages.yml` kiểm tra và xuất bản **chỉ runtime đảo**, atlas Nhật Diệm và font; không đưa `legacy/`, test, art nông trại hoặc ảnh tham chiếu lên site. Không có bước build bundler.
-
-## Thêm Island 2, Island 3
-
-1. Thêm entry có id riêng vào `ISLANDS` trong `islands.mjs`: `name`, `label`, `width/height`, `seed`, `spawn`, `coast`, `meadow`, `trees`, `rocks`, `bushes`, `paths`, `targets`, `hazards`.
-2. Bảo đảm spawn nằm trong `coast`, tránh đá và gốc cây; thêm kiểm thử `canOccupy` cho entry mới.
-3. Đổi `FIRST_ISLAND` để chạy thử đảo mới. `GameState(id)` và `IslandScene(state.island)` dùng cùng định nghĩa, không sửa player/HUD/skills.
-4. Khi bổ sung cổng liên đảo, controller gọi `state.setIsland(id)` và tạo lại `IslandScene` cho map mới, cập nhật `hud.scene`; chờ atlas sẵn sàng rồi tiếp tục loop. Prototype hiện chưa có cổng đi sang đảo khác.
-
-Kẻ địch có thể thêm như entity có `x/y/hp` và update riêng; hit logic đi qua `SkillSystem`. Vật phẩm/nhiệm vụ sau này nên có hệ thống/state riêng, không nhét vào HUD.
+- `src/island/`: runtime hiện tại, tách loader/camera/cảnh/nhân vật/kỹ năng/HUD/dữ liệu đảo.
+- `assets/production/`: master gốc và ảnh runtime đã chuẩn hóa. Website chỉ tải ảnh runtime.
+- `scripts/normalize-production.cjs`: dựng lại atlas/palette từ master bằng Canvas; chạy `npm run art:build` khi HTTP server đang hoạt động.
+- `artifacts/dawn-*.png`: ảnh gameplay thật từ lần kiểm tra trình duyệt.
+- [Kiến trúc và cách thêm đảo](docs/architecture.md).
+- [Nguồn hình ảnh và giới hạn hoạt ảnh](docs/art-provenance.md).
+- [Báo cáo thay đổi và kiểm chứng](docs/rebuild-report.md).
 
 ## Phạm vi hiện tại
 
-Một đảo, một player Nhật Diệm, ba hành động, bia thử và gai; chưa có kẻ địch AI, đồ nhặt, nhiệm vụ, save phiêu lưu hay liên kết đảo. Mã/asset nông trại cũ được giữ để tham khảo, không phải thành phần hoạt động của bản mẫu này.
+Đồ họa môi trường và nhân vật được tạo mới từ tham chiếu Phượng Hoàng của dự án, có alpha/palette/anchor riêng; không dùng ảnh mockup chứa UI làm màn chơi. Nền được vẽ sẵn và dựng theo vùng nhìn, props/nhân vật/hiệu ứng/HUD là các lớp riêng.
+
+Có sáu trạng thái chạy thật, nhưng nguồn nhân vật mới chỉ có sáu pose (hai pose mỗi hướng trước/trái/sau; hướng phải lật gương). Đánh và trúng đòn dùng pose cùng chuyển động/hiệu ứng; chưa phải bộ frame vẽ riêng đầy đủ cho từng hành động. Chưa có lưu tiến trình đảo, nhiệm vụ, NPC hoặc hệ thống đảo thứ hai. Không coi bản này là một game thương mại đã hoàn thiện toàn bộ nội dung.
+
+GitHub Pages tự kiểm tra và xuất bản khi push `main`; chỉ đóng gói runtime, font và ảnh chụp, không tải master/legacy lên site.

@@ -49,6 +49,8 @@ export class SkillSystem {
         dx: direction.x,
         dy: direction.y,
         traveled: 0,
+        charge: 0.16,
+        owner: player,
         life: skill.range / skill.speed,
       });
     return true;
@@ -77,8 +79,17 @@ export class SkillSystem {
       }
     }
     for (const p of this.projectiles) {
+      let stepTime = dt;
+      if (p.charge > 0) {
+        const consumed = Math.min(p.charge, dt);
+        p.charge -= consumed;
+        stepTime -= consumed;
+        p.x = p.owner.x + p.dx * 18;
+        p.y = p.owner.y + p.dy * 18;
+        if (stepTime <= 0) continue;
+      }
       const amount = Math.min(
-          SKILLS.fire.speed * dt,
+          SKILLS.fire.speed * stepTime,
           Math.max(0, SKILLS.fire.range - p.traveled),
         ),
         steps = Math.max(1, Math.ceil(amount / 3));
@@ -101,7 +112,7 @@ export class SkillSystem {
           p.life = 0;
         }
       }
-      p.life -= dt;
+      p.life -= stepTime;
       if (p.traveled >= SKILLS.fire.range) p.life = 0;
     }
     this.projectiles = this.projectiles.filter((p) => p.life > 0);

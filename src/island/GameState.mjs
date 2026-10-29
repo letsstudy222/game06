@@ -1,6 +1,7 @@
 import { getIsland, FIRST_ISLAND } from "./islands.mjs";
 import { PlayerPhoenix } from "./PlayerPhoenix.mjs";
 import { SkillSystem } from "./SkillSystem.mjs";
+import { Camera } from "./Camera.mjs";
 import { distance } from "./geometry.mjs";
 export class GameState {
   constructor(id = FIRST_ISLAND) {
@@ -13,6 +14,7 @@ export class GameState {
   setIsland(id) {
     this.island = getIsland(id);
     this.player = new PlayerPhoenix(this.island.spawn);
+    this.player.facing = { x: 0, y: 1 };
     this.skills = new SkillSystem();
     this.targets = this.island.targets.map((t) => ({
       ...t,
@@ -20,8 +22,10 @@ export class GameState {
       flash: 0,
       respawnIn: 0,
     }));
-    this.camera = { x: 0, y: 0 };
-    this.followCamera();
+    this.shrineActivated = false;
+    this.shrineVisits = 0;
+    this.camera = new Camera(this.island);
+    this.camera.follow(this.player, 0, true);
   }
   announce(text) {
     this.message = text;
@@ -46,15 +50,37 @@ export class GameState {
       this.player.respawn(this.island.spawn);
       this.announce("Nhật Diệm hồi sinh tại bãi cỏ.");
     }
-    this.followCamera();
+    this.followCamera(dt);
   }
-  followCamera() {
-    this.camera.x = Math.round(
-      Math.max(0, Math.min(this.island.width - 480, this.player.x - 240)),
+  followCamera(dt = 0) {
+    this.camera.follow(this.player, dt);
+  }
+  interact() {
+    if (this.paused) return false;
+    if (distance(this.player, this.island.shrine) > this.island.shrine.radius) {
+      this.announce("Đến gần bệ đá để tương tác.");
+      return false;
+    }
+    this.shrineVisits++;
+    this.shrineActivated = !this.shrineActivated;
+    this.announce(
+      this.shrineActivated
+        ? "Dấu ấn Nhật Diệm đã thức giấc."
+        : "Ngọn lửa vẫn chờ người trở lại.",
     );
-    this.camera.y = Math.round(
-      Math.max(0, Math.min(this.island.height - 270, this.player.y - 135)),
-    );
+    return true;
+  }
+  region() {
+    const r = this.island.regions.find((r) => {
+      const [x, y, w, h] = r.bounds;
+      return (
+        this.player.x >= x &&
+        this.player.x <= x + w &&
+        this.player.y >= y &&
+        this.player.y <= y + h
+      );
+    });
+    return r?.name || "Đảo Bình Minh";
   }
   snapshot() {
     return {
@@ -78,7 +104,11 @@ export class GameState {
         y: t.y,
         hp: t.hp,
       })),
-      camera: { ...this.camera },
+      camera: this.camera.snapshot(),
+      shrineActivated: this.shrineActivated,
+      nearShrine:
+        distance(this.player, this.island.shrine) <= this.island.shrine.radius,
+      region: this.region(),
     };
   }
 }

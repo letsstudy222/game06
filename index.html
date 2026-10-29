@@ -9,28 +9,28 @@
     <meta name="theme-color" content="#254e52" />
     <meta
       name="description"
-      content="Điều khiển Phượng Hoàng Nhật Diệm khám phá hòn đảo Bình Minh. Một prototype phiêu lưu pixel nhỏ và nhẹ."
+      content="Điều khiển Phượng Hoàng Nhật Diệm khám phá hòn đảo Bình Minh. Khám phá bãi biển, rừng ánh sớm và tàn tích cổ trong thế giới pixel."
     />
     <title>Nhật Diệm · Đảo Bình Minh</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" as="image" href="assets/sprites/phoenix-player.png" />
-    <link rel="stylesheet" href="style.css?v=5" />
+    <link rel="preload" as="image" href="assets/production/dawn/world.png" />
+    <link rel="stylesheet" href="style.css?v=6" />
   </head>
   <body>
-    <header class="page-header">
-      <a href="./" class="brand"
-        ><span aria-hidden="true">✦</span> NHẬT DIỆM
-        <small>ISLAND PROTOTYPE</small></a
-      >
-      <nav aria-label="Điều khiển game">
-        <button id="help" aria-label="Hướng dẫn điều khiển">?</button
-        ><button id="pause" aria-label="Tạm dừng" aria-pressed="false">
-          II
-        </button>
-      </nav>
-    </header>
     <main class="game-frame" aria-label="Đảo Bình Minh">
       <section class="stage">
+        <div class="scene-controls">
+          <button id="help" aria-label="Hướng dẫn — H" title="H · Hướng dẫn">
+            ?</button
+          ><button
+            id="pause"
+            aria-label="Tạm dừng"
+            aria-pressed="false"
+            title="Esc · Tạm dừng"
+          >
+            II
+          </button>
+        </div>
         <canvas
           id="island"
           width="480"
@@ -66,6 +66,7 @@
           <span id="island-index">ISLAND 01</span
           ><strong id="island-name">Đảo Bình Minh</strong>
         </div>
+        <div id="interaction" hidden>E · Chạm dấu ấn</div>
         <div id="message" role="status" aria-live="polite"></div>
         <div id="paused-banner" hidden>Đang tạm dừng</div>
         <nav class="hotbar" aria-label="Hành động của Nhật Diệm">
@@ -87,13 +88,6 @@
         </div>
       </section>
     </main>
-    <footer>
-      <span>WASD / Mũi tên <b>di chuyển</b></span
-      ><span>Shift <b>bay</b></span
-      ><span>J / Space <b>đánh</b></span
-      ><span>K <b>lửa</b></span
-      ><span>Esc <b>tạm dừng</b></span>
-    </footer>
     <div class="touch-pad" aria-label="Cần điều khiển cảm ứng">
       <div class="stick-base"><i></i></div>
       <span>Kéo để di chuyển</span>
@@ -127,17 +121,31 @@
           <dt>Esc</dt>
           <dd>Tạm dừng / tiếp tục</dd>
         </div>
+        <div>
+          <dt>E</dt>
+          <dd>Chạm bệ đá khi đến gần</dd>
+        </div>
+        <div>
+          <dt>H</dt>
+          <dd>Mở / đóng hướng dẫn</dd>
+        </div>
       </dl>
       <p class="note">
-        Bia đá sáng màu để thử đòn đánh, sẽ tự xuất hiện lại. Gai đá tím làm mất
-        HP khi chạm đất; hover để tránh. HP hồi dần khi rời chỗ nguy hiểm.
+        Theo lối mòn lên phía Bắc rồi sang tàn tích ở Đông Bắc. Đến gần dấu
+        Phượng Hoàng trên bệ đá và nhấn E để đánh thức ngọn lửa.
       </p>
       <p class="note">
-        Bay thấp vẫn ở trên đảo, không vượt qua nước hay tảng đá. Bản mẫu này
-        bắt đầu lại tại bãi cỏ khi tải lại trang.
+        Bụi gai gây mất HP khi chạm đất; hover để tránh. Bay thấp vẫn ở trên
+        đảo, không vượt qua nước hay đá. Phiên chơi bắt đầu lại khi tải lại
+        trang.
       </p>
       <button id="resume" class="resume">Trở lại hòn đảo</button>
     </dialog>
-    <script type="module" src="src/island/main.mjs?v=5"></script>
+    <div id="loading" role="status">
+      <span>NHẬT DIỆM</span>
+      <h1>Đảo Bình Minh</h1>
+      <p id="loading-progress">Đang mở lối vào đảo…</p>
+    </div>
+    <script type="module" src="src/island/main.mjs?v=6"></script>
   </body>
 </html>

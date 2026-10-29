@@ -21,13 +21,44 @@ export function landContains(island, p, radius = 0) {
     [0, -radius],
   ].every(([x, y]) => inside({ x: p.x + x, y: p.y + y }, island.coast));
 }
+export function segmentDistance(p, a, b) {
+  const dx = b[0] - a[0],
+    dy = b[1] - a[1],
+    n = dx * dx + dy * dy,
+    t = n
+      ? Math.max(0, Math.min(1, ((p.x - a[0]) * dx + (p.y - a[1]) * dy) / n))
+      : 0;
+  return Math.hypot(p.x - a[0] - dx * t, p.y - a[1] - dy * t);
+}
 export function canOccupy(island, p, radius = 5) {
-  if (!landContains(island, p, radius + 3)) return false;
+  const onLand = (point) =>
+    island.walkable
+      ? island.walkable.some((poly) => inside(point, poly)) ||
+        (island.corridors || []).some((r) =>
+          r.points.some(
+            (b, i) =>
+              i > 0 && segmentDistance(point, r.points[i - 1], b) <= r.radius,
+          ),
+        )
+      : inside(point, island.coast);
+  if (
+    ![
+      [0, 0],
+      [radius, 0],
+      [-radius, 0],
+      [0, radius],
+      [0, -radius],
+    ].every(([x, y]) => onLand({ x: p.x + x, y: p.y + y }))
+  )
+    return false;
   for (const tree of island.trees)
     if (Math.hypot(p.x - tree.x, p.y - tree.y) < radius + 5 * tree.size)
       return false;
   for (const rock of island.rocks)
     if (Math.hypot(p.x - rock.x, p.y - rock.y) < radius + rock.r * 0.8)
+      return false;
+  for (const obstacle of island.colliders || [])
+    if (Math.hypot(p.x - obstacle.x, p.y - obstacle.y) < radius + obstacle.r)
       return false;
   return true;
 }

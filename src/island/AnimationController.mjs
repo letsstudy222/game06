@@ -4,6 +4,7 @@ export const PHOENIX_ANIMATIONS = Object.freeze({
   fly: { row: 2, frames: 4, fps: 8, loop: true },
   attack: { row: 3, frames: 4, fps: 14, loop: false },
   fire: { row: 4, frames: 4, fps: 10, loop: false },
+  hurt: { row: 5, frames: 4, fps: 12, loop: false },
 });
 export class AnimationController {
   constructor(animations = PHOENIX_ANIMATIONS) {
