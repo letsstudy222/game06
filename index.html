@@ -14,84 +14,199 @@
     <title>Nhật Diệm · Đảo Bình Minh</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="preload" as="image" href="assets/production/dawn/world.png" />
-    <link rel="stylesheet" href="style.css?v=6" />
+    <link rel="stylesheet" href="style.css?v=7" />
   </head>
   <body>
     <main class="game-frame" aria-label="Đảo Bình Minh">
-      <section class="stage">
-        <div class="scene-controls">
-          <button id="help" aria-label="Hướng dẫn — H" title="H · Hướng dẫn">
-            ?</button
-          ><button
-            id="pause"
-            aria-label="Tạm dừng"
-            aria-pressed="false"
-            title="Esc · Tạm dừng"
-          >
-            II
-          </button>
-        </div>
-        <canvas
-          id="island"
-          width="480"
-          height="270"
-          tabindex="0"
-          aria-label="Điều khiển Nhật Diệm: WASD hoặc mũi tên để đi, J hoặc Space đánh thường, K dùng lửa, giữ Shift để bay."
-        ></canvas>
-        <div class="player-hud">
+      <canvas
+        id="island"
+        tabindex="0"
+        aria-label="Điều khiển Nhật Diệm bằng WASD, mũi tên hoặc cần cảm ứng"
+      ></canvas>
+      <div id="safe-ui">
+        <section class="player-hud" aria-label="Nhật Diệm, Legend, cấp 1">
           <canvas
             id="portrait"
             width="32"
             height="32"
-            aria-label="Phượng Hoàng Nhật Diệm"
+            aria-hidden="true"
           ></canvas>
           <div class="player-info">
-            <strong>Nhật Diệm <span>LEGEND</span></strong>
-            <div class="hp-label">
-              <span>HP</span><b id="hp-value">100 / 100</b>
+            <div class="player-heading">
+              <strong>Nhật Diệm</strong><span class="level">Lv. 1</span>
             </div>
             <div
               class="hp-track"
               role="meter"
-              aria-label="Sinh lực Nhật Diệm"
+              aria-label="Sinh lực"
               aria-valuemin="0"
               aria-valuemax="100"
               aria-valuenow="100"
             >
               <i id="hp-fill"></i>
             </div>
+            <div class="hp-label">
+              <span class="legend">LEGEND</span
+              ><span id="hp-value">100 / 100</span>
+            </div>
+          </div>
+          <button
+            id="collapse-hud"
+            aria-label="Thu gọn hoặc mở HUD nhân vật"
+            aria-expanded="true"
+            title="Thu gọn HUD"
+          >
+            −
+          </button>
+        </section>
+        <div class="world-controls">
+          <div class="island-hud">
+            <strong id="island-name">Đảo Bình Minh</strong
+            ><span id="island-index">Đồng cỏ</span>
+          </div>
+          <div class="scene-controls">
+            <button id="menu" aria-label="Menu" title="Esc · Menu">☰</button
+            ><button
+              id="pause"
+              aria-label="Tạm dừng hoặc tiếp tục"
+              title="Tạm dừng"
+            >
+              II
+            </button>
           </div>
         </div>
-        <div class="island-hud">
-          <span id="island-index">ISLAND 01</span
-          ><strong id="island-name">Đảo Bình Minh</strong>
-        </div>
-        <div id="interaction" hidden>E · Chạm dấu ấn</div>
         <div id="message" role="status" aria-live="polite"></div>
-        <div id="paused-banner" hidden>Đang tạm dừng</div>
+        <div class="touch-pad">
+          <button
+            class="drag-handle"
+            data-drag="joystick"
+            aria-label="Kéo vị trí joystick"
+          >
+            Di chuyển cần
+          </button>
+          <div
+            class="stick-base"
+            role="group"
+            aria-label="Cần điều khiển tám hướng"
+          >
+            <i></i>
+          </div>
+        </div>
         <nav class="hotbar" aria-label="Hành động của Nhật Diệm">
-          <button id="hover" aria-pressed="false" title="Giữ Shift để hover">
+          <button
+            class="drag-handle"
+            data-drag="actions"
+            aria-label="Kéo vị trí nút hành động"
+          >
+            Di chuyển nút
+          </button>
+          <button
+            id="hover"
+            aria-label="Giữ để bay"
+            aria-pressed="false"
+            title="Shift · Giữ để bay"
+          >
             <canvas width="16" height="16" aria-hidden="true"></canvas
-            ><span>Hover</span><kbd>Shift</kbd></button
-          ><button id="attack" title="J hoặc Space: đánh thường">
+            ><kbd>Shift</kbd><span class="sr-only">Bay</span>
+          </button>
+          <button id="attack" aria-label="Vũ kích" title="J / Space · Vũ kích">
             <canvas width="16" height="16" aria-hidden="true"></canvas
-            ><span>Vũ kích</span><kbd>J / Space</kbd
-            ><i class="cooldown-mask"></i><b class="cooldown-label"></b></button
-          ><button id="fire" title="K: kỹ năng lửa">
+            ><kbd>J / Space</kbd><i class="cooldown-mask"></i
+            ><b class="cooldown-label"></b
+            ><span class="sr-only">Đánh thường</span>
+          </button>
+          <button id="fire" aria-label="Nhật diệm" title="K · Nhật diệm">
             <canvas width="16" height="16" aria-hidden="true"></canvas
-            ><span>Nhật diệm</span><kbd>K</kbd><i class="cooldown-mask"></i
-            ><b class="cooldown-label"></b>
+            ><kbd>K</kbd><i class="cooldown-mask"></i
+            ><b class="cooldown-label"></b
+            ><span class="sr-only">Kỹ năng lửa</span>
+          </button>
+          <button id="interaction" hidden aria-label="Chạm dấu ấn">
+            <span aria-hidden="true">E</span
+            ><span class="sr-only">Tương tác</span>
           </button>
         </nav>
-        <div id="load-error" hidden role="alert">
-          Chưa tải được sprite Nhật Diệm. Hãy tải lại trang.
+        <div id="layout-editor" hidden>
+          <span>Kéo nhãn để đặt nút ở hai bên dưới.</span
+          ><button id="finish-layout">Xong</button>
         </div>
-      </section>
+      </div>
     </main>
-    <div class="touch-pad" aria-label="Cần điều khiển cảm ứng">
-      <div class="stick-base"><i></i></div>
-      <span>Kéo để di chuyển</span>
-    </div>
+    <dialog id="game-menu" aria-labelledby="menu-title">
+      <span class="eyebrow">ĐẢO BÌNH MINH</span>
+      <h1 id="menu-title">Nhật Diệm</h1>
+      <div id="menu-view">
+        <button disabled>Nhân vật <small>Chưa khả dụng</small></button>
+        <button disabled>Kỹ năng <small>Chưa khả dụng</small></button>
+        <button disabled>Bản đồ <small>Chưa khả dụng</small></button>
+        <button id="open-settings">
+          Cài đặt <small>Giao diện & điều khiển</small>
+        </button>
+        <button id="help">Hướng dẫn <small>Phím H</small></button>
+        <button id="resume-game" class="primary">Tiếp tục</button>
+      </div>
+      <div id="settings-view" hidden>
+        <label
+          >Kích thước joystick <output data-value="joystickSize"></output
+          ><input
+            aria-label="Joystick size"
+            data-setting="joystickSize"
+            type="range"
+            min="88"
+            max="144"
+            step="4"
+        /></label>
+        <label
+          >Kích thước nút <output data-value="actionSize"></output
+          ><input
+            aria-label="Action button size"
+            data-setting="actionSize"
+            type="range"
+            min="52"
+            max="80"
+            step="2"
+        /></label>
+        <label
+          >Độ hiện giao diện <output data-value="opacity"></output
+          ><input
+            aria-label="UI opacity"
+            data-setting="opacity"
+            type="range"
+            min="0.45"
+            max="1"
+            step="0.05"
+        /></label>
+        <label
+          >Tỉ lệ giao diện <output data-value="uiScale"></output
+          ><input
+            aria-label="UI scale"
+            data-setting="uiScale"
+            type="range"
+            min="0.8"
+            max="1.2"
+            step="0.05"
+        /></label>
+        <label
+          >Camera zoom<select aria-label="Camera zoom" data-setting="zoom">
+            <option value="0">Tự động theo màn hình</option>
+            <option value="1">1× · xa</option>
+            <option value="2">2×</option>
+            <option value="3">3×</option>
+            <option value="4">4× · gần</option>
+          </select></label
+        >
+        <p class="note">
+          Zoom dùng bước pixel nguyên. Mức tối thiểu tự tăng để vùng nhìn không
+          vượt bản đồ. Giữ nút cánh để bay.
+        </p>
+        <button id="edit-layout">
+          Kéo chỉnh vị trí nút <small>Dành cho điều khiển cảm ứng</small>
+        </button>
+        <button id="reset-layout">Đặt lại giao diện</button>
+        <p id="save-status" role="status"></p>
+        <button id="settings-back" class="primary">Trở lại menu</button>
+      </div>
+    </dialog>
     <dialog id="help-dialog" aria-labelledby="help-title">
       <button id="close-help" aria-label="Đóng hướng dẫn">×</button
       ><span class="eyebrow">MỘT HÒN ĐẢO · MỘT KHỞI ĐẦU</span>
@@ -119,7 +234,7 @@
         </div>
         <div>
           <dt>Esc</dt>
-          <dd>Tạm dừng / tiếp tục</dd>
+          <dd>Mở menu / tiếp tục</dd>
         </div>
         <div>
           <dt>E</dt>
@@ -146,6 +261,6 @@
       <h1>Đảo Bình Minh</h1>
       <p id="loading-progress">Đang mở lối vào đảo…</p>
     </div>
-    <script type="module" src="src/island/main.mjs?v=6"></script>
+    <script type="module" src="src/island/main.mjs?v=7"></script>
   </body>
 </html>

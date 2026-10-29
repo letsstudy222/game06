@@ -11,7 +11,10 @@
 | PlayerPhoenix / AnimationController | Di chuyển, HP, hướng, idle/move/fly/attack/fire/hurt |
 | SkillSystem | Cooldown, vùng đánh, thời gian tích lửa, projectile và va chạm |
 | GameState | Điều phối mô phỏng, vùng hiện tại, gai, đền, pause, snapshot chẩn đoán |
-| UIHud | HP/cooldown/vùng thật, prompt E; hướng dẫn trong hộp H |
+| UIHud / PlayerHUD / WorldHUD | HP/cooldown/vùng thật và portrait; fade vùng và thu gọn HUD |
+| InputManager / MobileJoystick / ActionButtons | Một đầu vào gameplay chung; tám hướng, đa chạm, pointer capture |
+| ResponsiveLayout / UISettings | Zoom nguyên, visualViewport, safe area, cỡ/vị trí và localStorage |
+| GameMenu | Menu tạm dừng, cài đặt, trợ giúp H và kéo bố trí |
 | islands / geometry | Dữ liệu bố trí và kiểm tra vùng đi được/collider |
 
 Màn Canvas phủ viewport, tỉ lệ pixel nguyên; tọa độ mô phỏng không bị làm tròn. Props có anchor riêng, cây che nhân vật giảm alpha. Alpha sprite nhị phân; không có cạnh nội suy hoặc nền caro giả. Ground/props dùng chung bảng màu 128 màu, Phoenix 48 màu.
@@ -27,3 +30,5 @@ Màn Canvas phủ viewport, tỉ lệ pixel nguyên; tọa độ mô phỏng kh�
 Để thêm nhân vật/hành động: tạo atlas đăng ký frame/anchor trong manifest, mở rộng lựa chọn pose của renderer và trạng thái controller. Hiện renderer có quy ước sáu pose Phoenix cụ thể, chưa phải trình biên tập hoạt ảnh tổng quát. Nền hiện là bản vẽ tác giả, chưa có hệ autotile/seamless editor.
 
 Nguồn nông trại cũ nằm trong `legacy/tiny-farm/`; nguồn art bằng hình khối của prototype nằm trong `legacy/island-prototype/`. Cả hai không được import hoặc phát hành trong runtime đảo.
+
+Chi tiết UI 0.7 và nghiệm thu mobile: [ui-redesign.md](ui-redesign.md).

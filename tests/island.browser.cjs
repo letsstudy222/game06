@@ -14,6 +14,7 @@ const { chromium } = require("playwright");
   });
   const context = await browser.newContext({
     viewport: { width: 1366, height: 768 },
+    hasTouch: true,
   });
   await context.addInitScript(() =>
     localStorage.setItem("nhat-diem.farm.v1", "legacy-save-untouched"),
@@ -72,7 +73,8 @@ const { chromium } = require("playwright");
   async function travel(goal) {
     await page.locator("#island").focus();
     const from = (await snap()).player,
-      path = corners(route(map, from, goal, 8));
+      // Follow a safe center corridor: allow margin for browser key-up latency.
+      path = corners(route(map, from, goal, 12));
     assert(path.length, "connected path to " + JSON.stringify(goal));
     for (const p of path) {
       await axis("x", p.x);
@@ -86,7 +88,12 @@ const { chromium } = require("playwright");
       ) < 8,
     );
   }
-  assert.equal(await page.locator(".hotbar button").count(), 3);
+  assert.equal(
+    await page
+      .locator(".hotbar button:not(.drag-handle):not(#interaction)")
+      .count(),
+    3,
+  );
   assert.equal(
     await page.locator("footer,#minimap,#quests,#seed-choice").count(),
     0,
@@ -164,6 +171,36 @@ const { chromium } = require("playwright");
   console.log(
     "PASS southern stairs/beach reached; all four regions have live screenshots",
   );
+  for (const [label, width, height] of [
+    ["portrait", 390, 844],
+    ["landscape", 844, 390],
+  ]) {
+    await page.setViewportSize({ width, height });
+    await page.touchscreen?.tap?.(1, 1).catch(() => {});
+    await page.waitForTimeout(200);
+    const v = await page.evaluate(() => IslandGame.view());
+    assert(
+      v.camera.x >= 0 &&
+        v.camera.y >= 0 &&
+        v.camera.x + v.width <= 960 &&
+        v.camera.y + v.height <= 640,
+    );
+    assert(
+      await page.locator("#island").evaluate((c) => {
+        const g = c.getContext("2d");
+        return [
+          [0, 0],
+          [c.width - 1, 0],
+          [0, c.height - 1],
+          [c.width - 1, c.height - 1],
+        ].every(([x, y]) => g.getImageData(x, y, 1, 1).data[3] === 255);
+      }),
+      "opaque authored world at all camera edges",
+    );
+    await page.screenshot({ path: `artifacts/ui-after/${label}-shore.png` });
+  }
+  await page.setViewportSize({ width: 1366, height: 768 });
+
   await travel(map.hazards[0]);
   await page.waitForFunction(() => IslandGame.snapshot().player.hp < 100);
   const hp = (await snap()).player.hp;

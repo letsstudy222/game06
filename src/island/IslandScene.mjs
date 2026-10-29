@@ -106,10 +106,7 @@ export class IslandScene {
     c.setTransform(1, 0, 0, 1, 0, 0);
     c.imageSmoothingEnabled = false;
     c.clearRect(0, 0, w, h);
-    // Real ocean art covers oversized/portrait viewports as well as the world extent.
-    for (let y = 0; y < h; y += 80)
-      for (let x = 0; x < w; x += 80)
-        c.drawImage(this.world, 880, 550, 80, 80, x, y, 80, 80);
+    // ResponsiveLayout guarantees the viewport stays inside the authored world.
     c.translate(-cam.renderX, -cam.renderY);
     this.ground.draw(c, { x: cam.renderX, y: cam.renderY }, w, h);
     this.drawAmbient(state);

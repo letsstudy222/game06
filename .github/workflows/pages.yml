@@ -24,18 +24,9 @@ jobs:
       - name: Verify island
         run: |
           for file in src/island/*.mjs scripts/*.cjs; do node --check "$file"; done
-          node tests/island.test.mjs
+          npm test
       - name: Prepare island-only site
-        run: |
-          mkdir -p _site/src/island _site/assets/production/dawn _site/assets/production/phoenix _site/assets/fonts _site/screenshots
-          cp index.html style.css _site/
-          cp src/island/*.mjs _site/src/island/
-          cp assets/production/manifest.json _site/assets/production/
-          cp assets/production/dawn/world.png assets/production/dawn/props.png _site/assets/production/dawn/
-          cp assets/production/phoenix/atlas.png _site/assets/production/phoenix/
-          cp assets/fonts/VT323-Regular.ttf assets/fonts/VT323-OFL.txt _site/assets/fonts/
-          cp assets/favicon.svg _site/assets/
-          cp artifacts/dawn-{meadow,forest,ruins,beach,fire}.png _site/screenshots/
+        run: node scripts/build-site.cjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

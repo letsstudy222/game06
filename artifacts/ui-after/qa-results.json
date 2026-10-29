@@ -1,0 +1,35 @@
+{
+  "testedAt": "2026-10-29T12:08:25.619Z",
+  "engine": "Chromium / Playwright, emulated touch via CDP",
+  "realDeviceTested": false,
+  "results": [
+    {
+      "name": "portrait",
+      "width": 390,
+      "height": 844,
+      "touch": true,
+      "status": "passed"
+    },
+    {
+      "name": "small",
+      "width": 360,
+      "height": 800,
+      "touch": true,
+      "status": "passed"
+    },
+    {
+      "name": "landscape",
+      "width": 844,
+      "height": 390,
+      "touch": true,
+      "status": "passed"
+    },
+    {
+      "name": "desktop",
+      "width": 1920,
+      "height": 1080,
+      "touch": false,
+      "status": "passed"
+    }
+  ]
+}

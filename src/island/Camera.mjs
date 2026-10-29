@@ -8,8 +8,8 @@ export class Camera {
     this.y = 0;
   }
   resize(width, height, player) {
-    this.width = width;
-    this.height = height;
+    this.width = Math.min(width, this.world.width);
+    this.height = Math.min(height, this.world.height);
     this.follow(player, 0, true);
   }
   follow(player, dt, snap = false) {
