@@ -594,6 +594,8 @@ Các rank/physics/cost/animation cần prototype và duyệt trước triển kh
 | Save persistence | P0 + cutscene boundary; actor state/route/stable flags commit theo completion |
 
 
+Nguồn `mem_gate_echo`: Linh Ấn Ly đã mở tại E21 + đối chiếu tín hiệu công trình ngoài cơ thể; xem provenance trong NARRATIVE_REVELATION_MATRIX. Không cộng hưởng một dạng Tinh Môn hoặc mở kiến thức toàn tri từ đồ vật.
+
 ## Guardrails kỹ thuật và asset dependencies
 
 Event-complete authority ở durable story state, không dựa vào cinematic đã đóng, actor HP0 hoặc UI journal mở. Rewards/completion/world projections cùng atomic unit hoặc journal tương đương; stable IDs không đổi theo title/localization. Transition và encounter lock không chồng commit. Fail giữa stage không làm mất bằng chứng đã ghi nhưng chưa grant world stable sớm.

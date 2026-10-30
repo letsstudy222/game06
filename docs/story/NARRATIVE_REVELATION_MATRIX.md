@@ -30,3 +30,7 @@ Memory là nguồn có điểm nhìn, không narrator toàn tri. `mem_*` ở đ�
 Bản tối thiểu CL01/02/03 và nhịp CL05 có trên main event; CL04 có khảo cứu main ở E03/E18. `opt_02_ancestral_echo` và `opt_06_cloud_archive` cho chiều sâu/mảnh đối chiếu thêm, không prerequisite kết chương/cổng hoặc lựa chọn giữ collection. Sau conflict, nguồn chuyển tới archive hoặc vẫn ở ruins đã ổn định; skip cutscene đưa bản tóm tắt fact có nguồn vào journal, không auto grant insight optional chưa tìm.
 
 “Apparent explanation” không lưu thành fact objective. Records cần source/viewpoint/era/integrity và kết luận suy diễn riêng theo Task 03. Không thay mọi ký ức thành giả khi cần twist; contradiction phải có đối chiếu địa điểm/hướng/độ thiếu hụt hoặc được ghi unresolved. Không thêm đối thoại Tứ Linh độc lập để thuyết giảng timeline.
+
+### Provenance của mảnh kết cung — PROPOSED
+
+`mem_gate_echo` lấy ấn tượng tổ tiên còn giữ trong Linh Ấn Ly khi mạng sống đã ổn định, rồi người chơi đối chiếu với các fragment Quy/Phượng/Long và tín hiệu ngoại cảnh của công trình. Tinh Môn không trở thành một sinh vật có Linh Hạch hay một dạng cộng hưởng mới; tín hiệu cổng là bằng chứng quan sát, không ký ức toàn tri do cổng truyền vào đầu người chơi. Fragment không xác nhận nguồn gốc Tinh Linh hoặc bản chất tối hậu cổng. Chapter gate là IV/E23, sourceRef là quan hệ Ly đã mở ở E21, externalEvidenceRef là phản hồi bốn hệ; toàn bộ cách đặt mảnh này vẫn đề xuất.
