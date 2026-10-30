@@ -62,3 +62,7 @@ Tinh Linh là tên thuật ngữ cho chủ thể linh thể người chơi. [S�
 ## Blueprint truyện Task 05
 
 [Tuyến bốn chương](story/FOUR_CHAPTER_STORY_OVERVIEW.md) và [audit/handoff index](story/TASK05_CONSISTENCY_AUDIT.md) cụ thể hóa narrative thành đề xuất event/quest có dependency, payoff, world-state và quyền quay lại. Không coi cast/boss/mission mới là canon đã duyệt, không triển khai truyện vào bản Dawn hiện tại hoặc mở planet chơi được.
+
+## Nền phe và sinh thái Task 06
+
+[Task06 audit/mục lục](factions/TASK06_CONSISTENCY_AUDIT.md) dẫn các tổ chức, behavior/assimilation, enemy templates và reward/data contracts ứng viên. Các phe/tên/membership vẫn PROPOSED; ngoại lai không là mục tiêu phải diệt sạch và collection không yêu cầu kill peaceful. Không có AI/UI/art mới.

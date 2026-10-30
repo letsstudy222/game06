@@ -72,6 +72,14 @@ Cơ chế thế giới/biến cố/cộng hưởng mới L02-P01–P10 đều **
 
 [S05-P01–P16](story/TASK05_CONSISTENCY_AUDIT.md) giữ trạng thái **PROPOSED** cho plot/24 events/cast/boss/quest/world states/capabilities/persistence. S05-P02 khuyến nghị boss sớm khóa cả empty slots, khác full-three entry của R03-P06 chưa approved; không thay confirmed membership lock D06 hoặc tự thêm species optional làm main gate. Các scenario Fire–Metal/Wind–Lightning không tự khóa roster D18. Không có event gameplay/asset mới.
 
+## Bổ sung Task 06 — nguồn: yêu cầu người dùng Task 06/96
+
+| ID | Trạng thái | Loại | Ràng buộc được yêu cầu, không canon tổ chức mới |
+| --- | --- | --- | --- |
+| D36 | CONFIRMED | Nguyên tắc thiết kế | Hành vi/rarity/affinity/morality tách; song nguyên tố không tự corrupted; forced assimilation không mặc định irreversible/mindless; không universal cleansing hoặc bắt kill peaceful để đủ collection. Ưu tiên localized consequences, không phê duyệt massive reputation/route độc quyền; không optional faction gate Sacred |
+
+[F06-P01–P15](factions/TASK06_CONSISTENCY_AUDIT.md) giữ **PROPOSED** cho ba tổ chức/tên Hồi Nguyên–Tân Sinh–Trông Giữ, lịch sử/membership, archetypes, assimilation/recovery profiles, rewards/relationships và data/edge cases. Chưa xác nhận faction tồn tại, named leaders, species mới, stat/AI hoặc asset mới. Nguồn story/cast/boss/world hiện hữu được mở rộng, không viết đè canon, D18/D19 và R03-P06/S05-P02 vẫn chưa tự chốt.
+
 ## Cách sửa quyết định
 
 Mọi thay đổi ghi ID, trạng thái cũ/mới, lý do, nguồn phê duyệt và hệ/asset bị ảnh hưởng trong task tương ứng. Chuyển PROPOSED/UNRESOLVED sang CONFIRMED cần quyết định rõ, không chỉ sửa lời văn. Sự thật kỹ thuật mới phải có đường dẫn hoặc kết quả kiểm chứng. Các tài liệu audit lịch sử vẫn có giá trị theo mốc; không để chúng ghi đè hướng chính thức này.

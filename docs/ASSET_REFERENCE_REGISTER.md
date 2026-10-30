@@ -42,3 +42,7 @@ Kiểm tra kỹ thuật phải đọc file thật, kiểm tra gutter/alpha, kh�
 ## Kiểm kê bổ sung Task 04
 
 Đã xem lại trực tiếp `assets/phoenix-3-v2.png` và `assets/production/phoenix/atlas.png`, đọc manifest/timing/pose selection. Chưa có ảnh Quy/Long/Ly nhận diện được trong checkout; các direction text Task 04 (Long dài xuyên mây, Ly guardian, Quy rùa nước cổ) được xác nhận bằng chỉ dẫn người dùng, không giả đã xem ảnh. [Register 12 stage và clip còn thiếu](creatures/SACRED_ART_REQUIREMENTS.md) là nguồn gap hiện tại; Phoenix reference có sẵn chưa đồng nghĩa bộ ba stage/clip đã được phân loại và nghiệm thu. Không tạo hoặc đổi tài nguyên trong Task 04.
+
+## Task 06 — template không là artwork/species đã duyệt
+
+[Asset-gap FG01–FG06](factions/TASK06_CONSISTENCY_AUDIT.md) ghi yêu cầu nguồn sinh học/habitat, silhouette, direction/anchor/telegraph/timing/playback và các dependencies chưa có. Task06 không tạo/thay/sửa art hoặc nhận đã xem enemy/faction ảnh chưa tồn tại. Chín archetype là templates, không chín sinh vật đã có sprite. Reference Tứ Linh đã duyệt giữ nguyên; không concept sheet nào được tự nhận là production animation.

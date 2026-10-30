@@ -41,3 +41,7 @@ Q18 vẫn thiếu ảnh Quy/Long/Ly; cần mapping reference Phoenix ↔ stage, 
 ## Sau Task 05
 
 Q06 có [blueprint bốn chương và phạm vi event](story/TASK05_CONSISTENCY_AUDIT.md), chưa có ngân sách/thời lượng cam kết. Q10 cần chọn full-three R03-P06 hay empty-slot-locked S05-P02 trước boss đầu; không đòi unannounced optional species. Q13/Q16 có world/refuge/event-save contracts đề xuất, chưa implemented. D35 chốt khung Long/Ly phân tán theo Task 05, không giải ý thức nguyên thể/tự nguyện/nguồn Tinh Linh. Cast/boss identities, Kim/Lôi affiliations và capability/asset prerequisites vẫn cần duyệt đúng phạm vi task sau.
+
+## Sau Task 06
+
+[Hồ sơ F06](factions/TASK06_CONSISTENCY_AUDIT.md) đề xuất ba tổ chức, local concerns/access, tám behavior views, assimilation outcomes và templates/reward/ledger. Chưa chốt existence/membership/lịch sử phe, species/art, roster Kim–Lôi, recoverability từng case, encounter subset/balance hoặc boss entry policy R03/S05. Nguồn gốc Tinh Linh/cổng, thủ phạm sâu và sự tự nguyện biến cố không được giải bằng faction propaganda. Cần duyệt phạm vi trước implementation, không chặn hoàn tất tài liệu.

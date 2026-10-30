@@ -52,3 +52,7 @@ Lôi/Kim là ngành nguyên tố hoặc hiện tượng năng lượng được 
 ## Chưa chốt — UNRESOLVED
 
 Bản chất vật lý/tinh thần cuối cùng của điểm nối; ai tạo ra; roster Lôi/Kim có được duyệt không; thông số tải/ngưỡng; cách vượt không gian về sau. Không biến mô hình sinh thái này thành các chỉ số gameplay nếu chưa có task thiết kế riêng.
+
+## Đặc tả sinh thái tiếp nối Task 06
+
+[ELEMENTAL_ASSIMILATION](../ecology/ELEMENTAL_ASSIMILATION.md) cụ thể hóa ba hiện tượng thành process/affinity/stability/evidence riêng, không thay lịch sử hoặc khóa roster D18. Các profiles/recovery outcomes vẫn PROPOSED; không tự coi dual-element là corruption hoặc Ly có universal cleansing.
