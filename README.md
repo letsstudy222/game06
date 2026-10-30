@@ -86,3 +86,8 @@ GitHub Pages tự kiểm tra và xuất bản khi push `main`; chỉ đóng gói
 ## Task08 — Master GDD và Phase I audit
 
 Bắt đầu tại [Master GDD](docs/GAME_DESIGN_DOCUMENT.md), [completion audit](docs/PHASE_I_COMPLETION_AUDIT.md), [readiness](docs/IMPLEMENTATION_READINESS.md) và [handoff](docs/PHASE_I_HANDOFF.md). Audit đã hoàn tất; **Phase I PARTIAL**, còn product/asset/technical gates trước Quy first playable. Game hiện tại không đổi trong task chỉ tài liệu này; Task09 chưa bắt đầu.
+
+
+## Task09 — Elemental system design
+
+[Elemental overview](docs/elements/ELEMENTAL_SYSTEM_OVERVIEW.md), [decision register](docs/elements/TASK09_DECISIONS.md) và [audit/delivery index](docs/elements/TASK09_CONSISTENCY_AUDIT.md): six identities, ModelC recommendation,36directed cells,9status/8reaction candidates, environment/balance/data/20scenarios. Chỉ tài liệu, no runtime rebalance/art/UI. D41 giữ early progression không bắt đủ3members/3elements; mechanics mới chưa approve và Task10 chưa bắt đầu.

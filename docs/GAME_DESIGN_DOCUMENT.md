@@ -78,7 +78,7 @@ Thứ tự/vùng/kết cung **CONFIRMED**. 24 events, cast/bosses, acts và CL01
 
 **PROPOSED R03/C04:** switch prepare→atomic commit→recovery; HP/cooldowns riêng, cost chung; no free heal/i-frame bởi switch; HP0 emergency transfer hoặc checkpoint, boss reload abort/reset; level/skill/evolution benefits pending ngoài frozen combat config. [TRANSFORMATION_DESIGN](gameplay/TRANSFORMATION_DESIGN.md), [PROGRESSION](gameplay/CREATURE_PROGRESSION_CONCEPT.md) giữ luật. Catch-up floor, numbers/XP curve/cap/evolution gates chưa duyệt.
 
-**BLOCKER C08-01:** R03-P06 đòi đủ ba healthy forms trước boss; S05-P02 cho empty locked ở I/II. Chỉ Quy trước boss I, chưa có hai species main bảo đảm. Không giải bằng tự cấp loài hoặc cho equip trong boss; chờ user quyết định ở register. Không cần chốt blocker này để làm elemental design độc lập của Task09.
+**Cập nhật Task09/D41:** không mandatory three-member/three-element gate; boss đầu không bị chặn chỉ vì còn một/hai forms phù hợp. Proposal full-three R03-P06 không còn alternative current cho early content; đây là source explicit mới xử lý phần member-count của C08-01. Không tự cấp thêm loài hoặc đổi membership giữa boss. Entry trigger, snapshot empty/stage/config, B+C/resource/HP/recovery và boss identities/outcomes khác vẫn cần approval riêng.
 
 ## 3.10 Persistent World Systems
 
@@ -119,3 +119,8 @@ QA mốc: schema/ID/link validation → logic tests → browser keyboard/touch/c
 [OPEN_QUESTIONS](OPEN_QUESTIONS.md) và [A08 decision metadata](PROJECT_DECISIONS.md) là queue có gate rõ: physical B+C; defeat/recovery; energy; thresholds/catch-up; early boss; factions/names/boss outcomes; localized choice bounds; world owners/reversibility/storage; engine future direction/device targets; Quy core appearance/art và playable scope budget.
 
 Origin/ultimate culprit/voluntary intervention là author mysteries chưa chốt, không tự lấp khi viết mechanics. Phase I **PARTIAL** vì chưa có một approved contract đủ cho opening transformation/boss/save và art/physics implementation handoff; không thiếu file bị che. Baseline confirmed được bảo tồn, proposal set được đóng mốc để review chứ chưa production freeze. Không tự bắt đầu Task09 hoặc code/asset production.
+
+
+## Task09 — elemental foundation handoff
+
+[Elemental overview](elements/ELEMENTAL_SYSTEM_OVERVIEW.md) và [Task09 audit](elements/TASK09_CONSISTENCY_AUDIT.md) dẫn six identities, recommended ModelC,36directed interaction contracts,9status/8reaction candidates và data/environment/balance scenarios. E09-P01–P12 đều PROPOSED, không final affinity table/numbers/dual mechanics. D41 no-mandatory-three là requirement explicit của Task09; chronology Q02/A08-15 và các quyết định PhaseI khác giữ mở. Chỉ tài liệu, không current runtime rebalance hoặc Task10 tự bắt đầu.

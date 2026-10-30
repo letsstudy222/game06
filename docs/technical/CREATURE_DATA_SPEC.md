@@ -70,3 +70,8 @@ Memory/theme tương lai tham chiếu lịch CHAPTER_REVELATIONS; chưa có ID r
 Theo ứng viên R03-P10, save giữ stable formId + committedStageId, progression và alias/schema/content versions. Rename stage cần alias giữ nội dung đã mở và rewards ledger; removed stage cần explicit migration, backup và safe checkpoint, không xóa tiến trình hoặc tự đưa người chơi xuống thấp để phạt. Trong boss dùng frozen config; load policy abort/reset của R03-P08 vẫn là đề xuất Task 03, không silently thay bằng resume.
 
 ID mới không phải đường dẫn file, không chỉ định storage/database/language. Task kỹ thuật sau phải map catalog sang stack đã xác minh và bảo toàn key settings/legacy; Task 04 không tạo dữ liệu executable hoặc import mới.
+
+
+## Task09 — elemental profile interface (PROPOSED E09-P10/P12)
+
+[Elemental data](ELEMENTAL_DATA_SPEC.md) nối elementRefs, attack/channel/property/status/reaction/resistance và environmental context tới cùng speciesId/formId/stage records; không progression owner thứ hai. Life authority không vào ordinary elementTypes. Six baseline affiliations không tự cho immunity/heal/moral alignment. Same element khác anatomy/movement/kit; new species dùng definitions và reusable modules, novel mechanics cần module riêng. Dual profile chỉ resolver interface, composition/bonus/primary-secondary/evolution/acquisition để Task10; không default math trong loader. Chưa code/schema JSON mới.

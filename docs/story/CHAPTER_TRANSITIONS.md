@@ -46,7 +46,7 @@ Không ép backtrack dài cho mọi quest chính; optional quay lại được b
 - Vị trí đổi loadout an toàn được bố trí trước gate và hai đầu tuyến; số lượng/asset/UX chưa chốt. Không mặc định đổi loadout mọi nơi hoặc giữa boss.
 - Vào biển sâu thiếu aquatic form: chặn tiến tại shelf an toàn và dẫn tới nơi chuẩn bị bộ; không cho chết kẹt rồi invent form. Nếu save cũ/bug đã đặt ở chỗ sai, recovery tới anchor validated dùng form khả dụng.
 - Region patch/ability-disable làm mất lối về: defer tới boundary, giữ route fallback hoặc từ chối patch. Nếu boss đang khóa bộ, queue change; emergency recovery sau abort/reset attempt, không mở membership trong combat.
-- Boss entry phải kiểm encounter capabilities và safe exit trước khóa; full-three R03-P06 vs empty-slot S05-P02 vẫn UNRESOLVED, không dùng loài optional chưa báo để lấp slot bắt buộc.
+- Boss entry kiểm encounter capabilities và safe exit trước khóa. Task09/D41 không mandatory3member/3elements, boss đầu không bị chặn vì mới có một/hai main forms; không dùng loài optional chưa báo để lấp slot. Entry trigger/snapshot/retry details vẫn UNRESOLVED, không tự phê duyệt toàn R03/S05.
 - Anchor cần clearance/render envelope/health/capabilities thực, không chỉ có tọa độ. Nếu không có viable form/anchor thì content invalid: giữ snapshot trước và không commit disable/transition; không xóa progression.
 
 Xem [authority](../world/WORLD_STATE_ARCHITECTURE.md), [world transaction](../world/WORLD_STATE_TRANSITIONS.md), [population coverage](../world/ECOLOGY_AND_SPAWN_STATES.md). Các tuyến mới/cue/collision/landing phải prototype sau; văn bản này chưa chứng minh map production tồn tại.

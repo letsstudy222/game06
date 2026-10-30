@@ -8,7 +8,7 @@ Dữ liệu có ba vị trí chứa formId hoặc empty và một activeFormId. 
 
 Dạng chỉ equip được nếu đã RESONATED, catalog designatedPlayable, không bị đình chỉ nội dung và có cấu trúc được hỗ trợ ở version hiện tại. Ngoài encounter hạn chế có thể đổi reserve; đổi active qua collection cũng phải qua kiểm tra/transaction biến hình bình thường, không miễn năng lượng/cooldown. Dạng tạm unavailable do truyện không được thêm vào slot mới; dạng đang equip giữ ID/progression nhưng bị disable, không bị xóa. Dạng HP=0 không chọn làm active, không thể dùng re-equip để hồi máu; chỉ phục hồi theo quy tắc nghỉ/reset.
 
-Trước khi đủ ba dạng, slot còn lại empty và không có filler/clone. Khám phá với một/hai dạng được phép. **Boss theo quy tắc bộ ba yêu cầu ba dạng khác nhau đã mở, đủ điều kiện entry; nếu chưa đủ thì không bắt đầu và cho rút ra an toàn.** Nội dung phải bảo đảm có đường thu nhận đủ ba dạng trước boss đầu; tutorial/encounter thường không tự bị gắn cờ boss. Đây là lựa chọn đề xuất để không mâu thuẫn “chọn bộ ba trước boss” với mở đầu chỉ có Quy.
+Trước khi đủ ba dạng, slot còn lại empty và không có filler/clone. **CONFIRMED D41 — Task09 §9/19:** không đặt yêu cầu ba thành viên hoặc ba nguyên tố khác nhau làm điều kiện tiến triển; boss đầu không bị chặn chỉ vì người chơi còn một/hai dạng phù hợp. Entry kiểm capabilities đã được main path bảo đảm và đường rút an toàn, không ngầm bắt loài optional. Giả định full-three gate ở proposal R03-P06 theo mốc Task03 không áp dụng cho early content; unique species/snapshot/HP/resource details khác của R03 vẫn PROPOSED.
 
 ## Một giao dịch đổi dạng — PROPOSED
 
@@ -43,7 +43,7 @@ Trạng thái encounter: `OUTSIDE → PREPARING → ACTIVE_LOCKED → RESOLVING 
 | Tình huống | Quy tắc ứng viên |
 | --- | --- |
 | Chuẩn bị | Hiển thị điều kiện, ba dạng, nguy cơ môi trường, checkpoint; cho chỉnh loadout và rút ra. Không vượt điểm bắt đầu trước xác nhận |
-| Khởi tạo | Chỉ khi đủ ba dạng khỏe/hợp lệ và không pending transform; ghi entry checkpoint, frozen set/stages, attemptId và lock bền vững **trước** kích hoạt boss |
+| Khởi tạo | Theo D41 không reject vì chưa đủ ba member hoặc ba element khác nhau; kiểm available capabilities/main route và không pending transform theo encounter contract. Đề xuất ghi entry checkpoint, frozen selected set gồm empty/stages, attemptId và lock bền vững **trước** kích hoạt boss; chi tiết snapshot/recovery chưa tự approved |
 | Trong trận | Switch chỉ trong frozen set; stat/skill/evolution config theo snapshot. Không đổi reserve bằng menu, transition, collection API hoặc save editor bình thường |
 | Hạ boss | RESOLVING khóa tiếp; commit completion + reward ledger duy nhất rồi kết thúc lock. Reload giữa resolution phục hồi transaction, không cộng thưởng hai lần |
 | Defeat | Ghi attempt failed, reset boss, rút về checkpoint, recovery như trên, đóng lock; retry là attempt mới và chọn lại bộ ba |
@@ -64,6 +64,6 @@ Không có resume boss giữa trận trong phương án này. Nếu cần resume
 
 Nhóm tương tác khác nhau có thể dùng cùng phím contextual sau này nhưng không tự dùng cùng cooldown/combat rule. Hạn chế mandatory switching bằng đoạn thử thách đủ dài cho một dạng, alternate route và điểm đổi an toàn; phối hợp khả năng trên trạng thái môi trường được lưu chứ không bật/tắt dạng mỗi tile. Dạng không thuận lợi vẫn có thể dùng ở đoạn tương hợp; không phủ debuff toàn chương để xóa ích lợi dạng cũ.
 
-## Alternative entry policy trong Task 05
+## Task09 — current early-entry constraint
 
-[Story S05-P02](../story/MAJOR_CONFLICTS_AND_BOSSES.md) khuyến nghị boss sớm cho bộ ba slot có empty, snapshot cả empty tới hết encounter; tránh main gate cần loài optional chưa công bố. Điều này khác **đề xuất** full-three entry R03-P06 ở trên, không âm thầm thay confirmed lock D06. Hai alternative chưa phải cùng một rule runtime: phải chọn/duyệt một policy trước implementation. Blueprint story dựa S05-P02, các điều kiện atomic/reload/defeat khác không tự được nâng thành approved.
+[Story S05-P02](../story/MAJOR_CONFLICTS_AND_BOSSES.md) đã khuyến nghị entry sớm với empty slots. Task09/D41 nay xác nhận không mandatory three-member/three-element gate, nên không tiếp tục coi full-three là alternative hợp lệ để chặn boss đầu. Đây là source mới explicit, không approval toàn bộ S05-P02. Selected membership vẫn khóa theo D06; snapshot cả empty, entry trigger, stage/config snapshot, atomic/reload/defeat và resource mechanics khác vẫn PROPOSED. [Task09 decisions](../elements/TASK09_DECISIONS.md) ghi phạm vi cập nhật và không tự chọn recovery model.

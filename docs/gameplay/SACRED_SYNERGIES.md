@@ -35,3 +35,8 @@ Các world-state puzzle đã commit có thể tồn tại qua đổi dạng đ�
 ## Điểm cần duyệt — UNRESOLVED
 
 Cặp nào thực sự vào vertical slice; loại effect có thể phản ứng; cap/TTL/cost, active-only exceptions, khả năng enemy dùng interaction, chính sách persistence của từng world receiver. Duyệt synergy không tự duyệt cả model hybrid hoặc các bảng khắc chế nguyên tố chưa có. Không đặt thông số số học để lấp phần balance.
+
+
+## Task09 — generic elemental contracts
+
+[Reaction register](../elements/ELEMENTAL_REACTIONS.md) đánh giá8conditional cases, [36-cell matrix](../elements/ELEMENTAL_INTERACTION_MATRIX.md) không là fixed multiplier chart. Giữ sixpair concepts/owner/channel/expiry ở đây PROPOSED C04-P10, không đổi names/skills/anatomy. Water–Wind/Wind–Wood có thể chỉ vector/carrier environmental synergy; không mọi cặp cần damage proc. D41 không mandatory3member/3elements, early content đủ main forms hiện có; Task10 dual profile math chưa chốt. Source snapshots/active-only Ly channel/reserve noheal/reaction ledger vẫn proposal nguồn, không được auto approve vì Task09 dẫn lại.

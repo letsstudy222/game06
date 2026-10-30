@@ -52,3 +52,8 @@ Thêm species: defaults journal undiscovered, no form grant; habitat rules đư�
 ## Validation contracts
 
 PWV01: ID unique/type/owner duy nhất. PWV02: prerequisite DAG/closure, không optional gate ẩn. PWV03: four network predicates đúng completion, awake theo subgrant. PWV04: reward ledger/payload/recipient đồng revision. PWV05: habitat coverage cả undiscovered. PWV06: nav/return/checkpoint và form envelope hợp lệ. PWV07: mutable variant không đảo main stable. PWV08: load/migration idempotent, namespace tách settings. PWV09: unique actors không nhân bản. PWV10: cached projection có revision/catalog phù hợp, không authoritative.
+
+
+## Task09 — status obligation integration candidate
+
+**PROPOSED E09-P10**, chưa sửa save contract runtime: [elemental spec](ELEMENTAL_DATA_SPEC.md) đề nghị minimal accepted status obligation khi drop temporary status ngoài boss sẽ thành reload free cleanse. Definition/version/owner/remaining time-budget/tick cursor cùng HP boundary, không particles/half-hit replay/offline ticks; unknown IDs preserve/quarantine/migrate theo policy. W07 transient reset/checkpoint và R03 no-free-heal/recovery vẫn authority cần phối hợp A08-11/E09-U03 trước code; không coi đề xuất này đã duyệt storage hoặc thêm reserve damage. Boss attempt abort/reset policy vẫn R03 proposal, không ngầm chuyển thành resume.

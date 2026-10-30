@@ -8,7 +8,7 @@
 | EC02 | Gặp cá thể cùng loài đang hiện thân | Cá thể gốc vẫn độc lập; observation/source mới có thể cập nhật; không tự unlock hoặc chiếm cơ thể | I04/I07; không delete/spawn clone cá thể gốc |
 | EC03 | Đủ điều kiện evolution trong boss | Ghi eligibility/pending benefits, giữ stage/config frozen; sau attempt và safe rest mới apply một lần | I03/I05/I07, không maxHP heal giữa boss |
 | EC04 | Source HP0 trong PREPARING | Hủy pending, nhả reservation; defeat flow chọn reserve viable theo thứ tự hoặc reset checkpoint; không commit request cũ | I01/I06; cùng defeat event không chuyển hai lần |
-| EC05 | Chỉ có một/hai dạng | Ba vị trí vẫn có empty; khám phá thường hợp lệ; boss yêu cầu bộ ba bị chặn ở preparation, luôn có đường rút | I02; không clone Quy để lấp ba slot |
+| EC05 | Chỉ có một/hai dạng | Ba vị trí vẫn có empty; early content/boss đầu hỗ trợ main capabilities đã mở, không reject chỉ vì thiếu ba member/elements; selected membership vẫn khóa, có safe return | D41/Task09 + D06/I02; không clone Quy, grant optional form hoặc lấp empty giữa boss |
 | EC06 | Reload lúc biến hình ngoài boss | Precommit giữ source với HP/cooldown durable mới nhất, không tiêu reservation; postcommit giữ target/cost/recovery; không offline heal | I05/I06; rollback không hoàn HP đã nhận |
 | EC07 | Đổi reserve qua menu trong boss | Từ chối ở state authority, collection chỉ đọc; active switch trong frozen set vẫn được | I03; scene/menu không thay set hoặc revision |
 | EC08 | Narrative event tạm khóa một dạng | Giữ unlock/XP/stage, disable selection có lý do và điều kiện gỡ; không xóa collection | I08; không reset tiến trình khi mở lại |

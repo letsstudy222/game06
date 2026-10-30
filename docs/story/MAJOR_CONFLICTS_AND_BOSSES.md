@@ -23,7 +23,7 @@ Không dùng một “tà lực bí ẩn” làm nguyên nhân của cả bốn.
 
 D05/D06 confirmed: ba slot, một active, thành phần khóa trong boss. R03-P06 đề xuất thêm full-three khỏe trước mọi boss, chưa confirmed. Blueprint này **khuyến nghị khác** cho encounter sớm: cho entry với các dạng main đã mở và slot trống; snapshot cả membership lẫn empty, cấm lấp slot đến khi encounter kết thúc. I chỉ Quy, II Quy/Phượng, từ III có ba Sacred qua main path. Vẫn không thêm member giữa boss, không buộc sở hữu loài optional.
 
-Đây là xung đột creative design được ghi công khai, không tự sửa code/canon. R03 full-three vẫn là alternative cũ; trước implementation phải duyệt một chính sách duy nhất hoặc duyệt nội dung main bảo đảm đủ ba dạng. Không ngầm thêm hai species chưa được duyệt. Handoff/schedule của Task 05 dựa S05-P02; các transaction/reload/defeat ứng viên khác R03 giữ nguyên trạng thái PROPOSED.
+Cập nhật Task09/D41: không mandatory three-member/three-element gate, boss đầu không bị chặn vì mới có Quy; vì vậy full-three của R03 là proposal lịch sử, không alternative current để áp lên early story. Không ngầm thêm hai species chưa duyệt. Snapshot/cách khóa empty/entry trigger và transaction/reload/defeat khác của S05/R03 vẫn PROPOSED; D41 không tự phê duyệt toàn bộ model.
 
 ## Task 06 — boss profile mapping và đánh giá alternatives
 
@@ -38,4 +38,4 @@ D05/D06 confirmed: ba slot, một active, thành phần khóa trong boss. R03-P0
 
 Chỉ IV có variant môi trường trọng tâm; I–III có cách giải hội tụ cùng điều kiện, không buộc mỗi boss hai ending/phe exclusive. Alternative cần thiết kế nguồn evidence **main** hoặc điều kiện có thể đạt không giết, không check optional faction quest/morality score. Danh tính cuối, pattern, precise mechanics, artwork/animation và numbers dành task sau; không mở nội dung hành tinh hay giải origin qua boss.
 
-Thắng conflict không đồng nghĩa stable toàn hệ: giữ E05/E11/E16/E22, các routes/refuges/journal source Task05 và lock/retry candidate. Completed encounter/NPC neutral không tự respawn hostile khi quay lại; replay nếu có là challenge tách không main reward. Chính sách empty-slot S05-P02 vs full-three R03-P06 vẫn UNRESOLVED, Task06 không phê duyệt một bên.
+Thắng conflict không đồng nghĩa stable toàn hệ: giữ E05/E11/E16/E22, các routes/refuges/journal source Task05 và lock/retry candidate. Completed encounter/NPC neutral không tự respawn hostile khi quay lại; replay nếu có là challenge tách không main reward. Theo mốc Task06 chưa chọn early entry; Task09/D41 nay loại member-count gate khỏi early content. Empty snapshot/trigger/retry cụ thể vẫn cần duyệt, không đồng nghĩa toàn S05-P02 approved.

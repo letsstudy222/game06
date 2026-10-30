@@ -62,7 +62,7 @@ Xem [W07-U01–U04](world/TASK07_CONSISTENCY_AUDIT.md): early boss entry R03/S05
 | P0 Q07/Q09/Q10 → A08-02/03 | Swim/collision/hazard/cost/cooldown/defeat/recovery subset | Quy I movement/combat/save implementation |
 | P0 Q13/Q16 → A08-09/11 | Authority/transaction/storage/namespace/backup/error/loss budget | Durable progress sample; UI settings vẫn tách |
 | P0 Q06 → A08-13 | First playable content/budget/acceptance, giữ sáu essential D40 | Implementation scope, không cần full boss/3species |
-| P1 Q10 → A08-05/07 | Full-three hay empty locked; boss identity/outcome | Boss I trước khi implement, không chặn Task09/read-only audit |
+| P1 Q10 → A08-05/07 | Theo Task09/D41 không mandatory3member/3elements; còn entry trigger/empty snapshot/retry và boss identity/outcome | Trước boss implementation; no-three baseline không cần hỏi lại, resource/recovery vẫn pending |
 | P1 Q09 → A08-04/10 | Curves/evolution thresholds/catch-up | Progression production, không numeric defaults tự bịa |
 | P1 Q08/Q11/Q18 → A08-14 | Roster species/habitat/refuge/animation và full elemental interaction design | Collection completeness/content-ready; Lôi/Kim affiliation đã confirmed, không hỏi lại |
 | P2 → A08-06/08 | Faction names/existence/relationships và localized choices | Optional faction content, không essential first playable |
@@ -74,3 +74,10 @@ Xem [W07-U01–U04](world/TASK07_CONSISTENCY_AUDIT.md): early boss entry R03/S05
 D18/D38 đã xác nhận Lôi/Kim là ảnh hưởng ngoại lai qua biến cố; không hỏi lại baseline này. Điều còn mở là phạm vi thời kỳ Đại Biến Cố và mốc tiếp xúc đầu nằm trước hay trong phạm vi đó. H2 tiếp xúc đầu/H4 đỉnh khủng hoảng trong [ANCIENT_CATASTROPHE](lore/ANCIENT_CATASTROPHE.md) chỉ là mô hình PROPOSED L02-P05, không phải chronology đã được duyệt. [ELEMENTAL_COSMOLOGY](lore/ELEMENTAL_COSMOLOGY.md) giữ cùng cách phân biệt; chưa có lựa chọn được chốt tại Q02/A08-15.
 
 Phase I PARTIAL, không tự tuyên bố freeze full production. Audit Task08 hoàn tất không trả lời thay các lựa chọn trên. Task09 — Elemental System Design chỉ bắt đầu khi được giao; không tự sinh damage chart/roster cuối trong audit này.
+
+
+## Task09 — elemental approvals và Task10 boundary
+
+[Task09 register](elements/TASK09_DECISIONS.md) E09-U01–U07 giữ ModelC/table/numbers, status ownership/CC/refresh/duration, reaction subset, minimal status-obligation save/performance/readability/asset gaps. Chronology Q02/A08-15 không đổi. D41 explicit xử lý no-mandatory-three early entry; các đoạn full-three-vs-empty của audit cũ là historical, không baseline hiện tại. B+C/quỹ/HP/abort-reset chưa được Task09 duyệt.
+
+Task10 chưa bắt đầu: dual resistance composition/damage bonus/primary-secondary/evolution/foreign hybrid acquisition/roster vẫn UNRESOLVED. Interface refs không tự là phép sum/product hoặc một dual species approved. Cần user giao Task10 riêng; không triển khai classes/loaders/save/balance trong Task09.

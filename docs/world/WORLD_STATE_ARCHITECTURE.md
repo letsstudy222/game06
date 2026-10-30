@@ -4,7 +4,7 @@
 
 ## Mục tiêu và ranh giới
 
-**CONFIRMED:** thế giới ghi nhớ thay đổi quan trọng; bốn chương có thể quay lại; ba dạng gồm một active/hai reserve, membership khóa trong boss; sinh thái thích nghi không mặc định xấu; Ly không hồi sinh tùy ý. Task07 chỉ tài liệu. **UNRESOLVED:** backend lưu, ngân sách dữ liệu, checkpoint cụ thể và boss sớm đủ ba dạng hay khóa ô trống.
+**CONFIRMED:** thế giới ghi nhớ thay đổi quan trọng; bốn chương có thể quay lại; ba dạng gồm một active/hai reserve, membership khóa trong boss; sinh thái thích nghi không mặc định xấu; Ly không hồi sinh tùy ý. Task07 chỉ tài liệu. **UNRESOLVED:** backend lưu, ngân sách dữ liệu, checkpoint cụ thể và chi tiết entry/snapshot/retry boss. Cập nhật Task09/D41: không mandatory3member/3elements hoặc member-count gate chặn boss đầu; giới hạn này không phê duyệt resource/recovery hoặc toàn S05-P02.
 
 Nguồn sự kiện/nội dung vẫn là [story handoff](../story/STORY_IMPLEMENTATION_HANDOFF.md). Tài liệu này sở hữu quy tắc authority; [data spec](../technical/PERSISTENT_WORLD_DATA_SPEC.md) sở hữu hợp đồng lưu; tài liệu chương sở hữu presentation/read model, không phát sinh event chính mới.
 

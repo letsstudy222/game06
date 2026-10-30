@@ -49,3 +49,8 @@ Audit actual PlayerPhoenix/SkillSystem/IslandScene/GameState/islands/AssetLoader
 ## Verification baseline và reporting
 
 Task08 chạy 30 baseline tests và read-only PNG/manifest checks; xem TASK08_CHANGELOG. Chưa fresh browser playback/real devices/Windows hoặc future-world tests. Build hiện chỉ đóng app/assets/screenshots, không docs; docs được xem bằng GitHub Markdown, game UI giữ nguyên. Sau task docs kiểm link/IDs/status/source/graph và git diff chỉ Markdown. Task code sau chạy tests đúng thay đổi và báo limitations; không dùng CI baseline pass làm bằng chứng features mới.
+
+
+## Current Task09 clarification
+
+Task09 đã được user giao, chỉ documentation/system design. [Task09 decisions](elements/TASK09_DECISIONS.md) và [audit](elements/TASK09_CONSISTENCY_AUDIT.md) là entrypoints cho elemental layer. **D41 explicit** loại no-mandatory-three member/element barrier cho early content/bossI; các bảng PhaseI/C08-01 phía trên giữ trạng thái theo mốc Task08, không là permission dùng full-three gate hiện tại. Resource/HP/recovery/config snapshots/entry triggers/boss identity vẫn pending. E09ModelC/status/reaction/data/save extensions đều PROPOSED. Chronology và P0 C04-P07/D18-D38 corrections giữ nguyên; Task10 chưa tự bắt đầu.

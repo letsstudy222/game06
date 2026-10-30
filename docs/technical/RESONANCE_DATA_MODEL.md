@@ -25,7 +25,7 @@ role có thể đa nhãn; rarity là dữ liệu riêng. Species removed/renamed
 
 I01. Sau bootstrap hoặc recovery, đúng một active body HP>0, thuộc member set, catalog hợp lệ và đặt được ở vị trí an toàn.
 
-I02. Ba vị trí loadout luôn tồn tại; có thể empty trước đủ dạng; boss entry chỉ khi đủ ba dạng distinct, khỏe và khả dụng theo chuẩn entry.
+I02. Ba vị trí loadout luôn tồn tại, có thể empty trước đủ dạng. **CONFIRMED D41 (Task09):** không bắt ba member/ba different elements, boss đầu không reject chỉ vì thiếu số dạng; capabilities/placement/entry phải phù hợp main forms đã mở. Unique-species restriction và chi tiết snapshot còn PROPOSED R03-P06, không tự phê duyệt qua cập nhật này.
 
 I03. ACTIVE_LOCKED/RESOLVING giữ frozen membership, stage/config; chuyển active không đổi set. Reward mở dạng mới không thêm thành viên.
 
@@ -64,4 +64,4 @@ Task triển khai sau cần adapter từ GameState hiện tại sang entities v�
 
 ## Task07 — tích hợp world persistence (PROPOSED)
 
-[Persistent world contract](PERSISTENT_WORLD_DATA_SPEC.md) dùng cùng durable writer/revision và RewardGrantLedger, không thêm collection/progression copy. Awakening sub-completion và form unlock/placement/sub-grant là cùng transaction; main awakening count suy từ bốn designated species, availability hiện thời theo progression/resonance. Boss lock/abort-reset và full-three vs early-empty conflict vẫn cần quyết định riêng, không tự đổi I02 bằng Task07.
+[Persistent world contract](PERSISTENT_WORLD_DATA_SPEC.md) dùng cùng durable writer/revision và RewardGrantLedger, không thêm collection/progression copy. Awakening sub-completion và form unlock/placement/sub-grant là cùng transaction; main awakening count suy từ bốn designated species, availability hiện thời theo progression/resonance. Task07 chưa tự đổi I02; Task09/D41 cập nhật rõ current no-mandatory-three entry ở I02 theo source mới. Boss lock D06 giữ; abort-reset/resource/HP và snapshot details vẫn cần quyết định riêng, không tự approved.

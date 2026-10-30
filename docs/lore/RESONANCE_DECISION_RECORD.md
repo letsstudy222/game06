@@ -54,7 +54,7 @@ Không nhận trạng thái rare/Legend trong HUD là hệ rarity/progression ho
 | R03-P03 | Health/activity của hạch tách; discovery/resonance/memory/mastery nhiều trục | Rõ nonplayable/memory độc lập, cần UI trình bày dễ hiểu ở task sau |
 | R03-P04 | Bốn acquisition route, story exception có event/requirements và idempotent grant | Nội dung riêng từng loài tốn thiết kế hơn kill-count chung |
 | R03-P05 | Memory có provenance, điểm nhìn, integrity và chapter gate | Không được dùng memory làm lời giải tự động; cần biên tập clue |
-| R03-P06 | Bộ ba unique species, empty slots sớm; boss gate đủ ba; membership snapshot khác active role | Phải có ba dạng sẵn trước boss đầu, không buộc đầu game có ba ngay |
+| R03-P06 | Bộ ba unique species/empty/snapshot; full-three gate là proposal theo mốc Task03, không áp cho early content theo Task09/D41 | Trade-off full-three cũ không được dùng chặn boss đầu; unique/snapshot details vẫn PROPOSED, không tự grant thêm loài |
 | R03-P07 | Switch transaction chịu damage, footprint revalidate; HP/cooldown riêng; chuyển khẩn khi HP0, không permadeath | Giữ nhịp trận nhưng forced transfer phải chống xử lý trùng và không miễn damage |
 | R03-P08 | Boss reload abort-and-reset, lock durable; reward/stage/skill benefit không đổi combat snapshot | Hy sinh resume giữa boss để có consistency đơn giản, rõ ràng |
 | R03-P09 | XP riêng, floor bắt kịp theo milestone tại safe rest; evolution hoãn ngoài boss, không heal | Tránh dạng mới quá yếu; cần mức floor không xóa ý nghĩa phát triển riêng |
@@ -73,7 +73,7 @@ Mô hình hybrid và hệ quả có được phê duyệt không; thông số ph
 | L02-P08 để vật lý chuyển dạng, HP/retry mở | R03-P01/P07/P08 cụ thể hóa thành ứng viên; không đóng UNRESOLVED ở cấp canon khi chưa duyệt |
 | Quy thức trước phục hồi hệ nước, Ly phải phục hồi sinh thái trước thức | Bootstrap Quy chỉ cần nhánh khởi động + compatibility; phục hồi toàn vùng đến sau. Các điều kiện bốn linh thú khác nhau; không dùng một quy trình cho tất cả |
 | L02-P07 bảo tồn Linh Thú, R03 nói hiện thân không cá thể mới | Phân biệt vật mang/bản sắc gốc với body điều khiển; lần đầu kích hoạt cấu trúc bảo tồn, switch sau không nhân linh thú hoặc tiêu hủy vật mang. Ý thức gốc vẫn chưa chốt |
-| Exactly three slots nhưng mở đầu chỉ Quy | Ba vị trí cố định, empty cho khám phá; chuẩn boss đủ ba là PROPOSED, không duplicate filler |
+| Exactly three slots nhưng mở đầu chỉ Quy | Ba vị trí cố định có empty; full-three từng là proposal Task03, Task09/D41 không cho dùng member-count gate chặn early progression/boss đầu; không duplicate filler |
 | Ly Sinh Mệnh, Phoenix respawn có thể bị hiểu hồi sinh vô hạn | Defeat là mất ổn định hiện thân trong model đề xuất; người/cá thể đã chết hoàn toàn không được phục sinh. Runtime cũ giữ nguyên, chưa được retcon thành implementation mới |
 | Level/evolution XP giữa boss có thể đổi stage trong snapshot | Ledger giữ gains, combat config/stage frozen; apply benefit ở ngoài lock/safe rest. Tiến hóa cùng formId không lách thành slot mới |
 | Không heal nhờ reload nhưng reload boss về checkpoint có recovery | Ngoài boss giữ HP/cost; trong boss chỉ recovery **sau** abort/reset toàn attempt. Không giữ tiến trình boss với HP/loadout mới |
@@ -91,3 +91,8 @@ Mô hình hybrid và hệ quả có được phê duyệt không; thông số ph
 ## Chuẩn bị Task 04
 
 Cần đề bài riêng và phạm vi rõ. Nếu triển khai hệ: duyệt ứng viên model/transaction/boss save, chốt các tham số cần cho phần code đó, catalog IDs và migration strategy; nếu làm nội dung: reference Quy và brief các stage/clip vẫn thiếu. Không tự tạo artwork hay tiến hành Task 04. Không cần tiết lộ nguồn gốc vũ trụ để tiếp tục công việc độc lập.
+
+
+## Task09 — giới hạn current của R03-P06
+
+Task09/D41 explicit: không mandatory three-member/three-element requirements, early boss không reject chỉ vì mới có một/hai forms phù hợp. Dòng R03-P06/boss đủ ba trong bảng Task03 là proposal lịch sử chưa được duyệt, không prerequisite current cho opening/bossI. Không gọi một approved rule bị SUPERSEDED vì chưa từng approve gate đó. Bộ ba/lock D05/D06 giữ nguyên; unique species/HP/cost/recovery/snapshot config và phần còn lại R03-P01–P11 vẫn PROPOSED. Active I02/EC05/TRANSFORMATION được đồng bộ theo D41; không tự chốt B+C hoặc S05-P02 chi tiết.
