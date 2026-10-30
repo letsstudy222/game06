@@ -107,6 +107,9 @@ const { chromium } = require("playwright");
       .evaluate((c) => getComputedStyle(c).imageRendering),
     "pixelated",
   );
+  assert.equal((await snap()).island, "dawn");
+  assert.equal(map.width, 1280);
+  assert.equal(map.height, 896);
   assert.equal((await snap()).player.animation, "idle");
   await shot("dawn-meadow");
   await page.keyboard.down("ArrowRight");
@@ -155,6 +158,8 @@ const { chromium } = require("playwright");
   assert.equal((await snap()).region, "Lối rừng ánh sớm");
   await shot("dawn-forest");
   console.log("PASS authored forest trail reached with real keyboard movement");
+  await travel({ x: 28 * 32 + 16, y: 13 * 32 + 16 });
+  await shot("dawn-upper-stairs");
   await travel(map.shrine);
   assert.equal((await snap()).nearShrine, true);
   assert.equal(await page.locator("#interaction").isVisible(), true);
@@ -260,6 +265,16 @@ const { chromium } = require("playwright");
     ),
     "only normalized production art loads",
   );
+  assert(requests.some((u) => u.includes("assets/environments/dawn/shadows.png")));
+  assert(!requests.some((u) => u.includes("assets/tiles/dawn/")));
+  // A separate display pass at 1× shows all 40×28 cells, after the real tour.
+  await page.evaluate(() => localStorage.setItem("nhat-diem.ui.v1", JSON.stringify({zoom:1})));
+  await page.setViewportSize({ width: 1280, height: 896 });
+  await page.reload();
+  await page.waitForFunction(() => window.IslandGame?.ready());
+  assert.equal((await page.evaluate(() => IslandGame.view())).width, 1280);
+  await page.waitForTimeout(250);
+  await page.screenshot({ path: "artifacts/tilemap/overview.png" });
   assert.deepEqual(errors, []);
   assert.deepEqual(bad, []);
   console.log(

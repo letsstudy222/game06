@@ -6,7 +6,7 @@ export class WorldLayer {
     this.meta = metadata;
     this.tileSize = this.map.tileSize;
     this.drawCount = 0;
-    this.sample = metadata.profile === "sample";
+    this.layered = ["sample", "sun-ruins"].includes(metadata.profile);
   }
   cell(x, y) {
     return this.map.ground[y]?.[x] || "deep";
@@ -83,11 +83,11 @@ export class WorldLayer {
           ctx,
           mask === 15
             ? "sand_" + (v % 3)
-            : "shore_" + mask + (this.sample ? "_" + frame : ""),
+            : "shore_" + mask + (this.layered ? "_" + frame : ""),
           x,
           y,
         );
-        if (this.sample) {
+        if (this.layered) {
           const water = (a, b) => ["deep", "shallow"].includes(this.cell(a, b));
           for (const [id, dx, dy] of [
             ["NW", -1, -1],
@@ -107,7 +107,7 @@ export class WorldLayer {
           y,
           (k) => !["sand", "deep", "shallow"].includes(k),
         );
-        const mood = this.sample ? this.map.mood?.[y]?.[x] : null,
+        const mood = this.layered ? this.map.mood?.[y]?.[x] : null,
           prefix =
             mood === "forest"
               ? "grassCool"
@@ -120,7 +120,7 @@ export class WorldLayer {
           x,
           y,
         );
-        if (this.sample && this.cell(x, y + 1) === "cliff")
+        if (this.layered && this.cell(x, y + 1) === "cliff")
           this.tile(ctx, "topRim", x, y);
         if (kind === "path")
           this.tile(
@@ -136,7 +136,7 @@ export class WorldLayer {
       }
       this.tile(
         ctx,
-        this.sample && kind === "rim"
+        this.layered && kind === "rim"
           ? (this.map.elevation?.[y - 1]?.[x] ?? 0) <
             (this.map.elevation?.[y]?.[x] ?? 1)
             ? "rimBack"
@@ -145,9 +145,9 @@ export class WorldLayer {
               : "rimRight"
           : kind === "stonePath"
             ? "stonePath_" + v
-            : this.sample && ["cliff", "cliffFoot"].includes(kind)
+            : this.layered && ["cliff", "cliffFoot"].includes(kind)
               ? kind + "_" + v
-              : this.sample && kind === "stairs"
+              : this.layered && kind === "stairs"
                 ? this.cell(x, y - 1) !== "stairs"
                   ? "stairsTop"
                   : this.cell(x, y + 1) !== "stairs"
@@ -161,7 +161,7 @@ export class WorldLayer {
         x,
         y,
       );
-      if (this.sample && kind === "cliff") {
+      if (this.layered && kind === "cliff") {
         if (this.cell(x - 1, y) === "stairs")
           this.tile(ctx, "cliffEndLeft", x, y);
         if (this.cell(x + 1, y) === "stairs")

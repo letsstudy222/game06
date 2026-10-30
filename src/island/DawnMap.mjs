@@ -51,7 +51,6 @@ export function buildDawnMap() {
     [34, 19],
   ])
     grid[y][x] = "deep";
-  const land = (x, y) => grid[y]?.[x] && grid[y][x] !== "deep";
   const mask = grid.map((row) => row.map((v) => v !== "deep"));
   for (let y = 0; y < rows; y++)
     for (let x = 0; x < columns; x++) {
@@ -137,6 +136,30 @@ export function buildDawnMap() {
     grid[y][x] = "grass";
   // A worn floor opening faces west toward the central terrace path.
   paint("floor", 24, 10, 2, 2);
+  // Upper sanctuary: a second continuous cliff band; stairs are its only entry.
+  for (let y = 6; y <= 10; y++)
+    for (let x = 24; x <= 32; x++) {
+      elevation[y][x] = 2;
+      grid[y][x] = y === 6 || x === 24 || x === 32 ? "rim" : "floor";
+    }
+  for (let x = 24; x <= 32; x++) {
+    grid[11][x] = "cliff";
+    grid[12][x] = "cliffFoot";
+  }
+  paint("stairs", 28, 11, 2, 2);
+  paint("stonePath", 22, 10, 2, 4);
+  paint("stonePath", 22, 13, 8, 1);
+  for (const [x, y] of [[25, 7], [31, 7], [25, 10], [30, 10]])
+    grid[y][x] = "moss";
+  // Record height for the extended first terrace and every stair landing.
+  for (let x = 11; x <= 31; x++) {
+    const front = x < 15 ? 13 : x > 24 && x < 29 ? 15 : 14;
+    for (let y = 13; y < front; y++) elevation[y][x] = 1;
+  }
+  const mood = grid.map((row, y) => row.map((kind, x) =>
+    x >= 24 && y >= 6 && y <= 12 ? "ruins" :
+    y >= 6 && y <= 13 && x >= 10 && x <= 16 ? "forest" :
+    y >= 5 && y <= 14 && x >= 9 && x <= 18 ? "forestEdge" : "sun"));
   const center = (x, y) => ({ x: x * 32 + 16, y: y * 32 + 16 });
   const object = (asset, x, y, extra = {}) => ({
     ...center(x, y),
@@ -147,10 +170,11 @@ export function buildDawnMap() {
     id: "dawn",
     name: "Đảo Bình Minh",
     label: "DAWN ISLAND",
-    assetManifest: "assets/tiles/dawn/manifest.json",
+    assetManifest: "assets/environments/dawn/manifest.json",
+    artProfile: "sun-ruins",
     width: columns * 32,
     height: rows * 32,
-    tilemap: { tileSize: 32, columns, rows, ground: grid, elevation },
+    tilemap: { tileSize: 32, columns, rows, ground: grid, elevation, mood },
     spawn: center(19, 20),
     checkpoints: {
       beach: center(20, 24),
@@ -187,15 +211,15 @@ export function buildDawnMap() {
     ],
     trees: [
       object("palm", 7, 17, { size: 1 }),
-      object("palm", 8, 21, { size: 1 }),
+      object("palmLeaning", 8, 21, { size: 1 }),
       object("palm", 29, 21, { size: 1 }),
-      object("palm", 31, 16, { size: 1 }),
+      object("palmLeaning", 31, 16, { size: 1 }),
       object("palm", 26, 23, { size: 1 }),
       object("palm", 12, 23, { size: 1 }),
       object("broadleaf", 12, 8, { size: 1 }),
-      object("broadleaf", 15, 8, { size: 1 }),
+      object("broadleafYoung", 15, 8, { size: 1 }),
       object("broadleaf", 11, 11, { size: 1 }),
-      object("broadleaf", 16, 12, { size: 1 }),
+      object("broadleafYoung", 16, 12, { size: 1 }),
       object("broadleaf", 24, 6, { size: 1 }),
       object("palm", 28, 5, { size: 1 }),
       object("broadleaf", 10, 17, { size: 1 }),
@@ -204,7 +228,7 @@ export function buildDawnMap() {
     rocks: [
       object("boulder", 12, 21, { r: 11 }),
       object("boulder", 29, 18, { r: 11 }),
-      object("boulder", 17, 24, { r: 11 }),
+      object("coastalRock", 17, 24, { r: 8 }),
       object("boulder", 34, 10, { r: 11 }),
     ],
     bushes: [
@@ -220,13 +244,15 @@ export function buildDawnMap() {
     props: [
       object("pillar", 26, 8),
       object("brokenPillar", 31, 8),
-      object("brokenPillar", 26, 12),
-      object("pillar", 31, 12),
+      object("brokenPillar", 26, 10),
+      object("pillar", 31, 10),
+      object("wall", 26, 7),
+      object("wall", 30, 7),
       object("altar", 29, 8),
       object("brazier", 27, 9),
-      object("brazier", 31, 10),
+      object("brazier", 30, 9),
       object("fragment", 25, 7),
-      object("fragment", 30, 12),
+      object("fragment", 30, 13),
       object("log", 9, 17),
       object("flowers", 16, 18),
       object("flowers", 23, 20),
@@ -242,11 +268,15 @@ export function buildDawnMap() {
       ...[
         [26, 8, 12],
         [31, 8, 12],
-        [26, 12, 12],
-        [31, 12, 12],
+        [26, 10, 12],
+        [31, 10, 12],
         [29, 8, 20],
+        [26, 7, 22],
+        [30, 7, 22],
+        [25, 7, 11],
+        [30, 13, 11],
         [27, 9, 7],
-        [31, 10, 7],
+        [30, 9, 7],
       ].map(([x, y, r]) => ({ ...center(x, y), r })),
     ],
     shrine: {

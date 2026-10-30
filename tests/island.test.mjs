@@ -263,3 +263,42 @@ test("visible solid tiles and collision share one grid, with stairs as the only 
       .includes("world.png"),
   );
 });
+
+test("full Dawn uses the approved layered kit at original scale and all used assets exist", () => {
+  const manifest = read('../' + map.assetManifest), env = manifest.environment;
+  assert.deepEqual([map.width, map.height, map.tilemap.tileSize], [1280, 896, 32]);
+  assert.equal(env.profile, 'sun-ruins');
+  assert.deepEqual(manifest.phoenix, read('../assets/samples/dawn/manifest.json').phoenix);
+  assert.deepEqual([...new Set(map.tilemap.elevation.flat())].sort(), [0,1,2]);
+  for (const mood of ['sun','forest','forestEdge','ruins']) assert(map.tilemap.mood.flat().includes(mood));
+  const ids = new Set(env.definitions.map(d => d.id));
+  for (const obj of [...map.trees,...map.rocks,...map.props,...map.bushes,...map.hazards]) assert(ids.has(obj.asset), obj.asset);
+  assert.equal(map.hazards.length, 2);
+  for (const id of ['bramble','log','shell','palmLeaning','broadleafYoung','coastalRock']) assert(ids.has(id));
+  // Exercise every renderer branch on every cell at every water/foam frame.
+  const layer = new WorldLayer(null, map, env);
+  for (let frame=0; frame<4; frame++) layer.draw({drawImage(){}}, {x:0,y:0}, map.width,map.height,frame/2);
+  for (const x of [28,29]) for (const y of [11,12]) {
+    assert.equal(map.tilemap.ground[y][x], 'stairs');
+    assert(canOccupy(map,{x:x*32+16,y:y*32+16},7));
+  }
+  assert(route(map,map.spawn,map.shrine,12).some(p => Math.floor(p.y/32)===11 && [28,29].includes(Math.floor(p.x/32))));
+});
+
+test("expanded object atlas retains palette, clean gutters, anchors and discrete shadows", () => {
+  const env = read('../'+map.assetManifest).environment;
+  const palette = new Set(env.palette), p = decode(new URL('../'+env.props, import.meta.url));
+  for(let i=0;i<p.data.length;i+=4) {
+    assert([0,255].includes(p.data[i+3]));
+    if(p.data[i+3]) assert(palette.has('#'+p.data.subarray(i,i+3).toString('hex')), p.data.subarray(i,i+3).toString('hex'));
+  }
+  for(const d of env.definitions) {
+    const [l,t,r,b]=d.bounds;
+    assert(l>=2 && t>=2 && r<=94 && b<=94, d.id);
+    assert.deepEqual(d.origin,[48,90]);
+    assert(d.shadow);
+  }
+  const sh = decode(new URL('../'+env.shadows,import.meta.url)), alpha=new Set();
+  for(let i=3;i<sh.data.length;i+=4) alpha.add(sh.data[i]);
+  assert.deepEqual([...alpha].sort((a,b)=>a-b),[0,48,90]);
+});

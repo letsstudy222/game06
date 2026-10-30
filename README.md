@@ -26,19 +26,13 @@ npm run test:browser
 npm run test:ui
 ```
 
-Giữ HTTP server ở cổng 8000 khi chạy browser test. Có thể đặt `GAME_URL` hoặc `CHROMIUM_PATH`; hệ thống Linux tự dùng `/usr/bin/chromium` nếu có. 22 kiểm tra logic, tilemap và cấu hình UI kiểm chứng đường đi bốn khu, va chạm, sáu trạng thái, chiến đấu, HP, đền, camera, phân mảnh bản đồ và tính toàn vẹn atlas. Browser test điều khiển bằng bàn phím thật qua bốn khu, chụp ảnh, kiểm tra HUD, trợ giúp/tạm dừng, sát thương và kích thước 320–1920px; không dịch chuyển nhân vật để giả lập hành trình.
+Giữ HTTP server ở cổng 8000 khi chạy browser test. Có thể đặt `GAME_URL` hoặc `CHROMIUM_PATH`; hệ thống Linux tự dùng `/usr/bin/chromium` nếu có. 30 kiểm tra logic, tilemap và cấu hình UI kiểm chứng đường đi bốn khu, va chạm, sáu trạng thái, chiến đấu, HP, đền, camera, phân mảnh bản đồ và tính toàn vẹn atlas. Browser test điều khiển bằng bàn phím thật qua bốn khu, chụp ảnh, kiểm tra HUD, trợ giúp/tạm dừng, sát thương và kích thước 320–1920px; không dịch chuyển nhân vật để giả lập hành trình.
 
-## Mẫu môi trường 0.9 — chờ duyệt
+## Môi trường toàn đảo — Fantasy Island × Mystic Ruins
 
-Mở `/?sample=1` để chơi sample có bộ art/bóng/ba cao độ mới; link gốc giữ đảo hiện tại. [Ảnh, nguồn art, cách dựng lại và giới hạn](docs/dawn-sample-review.md). Chưa nhân rộng ra toàn Dawn Island.
+Link chính đã áp dụng art direction mẫu được duyệt lên toàn đảo 40×28 ô (1280×896), với ba cao độ, hai cầu thang, rừng mát, biển/foam và quần thể đền trên cao. Phoenix, UI và gameplay giữ nguyên. `/?sample=1` vẫn mở mẫu riêng 26×22 để đối chiếu.
 
-## Tilemap 0.8 — Fantasy Island × Mystic Ruins
-
-Đảo đầu tiên hiện dựng từ tile 32×32 trên grid 40×28, 72 terrain tile và 13 prop sprite dùng chung palette. Không dùng tranh nền whole-world. Nước/bờ/cỏ/đường/vách/cầu thang/đền là các ô và lớp riêng; collision đọc cùng grid.
-
-[Chi tiết tile logic, asset giữ/thay, ảnh gameplay và giới hạn](docs/tilemap-island.md).
-
-[Production asset checklist — hoàn thiện mẫu trước khi mở rộng đảo](docs/production-asset-checklist.md). Bộ tile hiện tại vẫn ở mức prototype so với art target premium; kiểm tra kỹ thuật đạt không thay thế duyệt mỹ thuật.
+[Bàn giao, kiểm kê asset, ảnh gameplay và checklist còn thiếu](docs/dawn-full-environment.md). Bộ runtime chính ở `assets/environments/dawn/`, gồm 183 frame terrain và 18 ID props cùng bóng pixel. `npm run art:dawn` dựng lại bộ mở rộng từ tài nguyên mẫu đã lưu. [Nguồn và pipeline mẫu](docs/dawn-sample-review.md); [audit 0.8 lịch sử](docs/production-asset-checklist.md).
 
 ## Giao diện mobile RPG
 

@@ -1,3 +1,5 @@
+> Cập nhật: mẫu 0.9 đã được người dùng duyệt và áp dụng lên đảo chính. Xem [bàn giao toàn đảo](dawn-full-environment.md). Nội dung bên dưới mô tả mốc lịch sử trước khi nhân rộng.
+
 # Dawn Island — production asset checklist trước khi mở rộng
 
 Audit ngày 2026-10-30, đối chiếu prompt “Dawn Island Environment Rebuild — Sample Area First”, atlas PNG, manifest, ảnh gameplay hiện có và code render/map. Đây là audit và danh sách công việc, **không phải một sample production mới đã hoàn thành hoặc được duyệt**. Không mở rộng đảo trong bước này.

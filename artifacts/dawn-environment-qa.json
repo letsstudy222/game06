@@ -1,0 +1,15 @@
+{
+  "testedAt": "2026-10-30T03:46:36.538809+00:00",
+  "target": "default dawn 40x28, sun-ruins environment",
+  "status": "passed",
+  "logicTests": 30,
+  "browserSuites": [
+    "island.browser.cjs: real keyboard tour, combat, damage, shrine, camera, no page/asset errors",
+    "ui.browser.cjs: 390x844, 360x800, 844x390, 1920x1080; touch/settings/persistence",
+    "sample.browser.cjs: comparison sample regression"
+  ],
+  "build": "npm run build passed; packaged _site smoke movement/attack and versioned shadows passed",
+  "artBuild": "npm run art:dawn reproducible: all four output checksums unchanged on rebuild",
+  "realDeviceTested": false,
+  "deployment": "not part of local test evidence"
+}

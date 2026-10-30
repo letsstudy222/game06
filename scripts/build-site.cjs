@@ -23,6 +23,10 @@ const revision = crypto
   .update(fs.readFileSync(path.join(root, "assets/samples/dawn/terrain.png")))
   .update(fs.readFileSync(path.join(root, "assets/samples/dawn/objects.png")))
   .update(fs.readFileSync(path.join(root, "assets/samples/dawn/shadows.png")))
+  .update(fs.readFileSync(path.join(root, "assets/environments/dawn/manifest.json")))
+  .update(fs.readFileSync(path.join(root, "assets/environments/dawn/terrain.png")))
+  .update(fs.readFileSync(path.join(root, "assets/environments/dawn/objects.png")))
+  .update(fs.readFileSync(path.join(root, "assets/environments/dawn/shadows.png")))
   .digest("hex")
   .slice(0, 12);
 fs.rmSync(out, { recursive: true, force: true });
@@ -32,6 +36,10 @@ function copy(source, target = source) {
   fs.cpSync(path.join(root, source), destination, { recursive: true });
 }
 for (const file of [
+  "assets/environments/dawn/manifest.json",
+  "assets/environments/dawn/terrain.png",
+  "assets/environments/dawn/objects.png",
+  "assets/environments/dawn/shadows.png",
   "style.css",
   "assets/favicon.svg",
   "assets/fonts/VT323-Regular.ttf",
@@ -58,8 +66,8 @@ fs.writeFileSync(
   path.join(out, "index.html"),
   read("index.html")
     .replace(
-      "assets/tiles/dawn/terrain.png",
-      "assets/tiles/dawn/terrain.png?v=" + revision,
+      "assets/environments/dawn/terrain.png",
+      "assets/environments/dawn/terrain.png?v=" + revision,
     )
     .replace(/style\.css\?v=[^"']+/g, "style.css?v=" + revision)
     .replace(

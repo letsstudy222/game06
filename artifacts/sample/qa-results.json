@@ -1,6 +1,6 @@
 {
-  "testedAt": "2026-10-30T02:16:32.623Z",
-  "target": "http://127.0.0.1:8001/?sample=1",
+  "testedAt": "2026-10-30T03:42:30.703Z",
+  "target": "http://127.0.0.1:8000/?sample=1",
   "status": "passed",
   "realDeviceTested": false,
   "checks": [

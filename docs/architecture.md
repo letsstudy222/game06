@@ -1,3 +1,5 @@
+> Cập nhật: mẫu 0.9 đã được người dùng duyệt và áp dụng lên đảo chính. Xem [bàn giao toàn đảo](dawn-full-environment.md). Nội dung bên dưới mô tả mốc lịch sử trước khi nhân rộng.
+
 # Kiến trúc Dawn Island
 
 `main.mjs` tải manifest bằng `AssetLoader`, khởi tạo `GameState`, nối input và vòng lặp Canvas. Lỗi tải ảnh hiển thị rõ ở loading overlay, không thay bằng hình khối giả.

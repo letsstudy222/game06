@@ -1,3 +1,5 @@
+> Cập nhật: mẫu 0.9 đã được người dùng duyệt và áp dụng lên đảo chính. Xem [bàn giao toàn đảo](dawn-full-environment.md). Nội dung bên dưới mô tả mốc lịch sử trước khi nhân rộng.
+
 # Dawn Island 0.8 — Fantasy Island × Mystic Ruins
 
 ## Audit và thay đổi cách dựng

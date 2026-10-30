@@ -85,7 +85,7 @@ export class IslandScene {
   prop(ctx, id, x, y, alpha = 1, scale = 1) {
     const env = this.meta.environment,
       def = env.definitions.find((p) => p.id === id);
-    if (!def) return;
+    if (!def) throw new Error("Missing environment object " + id);
     const [sx, sy, w, h] = def.rect,
       origin = def.origin;
     ctx.save();
@@ -133,7 +133,7 @@ export class IslandScene {
       y: t.y,
       draw: () => {
         const p = state.player,
-          canopy = ["palm", "broadleaf"].includes(t.asset),
+          canopy = this.meta.environment.definitions.find((d) => d.id === t.asset)?.canopy || ["palm", "broadleaf"].includes(t.asset),
           behind =
             canopy &&
             p.y < t.y &&
