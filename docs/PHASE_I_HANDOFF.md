@@ -54,3 +54,8 @@ Task08 chạy 30 baseline tests và read-only PNG/manifest checks; xem TASK08_CH
 ## Current Task09 clarification
 
 Task09 đã được user giao, chỉ documentation/system design. [Task09 decisions](elements/TASK09_DECISIONS.md) và [audit](elements/TASK09_CONSISTENCY_AUDIT.md) là entrypoints cho elemental layer. **D41 explicit** loại no-mandatory-three member/element barrier cho early content/bossI; các bảng PhaseI/C08-01 phía trên giữ trạng thái theo mốc Task08, không là permission dùng full-three gate hiện tại. Resource/HP/recovery/config snapshots/entry triggers/boss identity vẫn pending. E09ModelC/status/reaction/data/save extensions đều PROPOSED. Chronology và P0 C04-P07/D18-D38 corrections giữ nguyên; Task10 chưa tự bắt đầu.
+
+
+## Task10 — nguồn đọc tiếp
+
+[Overview](elements/DUAL_ELEMENT_OVERVIEW.md), [decisions E10-P01–P10/U01–U08](elements/TASK10_DECISIONS.md) và [audit](elements/TASK10_CONSISTENCY_AUDIT.md) giữ đề xuất identity Model C + unordered membership, resistance C, bốn reference families, skill/reaction/evolution/data contracts. **PROPOSED**, chưa final multipliers/roster/primary-secondary/variant taxonomy. Six-element baseline/Sacred identities và D41 giữ nguyên; explicit Task10 §13 không mandatory dual species cho main boss. A08-05 entry/snapshot/retry và R03/W07/E09 save/resource/recovery vẫn mở, Phase I vẫn PARTIAL. E09-U06 nay có đề xuất để review, không tự RESOLVED. Task11 chưa bắt đầu.

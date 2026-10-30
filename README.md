@@ -91,3 +91,8 @@ Bắt đầu tại [Master GDD](docs/GAME_DESIGN_DOCUMENT.md), [completion audit
 ## Task09 — Elemental system design
 
 [Elemental overview](docs/elements/ELEMENTAL_SYSTEM_OVERVIEW.md), [decision register](docs/elements/TASK09_DECISIONS.md) và [audit/delivery index](docs/elements/TASK09_CONSISTENCY_AUDIT.md): six identities, ModelC recommendation,36directed cells,9status/8reaction candidates, environment/balance/data/20scenarios. Chỉ tài liệu, no runtime rebalance/art/UI. D41 giữ early progression không bắt đủ3members/3elements; mechanics mới chưa approve và Task10 chưa bắt đầu.
+
+
+## Task10 — Dual-element creature system
+
+[Overview](docs/elements/DUAL_ELEMENT_OVERVIEW.md), [decision register](docs/elements/TASK10_DECISIONS.md), [audit và delivery mapping](docs/elements/TASK10_CONSISTENCY_AUDIT.md): bốn reference families, identity/resistance recommendations, skill/reaction/evolution, bảy conceptual entities và20future QA cases. Chỉ tài liệu, không thay gameplay/art/UI; proposals chưa tự approved, Task11 chưa bắt đầu. Các câu “Task10 chưa bắt đầu” trong phần handoff Task09 bên trên mô tả mốc lịch sử Task09, không status hiện tại.

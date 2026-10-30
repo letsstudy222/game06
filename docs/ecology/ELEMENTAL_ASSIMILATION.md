@@ -47,3 +47,20 @@ Outcome ứng viên gồm `stable_adapted`, `recovering`, `managed_condition`, `
 Quest ổn định không auto mở form: còn cần viable source, compatibility, catalog designatedPlayable và acquisition route Task 03. Giữ individualId/species continuity và record quá trình, không spawn bản copy để nhận unlock/loot lần nữa; nguồn nghiên cứu của giai đoạn cũ có archive/refuge replay không xóa lịch sử.
 
 **UNRESOLVED:** profile nào thành species thật, nguyên nhân cụ thể, giới hạn/phép phục hồi từng loài, representation anatomy/FX, roster Lôi/Kim và quy tắc balance. Không generate art/cleansing skill mới hoặc định tội một faction qua bảng này.
+
+
+## Task10 — boundary và evidence handoff
+
+**PROPOSED E10-P07**, kế thừa F06-P06 chứ không thay approval. Requested `ADAPTATION_VS_ASSIMILATION.md` dùng chính nguồn này; không tạo bản sao. [Dual overview](../elements/DUAL_ELEMENT_OVERVIEW.md), [evolution](../elements/DUAL_ELEMENT_EVOLUTION.md) và [data](../technical/DUAL_ELEMENT_DATA_SPEC.md) tham chiếu process/affinity/stability/cognition/consent ở đây.
+
+| Trục | Stable hybrid | Harmful assimilation | Player evidence / interaction |
+| --- | --- | --- | --- |
+| Behavior | Kiếm ăn/nghỉ/xả theo chu kỳ khả thi | Có thể stress/mất nhịp hoặc vẫn ra quyết định có ý thức | Quan sát gần/xa nguồn, không một lần aggro quyết morality |
+| Stability | Hai chức năng sống bền, vẫn có tolerance giới hạn | Nguồn phơi nhiễm hoặc can thiệp vượt khả năng cá thể | Theo dõi nhiều nhịp, tìm refuge/records, ghi confidence |
+| Physical symptoms | Cơ quan bổ trợ có cấu trúc, không chỉ hai màu | Hỏng chức năng/stress có nguyên nhân, khác anatomy tự nhiên | Không diagnosis từ asymmetry hoặc palette đơn lẻ |
+| Environmental triggers | Môi trường nuôi cả hai cơ chế | Nguồn vượt tải/đường xả hỏng/cưỡng ép | Ngắt nguồn gây hại nếu khả thi, không giết nạn nhân là giải pháp mặc định |
+| Recovery | Giữ habitat ổn định, không cần tẩy ngoại lai | Phục hồi, managed condition hoặc chưa đủ bằng chứng | Không guaranteed cleanse một đòn hoặc resurrection |
+| Narrative consequence | Có quyền tồn tại trong ecosystem phục hồi | Giữ origin history/evidence sau ổn định | Không rewrite nạn nhân thành kẻ ác hoặc mọi faction thành thủ phạm |
+| Collection | R03 source/compatibility/playable route riêng | Recovery không auto unlock/evolve | Quan sát/restoration có thể là acquisition route nếu được duyệt, unique grant ledger |
+
+Một stable dual cá thể nhận Wet/Electrified không tự bị assimilation; forced exposure cũng không bảo đảm identity thành dual. Current condition nằm ở actor/quest owner F06/W07, stability profile chỉ rules/evidence refs. Không global corruption meter hoặc xóa XP. Deeper assimilation gameplay/AI/recovery mechanics để task tương ứng; Task10 không implement hoặc thêm cleansing skill.

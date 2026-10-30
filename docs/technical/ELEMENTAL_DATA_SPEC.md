@@ -53,3 +53,8 @@ Precommit load dùng last good boundary; postcommit restore outcome/obligation m
 ## Handoff cho Task10
 
 Chỉ cung cấp elementRefs list, resistance/attack profile interfaces và decision/version metadata. Task10 cần chọn dual-affinity composition, damage bonuses, priority/primary-secondary, evolution/hybrid acquisition và roster. Task09 không lấy max/min/sum/product hai resists làm default, không tự cấp dual skill bonus. Thêm element tương lai có catalog compatibility/migration tests, không tự confirmed element thứ bảy. Browser performance budgets/adapter/module choices cần technical task có actual repo audit, không gắn engine/database trong spec.
+
+
+## Task10 proposed extension — cùng authority, không resolver đã duyệt
+
+[E10 data](DUAL_ELEMENT_DATA_SPEC.md) cụ thể hóa E09-P12/U06 bằng proposal C species-specific + unordered membership, composition skill wrapper và resistance constraint view. CreatureElementProfile ở đây vẫn là entity gốc: optional pairDefinitionRef/stabilityProfileRef, versioned perStageOverrides; ElementalResistanceProfile vẫn duy nhất sở hữu responses, DualElementResistanceProfile chỉ tham chiếu constraints. AttackProperties single declaredElementRef không đổi; ElementalAbilityProfile tham chiếu nhiều AttackProperties components có budget/release policy rõ. Không nhân bản progression/status/world state. E09-U06 chưa được tự duyệt; model/math/values/roster vẫn pending ở [Task10 register](../elements/TASK10_DECISIONS.md).

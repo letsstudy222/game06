@@ -124,3 +124,8 @@ Origin/ultimate culprit/voluntary intervention là author mysteries chưa chốt
 ## Task09 — elemental foundation handoff
 
 [Elemental overview](elements/ELEMENTAL_SYSTEM_OVERVIEW.md) và [Task09 audit](elements/TASK09_CONSISTENCY_AUDIT.md) dẫn six identities, recommended ModelC,36directed interaction contracts,9status/8reaction candidates và data/environment/balance scenarios. E09-P01–P12 đều PROPOSED, không final affinity table/numbers/dual mechanics. D41 no-mandatory-three là requirement explicit của Task09; chronology Q02/A08-15 và các quyết định PhaseI khác giữ mở. Chỉ tài liệu, không current runtime rebalance hoặc Task10 tự bắt đầu.
+
+
+## Task10 — dual-element design handoff
+
+[Overview](elements/DUAL_ELEMENT_OVERVIEW.md), [decisions E10-P01–P10/U01–U08](elements/TASK10_DECISIONS.md) và [audit](elements/TASK10_CONSISTENCY_AUDIT.md) giữ đề xuất identity Model C + unordered membership, resistance C, bốn reference families, skill/reaction/evolution/data contracts. **PROPOSED**, chưa final multipliers/roster/primary-secondary/variant taxonomy. Six-element baseline/Sacred identities và D41 giữ nguyên; explicit Task10 §13 không mandatory dual species cho main boss. A08-05 entry/snapshot/retry và R03/W07/E09 save/resource/recovery vẫn mở, Phase I vẫn PARTIAL. E09-U06 nay có đề xuất để review, không tự RESOLVED. Task11 chưa bắt đầu.

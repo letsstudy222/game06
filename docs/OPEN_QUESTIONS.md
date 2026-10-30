@@ -81,3 +81,8 @@ Phase I PARTIAL, không tự tuyên bố freeze full production. Audit Task08 ho
 [Task09 register](elements/TASK09_DECISIONS.md) E09-U01–U07 giữ ModelC/table/numbers, status ownership/CC/refresh/duration, reaction subset, minimal status-obligation save/performance/readability/asset gaps. Chronology Q02/A08-15 không đổi. D41 explicit xử lý no-mandatory-three early entry; các đoạn full-three-vs-empty của audit cũ là historical, không baseline hiện tại. B+C/quỹ/HP/abort-reset chưa được Task09 duyệt.
 
 Task10 chưa bắt đầu: dual resistance composition/damage bonus/primary-secondary/evolution/foreign hybrid acquisition/roster vẫn UNRESOLVED. Interface refs không tự là phép sum/product hoặc một dual species approved. Cần user giao Task10 riêng; không triển khai classes/loaders/save/balance trong Task09.
+
+
+## Task10 — queue chưa duyệt
+
+[Overview](elements/DUAL_ELEMENT_OVERVIEW.md), [decisions E10-P01–P10/U01–U08](elements/TASK10_DECISIONS.md) và [audit](elements/TASK10_CONSISTENCY_AUDIT.md) giữ đề xuất identity Model C + unordered membership, resistance C, bốn reference families, skill/reaction/evolution/data contracts. **PROPOSED**, chưa final multipliers/roster/primary-secondary/variant taxonomy. Six-element baseline/Sacred identities và D41 giữ nguyên; explicit Task10 §13 không mandatory dual species cho main boss. A08-05 entry/snapshot/retry và R03/W07/E09 save/resource/recovery vẫn mở, Phase I vẫn PARTIAL. E09-U06 nay có đề xuất để review, không tự RESOLVED. Task11 chưa bắt đầu.
