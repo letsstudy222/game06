@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | Nền đang có | Đảo Bình Minh 40×28, Phoenix, input/combat/HP/shrine, camera, UI và môi trường đã duyệt; mẫu đối chiếu riêng | Có source và artifact local; không phải Chương I mới |
 | Vertical slice sản xuất đầu tiên | Một phần nhỏ, được polish của Chương I — Quy tại Vực Hải Uyên | Mục tiêu xác nhận; số phòng, thời lượng, nhân sự và lịch chưa chốt |
-| Cung truyện đầu | Quy → Phượng → Long → Ly, khôi phục bốn hệ và phát hiện cổng | Phạm vi nội dung ban đầu; không triển khai đồng loạt |
+| Cung truyện đầu | Quy → Phượng → Long → Ly, khôi phục bốn hệ và tái kích hoạt Tinh Môn (Task 02) | Phạm vi nội dung ban đầu; không triển khai đồng loạt |
 | Mở rộng | Hành trình tới hành tinh/môi trường khác qua cổng | Ngoài sản xuất ban đầu; chưa có cam kết hệ thống hoặc lịch |
 
 Đảo Bình Minh là tên/runtime ID hiện hữu (`dawn`). Đảo Nhật Diệm là bối cảnh Chương II trong tầm nhìn mới. **Chưa xác nhận chúng là cùng đảo hoặc quan hệ địa lý cụ thể**; không đổi tên map hay diễn giải prototype thành canon hoàn chỉnh.

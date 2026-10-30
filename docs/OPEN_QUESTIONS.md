@@ -25,3 +25,7 @@ Không tự trả lời các câu hỏi sau bằng canon mới. ID quyết đị
 | Q19 | Nguồn, quyền sử dụng và provenance đầy đủ của tham chiếu người dùng, nhạc/SFX sẽ được theo dõi thế nào? | Trước dùng asset trong sản xuất/phát hành; không suy diễn quyền từ sự tồn tại của file |
 
 Task 01 không bị chặn bởi các câu hỏi này: tài liệu ghi rõ phần thiếu. Task 02 cần đề bài riêng và chỉ giải quyết nhóm câu hỏi thuộc phạm vi đó.
+
+## Sau Task 02
+
+Tên vùng Ly đã chốt là Tiên Cảnh Vạn Sinh (D25); kết cung tái kích hoạt Tinh Môn (D26). Q01–Q05 vẫn mở: [mô hình biến cố](lore/ANCIENT_CATASTROPHE.md) là PROPOSED, chưa xác nhận sự tự nguyện hoặc nguồn gốc linh thể/cổng. Q08–Q10 có [giới hạn cộng hưởng đề xuất](lore/SPIRIT_AND_RESONANCE.md), chưa chốt vật lý chuyển dạng, HP hoặc retry. Các câu hỏi kỹ thuật/asset/scope còn lại giữ nguyên.

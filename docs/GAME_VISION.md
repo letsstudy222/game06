@@ -29,9 +29,9 @@ Vòng lặp mục tiêu: khám phá dấu vết và hệ sinh thái → đọc �
 | I — Quy / Quy Hải Uyên | Vực Hải Uyên | Thủy: thức tỉnh, bảo tồn, ký ức cổ, khám phá dưới nước | Bơi/di chuyển dưới nước, cảm nhận dòng năng lượng, phòng thủ, điều khiển nước. Khôi phục một hệ năng lượng lớn dưới biển, dần mở đường đến đảo núi lửa |
 | II — Phượng / Phượng Hoàng Nhật Diệm | Đảo Nhật Diệm | Hỏa: tái sinh, biến đổi, nhiệt, đổi mới | Lửa, di chuyển trên không, dòng nhiệt và năng lực liên quan cháy/tái sinh. Thức tỉnh Phượng góp phần đánh thức núi lửa đã ngủ hàng chục nghìn năm; luồng khí nóng là một phần đường lên thiên đảo |
 | III — Long / Long Thiên Phong | Thiên Đảo Phong Vân | Phong: tự do, chuyển động, cân bằng khí quyển, kiểm soát | Điều khiển gió, vượt dòng khí nguy hiểm, đổi luồng khí cục bộ, chiến kỹ bão. Giới hạn tự nhiên của các dạng cũ được thể hiện mà không vô hiệu hóa chúng tùy tiện; thức tỉnh Long mở đường tới thiên đường cổ |
-| IV — Ly / Ly Vạn Sinh | Thiên đường cổ trên trời đã đổ nát; chưa chốt tên riêng | Mộc; quyền năng nguyên sơ đặc biệt **Sinh Mệnh**: sinh thái, tái tạo, nương tựa, phục hồi | Cây, rễ/dây leo, chữa lành, khôi phục môi trường và quan hệ giữa hệ sống. Sinh Mệnh quan trọng về truyện hơn nguyên tố Mộc thông thường; không cho hồi sinh vô hạn sinh vật đã chết hoàn toàn |
+| IV — Ly / Ly Vạn Sinh | Tiên Cảnh Vạn Sinh — thiên đường cổ trên trời đã đổ nát | Mộc; quyền năng nguyên sơ đặc biệt **Sinh Mệnh**: sinh thái, tái tạo, nương tựa, phục hồi | Cây, rễ/dây leo, chữa lành, khôi phục môi trường và quan hệ giữa hệ sống. Sinh Mệnh quan trọng về truyện hơn nguyên tố Mộc thông thường; không cho hồi sinh vô hạn sinh vật đã chết hoàn toàn |
 
-Hoàn tất Chương IV kết nối lại bốn hệ nguyên tố và hé lộ cổng tinh giới cổ. Du hành hành tinh khác là hướng mở rộng sau này, ngoài phạm vi sản xuất ban đầu.
+Hoàn tất Chương IV kết nối lại bốn hệ nguyên tố và tái kích hoạt cổng tinh giới cổ (tên tạm: Tinh Môn). Du hành hành tinh khác là hướng mở rộng sau này, ngoài phạm vi sản xuất ban đầu.
 
 ## Đại Biến Cố Tinh Giới và giới hạn tiết lộ
 
@@ -46,3 +46,7 @@ Người chơi có thể thu thập nhiều dạng qua cộng hưởng, khám ph
 Khi boss bắt đầu, khóa thành phần bộ ba; vẫn đổi giữa ba dạng đó, nhưng không trang bị sinh vật khác cho đến khi cuộc chạm trán kết thúc. Mỗi sinh vật có cấp, kinh nghiệm, kỹ năng, tiến trình riêng và trạng thái tiến hóa khi phù hợp. Ngưỡng tiến hóa, phân phối XP và tài nguyên giữa các dạng chưa chốt.
 
 Tiến trình có ý nghĩa đến từ chiến đấu, khám phá, khám phá cốt truyện, cộng hưởng và thách thức môi trường. Tránh grind bắt buộc và power creep làm sinh vật đầu game lỗi thời.
+
+## Cập nhật Task 02
+
+Tên Tiên Cảnh Vạn Sinh và kết quả tái kích hoạt Tinh Môn do người dùng xác nhận ở Task 02, cụ thể hóa phần mở của Task 01. Xem [changelog lore](lore/LORE_CHANGELOG.md) và [lịch tiết lộ](lore/CHAPTER_REVELATIONS.md). Các cơ chế mới trong bộ lore vẫn PROPOSED nếu chưa có quyết định xác nhận riêng.

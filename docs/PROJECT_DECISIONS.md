@@ -33,6 +33,16 @@ Nguồn phê duyệt: yêu cầu Task 01/96 của người dùng, ngày 30/10/20
 | D23 | UNRESOLVED | Gameplay | Evolution thresholds, XP/loadout resource rules, resonance conditions, boss end/reset/save rules, roster cuối |
 | D24 | UNRESOLVED | Liên tục thế giới | Quan hệ Đảo Bình Minh hiện có với Đảo Nhật Diệm Chương II; không đổi map thành canon tự động |
 
+## Bổ sung Task 02 — nguồn: yêu cầu người dùng Task 02/96
+
+| ID | Trạng thái | Loại | Quyết định / quan hệ với bản trước |
+| --- | --- | --- | --- |
+| D25 | CONFIRMED | Tên vùng | Ly ở Tiên Cảnh Vạn Sinh; cụ thể hóa tên vùng chưa chốt ở Task 01, không đổi Mộc/Sinh Mệnh D04 |
+| D26 | CONFIRMED | Kết cung | Bốn chương kết bằng tái kích hoạt Tinh Môn, không chỉ phát hiện; tên Tinh Môn tạm thời; du hành hành tinh khác vẫn ngoài scope D11 |
+| D27 | CONFIRMED | Nhân vật | Linh thể nhận thức hạn chế, phát triển bản sắc qua trải nghiệm, tiếp cận ký ức tổ tiên; nguồn gốc/vai trò trước biến cố vẫn UNRESOLVED |
+
+Cơ chế thế giới/biến cố/cộng hưởng mới L02-P01–P10 đều **PROPOSED**, đăng ký tại [audit lore](lore/LORE_CONSISTENCY_AUDIT.md). Không tự đóng D17/D18/D21/D23/D24. [Changelog](lore/LORE_CHANGELOG.md) lưu phạm vi cập nhật.
+
 ## Cách sửa quyết định
 
 Mọi thay đổi ghi ID, trạng thái cũ/mới, lý do, nguồn phê duyệt và hệ/asset bị ảnh hưởng trong task tương ứng. Chuyển PROPOSED/UNRESOLVED sang CONFIRMED cần quyết định rõ, không chỉ sửa lời văn. Sự thật kỹ thuật mới phải có đường dẫn hoặc kết quả kiểm chứng. Các tài liệu audit lịch sử vẫn có giá trị theo mốc; không để chúng ghi đè hướng chính thức này.

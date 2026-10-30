@@ -7,6 +7,7 @@ Tên làm việc tiếng Anh: **Origins of the Four Sacred Spirits**. Bản chơ
 - [Tầm nhìn chính thức](docs/GAME_VISION.md) và [phạm vi sản xuất](docs/PROJECT_SCOPE.md).
 - [Trụ cột thiết kế](docs/CORE_DESIGN_PILLARS.md) và [quyết định CONFIRMED / PROPOSED / UNRESOLVED](docs/PROJECT_DECISIONS.md).
 - [Câu hỏi mở](docs/OPEN_QUESTIONS.md) và [đăng ký tham chiếu/asset thiếu](docs/ASSET_REFERENCE_REGISTER.md).
+- [Lore thế giới Task 02: lịch sử, Tứ Linh, biến cố và tiết lộ từng chương](docs/lore/LORE_CONSISTENCY_AUDIT.md).
 - [Kiểm kê repository Task 01](docs/REPOSITORY_AUDIT.md) và [quy trình phát triển](docs/DEVELOPMENT_WORKFLOW.md).
 
 Các tài liệu trên định hướng thiết kế; hướng dẫn chạy và lịch sử Dawn bên dưới mô tả chức năng đang có. Không mặc định đồng nhất Đảo Bình Minh với Đảo Nhật Diệm Chương II.
