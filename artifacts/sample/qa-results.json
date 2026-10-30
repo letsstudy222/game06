@@ -1,0 +1,15 @@
+{
+  "testedAt": "2026-10-30T02:16:32.623Z",
+  "target": "http://127.0.0.1:8001/?sample=1",
+  "status": "passed",
+  "realDeviceTested": false,
+  "checks": [
+    "actual keyboard tour across coast, forest and both stair runs",
+    "attack/fire/hover",
+    "shrine interaction",
+    "camera bounds",
+    "separate sample and default map",
+    "no master images or painted world at runtime",
+    "zero asset/page errors"
+  ]
+}

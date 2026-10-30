@@ -1,4 +1,5 @@
 import { WorldLayer } from "./WorldLayer.mjs";
+import { drawEnvironmentShadows } from "./EnvironmentShadows.mjs";
 import { distance } from "./geometry.mjs";
 /** Production images only for world/props/hero. Primitives below are lighting/FX. */
 export class IslandScene {
@@ -114,6 +115,13 @@ export class IslandScene {
     // ResponsiveLayout guarantees the viewport stays inside the authored world.
     c.translate(-cam.renderX, -cam.renderY);
     this.ground.draw(c, { x: cam.renderX, y: cam.renderY }, w, h, time);
+    if (this.meta.environment.shadows)
+      drawEnvironmentShadows(
+        c,
+        this.assets.get("shadows"),
+        this.meta.environment.definitions,
+        this.island,
+      );
     this.drawAmbient(state);
     const layers = [
       ...this.island.rocks,
@@ -127,7 +135,10 @@ export class IslandScene {
         const p = state.player,
           canopy = ["palm", "broadleaf"].includes(t.asset),
           behind =
-            canopy && p.y < t.y && p.y > t.y - 70 && Math.abs(p.x - t.x) < 38;
+            canopy &&
+            p.y < t.y &&
+            p.y > t.y - (this.island.artProfile ? 96 : 70) &&
+            Math.abs(p.x - t.x) < (this.island.artProfile ? 76 : 38);
         this.prop(c, t.asset, t.x, t.y, behind ? 0.48 : 1, t.size || 1);
       },
     }));

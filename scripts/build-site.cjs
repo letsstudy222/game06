@@ -19,6 +19,10 @@ const revision = crypto
   .update(fs.readFileSync(path.join(root, "assets/tiles/dawn/manifest.json")))
   .update(fs.readFileSync(path.join(root, "assets/tiles/dawn/terrain.png")))
   .update(fs.readFileSync(path.join(root, "assets/tiles/dawn/objects.png")))
+  .update(fs.readFileSync(path.join(root, "assets/samples/dawn/manifest.json")))
+  .update(fs.readFileSync(path.join(root, "assets/samples/dawn/terrain.png")))
+  .update(fs.readFileSync(path.join(root, "assets/samples/dawn/objects.png")))
+  .update(fs.readFileSync(path.join(root, "assets/samples/dawn/shadows.png")))
   .digest("hex")
   .slice(0, 12);
 fs.rmSync(out, { recursive: true, force: true });
@@ -36,6 +40,10 @@ for (const file of [
   "assets/tiles/dawn/terrain.png",
   "assets/tiles/dawn/objects.png",
   "assets/production/phoenix/atlas.png",
+  "assets/samples/dawn/manifest.json",
+  "assets/samples/dawn/terrain.png",
+  "assets/samples/dawn/objects.png",
+  "assets/samples/dawn/shadows.png",
 ])
   copy(file);
 fs.mkdirSync(path.join(out, "src/island"), { recursive: true });
@@ -61,6 +69,6 @@ fs.writeFileSync(
 );
 for (const name of ["meadow", "forest", "ruins", "beach", "fire"])
   copy("artifacts/dawn-" + name + ".png", "screenshots/dawn-" + name + ".png");
-for (const name of ["ui-before", "ui-after", "tilemap"])
+for (const name of ["ui-before", "ui-after", "tilemap", "sample"])
   copy("artifacts/" + name, "screenshots/" + name);
 console.log("Static Pages package ready:", revision);

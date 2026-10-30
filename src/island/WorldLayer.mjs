@@ -6,6 +6,7 @@ export class WorldLayer {
     this.meta = metadata;
     this.tileSize = this.map.tileSize;
     this.drawCount = 0;
+    this.sample = metadata.profile === "sample";
   }
   cell(x, y) {
     return this.map.ground[y]?.[x] || "deep";
@@ -78,7 +79,25 @@ export class WorldLayer {
       if (kind === "sand") {
         this.tile(ctx, "shallow_" + frame, x, y);
         const mask = this.mask(x, y, (k) => !["deep", "shallow"].includes(k));
-        this.tile(ctx, mask === 15 ? "sand_" + (v % 3) : "shore_" + mask, x, y);
+        this.tile(
+          ctx,
+          mask === 15
+            ? "sand_" + (v % 3)
+            : "shore_" + mask + (this.sample ? "_" + frame : ""),
+          x,
+          y,
+        );
+        if (this.sample) {
+          const water = (a, b) => ["deep", "shallow"].includes(this.cell(a, b));
+          for (const [id, dx, dy] of [
+            ["NW", -1, -1],
+            ["NE", 1, -1],
+            ["SE", 1, 1],
+            ["SW", -1, 1],
+          ])
+            if (!water(x + dx, y) && !water(x, y + dy) && water(x + dx, y + dy))
+              this.tile(ctx, "shoreCorner" + id, x, y);
+        }
         continue;
       }
       if (kind === "grass" || kind === "path") {
@@ -88,13 +107,27 @@ export class WorldLayer {
           y,
           (k) => !["sand", "deep", "shallow"].includes(k),
         );
-        this.tile(ctx, mask === 15 ? "grass_" + v : "grassEdge_" + mask, x, y);
+        const mood = this.sample ? this.map.mood?.[y]?.[x] : null,
+          prefix =
+            mood === "forest"
+              ? "grassCool"
+              : mood === "forestEdge"
+                ? "grassMid"
+                : "grass";
+        this.tile(
+          ctx,
+          mask === 15 ? prefix + "_" + v : prefix + "Edge_" + mask,
+          x,
+          y,
+        );
+        if (this.sample && this.cell(x, y + 1) === "cliff")
+          this.tile(ctx, "topRim", x, y);
         if (kind === "path")
           this.tile(
             ctx,
             "path_" +
               this.mask(x, y, (k) =>
-                ["path", "stairs", "floor", "moss"].includes(k),
+                ["path", "stairs", "floor", "moss", "stonePath"].includes(k),
               ),
             x,
             y,
@@ -103,14 +136,37 @@ export class WorldLayer {
       }
       this.tile(
         ctx,
-        kind === "floor"
-          ? "floor_" + (v % 3)
-          : kind === "moss"
-            ? "moss_" + (v % 2)
-            : kind,
+        this.sample && kind === "rim"
+          ? (this.map.elevation?.[y - 1]?.[x] ?? 0) <
+            (this.map.elevation?.[y]?.[x] ?? 1)
+            ? "rimBack"
+            : (this.map.elevation?.[y]?.[x - 1] ?? 0) < this.map.elevation[y][x]
+              ? "rimLeft"
+              : "rimRight"
+          : kind === "stonePath"
+            ? "stonePath_" + v
+            : this.sample && ["cliff", "cliffFoot"].includes(kind)
+              ? kind + "_" + v
+              : this.sample && kind === "stairs"
+                ? this.cell(x, y - 1) !== "stairs"
+                  ? "stairsTop"
+                  : this.cell(x, y + 1) !== "stairs"
+                    ? "stairsBottom"
+                    : "stairs"
+                : kind === "floor"
+                  ? "floor_" + (v % 3)
+                  : kind === "moss"
+                    ? "moss_" + (v % 2)
+                    : kind,
         x,
         y,
       );
+      if (this.sample && kind === "cliff") {
+        if (this.cell(x - 1, y) === "stairs")
+          this.tile(ctx, "cliffEndLeft", x, y);
+        if (this.cell(x + 1, y) === "stairs")
+          this.tile(ctx, "cliffEndRight", x, y);
+      }
     }
   }
 }

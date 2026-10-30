@@ -1,17 +1,19 @@
 {
   "name": "nhat-diem-dawn-island",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "description": "Original pixel adventure vertical slice for Dawn Island",
   "engines": {
     "node": ">=24"
   },
   "scripts": {
-    "test": "node --test tests/island.test.mjs tests/ui.test.mjs",
+    "test": "node tests/island.test.mjs && node tests/ui.test.mjs && node tests/sample.test.mjs",
     "test:browser": "node tests/island.browser.cjs",
     "art:build": "node scripts/build-tileset.cjs",
     "test:ui": "node tests/ui.browser.cjs",
-    "build": "node scripts/build-site.cjs"
+    "build": "node scripts/build-site.cjs",
+    "art:sample": "node scripts/normalize-sample-props.cjs && node scripts/normalize-sample-materials.cjs && node scripts/build-sample-art.cjs",
+    "test:sample": "node tests/sample.browser.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

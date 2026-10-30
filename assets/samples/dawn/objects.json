@@ -1,0 +1,350 @@
+[
+  {
+    "id": "palm",
+    "frame": 0,
+    "rect": [
+      0,
+      0,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      12,
+      4,
+      84,
+      89
+    ],
+    "source": {
+      "file": "foliage-stone.png",
+      "rect": [
+        37,
+        19,
+        455,
+        534
+      ]
+    }
+  },
+  {
+    "id": "broadleaf",
+    "frame": 1,
+    "rect": [
+      96,
+      0,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      11,
+      4,
+      84,
+      89
+    ],
+    "source": {
+      "file": "foliage-stone.png",
+      "rect": [
+        535,
+        20,
+        460,
+        533
+      ]
+    }
+  },
+  {
+    "id": "bush",
+    "frame": 2,
+    "rect": [
+      192,
+      0,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      26,
+      59,
+      70,
+      89
+    ],
+    "source": {
+      "file": "foliage-stone.png",
+      "rect": [
+        42,
+        624,
+        465,
+        322
+      ]
+    }
+  },
+  {
+    "id": "boulder",
+    "frame": 3,
+    "rect": [
+      288,
+      0,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      26,
+      56,
+      69,
+      89
+    ],
+    "source": {
+      "file": "foliage-stone.png",
+      "rect": [
+        536,
+        601,
+        459,
+        354
+      ]
+    }
+  },
+  {
+    "id": "brokenPillar",
+    "frame": 4,
+    "rect": [
+      0,
+      96,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      31,
+      40,
+      64,
+      89
+    ],
+    "source": {
+      "file": "foliage-stone.png",
+      "rect": [
+        96,
+        982,
+        339,
+        499
+      ]
+    }
+  },
+  {
+    "id": "altar",
+    "frame": 5,
+    "rect": [
+      96,
+      96,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      8,
+      6,
+      87,
+      89
+    ],
+    "source": {
+      "file": "foliage-stone.png",
+      "rect": [
+        545,
+        1014,
+        443,
+        467
+      ]
+    }
+  },
+  {
+    "id": "pillar",
+    "frame": 6,
+    "rect": [
+      192,
+      96,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      33,
+      56,
+      62,
+      89
+    ],
+    "source": {
+      "file": "structure.png",
+      "rect": [
+        88,
+        63,
+        424,
+        484
+      ]
+    }
+  },
+  {
+    "id": "wall",
+    "frame": 7,
+    "rect": [
+      288,
+      96,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      16,
+      43,
+      79,
+      89
+    ],
+    "source": {
+      "file": "structure.png",
+      "rect": [
+        512,
+        185,
+        493,
+        360
+      ]
+    }
+  },
+  {
+    "id": "fragment",
+    "frame": 8,
+    "rect": [
+      0,
+      192,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      30,
+      63,
+      65,
+      89
+    ],
+    "source": {
+      "file": "structure.png",
+      "rect": [
+        46,
+        679,
+        448,
+        336
+      ]
+    }
+  },
+  {
+    "id": "brazier",
+    "frame": 9,
+    "rect": [
+      96,
+      192,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      36,
+      66,
+      59,
+      89
+    ],
+    "source": {
+      "file": "structure.png",
+      "rect": [
+        555,
+        593,
+        414,
+        432
+      ]
+    }
+  },
+  {
+    "id": "flowers",
+    "frame": 10,
+    "rect": [
+      192,
+      192,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      33,
+      66,
+      63,
+      89
+    ],
+    "source": {
+      "file": "structure.png",
+      "rect": [
+        44,
+        1134,
+        440,
+        346
+      ]
+    }
+  },
+  {
+    "id": "driftwood",
+    "frame": 11,
+    "rect": [
+      288,
+      192,
+      96,
+      96
+    ],
+    "origin": [
+      48,
+      90
+    ],
+    "bounds": [
+      33,
+      66,
+      62,
+      89
+    ],
+    "source": {
+      "file": "structure.png",
+      "rect": [
+        527,
+        1103,
+        467,
+        370
+      ]
+    }
+  }
+]

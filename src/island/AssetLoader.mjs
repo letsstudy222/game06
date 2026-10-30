@@ -18,6 +18,9 @@ export class AssetLoader {
       ["terrain", this.manifest.environment.tiles],
       ["props", this.manifest.environment.props],
       ["phoenix", this.manifest.phoenix.image],
+      ...(this.manifest.environment.shadows
+        ? [["shadows", this.manifest.environment.shadows]]
+        : []),
     ];
     let loaded = 0;
     await Promise.all(

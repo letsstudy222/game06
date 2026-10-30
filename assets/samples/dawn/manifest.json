@@ -1,0 +1,1202 @@
+{
+  "version": 3,
+  "environment": {
+    "kind": "tilemap",
+    "profile": "sample",
+    "tileSize": 32,
+    "columns": 8,
+    "tiles": "assets/samples/dawn/terrain.png",
+    "tilesSize": [
+      256,
+      736
+    ],
+    "props": "assets/samples/dawn/objects.png",
+    "shadows": "assets/samples/dawn/shadows.png",
+    "palette": [
+      "#142f36",
+      "#1b4441",
+      "#25584a",
+      "#346b4c",
+      "#467e4e",
+      "#5c914e",
+      "#7ca653",
+      "#9fba5e",
+      "#bdd174",
+      "#d1d889",
+      "#21474b",
+      "#315f5a",
+      "#42766a",
+      "#669482",
+      "#263e49",
+      "#3b535b",
+      "#526b6b",
+      "#6b8280",
+      "#8d9d93",
+      "#afbaa6",
+      "#ced0b3",
+      "#e0dec0",
+      "#463e35",
+      "#66533a",
+      "#806741",
+      "#a08550",
+      "#baa56a",
+      "#d2be87",
+      "#e4d29b",
+      "#f3e1b3",
+      "#173e58",
+      "#1d5268",
+      "#246c7a",
+      "#2f8490",
+      "#399a9c",
+      "#55b2ab",
+      "#86c9bb",
+      "#b8dfcf",
+      "#dcf0d8",
+      "#6b5135",
+      "#917047",
+      "#b38a50",
+      "#d4ab60",
+      "#e6c779",
+      "#f6d997",
+      "#ffe9b8",
+      "#aa633e",
+      "#d9864d",
+      "#efaf68",
+      "#f6d48c",
+      "#7d6267",
+      "#ae807e",
+      "#d8a597",
+      "#efc7ac",
+      "#5a655b",
+      "#777a64",
+      "#999577",
+      "#b8ad86",
+      "#d2c49c",
+      "#3a5558",
+      "#50716d",
+      "#7a9b86",
+      "#a5b9a0",
+      "#f1e4c1"
+    ],
+    "tileDefinitions": {
+      "deep_0": {
+        "frame": 0
+      },
+      "deep_1": {
+        "frame": 1
+      },
+      "deep_2": {
+        "frame": 2
+      },
+      "deep_3": {
+        "frame": 3
+      },
+      "shallow_0": {
+        "frame": 4
+      },
+      "shallow_1": {
+        "frame": 5
+      },
+      "shallow_2": {
+        "frame": 6
+      },
+      "shallow_3": {
+        "frame": 7
+      },
+      "grass_0": {
+        "frame": 8
+      },
+      "grassCool_0": {
+        "frame": 9
+      },
+      "grassMid_0": {
+        "frame": 10
+      },
+      "sand_0": {
+        "frame": 11
+      },
+      "grass_1": {
+        "frame": 12
+      },
+      "grassCool_1": {
+        "frame": 13
+      },
+      "grassMid_1": {
+        "frame": 14
+      },
+      "sand_1": {
+        "frame": 15
+      },
+      "grass_2": {
+        "frame": 16
+      },
+      "grassCool_2": {
+        "frame": 17
+      },
+      "grassMid_2": {
+        "frame": 18
+      },
+      "sand_2": {
+        "frame": 19
+      },
+      "grass_3": {
+        "frame": 20
+      },
+      "grassCool_3": {
+        "frame": 21
+      },
+      "grassMid_3": {
+        "frame": 22
+      },
+      "sand_3": {
+        "frame": 23
+      },
+      "shore_0_0": {
+        "frame": 24
+      },
+      "shore_0_1": {
+        "frame": 25
+      },
+      "shore_0_2": {
+        "frame": 26
+      },
+      "shore_0_3": {
+        "frame": 27
+      },
+      "grassEdge_0": {
+        "frame": 28
+      },
+      "grassCoolEdge_0": {
+        "frame": 29
+      },
+      "grassMidEdge_0": {
+        "frame": 30
+      },
+      "path_0": {
+        "frame": 31
+      },
+      "shore_1_0": {
+        "frame": 32
+      },
+      "shore_1_1": {
+        "frame": 33
+      },
+      "shore_1_2": {
+        "frame": 34
+      },
+      "shore_1_3": {
+        "frame": 35
+      },
+      "grassEdge_1": {
+        "frame": 36
+      },
+      "grassCoolEdge_1": {
+        "frame": 37
+      },
+      "grassMidEdge_1": {
+        "frame": 38
+      },
+      "path_1": {
+        "frame": 39
+      },
+      "shore_2_0": {
+        "frame": 40
+      },
+      "shore_2_1": {
+        "frame": 41
+      },
+      "shore_2_2": {
+        "frame": 42
+      },
+      "shore_2_3": {
+        "frame": 43
+      },
+      "grassEdge_2": {
+        "frame": 44
+      },
+      "grassCoolEdge_2": {
+        "frame": 45
+      },
+      "grassMidEdge_2": {
+        "frame": 46
+      },
+      "path_2": {
+        "frame": 47
+      },
+      "shore_3_0": {
+        "frame": 48
+      },
+      "shore_3_1": {
+        "frame": 49
+      },
+      "shore_3_2": {
+        "frame": 50
+      },
+      "shore_3_3": {
+        "frame": 51
+      },
+      "grassEdge_3": {
+        "frame": 52
+      },
+      "grassCoolEdge_3": {
+        "frame": 53
+      },
+      "grassMidEdge_3": {
+        "frame": 54
+      },
+      "path_3": {
+        "frame": 55
+      },
+      "shore_4_0": {
+        "frame": 56
+      },
+      "shore_4_1": {
+        "frame": 57
+      },
+      "shore_4_2": {
+        "frame": 58
+      },
+      "shore_4_3": {
+        "frame": 59
+      },
+      "grassEdge_4": {
+        "frame": 60
+      },
+      "grassCoolEdge_4": {
+        "frame": 61
+      },
+      "grassMidEdge_4": {
+        "frame": 62
+      },
+      "path_4": {
+        "frame": 63
+      },
+      "shore_5_0": {
+        "frame": 64
+      },
+      "shore_5_1": {
+        "frame": 65
+      },
+      "shore_5_2": {
+        "frame": 66
+      },
+      "shore_5_3": {
+        "frame": 67
+      },
+      "grassEdge_5": {
+        "frame": 68
+      },
+      "grassCoolEdge_5": {
+        "frame": 69
+      },
+      "grassMidEdge_5": {
+        "frame": 70
+      },
+      "path_5": {
+        "frame": 71
+      },
+      "shore_6_0": {
+        "frame": 72
+      },
+      "shore_6_1": {
+        "frame": 73
+      },
+      "shore_6_2": {
+        "frame": 74
+      },
+      "shore_6_3": {
+        "frame": 75
+      },
+      "grassEdge_6": {
+        "frame": 76
+      },
+      "grassCoolEdge_6": {
+        "frame": 77
+      },
+      "grassMidEdge_6": {
+        "frame": 78
+      },
+      "path_6": {
+        "frame": 79
+      },
+      "shore_7_0": {
+        "frame": 80
+      },
+      "shore_7_1": {
+        "frame": 81
+      },
+      "shore_7_2": {
+        "frame": 82
+      },
+      "shore_7_3": {
+        "frame": 83
+      },
+      "grassEdge_7": {
+        "frame": 84
+      },
+      "grassCoolEdge_7": {
+        "frame": 85
+      },
+      "grassMidEdge_7": {
+        "frame": 86
+      },
+      "path_7": {
+        "frame": 87
+      },
+      "shore_8_0": {
+        "frame": 88
+      },
+      "shore_8_1": {
+        "frame": 89
+      },
+      "shore_8_2": {
+        "frame": 90
+      },
+      "shore_8_3": {
+        "frame": 91
+      },
+      "grassEdge_8": {
+        "frame": 92
+      },
+      "grassCoolEdge_8": {
+        "frame": 93
+      },
+      "grassMidEdge_8": {
+        "frame": 94
+      },
+      "path_8": {
+        "frame": 95
+      },
+      "shore_9_0": {
+        "frame": 96
+      },
+      "shore_9_1": {
+        "frame": 97
+      },
+      "shore_9_2": {
+        "frame": 98
+      },
+      "shore_9_3": {
+        "frame": 99
+      },
+      "grassEdge_9": {
+        "frame": 100
+      },
+      "grassCoolEdge_9": {
+        "frame": 101
+      },
+      "grassMidEdge_9": {
+        "frame": 102
+      },
+      "path_9": {
+        "frame": 103
+      },
+      "shore_10_0": {
+        "frame": 104
+      },
+      "shore_10_1": {
+        "frame": 105
+      },
+      "shore_10_2": {
+        "frame": 106
+      },
+      "shore_10_3": {
+        "frame": 107
+      },
+      "grassEdge_10": {
+        "frame": 108
+      },
+      "grassCoolEdge_10": {
+        "frame": 109
+      },
+      "grassMidEdge_10": {
+        "frame": 110
+      },
+      "path_10": {
+        "frame": 111
+      },
+      "shore_11_0": {
+        "frame": 112
+      },
+      "shore_11_1": {
+        "frame": 113
+      },
+      "shore_11_2": {
+        "frame": 114
+      },
+      "shore_11_3": {
+        "frame": 115
+      },
+      "grassEdge_11": {
+        "frame": 116
+      },
+      "grassCoolEdge_11": {
+        "frame": 117
+      },
+      "grassMidEdge_11": {
+        "frame": 118
+      },
+      "path_11": {
+        "frame": 119
+      },
+      "shore_12_0": {
+        "frame": 120
+      },
+      "shore_12_1": {
+        "frame": 121
+      },
+      "shore_12_2": {
+        "frame": 122
+      },
+      "shore_12_3": {
+        "frame": 123
+      },
+      "grassEdge_12": {
+        "frame": 124
+      },
+      "grassCoolEdge_12": {
+        "frame": 125
+      },
+      "grassMidEdge_12": {
+        "frame": 126
+      },
+      "path_12": {
+        "frame": 127
+      },
+      "shore_13_0": {
+        "frame": 128
+      },
+      "shore_13_1": {
+        "frame": 129
+      },
+      "shore_13_2": {
+        "frame": 130
+      },
+      "shore_13_3": {
+        "frame": 131
+      },
+      "grassEdge_13": {
+        "frame": 132
+      },
+      "grassCoolEdge_13": {
+        "frame": 133
+      },
+      "grassMidEdge_13": {
+        "frame": 134
+      },
+      "path_13": {
+        "frame": 135
+      },
+      "shore_14_0": {
+        "frame": 136
+      },
+      "shore_14_1": {
+        "frame": 137
+      },
+      "shore_14_2": {
+        "frame": 138
+      },
+      "shore_14_3": {
+        "frame": 139
+      },
+      "grassEdge_14": {
+        "frame": 140
+      },
+      "grassCoolEdge_14": {
+        "frame": 141
+      },
+      "grassMidEdge_14": {
+        "frame": 142
+      },
+      "path_14": {
+        "frame": 143
+      },
+      "shore_15_0": {
+        "frame": 144
+      },
+      "shore_15_1": {
+        "frame": 145
+      },
+      "shore_15_2": {
+        "frame": 146
+      },
+      "shore_15_3": {
+        "frame": 147
+      },
+      "grassEdge_15": {
+        "frame": 148
+      },
+      "grassCoolEdge_15": {
+        "frame": 149
+      },
+      "grassMidEdge_15": {
+        "frame": 150
+      },
+      "path_15": {
+        "frame": 151
+      },
+      "floor_0": {
+        "frame": 152
+      },
+      "floor_1": {
+        "frame": 153
+      },
+      "floor_2": {
+        "frame": 154
+      },
+      "moss_0": {
+        "frame": 155
+      },
+      "moss_1": {
+        "frame": 156
+      },
+      "stonePath_0": {
+        "frame": 157
+      },
+      "stonePath_1": {
+        "frame": 158
+      },
+      "stonePath_2": {
+        "frame": 159
+      },
+      "stonePath_3": {
+        "frame": 160
+      },
+      "rim": {
+        "frame": 161
+      },
+      "cliff_0": {
+        "frame": 162
+      },
+      "cliff_1": {
+        "frame": 163
+      },
+      "cliff_2": {
+        "frame": 164
+      },
+      "cliff_3": {
+        "frame": 165
+      },
+      "cliffFoot_0": {
+        "frame": 166
+      },
+      "cliffFoot_1": {
+        "frame": 167
+      },
+      "cliffFoot_2": {
+        "frame": 168
+      },
+      "cliffFoot_3": {
+        "frame": 169
+      },
+      "stairs": {
+        "frame": 170
+      },
+      "stairsTop": {
+        "frame": 171
+      },
+      "stairsBottom": {
+        "frame": 172
+      },
+      "topRim": {
+        "frame": 173
+      },
+      "rimLeft": {
+        "frame": 174
+      },
+      "rimRight": {
+        "frame": 175
+      },
+      "rimBack": {
+        "frame": 176
+      },
+      "shoreCornerNW": {
+        "frame": 177
+      },
+      "shoreCornerNE": {
+        "frame": 178
+      },
+      "shoreCornerSE": {
+        "frame": 179
+      },
+      "shoreCornerSW": {
+        "frame": 180
+      },
+      "cliffEndLeft": {
+        "frame": 181
+      },
+      "cliffEndRight": {
+        "frame": 182
+      }
+    },
+    "definitions": [
+      {
+        "id": "palm",
+        "frame": 0,
+        "rect": [
+          0,
+          0,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          12,
+          4,
+          84,
+          89
+        ],
+        "source": {
+          "file": "foliage-stone.png",
+          "rect": [
+            37,
+            19,
+            455,
+            534
+          ]
+        },
+        "shadow": {
+          "rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "broadleaf",
+        "frame": 1,
+        "rect": [
+          96,
+          0,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          11,
+          4,
+          84,
+          89
+        ],
+        "source": {
+          "file": "foliage-stone.png",
+          "rect": [
+            535,
+            20,
+            460,
+            533
+          ]
+        },
+        "shadow": {
+          "rect": [
+            128,
+            0,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "bush",
+        "frame": 2,
+        "rect": [
+          192,
+          0,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          26,
+          59,
+          70,
+          89
+        ],
+        "source": {
+          "file": "foliage-stone.png",
+          "rect": [
+            42,
+            624,
+            465,
+            322
+          ]
+        },
+        "shadow": {
+          "rect": [
+            256,
+            0,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "boulder",
+        "frame": 3,
+        "rect": [
+          288,
+          0,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          26,
+          56,
+          69,
+          89
+        ],
+        "source": {
+          "file": "foliage-stone.png",
+          "rect": [
+            536,
+            601,
+            459,
+            354
+          ]
+        },
+        "shadow": {
+          "rect": [
+            384,
+            0,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "brokenPillar",
+        "frame": 4,
+        "rect": [
+          0,
+          96,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          31,
+          40,
+          64,
+          89
+        ],
+        "source": {
+          "file": "foliage-stone.png",
+          "rect": [
+            96,
+            982,
+            339,
+            499
+          ]
+        },
+        "shadow": {
+          "rect": [
+            0,
+            128,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "altar",
+        "frame": 5,
+        "rect": [
+          96,
+          96,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          8,
+          6,
+          87,
+          89
+        ],
+        "source": {
+          "file": "foliage-stone.png",
+          "rect": [
+            545,
+            1014,
+            443,
+            467
+          ]
+        },
+        "shadow": {
+          "rect": [
+            128,
+            128,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "pillar",
+        "frame": 6,
+        "rect": [
+          192,
+          96,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          33,
+          56,
+          62,
+          89
+        ],
+        "source": {
+          "file": "structure.png",
+          "rect": [
+            88,
+            63,
+            424,
+            484
+          ]
+        },
+        "shadow": {
+          "rect": [
+            256,
+            128,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "wall",
+        "frame": 7,
+        "rect": [
+          288,
+          96,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          16,
+          43,
+          79,
+          89
+        ],
+        "source": {
+          "file": "structure.png",
+          "rect": [
+            512,
+            185,
+            493,
+            360
+          ]
+        },
+        "shadow": {
+          "rect": [
+            384,
+            128,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "fragment",
+        "frame": 8,
+        "rect": [
+          0,
+          192,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          30,
+          63,
+          65,
+          89
+        ],
+        "source": {
+          "file": "structure.png",
+          "rect": [
+            46,
+            679,
+            448,
+            336
+          ]
+        },
+        "shadow": {
+          "rect": [
+            0,
+            256,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "brazier",
+        "frame": 9,
+        "rect": [
+          96,
+          192,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          36,
+          66,
+          59,
+          89
+        ],
+        "source": {
+          "file": "structure.png",
+          "rect": [
+            555,
+            593,
+            414,
+            432
+          ]
+        },
+        "shadow": {
+          "rect": [
+            128,
+            256,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "flowers",
+        "frame": 10,
+        "rect": [
+          192,
+          192,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          33,
+          66,
+          63,
+          89
+        ],
+        "source": {
+          "file": "structure.png",
+          "rect": [
+            44,
+            1134,
+            440,
+            346
+          ]
+        },
+        "shadow": {
+          "rect": [
+            256,
+            256,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      },
+      {
+        "id": "driftwood",
+        "frame": 11,
+        "rect": [
+          288,
+          192,
+          96,
+          96
+        ],
+        "origin": [
+          48,
+          90
+        ],
+        "bounds": [
+          33,
+          66,
+          62,
+          89
+        ],
+        "source": {
+          "file": "structure.png",
+          "rect": [
+            527,
+            1103,
+            467,
+            370
+          ]
+        },
+        "shadow": {
+          "rect": [
+            384,
+            256,
+            128,
+            128
+          ],
+          "origin": [
+            48,
+            64
+          ]
+        }
+      }
+    ]
+  },
+  "phoenix": {
+    "image": "assets/production/phoenix/atlas.png",
+    "frameSize": 96,
+    "columns": 2,
+    "posesPerDirection": 2,
+    "directions": {
+      "down": {
+        "row": 0,
+        "origin": [
+          48,
+          72
+        ]
+      },
+      "left": {
+        "row": 1,
+        "origin": [
+          45,
+          72
+        ]
+      },
+      "right": {
+        "row": 1,
+        "origin": [
+          45,
+          72
+        ],
+        "mirror": true
+      },
+      "up": {
+        "row": 2,
+        "origin": [
+          48,
+          52
+        ]
+      }
+    },
+    "bounds": [
+      [
+        19,
+        18,
+        79,
+        75
+      ],
+      [
+        17,
+        17,
+        78,
+        75
+      ],
+      [
+        29,
+        19,
+        91,
+        74
+      ],
+      [
+        30,
+        28,
+        94,
+        74
+      ],
+      [
+        17,
+        16,
+        83,
+        84
+      ],
+      [
+        15,
+        19,
+        81,
+        84
+      ]
+    ]
+  }
+}

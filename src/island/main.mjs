@@ -9,7 +9,11 @@ import { ResponsiveLayout } from "./ResponsiveLayout.mjs";
 import { GameMenu } from "./GameMenu.mjs";
 async function start() {
   const canvas = document.getElementById("island"),
-    state = new GameState(),
+    state = new GameState(
+      new URLSearchParams(location.search).get("sample") === "1"
+        ? "dawn-sample"
+        : undefined,
+    ),
     assets = await new AssetLoader(state.island.assetManifest).load(
       (n, total) =>
         (document.getElementById("loading-progress").textContent =

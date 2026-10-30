@@ -1,6 +1,7 @@
 const assert = require("node:assert/strict"),
   fs = require("node:fs");
 const { chromium } = require("playwright");
+const OUT = process.env.ARTIFACT_DIR || "artifacts/ui-after";
 const url = process.env.GAME_URL || "http://127.0.0.1:8000";
 (async () => {
   const browser = await chromium.launch({
@@ -10,8 +11,8 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
     headless: true,
     args: ["--no-sandbox"],
   });
-  fs.mkdirSync("artifacts/ui-after", { recursive: true });
-  fs.rmSync("artifacts/ui-after/qa-results.json", { force: true });
+  fs.mkdirSync(OUT, { recursive: true });
+  fs.rmSync(`${OUT}/qa-results.json`, { force: true });
   const results = [];
   for (const [name, width, height] of [
     ["portrait", 390, 844],
@@ -120,7 +121,7 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
       } else assert.equal(await page.locator(".touch-pad").isVisible(), false);
     }
     await assertLayout();
-    await page.screenshot({ path: `artifacts/ui-after/${name}.png` });
+    await page.screenshot({ path: `${OUT}/${name}.png` });
     if (touch) {
       const cdp = await context.newCDPSession(page);
       const point = (p, id) => ({ ...p, id, radiusX: 4, radiusY: 4, force: 1 });
@@ -282,7 +283,7 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
         await page.locator("#game-menu").evaluate((e) => (e.scrollTop = 0));
       }
       await page.screenshot({
-        path: `artifacts/ui-after/${name}-settings.png`,
+        path: `${OUT}/${name}-settings.png`,
       });
       const settings = await page.evaluate(() => IslandGame.settings());
       await page.reload();
@@ -344,7 +345,7 @@ const url = process.env.GAME_URL || "http://127.0.0.1:8000";
     await context.close();
   }
   fs.writeFileSync(
-    "artifacts/ui-after/qa-results.json",
+    `${OUT}/qa-results.json`,
     JSON.stringify(
       {
         testedAt: new Date().toISOString(),

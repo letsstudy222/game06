@@ -28,11 +28,17 @@ npm run test:ui
 
 Giữ HTTP server ở cổng 8000 khi chạy browser test. Có thể đặt `GAME_URL` hoặc `CHROMIUM_PATH`; hệ thống Linux tự dùng `/usr/bin/chromium` nếu có. 22 kiểm tra logic, tilemap và cấu hình UI kiểm chứng đường đi bốn khu, va chạm, sáu trạng thái, chiến đấu, HP, đền, camera, phân mảnh bản đồ và tính toàn vẹn atlas. Browser test điều khiển bằng bàn phím thật qua bốn khu, chụp ảnh, kiểm tra HUD, trợ giúp/tạm dừng, sát thương và kích thước 320–1920px; không dịch chuyển nhân vật để giả lập hành trình.
 
+## Mẫu môi trường 0.9 — chờ duyệt
+
+Mở `/?sample=1` để chơi sample có bộ art/bóng/ba cao độ mới; link gốc giữ đảo hiện tại. [Ảnh, nguồn art, cách dựng lại và giới hạn](docs/dawn-sample-review.md). Chưa nhân rộng ra toàn Dawn Island.
+
 ## Tilemap 0.8 — Fantasy Island × Mystic Ruins
 
 Đảo đầu tiên hiện dựng từ tile 32×32 trên grid 40×28, 72 terrain tile và 13 prop sprite dùng chung palette. Không dùng tranh nền whole-world. Nước/bờ/cỏ/đường/vách/cầu thang/đền là các ô và lớp riêng; collision đọc cùng grid.
 
 [Chi tiết tile logic, asset giữ/thay, ảnh gameplay và giới hạn](docs/tilemap-island.md).
+
+[Production asset checklist — hoàn thiện mẫu trước khi mở rộng đảo](docs/production-asset-checklist.md). Bộ tile hiện tại vẫn ở mức prototype so với art target premium; kiểm tra kỹ thuật đạt không thay thế duyệt mỹ thuật.
 
 ## Giao diện mobile RPG
 
