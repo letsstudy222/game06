@@ -1,5 +1,17 @@
 # Phượng Hoàng Nhật Diệm — Dawn Island
 
+## Định hướng dự án — Tứ Linh Khởi Nguyên
+
+Tên làm việc tiếng Anh: **Origins of the Four Sacred Spirits**. Bản chơi Phượng Hoàng dưới đây là nền kỹ thuật hiện hữu; mục tiêu sản xuất đầu tiên của tầm nhìn mới là vertical slice Chương I — Quy tại Vực Hải Uyên. Chưa triển khai các hệ hóa thân/cộng hưởng hay bốn chương trong Task 01.
+
+- [Tầm nhìn chính thức](docs/GAME_VISION.md) và [phạm vi sản xuất](docs/PROJECT_SCOPE.md).
+- [Trụ cột thiết kế](docs/CORE_DESIGN_PILLARS.md) và [quyết định CONFIRMED / PROPOSED / UNRESOLVED](docs/PROJECT_DECISIONS.md).
+- [Câu hỏi mở](docs/OPEN_QUESTIONS.md) và [đăng ký tham chiếu/asset thiếu](docs/ASSET_REFERENCE_REGISTER.md).
+- [Kiểm kê repository Task 01](docs/REPOSITORY_AUDIT.md) và [quy trình phát triển](docs/DEVELOPMENT_WORKFLOW.md).
+
+Các tài liệu trên định hướng thiết kế; hướng dẫn chạy và lịch sử Dawn bên dưới mô tả chức năng đang có. Không mặc định đồng nhất Đảo Bình Minh với Đảo Nhật Diệm Chương II.
+
+
 Pixel adventure chạy trực tiếp bằng HTML/CSS, ES modules và Canvas 2D. Phượng Hoàng Legend là nhân vật điều khiển trên đảo gồm đồng cỏ, rừng phía Bắc, đền cổ và biển phía Nam. Đây là vertical slice khám phá; mã nông trại cũ được lưu trong `legacy/tiny-farm/`.
 
 ## Chạy thử
