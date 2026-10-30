@@ -37,3 +37,7 @@ Q08–Q10 và Q16 có [đặc tả ứng viên](lore/RESONANCE_DECISION_RECORD.m
 ## Sau Task 04
 
 Q18 vẫn thiếu ảnh Quy/Long/Ly; cần mapping reference Phoenix ↔ stage, không tự nhận Legend là stage III. Q09/Q11 vẫn chưa chốt ngưỡng evolution/XP cap/rarity; [abilities và synergies ứng viên](creatures/TASK04_CONSISTENCY_AUDIT.md) chưa có damage/cooldown/cost/range/TTL số. Q15/Q17 cần prototype clearance/render của Long dài và envelope stage lớn. Các quy tắc Task 03 được tham chiếu nhưng chưa tự phê duyệt; nguồn gốc Tinh Linh, cổng và tính tự nguyện biến cố giữ UNRESOLVED.
+
+## Sau Task 05
+
+Q06 có [blueprint bốn chương và phạm vi event](story/TASK05_CONSISTENCY_AUDIT.md), chưa có ngân sách/thời lượng cam kết. Q10 cần chọn full-three R03-P06 hay empty-slot-locked S05-P02 trước boss đầu; không đòi unannounced optional species. Q13/Q16 có world/refuge/event-save contracts đề xuất, chưa implemented. D35 chốt khung Long/Ly phân tán theo Task 05, không giải ý thức nguyên thể/tự nguyện/nguồn Tinh Linh. Cast/boss identities, Kim/Lôi affiliations và capability/asset prerequisites vẫn cần duyệt đúng phạm vi task sau.

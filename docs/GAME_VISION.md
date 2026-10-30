@@ -58,3 +58,7 @@ Tinh Linh là tên thuật ngữ cho chủ thể linh thể người chơi. [S�
 ## Đặc tả Tứ Linh Task 04
 
 [Ma trận bản sắc](creatures/SACRED_CREATURE_OVERVIEW.md) và [12 dạng tiến hóa](creatures/SACRED_EVOLUTION_MATRIX.md) cụ thể hóa hướng thiết kế từ Task 04. Giữ thứ tự chương và bộ ba; tên/ID stage, anatomy chi tiết, skills/synergies còn PROPOSED theo [audit](creatures/TASK04_CONSISTENCY_AUDIT.md). Chưa có bộ 12 animation production hoặc gameplay mới.
+
+## Blueprint truyện Task 05
+
+[Tuyến bốn chương](story/FOUR_CHAPTER_STORY_OVERVIEW.md) và [audit/handoff index](story/TASK05_CONSISTENCY_AUDIT.md) cụ thể hóa narrative thành đề xuất event/quest có dependency, payoff, world-state và quyền quay lại. Không coi cast/boss/mission mới là canon đã duyệt, không triển khai truyện vào bản Dawn hiện tại hoặc mở planet chơi được.

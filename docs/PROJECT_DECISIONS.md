@@ -63,6 +63,15 @@ Cơ chế thế giới/biến cố/cộng hưởng mới L02-P01–P10 đều **
 
 [C04-P01–P13](creatures/TASK04_CONSISTENCY_AUDIT.md) là các đặc tả **PROPOSED**: English/stage names/IDs, anatomy chi tiết, chiêu, environmental receivers, synergy, art pipeline, data fields và edge cases. Không gán atlas Legend hiện tại là stage III, không chốt rarity/level thresholds/damage/cooldown/cost. Không nâng R03/L02 proposals thành CONFIRMED. Chỉ tài liệu, không gameplay/art mới.
 
+## Bổ sung Task 05 — nguồn: yêu cầu người dùng Task 05/96
+
+| ID | Trạng thái | Loại | Quyết định / giới hạn |
+| --- | --- | --- | --- |
+| D34 | CONFIRMED | Yêu cầu narrative | Mỗi chương có cảm xúc/conflict/awakening/revelation/local resolution riêng; mở hệ dần, ecological storytelling, meaningful combat, world response và quay lại/collection không bị khóa bất ngờ. Kết cung có giá trị địa phương trước expansion, origin Tinh Linh vẫn bí ẩn |
+| D35 | CONFIRMED | Khung thức tỉnh | Theo yêu cầu Task 05: Long có dấu tổ tiên phân tán qua mạng khí, không thức từ một quả trứng khác; Ly phân tán trong mạng sinh học hỏng, không một trứng/nguồn năng lượng đơn đủ thức. Các cơ chế bảo tồn/đồng thuận/cấu trúc ý thức chi tiết của L02-P07 vẫn PROPOSED/UNRESOLVED |
+
+[S05-P01–P16](story/TASK05_CONSISTENCY_AUDIT.md) giữ trạng thái **PROPOSED** cho plot/24 events/cast/boss/quest/world states/capabilities/persistence. S05-P02 khuyến nghị boss sớm khóa cả empty slots, khác full-three entry của R03-P06 chưa approved; không thay confirmed membership lock D06 hoặc tự thêm species optional làm main gate. Các scenario Fire–Metal/Wind–Lightning không tự khóa roster D18. Không có event gameplay/asset mới.
+
 ## Cách sửa quyết định
 
 Mọi thay đổi ghi ID, trạng thái cũ/mới, lý do, nguồn phê duyệt và hệ/asset bị ảnh hưởng trong task tương ứng. Chuyển PROPOSED/UNRESOLVED sang CONFIRMED cần quyết định rõ, không chỉ sửa lời văn. Sự thật kỹ thuật mới phải có đường dẫn hoặc kết quả kiểm chứng. Các tài liệu audit lịch sử vẫn có giá trị theo mốc; không để chúng ghi đè hướng chính thức này.

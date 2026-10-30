@@ -1,5 +1,7 @@
 # Tứ Linh — lịch sử, vắng mặt và thức tỉnh
 
+> Cập nhật Task 05/D35: khung Long phân tán dấu qua mạng khí và Ly qua mạng sinh học được yêu cầu rõ; các chi tiết cơ chế/ý thức/can thiệp L02-P07 dưới đây vẫn PROPOSED. [Blueprint truyện](../story/TASK05_CONSISTENCY_AUDIT.md) không tự xác nhận sự tự nguyện hoặc nguồn gốc Tinh Linh.
+
 **CONFIRMED:** thứ tự, vùng và nguyên tố theo D04/D25; Ly có quyền năng Sinh Mệnh. **PROPOSED:** mọi cơ chế bảo tồn, vật mang và can thiệp chi tiết dưới đây (L02-P07). Hình dạng cuối và sprite không được tạo trong task này; [asset register](../ASSET_REFERENCE_REGISTER.md) ghi reference còn thiếu.
 
 ## Quy Hải Uyên — Thủy

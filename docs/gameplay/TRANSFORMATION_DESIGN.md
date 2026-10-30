@@ -63,3 +63,7 @@ Không có resume boss giữa trận trong phương án này. Nếu cần resume
 | Ly | Nối quan hệ rễ/cộng sinh, khôi phục điều kiện tăng trưởng | Healing combat không hồi sinh cả rừng chết | Suy luận nước/ẩm/đối tác sống, chọn quan hệ cần nối |
 
 Nhóm tương tác khác nhau có thể dùng cùng phím contextual sau này nhưng không tự dùng cùng cooldown/combat rule. Hạn chế mandatory switching bằng đoạn thử thách đủ dài cho một dạng, alternate route và điểm đổi an toàn; phối hợp khả năng trên trạng thái môi trường được lưu chứ không bật/tắt dạng mỗi tile. Dạng không thuận lợi vẫn có thể dùng ở đoạn tương hợp; không phủ debuff toàn chương để xóa ích lợi dạng cũ.
+
+## Alternative entry policy trong Task 05
+
+[Story S05-P02](../story/MAJOR_CONFLICTS_AND_BOSSES.md) khuyến nghị boss sớm cho bộ ba slot có empty, snapshot cả empty tới hết encounter; tránh main gate cần loài optional chưa công bố. Điều này khác **đề xuất** full-three entry R03-P06 ở trên, không âm thầm thay confirmed lock D06. Hai alternative chưa phải cùng một rule runtime: phải chọn/duyệt một policy trước implementation. Blueprint story dựa S05-P02, các điều kiện atomic/reload/defeat khác không tự được nâng thành approved.

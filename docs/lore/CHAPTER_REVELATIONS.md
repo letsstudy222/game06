@@ -46,3 +46,7 @@ Sau Chương IV, người chơi có thể hiểu một can thiệp giữ thế g
 Ví dụ: một ghi chép đền mô tả “lửa ngừng” như bị bỏ rơi, còn ký ức Phượng thể hiện chủ động giảm nhiệt; một nút Long ghi cảm giác đẩy dòng đi, nút khác ghi giữ dòng lại. Chúng có thể cùng đúng ở nơi khác nhau; vật chứng đường xả và hướng khí giúp người chơi tự đối chiếu. Không sửa bằng câu “tất cả ký ức đều giả”. Mỗi mảnh phải ghi nguồn, vùng quan sát, khoảng thời tương đối, độ thiếu hụt và clue kiểm chứng. Nếu hai mảnh mâu thuẫn không thể hòa giải bằng phạm vi quan sát, ghi lỗi/câu hỏi cần duyệt thay vì bịa thủ phạm xóa ký ức.
 
 Ưu tiên dấu kiến trúc, địa chất, thay đổi động vật, lớp trầm tích và đoạn ký ức ngắn xuất hiện cùng hành động. Tránh hội thoại dài giảng trọn timeline. Các câu văn ví dụ là ghi chú thiết kế, chưa là thoại in-game đã duyệt.
+
+## Cụ thể hóa production Task 05
+
+[Ma trận story](../story/NARRATIVE_REVELATION_MATRIX.md) dùng lại CL01–CL05, đặt vào 24 event và quy định payoff/archival nguồn; tài liệu này giữ giới hạn tiết lộ cấp lore. Event/cast/quest/memory IDs mới vẫn PROPOSED, không là mảnh đã có trong runtime hoặc phê duyệt toàn sự thật D17.
