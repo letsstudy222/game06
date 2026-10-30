@@ -22,3 +22,22 @@
 Accidental attack có thể tạo aggro ngắn/retreat, không tự đổi taxonomy thành enemy vĩnh viễn hoặc giảm đạo đức toàn phe. Stabilization quest đổi mức ổn định/nguồn stress chứ không luôn đổi speciesId hoặc xóa dual affinity. Trạng thái hostile tạm khác vai trò predatory/territorial và khác allegiance tổ chức.
 
 Khả năng nhận reward/resonance được tách khỏi kill outcome. Collection hoàn tất không buộc giết peaceful wildlife; giữ nguồn observation tại refuge nếu world-state dời nơi sống. Các archetype/template cụ thể và yêu cầu combat ở [ENEMY_ARCHETYPES](../gameplay/ENEMY_ARCHETYPES.md), không implement state machine trong tài liệu này.
+
+
+## Task11 — ecological classification projection (PROPOSED K11-P06)
+
+Requested `docs/creatures/ECOLOGICAL_CLASSIFICATION.md` dùng nguồn hiện hữu này; tám views F06 bên trên không bị thay bằng enum mới. Feeding/ecological functions như grazer/filter-feeder/predator/disperser/refuge-provider là evidence-based descriptors, không roster species được approved. `Regional Elite` là encounter overlay theo [enemy archetypes](../gameplay/ENEMY_ARCHETYPES.md), không rarity hoặc behavior thứ chín bắt buộc. Faction membership khác view hostile faction, có thể member neutral. LocalDisposition thay theo context, không rewrite behaviorPatterns.
+
+| View / overlay | Spawning | Observation | Resonance | Aggression | Quest / loot | Habitat change |
+| --- | --- | --- | --- | --- | --- | --- |
+| Passive | Food/refuge phù hợp | Từ khoảng an toàn, nhịp kiếm ăn | Observation route nếu designatedPlayable/source hợp lệ | Avoid/defend theo warning | Research/shed materials có nguồn, không kill-peaceful gate | Alternate refuge giữ observation access |
+| Neutral | Chu kỳ sinh hoạt/nguồn | Đọc feeding/travel | Habitat interaction có thể đủ một phần requirements | Context threat, không thấy player là attack | Ecological proof, reward không coin default | Dời route có clue, không reset discovered |
+| Territorial | Nest/resource boundary | Đọc warning/leash | Movement/challenge/repair nếu được duyệt | Cục bộ, passive ngoài nest có thể hợp lý | Clear access/challenge XP hoặc evidence, không hunt quota | Boundary mới validate safe route/collection |
+| Predatory | Prey/cover có quan hệ | Dấu rình/nhịp hunt | Combat trial hoặc behavior evidence, không victory auto grant | Hunt conditions, không đạo đức ác | Biological material/research theo encounter source | Prey shift kéo predator, giữ reachable encounter |
+| Stable adapted | Tolerance/partners ổn định | Hai chức năng ổn định không chỉ palette | Cùng R03 route, không tẩy foreign | Theo behavior khác, không type auto-hostile | Ecology/research/shed material, no corruption loot default | Preserve viable adapted habitat sau restoration |
+| Unstable assimilated | Exposure/source evidence | Gần/xa nguồn, cognition/consent nếu có | Stabilization chưa auto unlock/evolve | Có thể stress/avoid hoặc có ý thức | Source control/recovery evidence, no reinfect farming | Condition/history/unique actor continuity, recovery không universal |
+| Intelligent | Resources/intent/context | Social/records evidence nếu source hỗ trợ | Narrative/consent compatibility nếu designatedPlayable | Motive/witness/local permission | Records/tools/access nguồn rõ, không mỗi người một boss | Actor outcomes giữ, knowledge có provenance |
+| Faction member | Membership và local operation có approval | Đọc concern không suy cả species | Không faction cho quyền mọi member | LocalDisposition, không global morality | Selected persistent quest outcome, permissions riêng | Phe không overwrite physical ecology |
+| Regional elite overlay | Optional authored challenge có nguồn | Readable pattern/route mastery | Có thể trial nếu route được duyệt, không bắt buộc main | Base behavior + encounter objective | Optional material/evidence, unique ledger chống trùng | Completed outcome không respawn unique reward mới |
+
+Species present/discovered/playable khác nhau. Spawn eligibility đọc habitat/world projection, classification tag không tự spawn actor hoặc set world stable. Main collection không universal defeat. [Classification data](../technical/CREATURE_CLASSIFICATION_DATA_SPEC.md) dùng EcologicalBehaviorProfile như view của CreatureBehaviorProfile F06, không save schema thứ hai; disposition/stability cá thể giữ owner cũ. Approved Sacred authority không tự có behavior_intelligent dialogue hoặc faction membership.

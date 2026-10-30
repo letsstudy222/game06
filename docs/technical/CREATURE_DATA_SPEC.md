@@ -75,3 +75,8 @@ ID mới không phải đường dẫn file, không chỉ định storage/databa
 ## Task09 — elemental profile interface (PROPOSED E09-P10/P12)
 
 [Elemental data](ELEMENTAL_DATA_SPEC.md) nối elementRefs, attack/channel/property/status/reaction/resistance và environmental context tới cùng speciesId/formId/stage records; không progression owner thứ hai. Life authority không vào ordinary elementTypes. Six baseline affiliations không tự cho immunity/heal/moral alignment. Same element khác anatomy/movement/kit; new species dùng definitions và reusable modules, novel mechanics cần module riêng. Dual profile chỉ resolver interface, composition/bonus/primary-secondary/evolution/acquisition để Task10; không default math trong loader. Chưa code/schema JSON mới.
+
+
+## Task11 — classification views (PROPOSED K11-P11)
+
+[Classification data](CREATURE_CLASSIFICATION_DATA_SPEC.md) mở rộng cùng CreatureSpecies bằng metadata refs cho roles/narrative/scope, không tạo species identity mới. Existing rarity field là canonical rarityRef/policy, isPlayable vẫn eligibility owner, evolutionStages vẫn stage owner; CreatureClassification/PlayabilityProfile/EvolutionLineage chỉ extensions/views, không copied mutable values. EcologicalBehaviorProfile reuse CreatureBehaviorProfile F06; CollectionEntry đọc ResonanceRecord + progression/memory/world projection, không save discovery/unlock thứ hai. ModelB ít tiers/Sacred designation riêng là [recommendations](../creatures/RARITY_SYSTEM.md), không D19 hoặc E09/E10 tự approved. Nonplayable/ambient không cần full player stats/actions/stages; runtime-ready có explicit applicability policy và actual asset/module gates.

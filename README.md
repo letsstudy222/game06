@@ -96,3 +96,8 @@ Bắt đầu tại [Master GDD](docs/GAME_DESIGN_DOCUMENT.md), [completion audit
 ## Task10 — Dual-element creature system
 
 [Overview](docs/elements/DUAL_ELEMENT_OVERVIEW.md), [decision register](docs/elements/TASK10_DECISIONS.md), [audit và delivery mapping](docs/elements/TASK10_CONSISTENCY_AUDIT.md): bốn reference families, identity/resistance recommendations, skill/reaction/evolution, bảy conceptual entities và20future QA cases. Chỉ tài liệu, không thay gameplay/art/UI; proposals chưa tự approved, Task11 chưa bắt đầu. Các câu “Task10 chưa bắt đầu” trong phần handoff Task09 bên trên mô tả mốc lịch sử Task09, không status hiện tại.
+
+
+## Task11 — Creature classification, rarity và collection value
+
+[Overview](docs/creatures/CREATURE_CLASSIFICATION_OVERVIEW.md), [decision register](docs/creatures/TASK11_DECISIONS.md) và [audit/file mapping](docs/creatures/TASK11_CONSISTENCY_AUDIT.md): chín axes, rarity/roles/playability/evolution/collection, evidence matrix và20future QA cases. Chỉ tài liệu; ModelB/separate Sacred/roles là recommendations chưa approved. Không đổi gameplay/UI/art, không bắt đầu Task12. “Task11 chưa bắt đầu” ở handoff Task10 là lịch sử, không current status.

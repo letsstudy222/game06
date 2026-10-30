@@ -86,3 +86,8 @@ Task10 chưa bắt đầu: dual resistance composition/damage bonus/primary-seco
 ## Task10 — queue chưa duyệt
 
 [Overview](elements/DUAL_ELEMENT_OVERVIEW.md), [decisions E10-P01–P10/U01–U08](elements/TASK10_DECISIONS.md) và [audit](elements/TASK10_CONSISTENCY_AUDIT.md) giữ đề xuất identity Model C + unordered membership, resistance C, bốn reference families, skill/reaction/evolution/data contracts. **PROPOSED**, chưa final multipliers/roster/primary-secondary/variant taxonomy. Six-element baseline/Sacred identities và D41 giữ nguyên; explicit Task10 §13 không mandatory dual species cho main boss. A08-05 entry/snapshot/retry và R03/W07/E09 save/resource/recovery vẫn mở, Phase I vẫn PARTIAL. E09-U06 nay có đề xuất để review, không tự RESOLVED. Task11 chưa bắt đầu.
+
+
+## Task11 — decisions chưa chốt
+
+[Classification overview](creatures/CREATURE_CLASSIFICATION_OVERVIEW.md), [K11-P01–P12/U01–U08](creatures/TASK11_DECISIONS.md) và [audit/delivery mapping](creatures/TASK11_CONSISTENCY_AUDIT.md) ghi chín axes, ModelB ba rarity candidates, separate Sacred designation, sáu combat roles/specialization tags, exploration/ecology/playability và collection/data/20future cases. Mọi lựa chọn mới **PROPOSED**; D19 nămlabels vẫn PROPOSED, chưa assign Sacred rarity, không tiers→damage. D41 no-three early constraint giữ; A08-05 entry/capability/snapshot/retry còn mở. E09/E10 mechanics/save/catch-up/variant taxonomy chưa tự duyệt. Sacred identities/3stages và approved art preserved, PhaseI PARTIAL; Task12 chưa bắt đầu. Các handoff nói Task11 chưa bắt đầu ở phần trước là mốc lịch sử Task10.
