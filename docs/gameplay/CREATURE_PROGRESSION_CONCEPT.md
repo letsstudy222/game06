@@ -44,3 +44,7 @@ Evolution cần stage requirements theo loài: phát triển sinh học, khả n
 ## Còn mở — UNRESOLVED
 
 XP curve, level cap, stage thresholds và milestone cụ thể; số/mức skill; tác dụng mastery; HP/stats theo stage; mức catch-up và giá trị cost. Không dùng các giá trị này để triển khai khi chưa được chốt. Quy tắc độc lập, chống reward trùng và hoãn trong boss là phương án R03-P09, không tự nâng thành canon qua bảng này.
+
+## Liên kết Task 04
+
+[Ma trận 12 dạng](../creatures/SACRED_EVOLUTION_MATRIX.md) và hồ sơ species giữ anatomy/stage deltas; [abilities](SACRED_CREATURE_ABILITIES.md) giữ tên/ID và minimum stage ứng viên. Tên, gates chi tiết và balance vẫn PROPOSED; minimum stage không tự grant mọi skill. Quy tắc progression/formId và hoãn benefits khi boss ở đây giữ nguyên trạng thái đề xuất Task 03.

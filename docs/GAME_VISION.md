@@ -54,3 +54,7 @@ Tên Tiên Cảnh Vạn Sinh và kết quả tái kích hoạt Tinh Môn do ngư
 ## Thuật ngữ và đặc tả Task 03
 
 Tinh Linh là tên thuật ngữ cho chủ thể linh thể người chơi. [Sổ quyết định cộng hưởng](lore/RESONANCE_DECISION_RECORD.md) tách quy tắc đã xác nhận với mô hình B+C và cơ chế mới còn PROPOSED. Task 03 xác nhận Quy thức ở dạng non trẻ và Tứ Linh có ba giai đoạn tiến hóa lớn; chưa có ngưỡng level hoặc bộ animation được duyệt cho ba stage.
+
+## Đặc tả Tứ Linh Task 04
+
+[Ma trận bản sắc](creatures/SACRED_CREATURE_OVERVIEW.md) và [12 dạng tiến hóa](creatures/SACRED_EVOLUTION_MATRIX.md) cụ thể hóa hướng thiết kế từ Task 04. Giữ thứ tự chương và bộ ba; tên/ID stage, anatomy chi tiết, skills/synergies còn PROPOSED theo [audit](creatures/TASK04_CONSISTENCY_AUDIT.md). Chưa có bộ 12 animation production hoặc gameplay mới.

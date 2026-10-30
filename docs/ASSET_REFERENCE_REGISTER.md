@@ -38,3 +38,7 @@ Các Phoenix khác còn tồn tại: `assets/phoenix-1.png`, `assets/phoenix-2-v
 Mỗi asset cần định danh, chủ sở hữu/provenance và điều kiện sử dụng, chapter/role, reference được duyệt, source và export riêng, palette/scale/hướng sáng, alpha, frame rect, origin, bounds, footprint collision và trạng thái clip theo hướng. Tile chuẩn 32×32 hiện có; props/sinh vật nhiều ô được phép nếu nhất quán mật độ pixel và không che hành động. Dùng nearest-neighbor khi scale.
 
 Kiểm tra kỹ thuật phải đọc file thật, kiểm tra gutter/alpha, khớp metadata và chơi thử animation trong tình huống di chuyển/combat. Báo riêng phần nào được xem, phần nào chỉ có metadata, phần nào đã thử runtime. Không nhận “production-ready animation” chỉ vì có PNG hoặc art đã duyệt. Không sao chép proprietary character/visual/music/layout/UI; tham khảo nguyên lý chung không chuyển thành quyền dùng asset.
+
+## Kiểm kê bổ sung Task 04
+
+Đã xem lại trực tiếp `assets/phoenix-3-v2.png` và `assets/production/phoenix/atlas.png`, đọc manifest/timing/pose selection. Chưa có ảnh Quy/Long/Ly nhận diện được trong checkout; các direction text Task 04 (Long dài xuyên mây, Ly guardian, Quy rùa nước cổ) được xác nhận bằng chỉ dẫn người dùng, không giả đã xem ảnh. [Register 12 stage và clip còn thiếu](creatures/SACRED_ART_REQUIREMENTS.md) là nguồn gap hiện tại; Phoenix reference có sẵn chưa đồng nghĩa bộ ba stage/clip đã được phân loại và nghiệm thu. Không tạo hoặc đổi tài nguyên trong Task 04.

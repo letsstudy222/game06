@@ -53,3 +53,7 @@ Người chơi phục hồi các quan hệ còn khả thi nhờ nước/nhiệt/
 ## Cùng một can thiệp, bốn giá phải trả — PROPOSED
 
 Quy bảo tồn bên trong vật mang khoáng hóa; Phượng lùi chu kỳ sống; Long phân tán dấu thức trong mạng khí; Ly chia bản sắc trong mạng sống. Không ai “chết hoàn toàn rồi trở về bằng phép vô hạn”. Mỗi cách giữ lại chức năng tối thiểu làm mất khả năng chủ động của toàn thể; mất người điều phối gây suy thoái kéo dài, không làm mọi sự sống chết ngay. Tính tự nguyện và chi tiết ký ức khác nhau vẫn chưa chốt.
+
+## Đặc tả creature tiếp nối Task 04
+
+[Overview Tứ Linh](../creatures/SACRED_CREATURE_OVERVIEW.md) dẫn hồ sơ loài/stage/abilities, không thay nguồn lịch sử này. Bốn trạng thái vắng mặt L02-P07 và ý thức nguyên thể vẫn là PROPOSED/UNRESOLVED; D31–D33 chỉ xác nhận direction và quality rules theo Task 04, không làm lời kể lịch sử thành canon mới.

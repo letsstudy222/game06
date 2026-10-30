@@ -53,6 +53,16 @@ Cơ chế thế giới/biến cố/cộng hưởng mới L02-P01–P10 đều **
 
 [R03-P01–P11](lore/RESONANCE_DECISION_RECORD.md) là các đặc tả **PROPOSED** về model, acquisition, bộ ba, boss, defeat, progression, data và edge cases. Không tự đóng D21/D23 hoặc chuyển các đề xuất Task 02 thành canon. Chưa có implementation của hệ này.
 
+## Bổ sung Task 04 — nguồn: yêu cầu người dùng Task 04/96
+
+| ID | Trạng thái | Loại | Quyết định / giới hạn |
+| --- | --- | --- | --- |
+| D31 | CONFIRMED | Bản sắc gameplay | Quy phòng ngự/kiểm soát vùng và dòng nước; Phượng Hỏa cơ động/AoE/thermal; Long controller/gió/áp; Ly hỗ trợ/hồi phục/control Mộc và mạng sống. Cả bốn có combat/exploration/env riêng, không Sacred invincibility hoặc loài sau thay vĩnh viễn loài trước |
+| D32 | CONFIRMED | Hướng hình ảnh | Giữ Phoenix reference ngà/vàng-cam/crimson; Quy rùa nước cổ không mặc định rắn quấn; Long thân dài S rõ đầu/sừng/móng/bờm/đuôi xuyên mây, không worm/ngắn; Ly guardian gạc phân nhánh ngà/emerald/vàng, khác hươu thường. Đây là direction text được giao; ảnh Quy/Long/Ly chưa có trong checkout |
+| D33 | CONFIRMED | Chất lượng stage | I Thức Tỉnh → II Trưởng Thành → III Thức Tỉnh Nguyên Sơ: anatomy, movement, combat/env thay đổi có ý nghĩa, không chỉ resize/recolor. Stage label không tự cấp named authority mới; riêng Ly vẫn Mộc combat và Sinh Mệnh authority |
+
+[C04-P01–P13](creatures/TASK04_CONSISTENCY_AUDIT.md) là các đặc tả **PROPOSED**: English/stage names/IDs, anatomy chi tiết, chiêu, environmental receivers, synergy, art pipeline, data fields và edge cases. Không gán atlas Legend hiện tại là stage III, không chốt rarity/level thresholds/damage/cooldown/cost. Không nâng R03/L02 proposals thành CONFIRMED. Chỉ tài liệu, không gameplay/art mới.
+
 ## Cách sửa quyết định
 
 Mọi thay đổi ghi ID, trạng thái cũ/mới, lý do, nguồn phê duyệt và hệ/asset bị ảnh hưởng trong task tương ứng. Chuyển PROPOSED/UNRESOLVED sang CONFIRMED cần quyết định rõ, không chỉ sửa lời văn. Sự thật kỹ thuật mới phải có đường dẫn hoặc kết quả kiểm chứng. Các tài liệu audit lịch sử vẫn có giá trị theo mốc; không để chúng ghi đè hướng chính thức này.

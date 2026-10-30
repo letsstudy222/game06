@@ -33,3 +33,7 @@ Tên vùng Ly đã chốt là Tiên Cảnh Vạn Sinh (D25); kết cung tái kí
 ## Sau Task 03
 
 Q08–Q10 và Q16 có [đặc tả ứng viên](lore/RESONANCE_DECISION_RECORD.md), chưa là quyết định đã duyệt: hybrid B+C, quỹ/cooldown, bộ ba unique và boss reload abort/reset, defeat không permadeath, progression/catch-up và save journal. D30 chốt số stage lớn Tứ Linh là ba, không chốt XP curve/ngưỡng tiến hóa. Q01–Q05 về nguồn gốc/sự thật lịch sử vẫn mở. Cần duyệt model/cơ chế thuộc nhiệm vụ tiếp theo; không chặn công việc tài liệu độc lập.
+
+## Sau Task 04
+
+Q18 vẫn thiếu ảnh Quy/Long/Ly; cần mapping reference Phoenix ↔ stage, không tự nhận Legend là stage III. Q09/Q11 vẫn chưa chốt ngưỡng evolution/XP cap/rarity; [abilities và synergies ứng viên](creatures/TASK04_CONSISTENCY_AUDIT.md) chưa có damage/cooldown/cost/range/TTL số. Q15/Q17 cần prototype clearance/render của Long dài và envelope stage lớn. Các quy tắc Task 03 được tham chiếu nhưng chưa tự phê duyệt; nguồn gốc Tinh Linh, cổng và tính tự nguyện biến cố giữ UNRESOLVED.
