@@ -43,6 +43,16 @@ Nguồn phê duyệt: yêu cầu Task 01/96 của người dùng, ngày 30/10/20
 
 Cơ chế thế giới/biến cố/cộng hưởng mới L02-P01–P10 đều **PROPOSED**, đăng ký tại [audit lore](lore/LORE_CONSISTENCY_AUDIT.md). Không tự đóng D17/D18/D21/D23/D24. [Changelog](lore/LORE_CHANGELOG.md) lưu phạm vi cập nhật.
 
+## Bổ sung Task 03 — nguồn: yêu cầu người dùng Task 03/96
+
+| ID | Trạng thái | Loại | Quyết định / quan hệ với bản trước |
+| --- | --- | --- | --- |
+| D28 | CONFIRMED | Thuật ngữ | Dùng Tinh Linh / Linh Hạch / Linh Ấn / Cộng Hưởng / Ký Ức Tổ Tiên; định nghĩa vận hành và model hybrid chi tiết vẫn là đề xuất |
+| D29 | CONFIRMED | Mở đầu | Mười nhịp nhiễu động → di tích đáp ứng → cảm Linh Hạch → tiếp cận → cảm giác → ký ức thiếu → cộng hưởng → cấu trúc hoạt động → Quy non trẻ thức → cơ thể đầu tiên; không giải đáp nguồn gốc Tinh Linh |
+| D30 | CONFIRMED | Tiến hóa | Tứ Linh mỗi loài ba stage lớn; sinh vật phụ quan trọng có thể hai, wildlife/đặc thù có thể một. Ngưỡng level và thiết kế stage chưa chốt |
+
+[R03-P01–P11](lore/RESONANCE_DECISION_RECORD.md) là các đặc tả **PROPOSED** về model, acquisition, bộ ba, boss, defeat, progression, data và edge cases. Không tự đóng D21/D23 hoặc chuyển các đề xuất Task 02 thành canon. Chưa có implementation của hệ này.
+
 ## Cách sửa quyết định
 
 Mọi thay đổi ghi ID, trạng thái cũ/mới, lý do, nguồn phê duyệt và hệ/asset bị ảnh hưởng trong task tương ứng. Chuyển PROPOSED/UNRESOLVED sang CONFIRMED cần quyết định rõ, không chỉ sửa lời văn. Sự thật kỹ thuật mới phải có đường dẫn hoặc kết quả kiểm chứng. Các tài liệu audit lịch sử vẫn có giá trị theo mốc; không để chúng ghi đè hướng chính thức này.

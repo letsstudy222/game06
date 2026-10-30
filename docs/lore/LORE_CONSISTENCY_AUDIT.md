@@ -59,3 +59,7 @@ Task 03 chỉ bắt đầu khi có yêu cầu riêng. Không cần khóa mọi b
 ## Kết quả kiểm tra tài liệu
 
 Đã đối chiếu bốn nguyên tố/vùng, bảy pha, bốn trạng thái vắng mặt, giới hạn Sinh Mệnh, các nguồn ký ức, đường nối chương và phạm vi expansion. Rủi ro còn lại là **đề xuất chưa được phê duyệt**, không phải tính năng đã hoàn tất. Kiểm tra đường dẫn/diff được thực hiện trước commit; không dùng test gameplay cũ làm bằng chứng task này. Không thay gameplay, UI, input, art, animation hoặc engine.
+
+## Tiếp nối Task 03
+
+Yêu cầu Task 03 đã được người dùng cung cấp riêng. L02-P08 có đặc tả ứng viên chi tiết tại [RESONANCE_DECISION_RECORD](RESONANCE_DECISION_RECORD.md); core/imprint, switch, defeat và persistence chưa được nâng thành CONFIRMED. Không thay đổi bí ẩn nguồn gốc hoặc sự tự nguyện của biến cố.

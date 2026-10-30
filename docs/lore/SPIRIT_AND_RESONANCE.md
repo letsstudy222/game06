@@ -1,5 +1,7 @@
 # Linh thể và cộng hưởng
 
+> Mốc Task 02. Task 03 đã cụ thể hóa L02-P08 thành mô hình ứng viên và quy tắc trong [RESONANCE_DECISION_RECORD](RESONANCE_DECISION_RECORD.md). Những câu “chưa chốt” dưới đây ghi trạng thái canon; các ứng viên Task 03 vẫn PROPOSED, không là triển khai đã có. Khi đặc tả hệ, dùng các tài liệu Task 03 được dẫn, không tạo state machine thứ hai từ bản tóm tắt này.
+
 ## Đã xác nhận — CONFIRMED
 
 Linh thể ban đầu không có cơ thể, nhận thức hạn chế, cộng hưởng với cấu trúc sống được bảo tồn và lần đầu nhập Quy. Bản sắc riêng được hình thành dần qua trải nghiệm; linh thể có thể tiếp cận ký ức tổ tiên của sinh vật cộng hưởng. Nguồn gốc thật không được tiết lộ trong Chương I.

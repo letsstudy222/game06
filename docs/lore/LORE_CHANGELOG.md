@@ -25,3 +25,7 @@ GAME_VISION và PROJECT_SCOPE đổi kết quả cuối cung từ phát hiện s
 ### Kiểm định và phạm vi
 
 Đối chiếu trạng thái/thuật ngữ, link và diff tài liệu trước commit; mọi đề xuất quan trọng có nhãn hoặc nằm dưới tiêu đề PROPOSED. Không triển khai truyện, generate art, sửa code/UI/save hoặc chạy gameplay suite để nhận kết quả mới. CI khi push là kiểm tra tự động riêng của repository.
+
+## Tiếp nối Task 03 — 30/10/2026 (Asia/Saigon)
+
+D28–D30 bổ sung thuật ngữ, trình tự thức Quy và khung stage theo chỉ dẫn Task 03. R03-P01–P11 cụ thể hóa ứng viên L02-P08 mà không tự phê duyệt model hybrid. SPIRIT_AND_RESONANCE giữ lịch sử Task 02 và trỏ tới [sổ quyết định Task 03](RESONANCE_DECISION_RECORD.md). Quy thức non trẻ là chỉ dẫn mới; ý thức nguyên thể và nguồn gốc Tinh Linh vẫn UNRESOLVED.

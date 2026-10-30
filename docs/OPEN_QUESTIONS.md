@@ -29,3 +29,7 @@ Task 01 không bị chặn bởi các câu hỏi này: tài liệu ghi rõ phầ
 ## Sau Task 02
 
 Tên vùng Ly đã chốt là Tiên Cảnh Vạn Sinh (D25); kết cung tái kích hoạt Tinh Môn (D26). Q01–Q05 vẫn mở: [mô hình biến cố](lore/ANCIENT_CATASTROPHE.md) là PROPOSED, chưa xác nhận sự tự nguyện hoặc nguồn gốc linh thể/cổng. Q08–Q10 có [giới hạn cộng hưởng đề xuất](lore/SPIRIT_AND_RESONANCE.md), chưa chốt vật lý chuyển dạng, HP hoặc retry. Các câu hỏi kỹ thuật/asset/scope còn lại giữ nguyên.
+
+## Sau Task 03
+
+Q08–Q10 và Q16 có [đặc tả ứng viên](lore/RESONANCE_DECISION_RECORD.md), chưa là quyết định đã duyệt: hybrid B+C, quỹ/cooldown, bộ ba unique và boss reload abort/reset, defeat không permadeath, progression/catch-up và save journal. D30 chốt số stage lớn Tứ Linh là ba, không chốt XP curve/ngưỡng tiến hóa. Q01–Q05 về nguồn gốc/sự thật lịch sử vẫn mở. Cần duyệt model/cơ chế thuộc nhiệm vụ tiếp theo; không chặn công việc tài liệu độc lập.

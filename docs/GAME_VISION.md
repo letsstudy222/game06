@@ -50,3 +50,7 @@ Tiến trình có ý nghĩa đến từ chiến đấu, khám phá, khám phá c
 ## Cập nhật Task 02
 
 Tên Tiên Cảnh Vạn Sinh và kết quả tái kích hoạt Tinh Môn do người dùng xác nhận ở Task 02, cụ thể hóa phần mở của Task 01. Xem [changelog lore](lore/LORE_CHANGELOG.md) và [lịch tiết lộ](lore/CHAPTER_REVELATIONS.md). Các cơ chế mới trong bộ lore vẫn PROPOSED nếu chưa có quyết định xác nhận riêng.
+
+## Thuật ngữ và đặc tả Task 03
+
+Tinh Linh là tên thuật ngữ cho chủ thể linh thể người chơi. [Sổ quyết định cộng hưởng](lore/RESONANCE_DECISION_RECORD.md) tách quy tắc đã xác nhận với mô hình B+C và cơ chế mới còn PROPOSED. Task 03 xác nhận Quy thức ở dạng non trẻ và Tứ Linh có ba giai đoạn tiến hóa lớn; chưa có ngưỡng level hoặc bộ animation được duyệt cho ba stage.
