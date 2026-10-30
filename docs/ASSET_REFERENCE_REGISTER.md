@@ -123,3 +123,42 @@ SVG/favicon và font/VT323-OFL nằm trong build assets, không creature/referen
 | AR08-08 Rights/originality | provenance lịch sử có, user reference không là chứng nhận quyền tuyệt đối | Review source/license cho tài nguyên phát hành; không claim absolute originality hoặc tạo third-party substitute |
 
 Không sửa art để “chữa” các gaps trong Task08. Production approval và kỹ thuật validation là hai gate riêng; một file nằm trong production/ không tự đáp ứng cả hai. [IMPLEMENTATION_READINESS](IMPLEMENTATION_READINESS.md) giữ gate Quy/blockers và [HANDOFF](PHASE_I_HANDOFF.md) chỉ nguồn cần đọc.
+
+
+## Task12 — creature asset readiness frame work (PROPOSED B12-P10)
+
+Requested `docs/art/CREATURE_ASSET_READINESS.md` được đáp ứng ở nguồn này, không tạo authoritative register cạnh tranh. [Bible](creatures/CREATURE_DESIGN_BIBLE.md), [roster](creatures/CREATURE_ROSTER_REGISTER.md) và [animation standard](art/CREATURE_ANIMATION_REQUIREMENTS.md) dẫn cùng evidence. Mọi check mới ở 31/10/2026 Asia/Saigon, baseline `b610b56`, **read-only**.
+
+### Ten evidence gates, không một progress bar tự đã duyệt
+
+| Gate / conceptual level | Evidence cần | Không suy |
+| --- | --- | --- |
+| idea_only | Có brief/nguồn/tham chiếu key | Name không là đã duyệt species hoặc art file |
+| written_design | Anatomy/sinh thái/kit/template có nguồn/status | Document hoàn tất không là creative approval |
+| concept_sheet_created | Actual file truy cập, content/version/provenance | Multiple poses không frames/atlas |
+| concept_visually_approved | Explicit phê duyệt nguồn/revision/scope | Approved reference không action clip/readiness |
+| sprite_production_started | Actual export/nguồn và scope frames/action list | Filename production không validated |
+| sprite_frames_validated | Dimensions/alpha/rect/anchor/giải phẫu/orientation checks cho frames cụ thể | Frame check không timing/playback phê duyệt |
+| animation_atlas_validated | Frame refs/timing/action markers/directions + playback evidence được scope rõ | PartialstructuralPASS không full action certification |
+| integrated_in_runtime | Loader/render/action dùng asset trong actual code/config | Source integration không fresh game playtest |
+| gameplay_tested | Clip/action/geometry/interrupt/status/context test evidence, platform/version rõ | Baseline tests cũ không future features pass |
+| production_approved | Art/gameplay/technical acceptance đủ scope và explicit release phê duyệt | Không sốgate hoặc total score tự cấp phê duyệt |
+
+Lưu evidence theo từng stage/action/direction/revision và lĩnh vực; legacy runtime có thể integrated dù full animation gate chưa đủ. Không backfill còn thiếu gates bằng suy luận hoặc downgrade/xóa runtime hiện tại. Approval và technical validation là hai trục; dòng production status là projection từ evidence/phê duyệt records, không authoritative boolean độc lập. Missing/chưa xác minh khác bị bác.
+
+### Evidence mới thực sự đã kiểm Task12
+
+| Resource / nguồn | Thao tác và kết quả | Scope limit |
+| --- | --- | --- |
+| [Phoenix tham chiếu](../assets/phoenix-3-v2.png) | Mở xem trực tiếp: ivory/cream cơ thể, gold/orange/crimson lông vũ, cánh/flowingtail identity | Reference illustration, không crisp runtime frames hoặc 3 stage phê duyệt |
+| [Phoenix atlas](../assets/production/phoenix/atlas.png) | Mở xem trực tiếp và đọc PNG/alpha/bounds read-only:192×288,96 cell,2 poses×3 rows, alpha 0/255;6 alpha bounding boxes khớp manifest | Static structure PASS, chưa fresh playback/action certification, không full 12 sets |
+| [Manifest](../assets/production/manifest.json) | Đọc phoenix image/directions/origins/bounds; down origin 48,72/left 45,72/up 48,52; rightmirrorsleft | Environment section của manifest này là historical, không thay current Dawn manifest |
+| [AnimationController](../src/island/AnimationController.mjs), [IslandScene](../src/island/IslandScene.mjs), [PlayerPhoenix](../src/island/PlayerPhoenix.mjs), [GameState](../src/island/GameState.mjs) | Source inspection:6 states, renderer chọn 2 poses/direction, GameState tạo Player Phoenix | Actual runtime avatar chỉ Phoenix, chưa generic creature catalog/resonance/progression/loadout; không fresh game playtest |
+| [Legacy player metadata](../assets/sprites/phoenix-player.json), [Legend metadata](../assets/sprites/phoenix-legend.json) | Đọc 32 px metadata, khác 96 px actual atlas; không load như substitute | Không mở mọi legacy image/phê duyệt/playback, Legend không rarity/evolution proof |
+| [Dawn manifest](../assets/environments/dawn/manifest.json), [sample](../assets/samples/dawn/manifest.json), DawnMap nguồn | Read-only metadata/nguồn cho tile 32; dimension conventions giữ | Không kiểm/nhận underwater kit hoặc all region assets mới |
+
+### Production quality contract và gaps
+
+Frame dimensions theo đã duyệt cơ thể/pose, rect in bounds/gutter/no bleed; alpha phù hợp cơ thể/FX, orientation/mirroring explicit; per frame anchor/offset ổn định; anatomy consistent qua hướng/stages; timing/loop/phase/interrupt markers; actual manifest/version/ref re so lv es; core footprint/hurtbox/attackbox/visual envelope alignment **proposalC04-P07** cần prototype; runtime playback và actual scene contrast/culling/clearance; provenance/license/nguồn/approver scope đầy đủ. Không file nào được legalcertify từ filename hoặc image view.
+
+Quy/Long/Ly: đã duyệt text direction nhưng chưa có ảnh nhận diện được/production clips trong repo.12 stage gaps AG-Q1–AG-Y3 tại [C04 register](creatures/SACRED_ART_REQUIREMENTS.md) vẫn authority. Eight secondary +12 thông thường names external chưa xác minh;4IV redesign briefs chưa art work; batch IV cũ bị bác theo Task12 không có ảnh/IDs xác minh. Missing fx/audio/action frames/anchors/asymmetric directions/capability modules cho new roster ghi gap, không invent export paths. ExistingPhoenix mapping từng stage chưa được duyệt, integrated runtime không đồng nghĩa đủ 3 forms. Existing licenses/provenance cần scope audit sau, không claim absolute originality.

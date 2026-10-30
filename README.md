@@ -101,3 +101,8 @@ Bắt đầu tại [Master GDD](docs/GAME_DESIGN_DOCUMENT.md), [completion audit
 ## Task11 — Creature classification, rarity và collection value
 
 [Overview](docs/creatures/CREATURE_CLASSIFICATION_OVERVIEW.md), [decision register](docs/creatures/TASK11_DECISIONS.md) và [audit/file mapping](docs/creatures/TASK11_CONSISTENCY_AUDIT.md): chín axes, rarity/roles/playability/evolution/collection, evidence matrix và20future QA cases. Chỉ tài liệu; ModelB/separate Sacred/roles là recommendations chưa approved. Không đổi gameplay/UI/art, không bắt đầu Task12. “Task11 chưa bắt đầu” ở handoff Task10 là lịch sử, không current status.
+
+
+## Task12 — Creature Design Bible và production standard
+
+[Bible](docs/creatures/CREATURE_DESIGN_BIBLE.md), [roster](docs/creatures/CREATURE_ROSTER_REGISTER.md), [decisions](docs/creatures/TASK12_DECISIONS.md) và [audit/file mapping](docs/creatures/TASK12_CONSISTENCY_AUDIT.md): giải phẫu/silhouette/vận động/sinh thái/animation standards, verified vs external concepts, overlap đánh giá và data hand off. Chỉ tài liệu; đã duyệt art/game/UI giữ nguyên, new roster/production tiers chưa tự đã duyệt. Không bắt đầu Task 13; “Task12 chưa bắt đầu” ở historical Task 11 hand off không là dòng status.
