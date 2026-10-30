@@ -57,3 +57,17 @@ Không dùng thứ tự này để bỏ qua thiết kế phụ thuộc hoặc b�
 Chỉ thêm asset thực sự cần cho slice đã chốt. Concept, thiết kế được duyệt, sprite kỹ thuật và animation đã thử là các trạng thái riêng. Artwork được duyệt không tự trở thành sprite hoàn chỉnh; một bộ pose không tương đương toàn bộ clip hành động. Dùng [đăng ký asset](ASSET_REFERENCE_REGISTER.md) để ghi thiếu hụt thay vì lấp bằng tuyên bố hoàn thành.
 
 Cắt lát cần được chơi thử trên browser với kiểm tra chức năng; mobile giả lập và thiết bị thật phải báo riêng. Khả năng Windows cần bằng chứng đóng gói/chạy riêng trước khi nhận là hỗ trợ phát hành.
+
+
+## Task08 — release layers và mandatory first playable
+
+D40/Task08 §7 xác nhận essentials first playable; các quota/duration/budget khác chưa tự approve. Bảng là phạm vi, không claim implemented.
+
+| Layer | Essential content | Dependencies / deferred |
+| --- | --- | --- |
+| First Playable | Movement hoạt động, basic combat, Quy I, underwater environment sample, initial resonance demonstration, persistent progress | Duyệt body/defeat/capability/save subset + actual Quy/underwater assets. Không tự đòi boss/full three forms/full ChapterI |
+| Complete ChapterI | Underwater map/encounters/missions, progression, boss, restoration consequences, route hướng ChapterII và return/collection | Boss entry conflict/identity resolved, roster/habitats/quest/refuge/capability/asset coverage và QA save/lock |
+| Later chapters | Phượng/heat/thermal, Long/wind/sky, Ly/biological network và Tinh Môn | Chỉ mở sau core/slice/ChapterI evidence; art/physics riêng, không bốn vùng song song mặc định |
+| Optional enhancements | Deep faction relationships, broad synergies, extra elites/side-quest variants, richer ambient/optional mastery | Chỉ subset cần cho target milestone; không thêm morality meter/multiplayer hoặc features mới ngoài approved scope |
+
+[Readiness](IMPLEMENTATION_READINESS.md) và [dependency map](DESIGN_DEPENDENCY_MAP.md) quy định gate/preparation. Baseline Dawn/Phoenix là prototype hiện có, không được gọi first playable Quy. Task08 không thiết lập lịch, số encounters, số giờ, FPS/resolution hoặc cam kết nhân sự.

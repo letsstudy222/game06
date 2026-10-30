@@ -4,7 +4,7 @@ Quy ước trạng thái tại [WORLD_HISTORY](WORLD_HISTORY.md). Đây là hệ
 
 ## Vai trò nền — CONFIRMED
 
-Thế giới có bốn hệ nguyên sơ liên kết: Thủy, Hỏa, Phong, Mộc; Tứ Linh từng duy trì chúng. Sinh Mệnh là quyền năng đặc biệt của Ly, không đồng nhất với đòn đánh Mộc và không cho hồi sinh vô hạn sinh vật chết hoàn toàn. Ngoại lai không mặc định ác, bản địa không mặc định thiện. Lôi/Kim là hai hướng ngoại lai ban đầu **PROPOSED**, chưa khóa roster.
+Thế giới có bốn hệ nguyên sơ liên kết: Thủy, Hỏa, Phong, Mộc; Tứ Linh từng duy trì chúng. Sinh Mệnh là quyền năng đặc biệt của Ly, không đồng nhất với đòn đánh Mộc và không cho hồi sinh vô hạn sinh vật chết hoàn toàn. Ngoại lai không mặc định ác, bản địa không mặc định thiện. Lôi/Kim là hai ảnh hưởng nguyên tố ngoại lai **CONFIRMED theo Task08 §5, D18/D38**, đi vào qua biến cố. Roster đầy đủ/species và interaction rules vẫn chưa khóa.
 
 ## Cách tuần hoàn vận hành — PROPOSED, L02-P01
 
@@ -34,7 +34,7 @@ Cắt dòng đột ngột khi chênh lệch quá lớn có thể chuyển tải 
 
 Tại Chương IV, tái kích hoạt nghĩa là cấu trúc và liên kết đáp ứng trở lại, có thể nhận tín hiệu/dấu vết từ bên kia ở tải nhỏ được kiểm soát. Điều đó **không đồng nghĩa** hành lang an toàn cho sinh vật hoặc du hành đã được mở. Không trì hoãn việc tái kích hoạt thành một lời hứa ở expansion; chỉ việc di chuyển liên hành tinh nằm sau cung đầu. Cơ chế vận hành/chuyến đi cụ thể vẫn UNRESOLVED.
 
-## Lôi và Kim, tiếp xúc và xung đột — PROPOSED, L02-P04
+## Lôi và Kim — baseline CONFIRMED Task08; cơ chế L02-P04 PROPOSED
 
 Lôi/Kim là ngành nguyên tố hoặc hiện tượng năng lượng được xem là ngoại lai; không có nghĩa thế giới trước đó không có sét hoặc kim loại vật chất. Lôi có thể mang cách tích/phóng và dẫn năng lượng khác; Kim có thể tổ chức liên kết vật chất theo cách hệ địa phương chưa đệm được. Chúng không tạo bảng khắc chế hoặc roster chính thức trong task này.
 
@@ -51,8 +51,13 @@ Lôi/Kim là ngành nguyên tố hoặc hiện tượng năng lượng được 
 
 ## Chưa chốt — UNRESOLVED
 
-Bản chất vật lý/tinh thần cuối cùng của điểm nối; ai tạo ra; roster Lôi/Kim có được duyệt không; thông số tải/ngưỡng; cách vượt không gian về sau. Không biến mô hình sinh thái này thành các chỉ số gameplay nếu chưa có task thiết kế riêng.
+Bản chất vật lý/tinh thần cuối cùng của điểm nối; ai tạo ra; roster đầy đủ/species song nguyên tố và tương tác Lôi/Kim cụ thể; thông số tải/ngưỡng; cách vượt không gian về sau. Không biến mô hình sinh thái này thành các chỉ số gameplay nếu chưa có task thiết kế riêng.
 
 ## Đặc tả sinh thái tiếp nối Task 06
 
 [ELEMENTAL_ASSIMILATION](../ecology/ELEMENTAL_ASSIMILATION.md) cụ thể hóa ba hiện tượng thành process/affinity/stability/evidence riêng, không thay lịch sử hoặc khóa roster D18. Các profiles/recovery outcomes vẫn PROPOSED; không tự coi dual-element là corruption hoặc Ly có universal cleansing.
+
+
+## Task08 — chronology chưa tự chốt
+
+D38 xác nhận ảnh hưởng Lôi/Kim ngoại lai qua biến cố; không xác nhận thời điểm chính xác giữa tiếp xúc H2 và đỉnh khủng hoảng H4 của mô hình PROPOSED. Chi tiết trước/trong biến cố cần lore approval (C08-17 tại DESIGN_CONSISTENCY_REPORT ở docs root), không tự coi chronology H2 là accepted canon hoặc sửa quá khứ để khớp một cách hiểu.

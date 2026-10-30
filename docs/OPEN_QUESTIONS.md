@@ -14,7 +14,7 @@ Không tự trả lời các câu hỏi sau bằng canon mới. ID quyết đị
 | Q08 | Cộng hưởng cần điều kiện gì; những loài nào chỉ được phát hiện và những loài nào playable? | Trước collection/progression; tránh quy về bắt quái thông thường |
 | Q09 | XP phân phối thế nào giữa ba dạng; HP/cooldown/tài nguyên khi đổi dạng và ngưỡng tiến hóa từng loài? | Trước prototype transformation/progression; không đặt ngưỡng giả |
 | Q10 | Encounter boss bắt đầu/kết thúc khi nào; chết, bỏ chạy, retry và reload tác động khóa loadout thế nào? | Trước boss/save implementation; quy tắc khóa ba dạng đã xác nhận, chi tiết reset chưa có |
-| Q11 | Roster nguyên tố bản địa/ngoại lai cuối cùng, tương tác nguyên tố và hạng rarity cuối? | Trước balance/content schema; Lôi/Kim và năm rarity hiện là ứng viên |
+| Q11 | Roster nguyên tố bản địa/ngoại lai cuối cùng, tương tác nguyên tố và hạng rarity cuối? | Trước balance/content schema; Lôi/Kim foreign baseline được xác nhận tại Task08 D38; full roster/interactions và năm rarity còn mở |
 | Q12 | Sinh Mệnh có giới hạn chữa lành/tái tạo nào và phân biệt với hồi sinh người đã chết hoàn toàn ra sao? | Trước thiết kế Ly; nguyên tắc không hồi sinh vô hạn đã xác nhận |
 | Q13 | Trạng thái môi trường nào được lưu, quest điều chỉnh lại thế nào và bảo đảm đường sưu tầm ra sao? | Trước persistent world/save schema |
 | Q14 | Đảo Bình Minh hiện tại nằm ở đâu so với Đảo Nhật Diệm? Tái dùng bao nhiêu art/layout mà không làm sai truyện? | Trước tích hợp prototype vào Chương II; không rename/retcon trong Task 01 |
@@ -50,3 +50,23 @@ Q06 có [blueprint bốn chương và phạm vi event](story/TASK05_CONSISTENCY_
 ## Task07 — các điểm cần chốt trước implementation
 
 Xem [W07-U01–U04](world/TASK07_CONSISTENCY_AUDIT.md): early boss entry R03/S05; capability/clearance/safe anchors; species/habitat coverage; storage adapter/namespace/backup/error UX/loss budget; weather bounds/performance/faction approvals. Không tự phê duyệt W07 model hoặc bắt đầu Task08. Không có câu trả lời mới về origin Tinh Linh hoặc cosmic culprit.
+
+
+## Task08 — decision queue có gate
+
+[Register A08-01–A08-15](PROJECT_DECISIONS.md) tập trung source/rationale/dependencies/risks/approval; [consistency log](DESIGN_CONSISTENCY_REPORT.md) giữ conflicts, [readiness](IMPLEMENTATION_READINESS.md) giữ implementation gate. Không dùng quyền tự làm/commit để tự duyệt creative decisions.
+
+| Priority / question refs | Decision cần chốt | Gate thực sự bị chặn |
+| --- | --- | --- |
+| P0 Q05/Q08 → A08-01/14 | Physical B+C hay model khác; Quy core appearance, reference và consent/source | Opening resonance/art production |
+| P0 Q07/Q09/Q10 → A08-02/03 | Swim/collision/hazard/cost/cooldown/defeat/recovery subset | Quy I movement/combat/save implementation |
+| P0 Q13/Q16 → A08-09/11 | Authority/transaction/storage/namespace/backup/error/loss budget | Durable progress sample; UI settings vẫn tách |
+| P0 Q06 → A08-13 | First playable content/budget/acceptance, giữ sáu essential D40 | Implementation scope, không cần full boss/3species |
+| P1 Q10 → A08-05/07 | Full-three hay empty locked; boss identity/outcome | Boss I trước khi implement, không chặn Task09/read-only audit |
+| P1 Q09 → A08-04/10 | Curves/evolution thresholds/catch-up | Progression production, không numeric defaults tự bịa |
+| P1 Q08/Q11/Q18 → A08-14 | Roster species/habitat/refuge/animation và full elemental interaction design | Collection completeness/content-ready; Lôi/Kim affiliation đã confirmed, không hỏi lại |
+| P2 → A08-06/08 | Faction names/existence/relationships và localized choices | Optional faction content, không essential first playable |
+| P1/P2 Q15/Q17 → A08-12 | Adapter/modules/device budgets/Windows packaging, engine change nếu có evidence | Generic production runtime/platform claims |
+| P2 Q01–04 → A08-15 | Cosmic origin/culprit/voluntary intervention/gateway nature | Final historical truth; local slice/Task09 vẫn có thể thiết kế |
+
+Phase I PARTIAL, không tự tuyên bố freeze full production. Audit Task08 hoàn tất không trả lời thay các lựa chọn trên. Task09 — Elemental System Design chỉ bắt đầu khi được giao; không tự sinh damage chart/roster cuối trong audit này.

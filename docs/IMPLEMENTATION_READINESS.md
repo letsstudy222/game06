@@ -1,0 +1,45 @@
+# Implementation readiness gate — Task08
+
+Baseline `7125160`. **READY** = đủ cho nhiệm vụ có phạm vi ghi rõ, không nghĩa feature shipped. **CONDITIONAL** = spec có nhưng còn prerequisites cụ thể. **BLOCKED** = thiếu evidence/asset hoặc quyết định essential. `NOT IMPLEMENTED` mô tả software, không đánh trượt một nhiệm vụ chỉ tài liệu. Overall first playable Quy: **BLOCKED production release**, có thể làm preparation/design/audit độc lập.
+
+## System-by-system gate
+
+| System / intended task | Requirement clarity / document completeness | Dependencies / technical assumptions / unresolved | Risks / testability | Readiness / software evidence |
+| --- | --- | --- | --- | --- |
+| Read-only repository audit | Rõ preservation scope, nguồn [REPOSITORY_AUDIT](REPOSITORY_AUDIT.md)/GDD | Actual source/manifest/test accessible; recheck HEAD, không chọn engine bằng suy đoán | Kiểm modules/load/build seams và save settings; không cần origin cosmic | **READY** cho audit được giao; baseline source có |
+| Task09 elemental design | Bốn native + Lôi/Kim foreign + Life authority rõ; [COSMOLOGY](lore/ELEMENTAL_COSMOLOGY.md) | Chưa roster full/affinity interactions/status/costs; task09 chỉ thiết kế khi được giao | Không auto damage matrix, no evil foreign; review ví dụ mono/dual/authority | **READY** cho thiết kế có phạm vi; elemental system mới **NOT IMPLEMENTED** |
+| Dawn movement/basic combat maintenance | Source, logic tests, assets có; [architecture](architecture.md) | Runtime single Phoenix/ground hover; không đại diện swim physics | 30 tests pass Task08; browser/touch performance cần run riêng nếu sửa visual/input | **READY** cho bảo trì baseline nhỏ; implemented prototype |
+| Quy I underwater movement/combat | Role/brief/qualitative abilities có; chưa input/physics/ranges/clearance final | Quy reference/clips/underwater kit thiếu; A08-03/13/14 | Ground collision hiện chặn water, không bật swim bằng rename. Cần geometry/hazard/combat/animation tests | **BLOCKED** cho art-complete playable; concept prototype sau scope/asset approval |
+| Opening resonance / body formation | D29 mười nhịp rõ, acquisition/durable subgrant có proposal | A08-01/14: B+C/body source/core appearance/consent; chưa runtime forms | Test no-body bootstrap, interrupt trước/sau form commit, idempotent grant | **CONDITIONAL** sau contract subset duyệt; **NOT IMPLEMENTED** |
+| Three-form switching/loadout | Slots/active/reserve/lock CONFIRMED, R03 transaction chi tiết | A08-01/02/03/05; future generic forms, placement/cost/HP cần chốt | Damage ordering, duplicate input, cooldown/HP/reset, invalid placement; tests R03 chưa thực thi | **CONDITIONAL** cho prototype sau approval; **NOT IMPLEMENTED** |
+| Boss encounter entry/outcome/reload | Membership lock rõ, narrative roles đủ review | C08-01 full-three vs early-empty; A08-05/07 identities/entry/abort; boss mechanics/assets thiếu | Không optional species gate; freeze set/stage, defeat/retreat/reload/duplicate reward tests | **BLOCKED** cho boss I production; **NOT IMPLEMENTED** |
+| Per-species progression/evolution | Independent record/formId, 12 stage briefs, no thresholds assumed | A08-04/10 XP curve/caps/skill gates/catch-up; art và balance | Stage dims/HP ratio/frozen config/pending benefits/alias migration; no free heal | **CONDITIONAL** cho data prototype sau policy; full evolution art **BLOCKED**, software **NOT IMPLEMENTED** |
+| Collection/resonance journal | Present/discovered/playable/memory axes rõ | A08-01/14 source eligibility/species roster/observation, không universal kill unlock | Coverage trước/sau restoration kể cả undiscovered; duplicate sources/records | **CONDITIONAL** sau subset roster/acquisition; **NOT IMPLEMENTED** |
+| Enemy ecology/AI | 8 views, 9 templates, warning/leash/reward principles có | Species/motion/habitat/telegraph/balance chưa chốt; runtime targets thường trống | Chọn một template phù hợp slice, test senses/retreat/refuge/form switch identity | **CONDITIONAL** cho một encounter spec/prototype, complete ecology **BLOCKED**; templates **NOT IMPLEMENTED** |
+| Factions/local consequences | Three profiles/history + local fact model có | Existence/names/member identities A08-06/08 chưa approve, không essential first playable | Không global morality branch hoặc main Sacred gate; model localized có thể defer | **CONDITIONAL** design; official faction content **BLOCKED**, software **NOT IMPLEMENTED** |
+| Main story/quests I–IV | 24 main,8 optional, clues/reveals/return contracts đầy đủ review | S05 proposals, A08-05/07/13/14, physics/data/assets; actual dialogue/cutscenes missing | DAG/static refs testable; playable mission test chưa thể gọi pass | **CONDITIONAL** cho ChapterI subset authoring; full four-chapter production **BLOCKED**, **NOT IMPLEMENTED** |
+| World event authority / quest sync | W07 hierarchy/categories/transaction/20 cases, owner proposal rõ | A08-09/11, one writer across world/transform/encounter, explicit schema | Replays/partial saves/old patch overwrites/active actor relocation; conceptual invariants PWV | **CONDITIONAL** sau subset authority approved; **NOT IMPLEMENTED** |
+| Gameplay save/load/migration | Envelope/atomic boundary/ledger/version/fallback spec có | Storage adapter/namespace/backup/UX and loss budget A08-11, browser budgets chưa chốt | Quota/denied/corrupt/tab close/duplicate reward/migration failures; settings không thay game save | **CONDITIONAL** cho scoped durable sample sau choices; full feature **NOT IMPLEMENTED** |
+| Environment / map production | Dawn tile kit thực, W07 presentation contract có | Underwater base/conditional layers/safe anchors và future biomes chưa production; A08-14 | Nav/collision/render cùng source, safe return, reused layers, capture tại gameplay scale | Dawn asset reuse audit **READY**; Quy map production **BLOCKED** bởi art/physics |
+| Data-driven creature/skill content | D39 mandatory principle, C04/R03/F06/W07 schemas conceptual | A08-12 adapter/capability interfaces, field crosswalk, validation before executable content | Add second species using existing module without name branches; new mechanic module reusable | **CONDITIONAL** sau technical audit; generic architecture **NOT IMPLEMENTED** |
+| Browser build / release baseline | package/CI/build scripts actual, 30 tests pass | Pages deploy recheck exact SHA; docs not in _site. Không cần replace engine | Static build/smoke/browser checks theo thay đổi; CI pass không validate new design runtime | **READY** cho pipeline đang có; ChapterI delivery chưa có |
+| Windows/mobile release & budgets | Direction browser-first rõ, touch UI existing | A08-12: packaging/browser/device/resolution/FPS/memory/accessibility budget unresolved | Không hardware evidence hoặc installer; viewport emulation không device certification | **BLOCKED** cho release claim; browser code có không đồng nghĩa portable validated |
+
+## Dependency-based first playable scope
+
+**CONFIRMED Task08/D40:** movement + basic combat + Quy I + underwater sample + initial resonance + persistent progress. Không đòi boss, ba playable species, đủ 24 quests, full factions hoặc cả bốn elemental networks để chứng minh mốc này. Budget/area count/playtime không tự xác nhận.
+
+**PROPOSED A08-13 acceptance subset:** mở đầu có agency, Quy di chuyển/va chạm và basic encounter đọc được, một receiver tạo thay đổi nhỏ đúng story, discovery/memory sample có provenance, save/reload giữ unlock/proof/world patch không double grant. Dùng subset world contract, không mặc định triển khai toàn schema production ngay. Trước code phải duyệt subset cụ thể, form/animation/capability và storage/recovery assumptions; không tự tạo art cho đủ checkboxes.
+
+## Ưu tiên giải blockers
+
+| Ưu tiên | Hành động cụ thể | Chứng cứ để mở gate |
+| --- | --- | --- |
+| P0 design | Chốt A08-01/02/03/09/11/13 phần cần cho Quy I; giữ cosmic origin mở | Approved decision record có scope, outcome/retry/cost/owner/checkpoint rõ |
+| P0 art/content | Có reference Quy đã duyệt, stageI clips/anchors/envelope và underwater kit/receiver | Files thực + metadata + visual/animation validation, không concept sheet giả atlas |
+| P1 audit | Kiểm kỹ thuật renderer/collision/content adapter/storage/QA seams, current settings backward compatibility | Audit actual source và proposal migration nhỏ; không automatic engine rewrite |
+| P1 implementation | Những task nhỏ movement/combat/resonance/save, theo dependency map | Unit/browser tests + reload interruption/ledger + playable smoke, asset evidence |
+| P2 ChapterI | Chốt A08-05/07, thêm encounter/quest/progression/region coverage và return | Boss lock/retry verified, refuge coverage và quest proof/collection no softlock |
+| P3 expansion | Phượng → Long → Ly sau nền I, physics/art tương ứng | Staged content validation; không bốn chapters build đồng thời |
+
+Các trạng thái trên là kết quả audit, không yêu cầu dừng công việc tài liệu đã được giao. Task09 và read-only audit có thể được giao tiếp; playable implementation chỉ an toàn sau khi các dependencies đúng subset được giải, không cần chờ every optional system hoặc cosmic secret.

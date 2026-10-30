@@ -81,3 +81,8 @@ GitHub Pages tự kiểm tra và xuất bản khi push `main`; chỉ đóng gói
 ## Task 07 — Persistent world blueprint
 
 [Audit và mục lục Task07](docs/world/TASK07_CONSISTENCY_AUDIT.md): authority, bốn vùng, population/quest/revisit, event DAG, save/migration và 20 acceptance scenarios. Chỉ tài liệu; chưa triển khai world save, không thay game/art.
+
+
+## Task08 — Master GDD và Phase I audit
+
+Bắt đầu tại [Master GDD](docs/GAME_DESIGN_DOCUMENT.md), [completion audit](docs/PHASE_I_COMPLETION_AUDIT.md), [readiness](docs/IMPLEMENTATION_READINESS.md) và [handoff](docs/PHASE_I_HANDOFF.md). Audit đã hoàn tất; **Phase I PARTIAL**, còn product/asset/technical gates trước Quy first playable. Game hiện tại không đổi trong task chỉ tài liệu này; Task09 chưa bắt đầu.

@@ -71,3 +71,8 @@ Tinh Linh là tên thuật ngữ cho chủ thể linh thể người chơi. [S�
 ## Blueprint thế giới bền vững Task07
 
 [Task07 audit](world/TASK07_CONSISTENCY_AUDIT.md) phân biệt permanent/persistent/temporary/repeatable/cosmetic, nguồn chuẩn và projection, giữ return/collection và boss lock. W07-P01–P10 là PROPOSED; không nâng các tuyến truyện/phe/cơ chế cũ thành approved hoặc nhận game đã có save tương ứng.
+
+
+## Master GDD và Phase I audit — Task08
+
+[GAME_DESIGN_DOCUMENT](GAME_DESIGN_DOCUMENT.md) là central summary; [PHASE_I_COMPLETION_AUDIT](PHASE_I_COMPLETION_AUDIT.md), [consistency/readiness](IMPLEMENTATION_READINESS.md) và [handoff](PHASE_I_HANDOFF.md) giữ evidence/gates. Phase I PARTIAL, không tự approve proposals. Task08 D38 xác nhận Lôi/Kim foreign baseline, D39 mandatory extensibility, D40 first playable Quy/underwater/resonance/persistent progress; details chưa approved và runtime vẫn Dawn/Phoenix. Không tự bắt đầu Task09.

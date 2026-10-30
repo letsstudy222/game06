@@ -29,3 +29,8 @@ GAME_VISION và PROJECT_SCOPE đổi kết quả cuối cung từ phát hiện s
 ## Tiếp nối Task 03 — 30/10/2026 (Asia/Saigon)
 
 D28–D30 bổ sung thuật ngữ, trình tự thức Quy và khung stage theo chỉ dẫn Task 03. R03-P01–P11 cụ thể hóa ứng viên L02-P08 mà không tự phê duyệt model hybrid. SPIRIT_AND_RESONANCE giữ lịch sử Task 02 và trỏ tới [sổ quyết định Task 03](RESONANCE_DECISION_RECORD.md). Quy thức non trẻ là chỉ dẫn mới; ý thức nguyên thể và nguồn gốc Tinh Linh vẫn UNRESOLVED.
+
+
+## Task08 — source-priority audit và baseline nguyên tố
+
+D18 cập nhật PROPOSED→CONFIRMED chỉ cho Lôi/Kim foreign influences qua biến cố theo explicit Task08 §5/D38. Full roster, dual species và cơ chế L02-P04 vẫn PROPOSED/UNRESOLVED; không xác nhận thủ phạm, voluntary sacrifice hoặc origin Tinh Linh. ELEMENTAL_COSMOLOGY và active summary ChapterII sửa cùng scope. Các dòng “D18 vẫn PROPOSED” ở entries Task02/03 là historical status của baseline lúc đó, không current authority. Kết cung cũ “hé lộ cổng” đã được Task02/D26 thay activation, recorded SUPERSEDED H08-S01; không approval mới cho gateway mechanism.

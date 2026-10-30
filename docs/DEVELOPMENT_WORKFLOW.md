@@ -57,3 +57,8 @@ Commit/push/deploy theo phạm vi ủy quyền của phiên/task. Repository có
 ## Chuẩn bị cho Task 02
 
 Cần một đề bài riêng: lựa chọn mục tiêu cụ thể (ví dụ đặc tả slice Chương I trước khi viết code), phạm vi được phép và tiêu chí nghiệm thu. Ưu tiên cung cấp reference Quy có thể truy cập cùng mức duyệt; chốt trứng/lõi nếu nhiệm vụ đụng mở đầu; thống nhất quy cách art/animation, điều kiện traversal và giới hạn nội dung slice. Đánh giá nhu cầu save và packaging Windows theo task riêng, không ép mọi câu hỏi lớn phải có đáp án trước khi làm việc độc lập.
+
+
+## Entry point sau Task08
+
+Đọc [PHASE_I_HANDOFF](PHASE_I_HANDOFF.md) và [Master GDD](GAME_DESIGN_DOCUMENT.md) trước work package chi tiết. PROJECT_DECISIONS sở hữu approval/status, audit/readiness chỉ evidence/gates. D18/D38 foreign baseline và D39 extensibility là yêu cầu confirmed mới; B+C/HP/boss entry/factions/thresholds/storage vẫn chưa tự approved. Không dùng “design freeze” để suy PhaseI đã production-ready: hiện PARTIAL. Phần chuẩn bị Task02 ở trên là hướng dẫn lịch sử theo mốc, không hủy các task đã được người dùng giao sau đó.

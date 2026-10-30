@@ -4,7 +4,7 @@
 
 ## Vùng sống nhiều lớp
 
-Bờ chân đảo có đường nước Quy quay lại được; trên là bazan nguội, rừng trên đất núi lửa, dốc khô, sanctuary Hỏa, buồng trao đổi nhiệt ngầm và khe địa nhiệt bất ổn cục bộ. Không làm cả đảo phủ lava, không biến nước được khôi phục thành tắm dung nham. Sinh cảnh Fire–Metal là **concept PROPOSED**: dùng để nghiên cứu thích nghi, chưa khóa Kim vào roster canon.
+Bờ chân đảo có đường nước Quy quay lại được; trên là bazan nguội, rừng trên đất núi lửa, dốc khô, sanctuary Hỏa, buồng trao đổi nhiệt ngầm và khe địa nhiệt bất ổn cục bộ. Không làm cả đảo phủ lava, không biến nước được khôi phục thành tắm dung nham. Sinh cảnh Fire–Metal là **concept PROPOSED**: dùng để nghiên cứu thích nghi, chưa duyệt species/habitat cụ thể. Task08 D18/D38 xác nhận Kim là ảnh hưởng ngoại lai, không tự approve sinh cảnh/loài này.
 
 ## Act I — Cơ thể không hợp mọi nơi (`evt_07_survey_basalt`)
 
