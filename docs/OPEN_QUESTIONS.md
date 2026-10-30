@@ -45,3 +45,8 @@ Q06 có [blueprint bốn chương và phạm vi event](story/TASK05_CONSISTENCY_
 ## Sau Task 06
 
 [Hồ sơ F06](factions/TASK06_CONSISTENCY_AUDIT.md) đề xuất ba tổ chức, local concerns/access, tám behavior views, assimilation outcomes và templates/reward/ledger. Chưa chốt existence/membership/lịch sử phe, species/art, roster Kim–Lôi, recoverability từng case, encounter subset/balance hoặc boss entry policy R03/S05. Nguồn gốc Tinh Linh/cổng, thủ phạm sâu và sự tự nguyện biến cố không được giải bằng faction propaganda. Cần duyệt phạm vi trước implementation, không chặn hoàn tất tài liệu.
+
+
+## Task07 — các điểm cần chốt trước implementation
+
+Xem [W07-U01–U04](world/TASK07_CONSISTENCY_AUDIT.md): early boss entry R03/S05; capability/clearance/safe anchors; species/habitat coverage; storage adapter/namespace/backup/error UX/loss budget; weather bounds/performance/faction approvals. Không tự phê duyệt W07 model hoặc bắt đầu Task08. Không có câu trả lời mới về origin Tinh Linh hoặc cosmic culprit.

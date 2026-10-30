@@ -60,3 +60,8 @@ Save thiếu/hỏng không được silently grant unlock hoặc xóa dữ liệ
 Sự kiện có ID và order: resolve damage đến hạn → cancel/defeat nếu cần → validate pending transform → atomic commit → recovery/cooldown tick → reward/milestone commit theo gate → save snapshot. Có thể chọn tick architecture khác nhưng phải giữ cùng kết quả ở ranh giới damage/commit. Level/skill benefits trong boss lưu pending, không đổi combat snapshot.
 
 Task triển khai sau cần adapter từ GameState hiện tại sang entities và save migration, test retry/reload/damage/ledger; không sửa `PlayerPhoenix` trong Task 03. Công cụ/engine sản xuất và bảo mật save multiplayer vẫn UNRESOLVED.
+
+
+## Task07 — tích hợp world persistence (PROPOSED)
+
+[Persistent world contract](PERSISTENT_WORLD_DATA_SPEC.md) dùng cùng durable writer/revision và RewardGrantLedger, không thêm collection/progression copy. Awakening sub-completion và form unlock/placement/sub-grant là cùng transaction; main awakening count suy từ bốn designated species, availability hiện thời theo progression/resonance. Boss lock/abort-reset và full-three vs early-empty conflict vẫn cần quyết định riêng, không tự đổi I02 bằng Task07.

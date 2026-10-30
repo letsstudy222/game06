@@ -66,3 +66,8 @@ Tinh Linh là tên thuật ngữ cho chủ thể linh thể người chơi. [S�
 ## Nền phe và sinh thái Task 06
 
 [Task06 audit/mục lục](factions/TASK06_CONSISTENCY_AUDIT.md) dẫn các tổ chức, behavior/assimilation, enemy templates và reward/data contracts ứng viên. Các phe/tên/membership vẫn PROPOSED; ngoại lai không là mục tiêu phải diệt sạch và collection không yêu cầu kill peaceful. Không có AI/UI/art mới.
+
+
+## Blueprint thế giới bền vững Task07
+
+[Task07 audit](world/TASK07_CONSISTENCY_AUDIT.md) phân biệt permanent/persistent/temporary/repeatable/cosmetic, nguồn chuẩn và projection, giữ return/collection và boss lock. W07-P01–P10 là PROPOSED; không nâng các tuyến truyện/phe/cơ chế cũ thành approved hoặc nhận game đã có save tương ứng.

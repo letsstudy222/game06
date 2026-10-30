@@ -83,3 +83,12 @@ Cơ chế thế giới/biến cố/cộng hưởng mới L02-P01–P10 đều **
 ## Cách sửa quyết định
 
 Mọi thay đổi ghi ID, trạng thái cũ/mới, lý do, nguồn phê duyệt và hệ/asset bị ảnh hưởng trong task tương ứng. Chuyển PROPOSED/UNRESOLVED sang CONFIRMED cần quyết định rõ, không chỉ sửa lời văn. Sự thật kỹ thuật mới phải có đường dẫn hoặc kết quả kiểm chứng. Các tài liệu audit lịch sử vẫn có giá trị theo mốc; không để chúng ghi đè hướng chính thức này.
+
+
+## Bổ sung Task07 — nguồn: yêu cầu người dùng Task07/96
+
+| ID | Status | Ràng buộc được yêu cầu |
+| --- | --- | --- |
+| D37 | CONFIRMED | World persistence phân cấp và năm loại thay đổi; tránh duplicate independently mutable truth, reward replay và softlock; quay lại/collection vẫn đạt sau ecological change; deterministic main dependencies, save migration/web-first; không override boss membership lock hoặc coi faction proposal là approved |
+
+[W07-P01–P10 và U01–U04](world/TASK07_CONSISTENCY_AUDIT.md) vẫn PROPOSED/UNRESOLVED cho authority cụ thể, phase predicates, transaction/storage/recovery, habitat/presentation/data. D37 không xác nhận backend, quest ID, faction hoặc code mới.

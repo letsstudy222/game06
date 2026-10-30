@@ -46,3 +46,8 @@ Kiểm tra kỹ thuật phải đọc file thật, kiểm tra gutter/alpha, kh�
 ## Task 06 — template không là artwork/species đã duyệt
 
 [Asset-gap FG01–FG06](factions/TASK06_CONSISTENCY_AUDIT.md) ghi yêu cầu nguồn sinh học/habitat, silhouette, direction/anchor/telegraph/timing/playback và các dependencies chưa có. Task06 không tạo/thay/sửa art hoặc nhận đã xem enemy/faction ảnh chưa tồn tại. Chín archetype là templates, không chín sinh vật đã có sprite. Reference Tứ Linh đã duyệt giữ nguyên; không concept sheet nào được tự nhận là production animation.
+
+
+## Task07 — environment state presentation gaps
+
+[Presentation contract](world/ENVIRONMENT_STATE_PRESENTATION.md) cần base geography/conditional layers, receiver/bridge/vent/wind/root states, collision/nav anchors, readable cues và audio/lighting profiles cho bốn vùng. Chưa có các bộ production được xác minh cho toàn bốn chương; Dawn hiện hữu không tự đáp ứng. Không tạo/đổi hoặc xem lại ảnh/animation mới trong Task07; đây là handoff và ghi thiếu, không xác nhận assets sẵn sàng.

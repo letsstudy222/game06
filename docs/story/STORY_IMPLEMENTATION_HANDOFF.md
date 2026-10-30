@@ -653,3 +653,8 @@ Không đặt stage/evolution threshold hoặc collection UI mới trong bluepri
 | T05-EC18 | Event main đòi animation/receiver/asset thiếu | Mark blocked content-ready trước cho entry; không xóa requirement âm thầm hoặc dựng placeholder rồi nhận đã có chương. Không sửa bản Phoenix đang chạy để fake pass |
 
 Các quy tắc là acceptance expectations cho task tương lai, không test đã thực thi. Bảo vệ reload/menu hợp lệ, không hứa anti-cheat mọi save chỉnh tay. Thay đổi narrative phải cập nhật cả projection spawn, reward ledger và các phụ thuộc; rename text không rename stable ID.
+
+
+## Task07 — làm rõ authority/save contract (PROPOSED W07-P01/P04)
+
+State changes trong 24 contracts là predicate aliases/outcomes dưới [world architecture](../world/WORLD_STATE_ARCHITECTURE.md), không bag boolean độc lập cạnh completion. Awake lấy form_committed, practice lấy parent; stable lấy restoration completion. Outcome nhánh, memory, resonance và grant vẫn theo owner riêng. P0 lưu authoritative facts + mutable owned patches + reward recipient/ledger cùng logical transaction; projection phase/count/cache được dựng lại, không replay grant/old patches khi load. [World dependency projection](../world/WORLD_EVENT_DEPENDENCIES.md) phân biệt entry available với arrived. Event IDs, narrative completion và rewards scope Task05 không đổi.

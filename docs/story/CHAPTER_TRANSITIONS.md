@@ -25,3 +25,28 @@ Không đảm bảo thời lượng hay đòi thiết bị/camera technique mớ
 4. Ngắt/reload precommit → source checkpoint; postcommit → destination checkpoint; không duplicate grant/chapter open hoặc rơi giữa hai scene. Nếu destination thiếu asset thì giữ source và báo gap, không “teleport tạm” sang Dawn.
 
 Không cần unequipped optional species: trước boundary có chỗ mở collection; nếu bắt buộc một Sacred main chưa equipped thì hướng dẫn đổi tại chỗ an toàn, không sửa membership giữa boss. Nếu main form tạm disabled bởi narrative event, event đó phải có rescue/alternative đã thiết kế hoặc chờ phục hồi ở vùng trú; không bắt đi vào route không thể quay lại.
+
+
+## Task07 — Region revisit design (PROPOSED W07-P07)
+
+Tài liệu này cũng là đầu ra tương đương `REGION_REVISIT_DESIGN`: giữ nguồn topology/đường về tại đây, không tạo một bản tuyến cạnh tranh. Mở tuyến hai chiều là phần cùng arrival transaction, không phần thưởng tùy chọn sau khi qua chương.
+
+| Vùng trở lại | Đường về / reconstruct | Quest và repeatable | Dạng mới mở thêm / nội dung sau chương |
+| --- | --- | --- | --- |
+| Vực Hải Uyên | Bờ nông ↔ thềm biển ↔ sanctuary; phase từ E05, variant từ owner hiện tại | Reef observation, archive, resonance refuge; predator/territory repeat policy, guardian unique outcome giữ | Phượng làm nóng receiver phụ ngoài nước, Long điều khí ở chamber, Ly chăm coral còn sống nếu rule duyệt; optional không main gate |
+| Đảo Nhật Diệm | Landing thermal xuống ↔ basalt ↔ bờ; vent profile đã hồi giữ | Thermal habitat/challenge và source đã relocated; custodian theo outcome | Quy vào ống ngập, Long lane phụ, Ly phục hồi vật mang sống; không hủy rừng để tạo việc |
+| Phong Vân | Living corridor về trạm ↔ corridor chính ↔ thermal xuống | Cloud archive, movement trial/observation; regulator không respawn để farm | Long nook riêng, Ly nối cầu còn mô sống, Quy/Phượng ở túi môi trường phù hợp; storm variation không khóa đường về |
+| Vạn Sinh | Corridor gió nối Phong Vân, post-arc vẫn ở đây | Adapted garden/variant reversible, ecological follow-up, ký ức đọc lại | Bốn hệ đóng góp nối tiếp, không bốn equipped; Tinh Môn không teleport tới planet chưa làm |
+
+Không ép backtrack dài cho mọi quest chính; optional quay lại được báo mục đích/location, chưa chốt fast-travel. Memory đã thu có marker/recap/replay, không object reward mới. Region load dựng projection hiện tại chứ không replay toàn story hoặc reset về crisis. Những capability/dạng sau giúp optional nook; không retroactively bắt người chơi lấy một loài optional để xong main.
+
+### Bảo vệ loadout và traversal
+
+- Trước đoạn không thể quay đầu, kiểm aquatic/thermal/air/clearance requirements của route và ít nhất một đường hồi với loadout khả dụng; cue từ safe approach, không sau khi đã rơi xuống.
+- Vị trí đổi loadout an toàn được bố trí trước gate và hai đầu tuyến; số lượng/asset/UX chưa chốt. Không mặc định đổi loadout mọi nơi hoặc giữa boss.
+- Vào biển sâu thiếu aquatic form: chặn tiến tại shelf an toàn và dẫn tới nơi chuẩn bị bộ; không cho chết kẹt rồi invent form. Nếu save cũ/bug đã đặt ở chỗ sai, recovery tới anchor validated dùng form khả dụng.
+- Region patch/ability-disable làm mất lối về: defer tới boundary, giữ route fallback hoặc từ chối patch. Nếu boss đang khóa bộ, queue change; emergency recovery sau abort/reset attempt, không mở membership trong combat.
+- Boss entry phải kiểm encounter capabilities và safe exit trước khóa; full-three R03-P06 vs empty-slot S05-P02 vẫn UNRESOLVED, không dùng loài optional chưa báo để lấp slot bắt buộc.
+- Anchor cần clearance/render envelope/health/capabilities thực, không chỉ có tọa độ. Nếu không có viable form/anchor thì content invalid: giữ snapshot trước và không commit disable/transition; không xóa progression.
+
+Xem [authority](../world/WORLD_STATE_ARCHITECTURE.md), [world transaction](../world/WORLD_STATE_TRANSITIONS.md), [population coverage](../world/ECOLOGY_AND_SPAWN_STATES.md). Các tuyến mới/cue/collision/landing phải prototype sau; văn bản này chưa chứng minh map production tồn tại.

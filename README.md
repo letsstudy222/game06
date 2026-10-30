@@ -76,3 +76,8 @@ Có sáu trạng thái chạy thật, nhưng nguồn nhân vật mới chỉ có
 `npm run build` tạo thư mục `_site` với revision tag đồng nhất cho các ES module, tránh tải lẫn mã cũ từ cache sau khi phát hành.
 
 GitHub Pages tự kiểm tra và xuất bản khi push `main`; chỉ đóng gói runtime, font và ảnh chụp, không tải master/legacy lên site.
+
+
+## Task 07 — Persistent world blueprint
+
+[Audit và mục lục Task07](docs/world/TASK07_CONSISTENCY_AUDIT.md): authority, bốn vùng, population/quest/revisit, event DAG, save/migration và 20 acceptance scenarios. Chỉ tài liệu; chưa triển khai world save, không thay game/art.

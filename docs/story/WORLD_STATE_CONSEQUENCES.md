@@ -54,3 +54,8 @@ Permission optional có điều kiện review/revoke và đường repair; **ess
 Đề xuất stage change ở boundary an toàn: ngừng nhận spawn mới từ projection cũ, giữ actor IDs/completion ledger, đối chiếu placement/source/nav mới rồi relocate tới refuge hợp lệ trước khi cho attack lại. Không despawn vào void hoặc spawn một bản mới để nhận reward trùng. Nếu đang boss lock/transition không tương thích, queue change tới khi attempt/arrival resolve; đừng sửa cảnh đánh nửa chừng không báo.
 
 Một quest ổn định nguồn có thể chủ động ngắt encounter nếu contract cho phép: commit source/outcome/disposition/HP policy đã khai và kết thúc attack an toàn, không heal hay đổi affiliation ngầm. Boss completion vs ecological restoration là transactions khác như Task05; các rollback của thử nghiệm chưa commit không đảo main flags đã durable. Mọi mapping habitat/source phải giữ ít nhất một route nghiên cứu/collection, kể cả người chơi chưa từng gặp loài.
+
+
+## Task07 — nguồn chuẩn và ecology projection (PROPOSED)
+
+[World architecture](../world/WORLD_STATE_ARCHITECTURE.md) sở hữu hierarchy/authority; [chapter state tables](../world/TASK07_CONSISTENCY_AUDIT.md) bổ sung predicates/presentation mà không tạo main events khác. Stable flags là aliases của completion, habitat/phase là projection; mutable optional variant đúng một owner. [Coverage rules](../world/ECOLOGY_AND_SPAWN_STATES.md) kiểm cả loài chưa discovered, actor relocation ở safe boundary. Các consequences/phe của Task05–06 vẫn PROPOSED; không có world runtime mới.

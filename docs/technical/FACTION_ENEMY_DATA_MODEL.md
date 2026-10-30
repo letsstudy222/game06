@@ -52,3 +52,8 @@ Source/quest item chưa có inventory production được coi là evidence contr
 ## Mở rộng và prerequisites
 
 Loài mới chọn profile/gates/affiliation/habitat/animation/loot manifest bằng dữ liệu khái niệm, không rewrite core theo tên. Những khác biệt giác quan/movement thật cần capability trong stack được test trước; template không cho máy có khả năng bất khả thi. Cần approval scope/faction/cast/species, art/telegraph/nav/capability, balance và persistence prototype ở task sau; không cài AI hoặc chọn database trong Task06.
+
+
+## Task07 — clarification RegionEcologyState (PROPOSED W07-P02)
+
+RegionEcologyState là read-only projection từ [completion/region authority](../world/WORLD_STATE_ARCHITECTURE.md), habitat catalog và actor outcomes. stableMainFlags là predicate refs, variant đọc RegionState, pendingChanges chỉ intent chưa committed; không lưu bản sao mutable. Critical relocation choice/unique actor outcome lưu đúng owner record, ordinary wildlife positions không persist mọi frame. FactionRelationship vẫn tách physical ecology; ba faction chưa approved. [World data contract](PERSISTENT_WORLD_DATA_SPEC.md) mô tả validation/migration chung, không thay entity definitions thành code.
