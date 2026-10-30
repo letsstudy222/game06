@@ -60,4 +60,8 @@ Bản chất vật lý/tinh thần cuối cùng của điểm nối; ai tạo ra
 
 ## Task08 — chronology chưa tự chốt
 
-D38 xác nhận ảnh hưởng Lôi/Kim ngoại lai qua biến cố; không xác nhận thời điểm chính xác giữa tiếp xúc H2 và đỉnh khủng hoảng H4 của mô hình PROPOSED. Chi tiết trước/trong biến cố cần lore approval (C08-17 tại DESIGN_CONSISTENCY_REPORT ở docs root), không tự coi chronology H2 là accepted canon hoặc sửa quá khứ để khớp một cách hiểu.
+**CONFIRMED D18/D38:** Lôi/Kim là ảnh hưởng nguyên tố ngoại lai qua biến cố. Cụm “qua biến cố” xác nhận liên hệ với lịch sử biến cố, không tự xác định mốc tiếp xúc đầu tiên hoặc ranh giới thời kỳ được gọi là Đại Biến Cố.
+
+**PROPOSED L02-P05:** H2 tiếp xúc đầu và H4 đỉnh khủng hoảng thuộc [mô hình nhân quả H1–H7](ANCIENT_CATASTROPHE.md). Thứ tự trong mô hình làm việc này không phải phê duyệt chronology chi tiết.
+
+**UNRESOLVED Q02/A08-15:** phạm vi thời kỳ Đại Biến Cố và vị trí của tiếp xúc đầu trong phạm vi đó. Chưa chốt rằng ảnh hưởng Lôi/Kim bắt đầu trước hay trong thời kỳ này; không chọn một cách hiểu để viết lại lịch sử. Xem [câu hỏi Q02](../OPEN_QUESTIONS.md) và C08-17 trong [consistency report theo mốc Task08](../DESIGN_CONSISTENCY_REPORT.md).

@@ -107,6 +107,8 @@ Thứ tự: (1) explicit user-approved; (2) later approved supersession của ac
 
 D38 không tuyên bố Lôi/Kim đã implemented hoặc previously approved trước mốc này. Các audit/changelog Task02–07 là historical snapshots theo baseline; các câu D18-candidate trong chúng không override update này. D17/D19/D21–D24 và R03/C04/S05/F06/W07 giữ status cũ nếu không có approval riêng. D40 cụ thể hóa essential scope, D20 quota/budget vẫn proposal.
 
+D18 giữ nội dung baseline Lôi/Kim; D38 ghi nhận nguồn xác nhận mới tại Task08 cập nhật D18. Quan hệ này là provenance/phê duyệt (`D38 cập nhật D18`), không phải hai prerequisite gameplay phụ thuộc nhau. Cột Dependencies của D18 giữ nền D09; D38 là bản ghi phê duyệt, không khai báo prerequisite gameplay. Status và phạm vi quyết định đã xác nhận không đổi.
+
 ### Metadata D01–D40
 
 Mỗi record được join bằng ID với bảng status/category/statement ở trên. Bảng sau bổ sung **Title, Source, Rationale, Affected systems, Dependencies, Risks, Required approval**; không lưu status thứ hai. Source “TaskNN” là chỉ dẫn người dùng, evidence paths là repository thực, không file prompt giả.
@@ -130,7 +132,7 @@ Mỗi record được join bằng ID với bảng status/category/statement ở 
 | D15 / Map/atlas hiện tại | src/island/islands.mjs; manifests; Task08 PNG checks | Kích thước có evidence | Render/collision/assets | D14 | Không tất cả form 96px/6 full clips | Không cho fact; pipeline mới A08-14 |
 | D16 / Bảo tồn baseline | Task01; DEVELOPMENT_WORKFLOW | Không phá code/art/save cũ | All existing runtime | Git status/diff | Docs bị dùng để sửa game ngoài scope | Task code/art riêng nếu thay |
 | D17 / Can thiệp/hiến tế | Task01; lore/ANCIENT_CATASTROPHE | Working hypothesis có giới hạn | Lore/reveals | A08-15 | Nhầm tự nguyện/death thành canon | Có trước historical truth freeze |
-| D18 / Lôi/Kim foreign | Task08 §5; D38; lore/ELEMENTAL_COSMOLOGY | Baseline explicit mới | Element/ecology | D09/D38 | Không xác nhận full roster/balance | Không baseline; roster/interactions cần task riêng |
+| D18 / Lôi/Kim foreign | Task08 §5; D38; lore/ELEMENTAL_COSMOLOGY | Baseline explicit mới | Element/ecology | D09 | Không xác nhận full roster/balance | Không baseline; roster/interactions cần task riêng |
 | D19 / Rarity candidates | Task01; CORE_DESIGN_PILLARS | Phân loại ứng viên chưa khóa | Collection/UI/balance | Roster | Legend HUD không evidence system | Có nếu dùng rarity production |
 | D20 / Slice sizing proposal | Task01; PROJECT_SCOPE | Scope kiểm chứng trước | Production | D40/A08-13 | Đọc gợi ý như quota cam kết | Có cho budget/content sizing |
 | D21 / Open lore group | Task01; OPEN_QUESTIONS Q01–05 | Không sáng tác origin ngầm | Lore/opening | Evidence/author decisions | Bundle không chốt body/cổng | Có, phần opening A08-01/14; sâu A08-15 |
@@ -150,7 +152,7 @@ Mỗi record được join bằng ID với bảng status/category/statement ở 
 | D35 / Long/Ly phân tán | Task05; lore/SACRED_CREATURES | Awakening distinct, no four eggs | Lore/resonance | D04/D29 | Mechanism/ý thức chưa chốt | Chi tiết A08-01/15 |
 | D36 / Ecology/choices localized | Task06; ecology/ELEMENTAL_ASSIMILATION | Không evil foreign/killing collection | Enemy/factions/rewards | D08/D10 | Branches/reputation phình scope | A08-06/08/14 |
 | D37 / Persistent world requirements | Task07; world/WORLD_STATE_ARCHITECTURE | One truth, no softlock/double grant | World/save/quest | D12/D06 | Requirement không implementation | A08-09/11 cho contract cụ thể |
-| D38 / Foreign baseline Task08 | Task08 §5 | Approval mới rõ provenance | Cosmology/Task09 | D09/D18 | Lầm rằng old proposal tự được duyệt vì lặp | Không baseline; future roster riêng |
+| D38 / Foreign baseline Task08 | Task08 §5 | Approval mới rõ provenance | Cosmology/Task09 | Không áp dụng — bản ghi phê duyệt | Lầm rằng old proposal tự được duyệt vì lặp | Không baseline; future roster riêng |
 | D39 / Data-driven extensibility | Task08 §8; technical/CREATURE_DATA_SPEC | Thêm species không rewrite core | Tech/content | Reusable capabilities/validator | Không phải mọi mechanic chỉ data | Không principle; module architecture A08-12 |
 | D40 / First playable essentials | Task08 §7; PROJECT_SCOPE | Mốc reviewable nhỏ hơn chương | Production/QA | A08-01/02/03/09/11/13/14 | Scope creep đủ bộ ba/boss/bốn chương | Không essentials; subset/budget cần A08-13 |
 

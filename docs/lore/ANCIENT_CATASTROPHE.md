@@ -8,6 +8,8 @@ Biến cố xảy ra hàng chục nghìn năm trước, sau tiếp xúc qua cổ
 
 Đây là “sự thật nền” **tạm dùng trong biên tập**, không phải canon đã duyệt, không là điều người chơi biết ngay và không phải bí mật được bảo vệ bởi quyền truy cập repository. Các tài liệu công khai vẫn chứa spoiler dành cho tác giả. Muốn đưa một chi tiết vào game phải dùng [lịch tiết lộ](CHAPTER_REVELATIONS.md).
 
+**Ranh giới trạng thái:** H2 “Tiếp xúc đầu” và H4 “Khủng hoảng Tinh Môn” dưới đây thuộc mô hình PROPOSED L02-P05. Baseline D18/D38 xác nhận ảnh hưởng Lôi/Kim ngoại lai qua biến cố, không phê duyệt mốc tiếp xúc đầu hay ranh giới thời kỳ Đại Biến Cố. Quan hệ “sau tiếp xúc” ở phần nền không tự xác định tiếp xúc nằm trước hay trong thời kỳ được gọi là biến cố; phạm vi chronology chi tiết vẫn **UNRESOLVED Q02/A08-15** theo [cosmology](ELEMENTAL_COSMOLOGY.md). Giữ nguyên bảng giả thuyết và các sự kiện nền đã xác nhận, không thêm hoặc đảo mốc lịch sử.
+
 | Pha | Nguyên nhân chính | Thành phần tham gia, chưa đặt tên riêng | Hệ quả môi trường | Hệ quả sinh học dài hạn | Bằng chứng hiện tại đề xuất |
 | --- | --- | --- | --- | --- | --- |
 | H1 — Cân bằng | Dòng trao đổi giữa bốn hệ trong sức phục hồi của môi trường | Tứ Linh, sinh vật địa phương, cộng đồng vận hành công trình | Dòng nước/nhiệt/khí và mạng sống hỗ trợ nhau | Đa dạng thích nghi theo từng vùng | Kênh đền có cùng quy tắc bốn nhánh; lớp trầm tích trước xáo trộn |

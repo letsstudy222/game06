@@ -69,4 +69,8 @@ Xem [W07-U01–U04](world/TASK07_CONSISTENCY_AUDIT.md): early boss entry R03/S05
 | P1/P2 Q15/Q17 → A08-12 | Adapter/modules/device budgets/Windows packaging, engine change nếu có evidence | Generic production runtime/platform claims |
 | P2 Q01–04 → A08-15 | Cosmic origin/culprit/voluntary intervention/gateway nature | Final historical truth; local slice/Task09 vẫn có thể thiết kế |
 
+### Làm rõ Q02 — chronology ngoại lai vẫn UNRESOLVED
+
+D18/D38 đã xác nhận Lôi/Kim là ảnh hưởng ngoại lai qua biến cố; không hỏi lại baseline này. Điều còn mở là phạm vi thời kỳ Đại Biến Cố và mốc tiếp xúc đầu nằm trước hay trong phạm vi đó. H2 tiếp xúc đầu/H4 đỉnh khủng hoảng trong [ANCIENT_CATASTROPHE](lore/ANCIENT_CATASTROPHE.md) chỉ là mô hình PROPOSED L02-P05, không phải chronology đã được duyệt. [ELEMENTAL_COSMOLOGY](lore/ELEMENTAL_COSMOLOGY.md) giữ cùng cách phân biệt; chưa có lựa chọn được chốt tại Q02/A08-15.
+
 Phase I PARTIAL, không tự tuyên bố freeze full production. Audit Task08 hoàn tất không trả lời thay các lựa chọn trên. Task09 — Elemental System Design chỉ bắt đầu khi được giao; không tự sinh damage chart/roster cuối trong audit này.

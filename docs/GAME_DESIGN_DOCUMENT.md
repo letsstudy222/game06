@@ -90,7 +90,9 @@ Bốn vùng: nước dormant→disturbed→restoring→stable; nhiệt dormant�
 
 ## 3.11 Art Direction
 
-**CONFIRMED D01/D15/D32/D33:** pixel art sắc, silhouette đọc rõ, palette/hướng sáng có kiểm soát; reference approved không thay âm thầm. Runtime tile 32px là fact hiện tại, không bắt mọi form 96px. Visual envelope/core footprint/hurtbox/attack box riêng, Long dài và stage lớn cần clearance prototype.
+**CONFIRMED D01/D15/D32/D33:** pixel art sắc, silhouette đọc rõ, palette/hướng sáng có kiểm soát; reference approved không thay âm thầm. Runtime tile 32px là fact hiện tại, không bắt mọi form 96px. Hướng Long thân dài đã duyệt theo D32 được giữ nguyên.
+
+**PROPOSED C04-P07:** tách visual envelope, core footprint, hurtbox và attack hitbox; giải pháp clearance/rendering cho Long thân dài và các stage lớn cần prototype theo [evolution matrix — collision và rendering](creatures/SACRED_EVOLUTION_MATRIX.md). Đây là đề xuất kỹ thuật chưa được phê duyệt, không phải phần mở rộng của baseline CONFIRMED ở trên.
 
 [Asset readiness tại register hiện hữu](ASSET_REFERENCE_REGISTER.md) phân biệt approved reference, unreviewed concept, production sprite/atlas có phạm vi validation, environment tile, missing/unverified. Task08 trực tiếp xem Phoenix reference, runtime atlas, Dawn terrain/objects, kiểm PNG/manifest/source và tests hiện hữu. Hai pose × ba hướng, right mirror; sáu controller states không sáu full hand-authored action clips. Quy/Long/Ly và underwater stage-I kit chưa có nhận diện được; chưa fresh playback/physical-device QA. Không gán Legend=stage III hoặc concept-sheet rows=animation đã validate.
 
