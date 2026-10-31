@@ -1,0 +1,24 @@
+# Nhiệm vụ mở đầu và ánh xạ sự kiện
+
+**PROPOSED O17-P06**, kế thừa S05/W07/R03. Nguồn questId là [quest outline](../story/QUEST_DESIGN_OUTLINE.md); eventId và rewards là [story handoff E01](../story/STORY_IMPLEMENTATION_HANDOFF.md). Bảng này là chi tiết objective của **cùng** `mq_01` / `evt_01_quy_awakes`, không registry thứ hai. `opening_bNN` chỉ là stepId cục bộ. Mỗi dòng áp dụng đúng hai IDs trên; E02 chỉ là mục tiêu tiếp theo.
+
+| stepId / mục tiêu tiếng Việt | Prerequisites | Trigger và completion evidence | Fail / retry / softlock cần tránh | Reward, persistent facts | Dialogue / scene |
+| --- | --- | --- | --- | --- | --- |
+| opening_b01 — Hướng chú ý về vệt sáng | BOOTSTRAP_START / CAP_BOOTSTRAP, chưa có thân | Input vào dấu gần → phản hồi đầu được quan sát | Không input thì giữ vùng, cue hình/chữ; không autoplay complete | Không reward; evidence awareness trong tiến độ E01, không cờ global riêng | opening_silence/orient; guided |
+| opening_b02 — Đáp lại dấu sáng | b01 evidence | Tương tác dấu → di tích đáp | Trigger lặp trả cùng evidence; không yêu cầu activeForm | Evidence signal trong E01; chưa form | opening_answer; playable giới hạn |
+| opening_b03 — Theo dấu nước | b02 | Theo các anchor gần → sanctuary/source đã cảm nhận | Không free-flight; hồi anchor hợp lệ nếu lạc cue; không cần loài optional | Discovery/evidence source theo owner R03/E01, không unique reward mới | opening_follow/broken; guided |
+| opening_b04 — Chạm nơi đang đáp | Đến source, nguồn còn hợp lệ | Chạm → giác quan từng phần được ghi | Nguồn tạm invalid thì nêu lý do/revalidate; không phá vật mang | Evidence tiếp xúc; không form | opening_near/touch; overlay |
+| opening_b05 — Cảm mảnh ký ức | b04; content memory hợp lệ | Chủ động tiếp xúc → xử lý fragment trước resonance; có thể rút ngắn trình bày | Gọi lại cùng memoryId không claim lại; thiếu content phải gate, không bịa memory khác | mem_quy_first_sense theo memory owner và receipt cùng W07; không XP giả định | opening_memory_pressure/absence/note; memory |
+| opening_b06 — Chạm vào nhịp nước | b05 evidence; nguồn/môi trường/tương hợp và anchor hợp lệ | Confirm → source_validated; cấu trúc đáp → form_committed durable | Ngắt trước commit retry cùng source; sau commit resume Quy; không gate CAP_QUY_MOVE tại entry | grant_evt_01_quy_awakes_form một lần; form_quy_hai_uyen unlock/active placement; quy_awake/first_body_acquired là projections | opening_resonate/wait/body/body_notice; transition |
+| opening_b07 — Bơi và hãm | form_committed; CAP_QUY_MOVE | Tự bơi tới vùng, hãm có kiểm soát → evidence cả hai | Skip prompt không đủ; re-evaluate vùng khi reload; không timer/oxy | Evidence practice trong E01, không reward con mới | opening_swim/brake; playable |
+| opening_b08 — Mở lối nước gần | b07 evidence; receiver hợp lệ | Quan sát/thao tác đúng rãnh → cơ cấu và lối ra cục bộ hợp lệ | Sai trả trạng thái an toàn, cue lại; một Quy đủ, không stage II | Local mechanism patch cùng owner W07, có đường về; không water_restored | opening_flow/mechanism/retry; playable |
+| opening_b09 — Nhìn lại tiếng vọng | mem_quy_first_sense đã mở | Chọn replay hoặc bỏ qua | Không bắt buộc; replay không chặn cửa, không grant | Chỉ feedback lặp; không fact mới | opening_echo_again + bản ngắn; optional |
+| opening_b10 — Rời buồng thức | Đủ b01–08 evidence, safe route/exit; b09 không gate | Đi tới cửa an toàn → practice_complete và parent completion | Thiếu evidence chỉ rõ bài thiếu; cửa có tuyến quay lại; durable lỗi không báo xong | grant_evt_01_quy_awakes parent R0 + facts/practice, không mở dạng lần hai | opening_exit/next; playable |
+
+## Ownership và handoff
+
+Không thêm `evt_opening_*`, một quest cho mỗi beat hoặc `quyUnlocked` writer trong scene. Canonical event phases/sub-completions, memory, unlock, local mechanism patch và quest evidence đi qua existing W07 writer. Awareness/signal labels là cách đọc progress E01, không yêu cầu một boolean authority cho từng câu thoại. `resonance initiated` chỉ intent tạm, không permanent unlock.
+
+Source claim của sub-grant và parent khác nhau vì hai **kết quả logic** đã được S05 chia, không vì contentVersion hay người nhận. Không thêm thưởng EXP/loot cho mở đầu khi chưa duyệt payload. Memory evidence thuộc E01, không tự tạo grant thứ ba: definition cần pin attribution memory component ở boundary trước form, với stable memory identity; xem [contract](../technical/OPENING_STATE_AND_SAVE_CONTRACT.md). Không lấy parent completion làm điều kiện phải có trước sub-grant.
+
+Sau parent complete, UI đọc `mq_02` / `evt_02_read_reef`, tên “Rạn vẫn đang sống”. Cửa mở không đồng nghĩa reef_observed/journal_introduced/E02 encounter hoặc E03/E05 đã xong. E01 có thể mở khám phá đầu và hướng tới vùng E02 an toàn; combat của E02 nằm ngoài Task17. Các quest/event IDs kế thừa vẫn PROPOSED S05, không được đổi trạng thái chỉ vì sử dụng tại đây.
