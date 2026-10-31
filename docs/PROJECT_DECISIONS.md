@@ -322,3 +322,35 @@ D41 đến từ explicit Task09, không approval toàn S05-P02/R03. Full-three g
 ## Task16 — loadout/switch/lock proposals, không automatic entry approval
 
 [Overview](loadout/LOADOUT_SYSTEM_OVERVIEW.md), [L16-P01–P16/U01–U10](loadout/TASK16_DECISIONS.md), [L16-DR01](loadout/BOSS_ENTRY_AND_RETRY.md) và [local audit](loadout/TASK16_CONSISTENCY_AUDIT.md) giữ one canonical loadout/active selection, unique-species proposal, contextual edit/switch/action rules, ownership, boss9states/entry/retry, safe evolution/unlock/persistence. **D41 no-three count constraint vẫn CONFIRMED**; minimum-one và detailed early-entry package vẫn PROPOSED/UNRESOLVED theo Task16§3, không full-three approval hoặc silent supersession. HP16B-individual là cùng hướng C14/P15A; B+C/HP/recovery/stability/cost/timing/config/snapshot/storage policies chưa approve.13conceptualentities/18status-qualified invariants/44future QA scenarios. Không code/UI/save/art changes; PhaseII design inputs có thể audit khi được yêu cầu, full audit/Task17 chưa chạy. PhaseI PARTIAL giữ nguyên.
+
+## Handoff Task17 — không thêm quyết định confirmed
+
+[O17-P01–P08 / O17-U01–U06](chapter1/TASK17_DECISIONS.md), [opening](chapter1/CHAPTER1_OPENING_OVERVIEW.md) và [local audit](chapter1/TASK17_CONSISTENCY_AUDIT.md) ghi gói mở đầu E01: ký ức trước cộng hưởng theo D29, form sub-grant trước practice/parent, một Quy đủ tuyến. Mọi nhịp chơi/lời văn/topology/save detail mới vẫn PROPOSED; Q01–Q05/Q07/Q16/Q18 và prior mechanics chưa tự approved. CONFIRMED/PROPOSED/UNRESOLVED/SUPERSEDED cũ giữ nguyên; các handoff cũ là lịch sử. Chỉ tài liệu, Task18 chưa bắt đầu.
+
+## Handoff Task18 — giữ status, không thêm approval mechanics
+
+[Q18-P01–P11 / Q18-U01–U06](chapter1/TASK18_DECISIONS.md), [Quy overview](chapter1/QUY_DESIGN_OVERVIEW.md) và [audit](chapter1/TASK18_CONSISTENCY_AUDIT.md) ghi ba-stage detail, accessible x–y candidate, Chấn Mai/finite short brace I khác Mai Định Áp II, Water/environment/progression/loadout, art/data/gaps/30future QA. Typed stage/ability refs giữ IDs C04, không đổi registry; O17/E01 chronology, same reward ledger, D41 và corrections PhaseII giữ nguyên. Chi tiết mới PROPOSED; HP/resources/manifestation/thresholds/save/art chưa approve. Không runtime/art/map/UI/save/config changes, Task19 chưa bắt đầu.
+
+## Handoff Task19 — map design có điều kiện
+
+[H19-P01–P11 / H19-U01–U07](chapter1/TASK19_DECISIONS.md), [overview](chapter1/VUC_HAI_UYEN_WORLD_OVERVIEW.md), [local audit](chapter1/TASK19_CONSISTENCY_AUDIT.md): 9functional zones/13connectors, 8biome groups/5puzzle archetypes, one-Quy main route, optional deep/evolved revisit, W07 bindings, boss/exit handoff, art families/12entities/35future QA. Names/layout/hy_* IDs và x–y production recommendation chưa CONFIRMED. D29/D41, O17/Q18 proposals, same W07 owner/RewardGrantLedger và E04/E05/E06 separation giữ nguyên. Không gameplay/map/art/UI/collision/save/config changes; Task20 chưa bắt đầu.
+
+## Handoff Task20 — giữ authority và approval status
+
+[E20-P01–P11 / E20-U01–U07](chapter1/TASK20_DECISIONS.md), [overview](chapter1/CHAPTER1_ECOLOGY_OVERVIEW.md), [audit](chapter1/TASK20_CONSISTENCY_AUDIT.md) ghi7ecological dossiers×20fields, food web/contextual relationships,9zone habitats/8archetypes/noncombat/resonance/stable-vs-forced-vs-temporary/world-state, minimum slice/art/12entities/35future QA. Sáu ref_i_* vẫn external/unverified, secondary2stages/ordinary1form chỉ targets; optional playable candidates và nonplayable recommendations chưa approve. D29/D41/cosmology/Q18/H19/W07/one RewardGrantLedger giữ nguyên; không source store/progression record mới. Chỉ docs, Task21 chưa bắt đầu.
+
+## Handoff Task21 — không thêm canon/approval mechanics
+
+[Q21-P01–P10 / Q21-U01–U07](chapter1/TASK21_DECISIONS.md), [overview](chapter1/CHAPTER1_MAIN_QUEST_OVERVIEW.md), [audit](chapter1/TASK21_CONSISTENCY_AUDIT.md) ghi six existing quests×19fields, six-act grouping/acyclic dependencies, objective taxonomy/source predicates, dialogue/memory/state/route/reward/boss/first-slice contracts,12entities/40future QA. S05/O17/Q18/H19/E20 status và D29/D41 giữ; E01form trước parent/E04conflict trước E05restoration/E06arrival-return khác nhau. QuestCompletionRecord là source ref/view, same RewardGrantLedger; no new boss identity/species approval/HP policy. Task22 chưa bắt đầu.
+
+## Handoff Task22 — optional, one-authority design
+
+[S22-P01–P10 / S22-U01–U07](chapter1/TASK22_DECISIONS.md), [overview](chapter1/CHAPTER1_SIDE_QUEST_OVERVIEW.md), [audit](chapter1/TASK22_CONSISTENCY_AUDIT.md): four major specs×21fields/four activities/two expansions, ecological/exploration/memory/resonance/dialogue/zone/system/event/availability/first-slice,10schema views/40future QA. New opt_c1_*/evt_opt_* bindings và mem_quy_refuge_margin vẫn proposals; S05 optional prereqs/legacy grants giữ, no new source từ wrapper/version. Main/Q21 graph unchanged, no mandatory side power/species, same RewardGrantLedger/W07/Q21 engine, six refs unverified. Task23 chưa bắt đầu.
+
+## Handoff Task23 — proposal boss, không approval mới
+
+[B23-P01–P12 / B23-U01–U07](chapter1/TASK23_DECISIONS.md), [overview](chapter1/CHAPTER1_BOSS_OVERVIEW.md), [audit](chapter1/TASK23_CONSISTENCY_AUDIT.md) ghi two candidates×13fields/five actions×16fields/two phases/eleven AI states/QuyI counters/arena/two environment recipes/lock-retry/E04 rewards/art/12entities/40future QA. Candidate IDs không thay npc_tide_keeper/boss_water_access/evt_04_guardian_conflict/grant_evt_04_guardian_conflict, no confirmed species/affinity/HP model hoặc new ledger. D06/D41/HP0 valid-continuation guard giữ, emergency transfer PROPOSED, E05/E06 separate. Task24 chưa bắt đầu.
+
+## Handoff Task24 — source boundaries không duplicate finale facts
+
+[F24-P01–P11 / F24-U01–U07](chapter1/TASK24_DECISIONS.md), [overview](chapter1/CHAPTER1_FINALE_OVERVIEW.md), [audit](chapter1/TASK24_CONSISTENCY_AUDIT.md) ghi four conceptual milestones/nine restore steps/9zone before-after/S22 continuity/Quy quiet moment/CL02+earned mem_quy_current reprise/completion scopes/Phượng hint/E06 one actor travel/25text cues/12entities/45future QA. E05 water_stable/chapter_01_complete alias co-commit inherited PROPOSED giữ, no extra event/grant/flag hoặc C/D split approved mới. R03/C14/P15/L16/W07/O17–B23 statuses giữ; no forced evolve/health recovery/Phượng form, no production files. Task25/PhaseIII-wide audit chưa bắt đầu.

@@ -68,3 +68,7 @@ Environmental action có contract riêng với cơ cấu/vùng: prerequisites �
 | `env_ly_network` / nối quan hệ sinh thái | Dấu nút sống/đối tác, preview link; II hai đối tác, III cụm | Năng lượng không thay đối tác đã mất, không resurrection | Suy luận liên hệ, giữ sinh cảnh mới khi phục hồi, không hồi nguyên trạng máy móc | Long giúp ẩm/hạt, Quy nước; chỉ cần một cặp active nối tiếp, không cả bốn |
 
 Sensing có thể bị chapter knowledge gate chặn dù stage đủ cao. Đây là candidate repertoire; số thử thách/receiver thực tế và thế giới lưu những event nào phải được thiết kế riêng. Không dùng skill healing/AoE làm đường tắt vượt lịch revelation hoặc khôi phục toàn biome.
+
+## Task18 — chi tiết áp dụng họ kỹ năng Quy
+
+[Quy signature skills](../chapter1/QUY_SIGNATURE_SKILLS.md) và [combat](../chapter1/QUY_COMBAT_DESIGN.md) cụ thể hóa IDs/concepts Quy trong bảng gốc này, không đăng ký lại hoặc rename. Stage IDs và ability IDs quy_s1/s2/s3 phải typed refs theo [data handoff](../technical/QUY_DATA_SPEC.md); short brace Stage I của C14 không cấp sớm Mai Định Áp Stage II. Mọi bổ sung mechanics/resource/guard/status vẫn PROPOSED, chưa approval hoặc runtime.

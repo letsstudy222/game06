@@ -159,3 +159,35 @@ Origin/ultimate culprit/voluntary intervention là author mysteries chưa chốt
 ## Task16 — loadout và PhaseII design handoff
 
 [Overview](loadout/LOADOUT_SYSTEM_OVERVIEW.md), [L16 register](loadout/TASK16_DECISIONS.md), [early-entry DR01](loadout/BOSS_ENTRY_AND_RETRY.md) và [local audit](loadout/TASK16_CONSISTENCY_AUDIT.md) chi tiết hóa cùng R03 loadout/transform/lock owner. D05/06/07/D41 giữ: up-to-three/one body/member lock+switchwithin/species progression/no compulsorythree early. Recommended min-one/empty snapshot/entry/retry package vẫn pending, không rewrite history. Short switch+buffer/debt, individual HP (Task16B=C14A), safe geometry/stage/config/collection/save/input contracts đều PROPOSED.13entities/18invariants/44future cases, Quy milestone không boss/multiple production forms. Task16 hoàn tất tài liệu được giao của PhaseII09–16, không comprehensive audit/freeze/implementation readiness; Task17 chưa bắt đầu, PhaseI PARTIAL không đổi.
+
+## Bàn giao Task17 — mở đầu Vực Hải Uyên
+
+[Opening overview](chapter1/CHAPTER1_OPENING_OVERVIEW.md) cụ thể hóa E01 và D29 với ký ức trước cộng hưởng, một dạng Quy, tutorial tối giản. [State/save contract](technical/OPENING_STATE_AND_SAVE_CONTRACT.md) và [decisions](chapter1/TASK17_DECISIONS.md) giữ các đề xuất/gate chưa duyệt; không thay authority S05/R03/W07 hoặc xác nhận runtime.
+
+## Handoff Task18 — Quy và underwater prototype
+
+[Hồ sơ Quy](chapter1/QUY_DESIGN_OVERVIEW.md) cụ thể hóa C04/V13/C14/P15/L16 và Task17, ưu tiên Stage I. [Q18 decisions](chapter1/TASK18_DECISIONS.md) giữ tất cả proposal/gate; [runtime gaps](technical/QUY_RUNTIME_GAP_ANALYSIS.md) phân biệt primitive hiện hữu và phần chưa triển khai. Chưa production freeze, chưa Task19.
+
+## Handoff Task19 — không gian Chương I
+
+[Hải Uyên world package](chapter1/VUC_HAI_UYEN_WORLD_OVERVIEW.md), [graph](chapter1/CHAPTER1_WORLD_GRAPH.md) và [H19 decisions](chapter1/TASK19_DECISIONS.md) cụ thể hóa Task17/18 và W07/S05: main Quy I, optional deep route, E04 conflict khác E05 restoration/E06 arrival-return. Zone names/layout/IDs và map/data/art requirements mới vẫn PROPOSED, không implementation hoặc design freeze.
+
+## Handoff Task20 — hệ sinh thái Chương I
+
+[Ecology package](chapter1/CHAPTER1_ECOLOGY_OVERVIEW.md), [E20 decisions](chapter1/TASK20_DECISIONS.md) và [local audit](chapter1/TASK20_CONSISTENCY_AUDIT.md) phát triển F06/B12/K11/R03/P15/W07 trên graph H19. Food web/relationships/AI/placement/acquisition mới vẫn PROPOSED, references không thành canon vì lặp tên; không ecology runtime hoặc production freeze.
+
+## Handoff Task21 — main quest application design
+
+[Main quest package](chapter1/CHAPTER1_MAIN_QUEST_OVERVIEW.md), [Q21 decisions](chapter1/TASK21_DECISIONS.md) và [local audit](chapter1/TASK21_CONSISTENCY_AUDIT.md) dùng mq_01–06/E01–06 sẵn có, Task17 opening, Quy I, graph H19/ecology E20. Sáu hồi không sáu event mới; world/quest progress là projections/facts đúng owners, không ledger thứ hai hoặc gameplay đã chạy.
+
+## Handoff Task22 — optional content có điều kiện
+
+[Side quest package](chapter1/CHAPTER1_SIDE_QUEST_OVERVIEW.md), [S22 decisions](chapter1/TASK22_DECISIONS.md), [audit](chapter1/TASK22_CONSISTENCY_AUDIT.md) reuse S05 opt_01/02 và opt_03 late E08, Q21/H19/E20/W07/P15 framework. New local quests/memory/event aliases/title/payload/geometry vẫn PROPOSED, no optional→main prerequisite hoặc side quest engine mới.
+
+## Handoff Task23 — first boss encounter design
+
+[Boss package](chapter1/CHAPTER1_BOSS_OVERVIEW.md), [B23 decisions](chapter1/TASK23_DECISIONS.md), [audit](chapter1/TASK23_CONSISTENCY_AUDIT.md) giữ npc_tide_keeper/boss_water_access/E04, recommend Lam Giáp candidate qua QuyI movement/basic baseline, no mandatory guard/spell/other form. HP/recovery/emergency transfer/arbitration/art/timing/save still pending, E04 permission không E05 restore/E06 arrival; no gameplay implementation.
+
+## Handoff Task24 — kết chương bằng công năng được kiểm chứng
+
+[Finale package](chapter1/CHAPTER1_FINALE_OVERVIEW.md), [F24 decisions](chapter1/TASK24_DECISIONS.md), [audit](chapter1/TASK24_CONSISTENCY_AUDIT.md) giữ inherited S05/W07 C-hydrology và D-chapter view cùng E05 transaction, E04 permission/close trước operation và E06 arrival/return riêng. No extra final-dialogue/memory/optional collection gate, no full ChapterII gameplay hoặc new Phượng unlock.

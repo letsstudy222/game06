@@ -116,3 +116,35 @@ Task10 chưa bắt đầu: dual resistance composition/damage bonus/primary-seco
 ## Task16 — loadout approvals và audit boundary
 
 [L16-U01–U10](loadout/TASK16_DECISIONS.md) nối Q07–10/Q15–18: minimum-one/detailed early entry, eligibility/uniqueness, context edit, cancel/buffer/placement/motion, HP/manifestation/recovery/stability, exact lock/snapshot, retry/invalid checkpoints/reload, safe evolution/config benefits, writer/ack/migration/loss budget, logical input/UI/device rules. D41 đã xác nhận no-compulsorythree early; **không hạ baseline này hoặc tự chốt toàn early-entry policy**. [DR01/update-after-approval plan](loadout/BOSS_ENTRY_AND_RETRY.md) giữ conflict/source scope; HP16B=C14/P15A chưa chosen. [Quy-only slice](loadout/FIRST_PLAYABLE_LOADOUT.md), [audit](loadout/TASK16_CONSISTENCY_AUDIT.md) giữ missing implementation/assets/save gates. Full PhaseII audit/Task17 chưa bắt đầu.
+
+## Sau Task17 — gate mở đầu
+
+[O17-U01–U06](chapter1/TASK17_DECISIONS.md) nối Q05 vật mang, Q03 manifestation/ý thức, Q07 input/bơi/cơ cấu, Q16 durable save/memory receipt mapping/migration, Q18–19 asset/provenance và Q06/Q17 scope/thiết bị. [Save contract](technical/OPENING_STATE_AND_SAVE_CONTRACT.md) cần mapping receipt memory trước form; không tự claim parent E01 sớm. Chưa câu hỏi nào được tự đánh RESOLVED. Q01/Q02/Q04 tiếp tục giữ bí ẩn, không cần trả lời trong mở đầu. Không bắt đầu Task18.
+
+## Sau Task18 — phụ thuộc Quy
+
+[Q18-U01–U06](chapter1/TASK18_DECISIONS.md) theo dõi vật mang/manifestation, movement/input/current/geometry/camera, health/resource/guard/recovery, typed catalog/save/memory receipt mapping, evolution/mastery/thresholds và art/provenance/device budgets. Q01–Q05 và O17 gates không tự RESOLVED; Quy art chưa production-ready. Task19 cần kiểm receiver tiers/route/clearance, không đặt mandatory stage II/III gate khi chưa bảo đảm progression.
+
+## Sau Task19 — gate map Hải Uyên
+
+[H19-U01–U07](chapter1/TASK19_DECISIONS.md) nối production camera/plane/depth/streaming/envelope, current/input/pressure/capability, boss spatial/entry/retry/HP, W07 durable save/O17 memory receipt/migration, roster-habitat coverage và art/provenance/device/scope/topology/name approval. Main graph dùng Quy I, không optional species/full3/II/III gate. Các vấn đề cũ chưa tự RESOLVED; không nhận đã có production map hoặc bắt đầu Task20.
+
+## Sau Task20 — ecology gates
+
+[E20-U01–U07](chapter1/TASK20_DECISIONS.md) nối official species/art/element/origin/stage approval, playability/resonance routes, AI plane/current/nav/performance, P15 source/payload mapping và C14 health/recovery, W07 save/actor/coverage/migration, F06 adaptation evidence và production scope/devices. Không tự RESOLVED các câu hỏi cũ; stable foreign adaptation khác forced assimilation/temporary status, không Earth mới hoặc mandatory optional collection.
+
+## Sau Task21 — quest implementation gates
+
+[Q21-U01–U07](chapter1/TASK21_DECISIONS.md) nối source/objective predicate/instance bindings, Quy/route/input/geometry, Task23 qualifying boss outcome/entry/retry/HP policies, W07/O17 memory receipt/durable save/migration, E20 approved species/actor/source/asset coverage, P15 reward payload/recipient policy và dialogue/localization/Task24 staging. Chưa câu hỏi cũ nào tự RESOLVED; first slice có thể dừng partial E02, không fake full completion hoặc start Task22.
+
+## Sau Task22 — optional content gates
+
+[S22-U01–U07](chapter1/TASK22_DECISIONS.md) nối source/objective/room/predicate scope, official species/art/behavior/journal, current/geometry/return/combat policy, W07/Q21/P15 optional alias/legacy-source/recipient/stacking/durable save/migration, optional echo provenance, late R03 eligibility/fallback-entitlement và localization/device budgets. Không tự RESOLVED câu hỏi cũ; no optional→main hoặc form retro grant qua content version.
+
+## Sau Task23 — boss production gates
+
+[B23-U01–U07](chapter1/TASK23_DECISIONS.md) nối identity/visual approval, QuyI current/geometry/camera/latency/return, attack/control/resource/phase thresholds/resistance, HP0/continuation/simultaneous outcomes/L16 entry-retry, E04 combat/trial/refuge/permission predicate, W07/P15 atomic save/recipients/migration và art/audio/device/Task24 ending staging. Chưa vấn đề cũ nào tự RESOLVED; counter thiếu phải sửa boss/arena thay invent mandatory skill/form.
+
+## Sau Task24 — finale/travel implementation gates
+
+[F24-U01–U07](chapter1/TASK24_DECISIONS.md) nối source-version closure/E05 alias/predicate/write-set, G/A/B/outlet/refuge/coverage/placement checks, body/current/geometry/camera/lock recovery, W07/P15 atomic writer/ledger/travel identity/migration, E20/S22 sources và actual ChapterII destination/return anchors/art/cues/device budgets. Giữ E05 C/D same source semantics, E06 arrived riêng; any future split D cần explicit source decision. Không tự RESOLVED Q01–Q05/D24 hoặc chạy Task25/audit toàn phase.
