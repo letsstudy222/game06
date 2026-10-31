@@ -2,7 +2,7 @@
 
 **PROPOSED O17-P06**, kế thừa S05/W07/R03. Nguồn questId là [quest outline](../story/QUEST_DESIGN_OUTLINE.md); eventId và rewards là [story handoff E01](../story/STORY_IMPLEMENTATION_HANDOFF.md). Bảng này là chi tiết objective của **cùng** `mq_01` / `evt_01_quy_awakes`, không registry thứ hai. `opening_bNN` chỉ là stepId cục bộ. Mỗi dòng áp dụng đúng hai IDs trên; E02 chỉ là mục tiêu tiếp theo.
 
-| stepId / mục tiêu tiếng Việt | Prerequisites | Trigger và completion evidence | Fail / retry / softlock cần tránh | Reward, persistent facts | Dialogue / scene |
+| stepId / mục tiêu tiếng Việt | Điều kiện tiên quyết | Trigger và completion evidence | Fail / retry / softlock cần tránh | Reward, persistent facts | Dialogue / scene |
 | --- | --- | --- | --- | --- | --- |
 | opening_b01 — Hướng chú ý về vệt sáng | BOOTSTRAP_START / CAP_BOOTSTRAP, chưa có thân | Input vào dấu gần → phản hồi đầu được quan sát | Không input thì giữ vùng, cue hình/chữ; không autoplay complete | Không reward; evidence awareness trong tiến độ E01, không cờ global riêng | opening_silence/orient; guided |
 | opening_b02 — Đáp lại dấu sáng | b01 evidence | Tương tác dấu → di tích đáp | Trigger lặp trả cùng evidence; không yêu cầu activeForm | Evidence signal trong E01; chưa form | opening_answer; playable giới hạn |

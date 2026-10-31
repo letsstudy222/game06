@@ -19,4 +19,4 @@ First pass movement có thể dùng approved anatomical blockout trong môi trư
 4. Kết nối E01/task17 + W07/R03 memory/form/practice atomic receipts và migration; nghiệm thu reload/skip/revisit.
 5. Chỉ sau đó mở rộng Chapter I assets/encounter và xét production II/III. Đây là handoff, không đang thực thi Tasks25–48.
 
-Gate chưa qua gồm Q05 vật mang, manifestation, input/current/guard/resource/HP/recovery và save policies cần dùng, reference/clip Quy. Xem [decisions](TASK18_DECISIONS.md), [art spec](../art/QUY_ART_PRODUCTION_SPEC.md), [runtime gaps](../technical/QUY_RUNTIME_GAP_ANALYSIS.md). Không bắt đầu Task19 hoặc code trong Task18.
+Gate chưa qua gồm Q05 vật mang, manifestation, input/current/guard/resource/HP/recovery và save policies cần dùng, reference/clip Quy. Xem [quyết định](TASK18_DECISIONS.md), [art spec](../art/QUY_ART_PRODUCTION_SPEC.md), [khoảng cách runtime](../technical/QUY_RUNTIME_GAP_ANALYSIS.md). Không bắt đầu Task19 hoặc code trong Task18.

@@ -1,6 +1,6 @@
 # Từ kết quả boss tới quyền thử dòng
 
-**PROPOSED F24-P02**, không redesign boss. [B23 overview](CHAPTER1_BOSS_OVERVIEW.md), [phases](CHAPTER1_BOSS_PHASES.md), [retry/lock](CHAPTER1_BOSS_RETRY_AND_LOCK.md), [E04 rewards](CHAPTER1_BOSS_REWARDS_AND_STATES.md) giữ same npc_tide_keeper/boss_water_access/E04 và recommended Lam Giáp PROPOSED, không approved species/visual/cognition/outcome mới.
+**PROPOSED F24-P02**, không redesign boss. [B23 overview](CHAPTER1_BOSS_OVERVIEW.md), [phases](CHAPTER1_BOSS_PHASES.md), [thử lại/khóa](CHAPTER1_BOSS_RETRY_AND_LOCK.md), [E04 rewards](CHAPTER1_BOSS_REWARDS_AND_STATES.md) giữ same npc_tide_keeper/boss_water_access/E04 và recommended Lam Giáp PROPOSED, không approved species/visual/cognition/outcome mới.
 
 | Boundary | Kết quả/narrative/control | Owner / guard |
 | --- | --- | --- |

@@ -33,7 +33,7 @@ flowchart LR
 | H / hy_zone_boss | Thềm Giữ Nước | hy_reg_returns |
 | I / hy_zone_exit | Lối Nước Ra Bờ | hy_reg_returns |
 
-| connectorId | Endpoints | Loại | Access predicate | Capability | Return contract |
+| connectorId | Endpoints | Loại | Access predicate | Năng lực | Return contract |
 | --- | --- | --- | --- | --- | --- |
 | hy_conn_ab | A ↔ B | Main | E01 practice_complete; local exit valid | Quy I bơi/hãm | Hai chiều sau mở; prebody chỉ Task17 anchors |
 | hy_conn_bc | B ↔ C | Main | E02 complete | Quy I movement/read flow đã học | Hai chiều, refuge ở cả hai đầu |

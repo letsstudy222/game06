@@ -20,4 +20,4 @@
 
 Primary/secondary candidates: sứa B↔D; carp B/D↔C lane yếu; polyp B↔E substrate viable; đuối C↔B sand pockets; ốc D↔B; cá ngựa D↔B có anchor. Đây là habitat links dùng các connectors Task19 đủ predicates/capability, không teleport migration xuyên gate hoặc tạo cạnh map khác. Main route A–B–C–E–G–H rồi E05/I, D/F optional; skip tất cả wildlife resonance vẫn giữ main.
 
-Before E03/E05 projection thay đổi, verify mỗi approved species còn source observation và resonance nếu applicable, kể cả undiscovered; tolerance/feeding/route/clearance đủ, không chỉ secondary name. Unique actor relocation giữ instance identity/outcome. Khi roster chưa approved không thể claim toàn coverage đã chứng minh. Xem [world states](CHAPTER1_ECOLOGICAL_WORLD_STATES.md).
+Before E03/E05 projection thay đổi, verify mỗi approved species còn source observation và resonance nếu applicable, kể cả undiscovered; tolerance/feeding/route/clearance đủ, không chỉ secondary name. Unique actor relocation giữ instance identity/outcome. Khi roster chưa approved không thể claim toàn coverage đã chứng minh. Xem [trạng thái thế giới](CHAPTER1_ECOLOGICAL_WORLD_STATES.md).

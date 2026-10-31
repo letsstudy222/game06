@@ -6,7 +6,7 @@
 
 Baseline main caps: CAP_QUY_MOVE (bơi/hãm/đổi hướng), CAP_QUY_BASIC (quy_basic/Chấn Mai), CAP_QUY_READ_FLOW và CAP_STRUCTURE_OPERATE (receiver context I). Bơi không đòi arbitrary3D depth, shift-hover/regen Phượng không luật Quy. Short brace I cần capability/cost/clip approval và lesson E02 nếu dùng; không mặc định full Mai Định Áp quy_s2 II. Vành Nước quy_s1 khả năng StageI nhưng minimumStage không auto unlock, vì thế **không mandatory** cho route này.
 
-| Required decision/action | Available Quy response | Boss pattern | Counterplay/opening | Environment | Failure/recovery |
+| Required decision/action | Available Quy response | Boss pattern | Counterplay/opening | Environment | Thất bại/phục hồi |
 | --- | --- | --- | --- | --- | --- |
 | Nhìn arc/facing lock, ra sườn hoặc lùi | Quy I move/brake, Chấn Mai sau recover | c1_keeper_sweep | Arc finite/locked, flank và recovery core reachable; không required i-frame/guard/parry | Lane trống và turn/braking margin trước selection | Hụt nhịp nhận damage theo approved model, còn route lấy lại vị trí; nếu wall pin thì pattern invalid/content fix |
 | Rời line trước pulse hoặc dùng cover valid | Quy I lateral movement, basic punish sau vent đóng | c1_keeper_pressure | Không homing, LOS/cover explicit, safe side path còn | Static breakwater và alternate no-cover route, no damage immunity assumption | Missed cue không chuỗi guaranteed hitstun; reset vị trí qua refuge, no free heal |

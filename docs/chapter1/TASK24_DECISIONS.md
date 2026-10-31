@@ -1,6 +1,6 @@
-# Decision register finale Task24
+# Sổ quyết định finale Task24
 
-## Status giữ nguyên
+## Trạng thái giữ nguyên
 
 | Status | Nền được bảo toàn |
 | --- | --- |
@@ -11,23 +11,23 @@
 
 [S05 E05/E06](../story/STORY_IMPLEMENTATION_HANDOFF.md), [W07 alias rules](../world/WORLD_STATE_ARCHITECTURE.md), [PROJECT_DECISIONS](../PROJECT_DECISIONS.md), [OPEN_QUESTIONS](../OPEN_QUESTIONS.md) là nguồn. C/D semantic khác nhưng cùng E05 source/commit hiện có là **inherited proposal giữ**, không new CONFIRMED decision. Không new chapter-complete store/event/grant hoặc final-dialogue prerequisite. Source change để tách D cần explicit approval/migration sau, chưa làm tại Task24.
 
-## F24 proposals
+## Các đề xuất F24
 
 | ID / status | Phạm vi/owner | Approve trước |
 | --- | --- | --- |
 | F24-P01 PROPOSED | [Overview milestones](CHAPTER1_FINALE_OVERVIEW.md), [completion](CHAPTER1_COMPLETION_CONDITIONS.md), A/B/C/D/R/N semantics/source dependencies | Source definition integration/migration, không duplicate chapter fact hoặc movie gate |
-| F24-P02 PROPOSED | [Boss resolution](CHAPTER1_BOSS_RESOLUTION.md), consume B23 accepted disposition/close/body context | Final B23 source/outcome/HP0/close/recovery policies, no boss redesign |
+| F24-P02 PROPOSED | [Xử lý kết quả boss](CHAPTER1_BOSS_RESOLUTION.md), consume B23 accepted disposition/close/body context | Final B23 source/outcome/HP0/close/recovery policies, no boss redesign |
 | F24-P03 PROPOSED | [Restoration](CHAPTER1_HYDROLOGICAL_RESTORATION.md), nine player/commit/presentation steps | Exact source/receiver/predicate/revision/confirmation fixtures, no arbitrary force/timing |
-| F24-P04 PROPOSED | [Zone matrix](CHAPTER1_RESTORATION_ZONE_MATRIX.md), current/visibility/light/nav/habitat changes | Actual map patches/geometry/source property/placement/coverage binding |
+| F24-P04 PROPOSED | [Ma trận vùng](CHAPTER1_RESTORATION_ZONE_MATRIX.md), current/visibility/light/nav/habitat changes | Actual map patches/geometry/source property/placement/coverage binding |
 | F24-P05 PROPOSED | [Ecology](CHAPTER1_ECOLOGICAL_AFTERMATH.md), [post exploration](CHAPTER1_POST_RESTORATION_EXPLORATION.md), S22 continuity | Scoped roster/source/secondary tolerance/living availability/return approval |
-| F24-P06 PROPOSED | [Quy finale](CHAPTER1_QUY_FINALE.md), [final clue](CHAPTER1_FINAL_MEMORY.md), earned memory reprise/CL02/no new memory gate | Perception/interpretation/voice/provenance/presentation review; no new memoryId/canon origin |
+| F24-P06 PROPOSED | [kết chương của Quy](CHAPTER1_QUY_FINALE.md), [final clue](CHAPTER1_FINAL_MEMORY.md), earned memory reprise/CL02/no new memory gate | Perception/interpretation/voice/provenance/presentation review; no new memoryId/canon origin |
 | F24-P07 PROPOSED | Story/region/optional/bestiary scope separation và source-version valid closure | Integrity/cache/old-save/source alias policies, no all-collection/E06 prerequisite E05 |
 | F24-P08 PROPOSED | [Phượng hint](CHAPTER1_PHOENIX_FORESHADOWING.md), [travel](CHAPTER1_CROSS_CHAPTER_TRAVEL.md), warm coast/source+dest+return | Destination content/plane/body/camera/one controlled actor/transaction approval, not dawn rename |
 | F24-P09 PROPOSED | [25text cues/control](CHAPTER1_FINALE_DIALOGUE.md), skip/replay/focus/reducedmotion | Essential/localized content/art/source/control timing, no callbacks grant |
 | F24-P10 PROPOSED | [Events/rewards/state views](CHAPTER1_FINALE_EVENTS_AND_REWARDS.md), 12conceptual entities | W07/Q21/R03/P15/L16 single authority/atomic recipients/source identity integration |
-| F24-P11 PROPOSED | [Scope](CHAPTER1_FINALE_PRODUCTION_SCOPE.md), [art](../art/CHAPTER1_FINALE_ART_HANDOFF.md), [data](../technical/CHAPTER1_FINALE_DATA_SPEC.md), [45future QA](../technical/CHAPTER1_FINALE_TEST_CASES.md) | Actual assets/runtime/prototype/devices/playback/test evidence; no full-ending dependency first Quy slice |
+| F24-P11 PROPOSED | [Scope](CHAPTER1_FINALE_PRODUCTION_SCOPE.md), [art](../art/CHAPTER1_FINALE_ART_HANDOFF.md), [data](../technical/CHAPTER1_FINALE_DATA_SPEC.md), [45 ca QA tương lai](../technical/CHAPTER1_FINALE_TEST_CASES.md) | Actual assets/runtime/prototype/devices/playback/test evidence; no full-ending dependency first Quy slice |
 
-## Open gates
+## Các điều kiện còn mở
 
 | ID / status | Cần quyết định / nguồn | Chặn gì / neutral handoff |
 | --- | --- | --- |

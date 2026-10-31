@@ -1,6 +1,6 @@
 # Quan hệ liên loài và hành vi quan sát
 
-**PROPOSED E20-P03.** Ma trận sau là thiết kế giả thuyết, không confirmed history/biology. Refs thuộc [register](CHAPTER1_SPECIES_REGISTER.md), zone topology thuộc Task19. Optional relevance không mint quest/event mới; E02/E03/E05 chỉ consumer proof khi rules/manifest được author, không hoàn thành tự động từ proximity.
+**PROPOSED E20-P03.** Ma trận sau là thiết kế giả thuyết, không confirmed history/biology. Refs thuộc [sổ đăng ký](CHAPTER1_SPECIES_REGISTER.md), zone topology thuộc Task19. Optional relevance không mint quest/event mới; E02/E03/E05 chỉ consumer proof khi rules/manifest được author, không hoàn thành tự động từ proximity.
 
 | Hai bên / loại quan hệ | Context | Hành vi thấy được | Player interaction / optional relevance | World-state effect |
 | --- | --- | --- | --- | --- |

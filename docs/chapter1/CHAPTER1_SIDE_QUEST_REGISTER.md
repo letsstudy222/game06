@@ -2,7 +2,7 @@
 
 **PROPOSED S22-P01/P02**, kế thừa [S05 optional source](../story/QUEST_DESIGN_OUTLINE.md). opt_01/02/03 giữ ID/purpose/prerequisite gốc, display titles mới là draft. Các opt_c1_*/act_c1_* mới được collision-check với docs baseline, không approved runtime quest IDs. Không reassign existing IDs, không modify mainline hoặc promise mọi wildlife playable.
 
-| Quest/activity ID / tên Việt đề xuất | Class / category | Prerequisite / nơi | Reward ceiling / complexity | Approval/source |
+| Quest/activity ID / tên Việt đề xuất | Class / category | Prerequisite / nơi | Reward ceiling / complexity | Phê duyệt/nguồn |
 | --- | --- | --- | --- | --- |
 | opt_c1_quiet_refuge / Một khoảng nước yên | FIRST PLAYABLE CANDIDATE / ecological assistance | E01 parent complete, B near refuge | Knowledge một lần + local niche setting, không stats bắt buộc; thấp–vừa | New PROPOSED, source/receiver/manifest binding phải duyệt |
 | opt_01_reef_observation / Nhịp sống nơi rạn | CHAPTER I CORE OPTIONAL CONTENT / observation/knowledge | E02 complete, B hoặc D equivalent source | Journal/habitat fact, EXP chỉ approved manifest; thấp–vừa nếu actor đã có | Existing S05 PROPOSED; không quest available trước E02 như slice mới |

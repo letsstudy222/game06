@@ -1,6 +1,6 @@
 # Ecology sau dòng hồi — thay đổi có giới hạn
 
-**PROPOSED F24-P04/P05**, [E20 ecology](CHAPTER1_ECOLOGY_OVERVIEW.md)/[habitats](CHAPTER1_HABITAT_MATRIX.md)/[adaptation](CHAPTER1_ADAPTATION_AND_ASSIMILATION.md) và [W07 coverage](../world/ECOLOGY_AND_SPAWN_STATES.md) là nguồn. Six wildlife refs có hồ sơ chữ nhưng vẫn EXTERNAL CONCEPT REFERENCE — NOT VERIFIED IN REPOSITORY, no official species/art/element/playability mới được approve.
+**PROPOSED F24-P04/P05**, [E20 ecology](CHAPTER1_ECOLOGY_OVERVIEW.md)/[sinh cảnh](CHAPTER1_HABITAT_MATRIX.md)/[adaptation](CHAPTER1_ADAPTATION_AND_ASSIMILATION.md) và [W07 coverage](../world/ECOLOGY_AND_SPAWN_STATES.md) là nguồn. Six wildlife refs có hồ sơ chữ nhưng vẫn EXTERNAL CONCEPT REFERENCE — NOT VERIFIED IN REPOSITORY, no official species/art/element/playability mới được approve.
 
 | Ecological axis | Meaningful consequence/candidate cue | Limit/owner |
 | --- | --- | --- |

@@ -15,17 +15,17 @@ Nguồn [PROJECT_DECISIONS](../PROJECT_DECISIONS.md), [OPEN_QUESTIONS](../OPEN_Q
 
 | ID / status | Nội dung / owner file | Cần duyệt trước |
 | --- | --- | --- |
-| H19-P01 PROPOSED | [Overview](VUC_HAI_UYEN_WORLD_OVERVIEW.md), x–y candidate và minimum/core/optional scope | Scope/prototype planning, không default cả9 zones production |
-| H19-P02 PROPOSED | [Hierarchy](CHAPTER1_REGION_HIERARCHY.md), typed IDs/camera alternatives | Map/loader/coordinate/layer architecture |
+| H19-P01 PROPOSED | [Tổng quan](VUC_HAI_UYEN_WORLD_OVERVIEW.md), x–y candidate và minimum/core/optional scope | Scope/prototype planning, không default cả9 zones production |
+| H19-P02 PROPOSED | [Phân cấp](CHAPTER1_REGION_HIERARCHY.md), typed IDs/camera alternatives | Map/loader/coordinate/layer architecture |
 | H19-P03 PROPOSED | [Graph](CHAPTER1_WORLD_GRAPH.md), [zones](CHAPTER1_ZONE_DESIGNS.md), 9 functional zones/13 connectors | Blocking layout/names/content IDs và main/return guarantees |
 | H19-P04 PROPOSED | [Main route](CHAPTER1_MAIN_ROUTE.md), learning/pacing/refuges | Playtest/scope freeze, chưa measured durations |
-| H19-P05 PROPOSED | [Biomes](CHAPTER1_BIOMES.md), [habitats](CHAPTER1_CREATURE_HABITATS.md) | Roster/habitat/art/spawn content; external refs chưa approved |
+| H19-P05 PROPOSED | [Sinh cảnh](CHAPTER1_BIOMES.md), [sinh cảnh](CHAPTER1_CREATURE_HABITATS.md) | Roster/habitat/art/spawn content; external refs chưa approved |
 | H19-P06 PROPOSED | [Currents/hazards](CHAPTER1_CURRENTS_AND_HAZARDS.md), local bounded physics cues | Movement/current/pressure/visibility implementation |
 | H19-P07 PROPOSED | [Ruins](CHAPTER1_ANCIENT_RUINS.md), [puzzles](CHAPTER1_ENVIRONMENTAL_PUZZLES.md) | Narrative/evidence/receiver/source scripts và art |
 | H19-P08 PROPOSED | [Gates/shortcuts](CHAPTER1_GATES_AND_SHORTCUTS.md), accessible navigation và no-softlock | Main graph validation trước production, advanced optional route rules |
 | H19-P09 PROPOSED | [Persistent bindings](CHAPTER1_PERSISTENT_ENVIRONMENT.md), one owner và W07 boundaries | Save/world/quest adapter/migration, không store thứ hai |
-| H19-P10 PROPOSED | [Boss area](CHAPTER1_BOSS_AREA_HANDOFF.md), [exit/return](CHAPTER1_EXIT_AND_RETURN.md) | Boss spatial constraints/entry/retry và E06 transition implementation |
-| H19-P11 PROPOSED | [Art](../art/CHAPTER1_WORLD_ART_HANDOFF.md), [12entity data spec](../technical/CHAPTER1_MAP_DATA_SPEC.md), [35future QA](../technical/CHAPTER1_MAP_TEST_CASES.md) | Asset pipeline/content validation và runtime nghiệm thu |
+| H19-P10 PROPOSED | [Khu boss](CHAPTER1_BOSS_AREA_HANDOFF.md), [lối ra/đường về](CHAPTER1_EXIT_AND_RETURN.md) | Boss spatial constraints/entry/retry và E06 transition implementation |
+| H19-P11 PROPOSED | [Art](../art/CHAPTER1_WORLD_ART_HANDOFF.md), [đặc tả 12 thực thể dữ liệu](../technical/CHAPTER1_MAP_DATA_SPEC.md), [35 ca QA tương lai](../technical/CHAPTER1_MAP_TEST_CASES.md) | Asset pipeline/content validation và runtime nghiệm thu |
 
 ## Những quyết định còn thiếu
 

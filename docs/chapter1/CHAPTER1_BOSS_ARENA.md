@@ -13,7 +13,7 @@ flowchart LR
 
 Đây là topology nội H, không thêm hy_conn mới. Exit từ arena về prep chỉ sau accepted close/abort/outcome theo [retry](CHAPTER1_BOSS_RETRY_AND_LOCK.md), arrow không cổng tự unlock khi bước ra.
 
-| Thành phần | Spatial contract | Safety/collision/phase |
+| Thành phần | Hợp đồng không gian | Safety/collision/phase |
 | --- | --- | --- |
 | Prep/checkpoint | Từ gh/G, chỗ đứng rộng nhìn được entry/rút, source anchor valide Quy I/current layer/return | Ngoài hostile volumes/detection; không fauna surprise hoặc auto HP refill; source/cap/snapshot trước entry |
 | Player start | Lane mở gần rìa prep, facing tới keeper/landmark, đủ margin hãm | Không trong hit telegraph đang active, no intro hit trước trả control |

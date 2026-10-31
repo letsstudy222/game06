@@ -4,7 +4,7 @@
 
 | Trục so sánh | Stage I | Stage II | Stage III | Giữ xuyên stage |
 | --- | --- | --- | --- | --- |
-| Silhouette | Oval gọn, chi ngắn tách nền | Mai ngang, vây trước mở âm rõ | Khối mai thấp tầng, vây chia mặt | Đầu–mai–bốn chi–đuôi luôn nhận ra |
+| Hình dáng nhận diện | Oval gọn, chi ngắn tách nền | Mai ngang, vây trước mở âm rõ | Khối mai thấp tầng, vây chia mặt | Đầu–mai–bốn chi–đuôi luôn nhận ra |
 | Đầu | Nêm ngắn/hàm rùa | Má trơn và cổ linh hoạt | Gờ nối cổ, cổ chắc | Mắt hai bên và mõm rùa, không mặt người/rồng |
 | Mai | Ít mảng lớn | Rãnh viền có hướng | Tầng vào–ra có công năng | Mai là cấu trúc thân, không áo giáp tháo rời |
 | Vây/chi | Màng bơi nhỏ | Mặt lực trước rộng | Mặt lực chia vùng, gập nếu có dữ liệu | Đúng bốn gốc chi/khớp, không đổi số khi xoay |

@@ -4,17 +4,17 @@
 
 ## Quy Hải Uyên
 
-| Field | Đặc tả / trạng thái |
+| Trường | Đặc tả / trạng thái |
 | --- | --- |
 | Species ID / reference key | quy_hai_uyen là species ref ứng viên C04, form_quy_hai_uyen ổn định qua stages; không official registry mới |
 | Tên Việt | Quy Hải Uyên |
 | Trạng thái duyệt | Identity CONFIRMED; anatomy/mechanics/ecology detail PROPOSED theo Q18/E20 |
-| Body plan | Rùa nước cổ có mai rõ, đầu rùa, bốn chi/vây và đuôi; không rắn/dragon-turtle mới |
+| Cấu trúc cơ thể | Rùa nước cổ có mai rõ, đầu rùa, bốn chi/vây và đuôi; không rắn/dragon-turtle mới |
 | Elemental classification | Thủy CONFIRMED, không thêm Lôi/Kim/Mộc |
-| Ecological role | Sacred influence lên dòng/đường hồi và ký ức; không ordinary breeding population |
-| Preferred habitat | A resonance, tuyến ngập B/C/E/G và revisit có route/clearance |
+| Vai trò sinh thái | Sacred influence lên dòng/đường hồi và ký ức; không ordinary breeding population |
+| Sinh cảnh ưa thích | A resonance, tuyến ngập B/C/E/G và revisit có route/clearance |
 | Diet / energy source | Chưa chốt nhu cầu ăn/sinh lý Sacred; không invent nguồn mana hay ăn wildlife bắt buộc |
-| Locomotion | Quy I bơi/hãm x–y candidate; lên nền khi zone cho; II/III anatomy/abilities theo Task18 |
+| Cách vận động | Quy I bơi/hãm x–y candidate; lên nền khi zone cho; II/III anatomy/abilities theo Task18 |
 | Activity pattern | Theo player; không lịch AI wildlife hoặc ngày đêm mới |
 | Social / territorial behavior | Không gán bầy/tổ săn hoặc thống trị mọi species; hiện diện có thể làm fauna thận trọng |
 | Defensive behavior | Chọn vị trí/short brace I hữu hạn; S2 II khác; HP/resources/recovery chưa duyệt |
@@ -29,17 +29,17 @@
 
 ## Sứa Ngọc Biển Sao
 
-| Field | Đặc tả / trạng thái |
+| Trường | Đặc tả / trạng thái |
 | --- | --- |
 | Species ID / reference key | ref_i_sua_ngoc_bien_sao; chưa approved speciesId |
 | Tên Việt | Sứa Ngọc Biển Sao |
 | Trạng thái duyệt | EXTERNAL CONCEPT REFERENCE — NOT VERIFIED IN REPOSITORY; toàn dossier mới PROPOSED |
-| Body plan | Chuông mềm nổi làm khối chính, tay/tua tỏa từ dưới; khác polyp chân bám |
+| Cấu trúc cơ thể | Chuông mềm nổi làm khối chính, tay/tua tỏa từ dưới; khác polyp chân bám |
 | Elemental classification | Thủy hypothesis, origin/affinity cuối UNRESOLVED |
-| Ecological role | Lọc/hứng nguồn nhỏ trôi theo dòng trong fantasy ecology, không energy pin vô hạn |
-| Preferred habitat | B túi nước yên, D rìa tảo có khoảng trống; không source duy nhất trong F |
+| Vai trò sinh thái | Lọc/hứng nguồn nhỏ trôi theo dòng trong fantasy ecology, không energy pin vô hạn |
+| Sinh cảnh ưa thích | B túi nước yên, D rìa tảo có khoảng trống; không source duy nhất trong F |
 | Diet / energy source | Hạt hữu cơ/vi sinh nhỏ generic; biolum là cue chứ không tự nguồn năng lượng vô hạn |
-| Locomotion | Co chuông trôi/chỉnh hướng nhẹ theo current, không bám nền như polyp |
+| Cách vận động | Co chuông trôi/chỉnh hướng nhẹ theo current, không bám nền như polyp |
 | Activity pattern | Kiếm ăn theo nhịp dòng yếu; không định giờ thực/day-night gate |
 | Social / territorial behavior | Drifter đơn hoặc cụm thưa; giữ khoảng thay chase |
 | Defensive behavior | Rút vùng yên/co thân; tua tự vệ chỉ nếu được author/cue, không passive điện |
@@ -54,17 +54,17 @@
 
 ## Cá Chép Nguyệt Châu
 
-| Field | Đặc tả / trạng thái |
+| Trường | Đặc tả / trạng thái |
 | --- | --- |
 | Species ID / reference key | ref_i_ca_chep_nguyet_chau; chưa approved speciesId |
 | Tên Việt | Cá Chép Nguyệt Châu |
 | Trạng thái duyệt | EXTERNAL CONCEPT REFERENCE — NOT VERIFIED IN REPOSITORY; PROPOSED |
-| Body plan | Thân cá thuôn, cuống đuôi và vây rõ; không mặt vây phẳng kiểu cá đuối |
+| Cấu trúc cơ thể | Thân cá thuôn, cuống đuôi và vây rõ; không mặt vây phẳng kiểu cá đuối |
 | Elemental classification | Thủy hypothesis; tên ngọc không cho Kim/rarity, origin UNRESOLVED |
-| Ecological role | Swimmer/grazer candidate đưa dấu nhịp từ mảng tảo tới lane yên |
-| Preferred habitat | B/D rìa cát–tảo, C lane yếu khi route đã mở |
+| Vai trò sinh thái | Swimmer/grazer candidate đưa dấu nhịp từ mảng tảo tới lane yên |
+| Sinh cảnh ưa thích | B/D rìa cát–tảo, C lane yếu khi route đã mở |
 | Diet / energy source | Nguồn bám tảo/hạt nhỏ generic, không vật liệu loot mặc định |
-| Locomotion | Đạp đuôi có nhịp, schooling chuyển hướng quanh đá; không lượn sát đáy như đuối |
+| Cách vận động | Đạp đuôi có nhịp, schooling chuyển hướng quanh đá; không lượn sát đáy như đuối |
 | Activity pattern | Ăn/nghỉ theo dòng/threat, không daily schedule phải chờ |
 | Social / territorial behavior | Nhóm nhỏ co/giãn, tránh Quy gần; không shared aggro toàn map |
 | Defensive behavior | Burst rút ngắn về refuge; bị đánh không tự thành hostile species vĩnh viễn |
@@ -79,17 +79,17 @@
 
 ## Hải Quỷ Bông Xanh
 
-| Field | Đặc tả / trạng thái |
+| Trường | Đặc tả / trạng thái |
 | --- | --- |
 | Species ID / reference key | ref_i_hai_quy_bong_xanh; chưa approved speciesId |
 | Tên Việt | Hải Quỷ Bông Xanh |
 | Trạng thái duyệt | EXTERNAL CONCEPT REFERENCE — NOT VERIFIED IN REPOSITORY; PROPOSED |
-| Body plan | Polyp hypothesis có chân/đế bám, khối thấp với vành tua thu/xòe tại chỗ; không chuông trôi |
+| Cấu trúc cơ thể | Polyp hypothesis có chân/đế bám, khối thấp với vành tua thu/xòe tại chỗ; không chuông trôi |
 | Elemental classification | Thủy hypothesis, không suy evil từ chữ quỷ; origin chưa duyệt |
-| Ecological role | Filter feeder bám substrate, giúp thấy lượng hạt và hướng current |
-| Preferred habitat | B rạn/đá, E mép sáng có dòng nhẹ; secondary substrate B |
+| Vai trò sinh thái | Filter feeder bám substrate, giúp thấy lượng hạt và hướng current |
+| Sinh cảnh ưa thích | B rạn/đá, E mép sáng có dòng nhẹ; secondary substrate B |
 | Diet / energy source | Hạt trôi/vi sinh generic theo dòng; không tạo vật phẩm từ không khí |
-| Locomotion | Đứng bám, tua hoạt động; relocation theo habitat rules, không chạy như cá |
+| Cách vận động | Đứng bám, tua hoạt động; relocation theo habitat rules, không chạy như cá |
 | Activity pattern | Mở tua khi dòng phù hợp, khép khi disturbance |
 | Social / territorial behavior | Cụm substrate thưa, không chase; local contact defense candidate |
 | Defensive behavior | Khép tua/rút vào đế; warning tua/đường viền nếu vùng tiếp xúc có hazard |
@@ -104,17 +104,17 @@
 
 ## Cá Đuối Lưu Quang
 
-| Field | Đặc tả / trạng thái |
+| Trường | Đặc tả / trạng thái |
 | --- | --- |
 | Species ID / reference key | ref_i_ca_duoi_luu_quang; chưa approved speciesId |
 | Tên Việt | Cá Đuối Lưu Quang |
 | Trạng thái duyệt | EXTERNAL CONCEPT REFERENCE — NOT VERIFIED IN REPOSITORY; PROPOSED |
-| Body plan | Thân dẹt rộng, vây hai bên thành mặt lượn, đuôi lái; không thân cá chép thuôn |
+| Cấu trúc cơ thể | Thân dẹt rộng, vây hai bên thành mặt lượn, đuôi lái; không thân cá chép thuôn |
 | Elemental classification | Thủy hypothesis, glow không Lightning; origin UNRESOLVED |
-| Ecological role | Benthic forager/scavenger và facultative small-prey predator candidate; không chỉ EXP mob |
-| Preferred habitat | C nền cát rộng/lane yếu, B outer sand secondary; không source chỉ ở F |
+| Vai trò sinh thái | Benthic forager/scavenger và facultative small-prey predator candidate; không chỉ EXP mob |
+| Sinh cảnh ưa thích | C nền cát rộng/lane yếu, B outer sand secondary; không source chỉ ở F |
 | Diet / energy source | Fauna nhỏ/cặn hữu cơ generic theo brief được duyệt; không xác nhận săn các named refs |
-| Locomotion | Gợn vây lượn thấp rồi dừng/ẩn ở rìa đá, turn envelope khác schooling carp |
+| Cách vận động | Gợn vây lượn thấp rồi dừng/ẩn ở rìa đá, turn envelope khác schooling carp |
 | Activity pattern | Kiếm ăn ngắt quãng, nghỉ ở sand pocket; trigger local không hẹn timer dài |
 | Social / territorial behavior | Cá thể có thể territorial ở nơi trú; warning rồi rút/chase cục bộ, không toàn loài hostile |
 | Defensive behavior | Xòe vây/đổi hướng cảnh báo, short advance eligible, có recovery/retreat route |
@@ -129,17 +129,17 @@
 
 ## Ốc Đá San Hô
 
-| Field | Đặc tả / trạng thái |
+| Trường | Đặc tả / trạng thái |
 | --- | --- |
 | Species ID / reference key | ref_i_oc_da_san_ho; chưa approved speciesId |
 | Tên Việt | Ốc Đá San Hô |
 | Trạng thái duyệt | EXTERNAL CONCEPT REFERENCE — NOT VERIFIED IN REPOSITORY; PROPOSED |
-| Body plan | Vỏ xoắn/hump nhỏ và chân cơ bám; không mai oval/bốn vây của Quy |
+| Cấu trúc cơ thể | Vỏ xoắn/hump nhỏ và chân cơ bám; không mai oval/bốn vây của Quy |
 | Elemental classification | Element UNRESOLVED; vật liệu đá không thêm Earth/Kim, origin chưa chốt |
-| Ecological role | Grazer/detritus processor candidate trên substrate, tạo dấu ăn có thể quan sát |
-| Preferred habitat | D đá phủ tảo, B rìa rạn secondary, tránh lane mạnh không điểm bám |
+| Vai trò sinh thái | Grazer/detritus processor candidate trên substrate, tạo dấu ăn có thể quan sát |
+| Sinh cảnh ưa thích | D đá phủ tảo, B rìa rạn secondary, tránh lane mạnh không điểm bám |
 | Diet / energy source | Màng bám/tảo/cặn generic; không “ăn đá sinh currency” |
-| Locomotion | Trườn chậm trên bề mặt, footprint nhỏ, anchor tại chân; không swim turtle |
+| Cách vận động | Trườn chậm trên bề mặt, footprint nhỏ, anchor tại chân; không swim turtle |
 | Activity pattern | Ăn theo điều kiện bề mặt và threat, không sim nhu cầu dinh dưỡng thật |
 | Social / territorial behavior | Đơn/cụm nhỏ, tránh/thu chân khi gần; không giữ lãnh thổ đánh player |
 | Defensive behavior | Thu chân/vào vỏ và dừng; không invulnerable collectible phá được bằng mọi basic |
@@ -154,17 +154,17 @@
 
 ## Cá Ngựa Thủy Ảnh
 
-| Field | Đặc tả / trạng thái |
+| Trường | Đặc tả / trạng thái |
 | --- | --- |
 | Species ID / reference key | ref_i_ca_ngua_thuy_anh; chưa approved speciesId |
 | Tên Việt | Cá Ngựa Thủy Ảnh |
 | Trạng thái duyệt | EXTERNAL CONCEPT REFERENCE — NOT VERIFIED IN REPOSITORY; PROPOSED |
-| Body plan | Thân đứng nhỏ với đuôi bám, vây nhỏ giữ tư thế; không schooling cá chép/vây đuối |
+| Cấu trúc cơ thể | Thân đứng nhỏ với đuôi bám, vây nhỏ giữ tư thế; không schooling cá chép/vây đuối |
 | Elemental classification | Thủy hypothesis, tên ảnh không nguyên tố mới; origin UNRESOLVED |
-| Ecological role | Small forager/anchor observer candidate, báo điểm tựa và nơi nước yên |
-| Preferred habitat | D cây bám, B sheltered growth secondary; không deep forced migration |
+| Vai trò sinh thái | Small forager/anchor observer candidate, báo điểm tựa và nơi nước yên |
+| Sinh cảnh ưa thích | D cây bám, B sheltered growth secondary; không deep forced migration |
 | Diet / energy source | Hạt/fauna rất nhỏ generic theo approval, không ăn mana lore đã chốt |
-| Locomotion | Neo/thả, bơi chỉnh ngắn, không drift chuông hoặc tăng tốc cá chép |
+| Cách vận động | Neo/thả, bơi chỉnh ngắn, không drift chuông hoặc tăng tốc cá chép |
 | Activity pattern | Nhịp neo–thả theo dòng yên, thu khoảng khi threat |
 | Social / territorial behavior | Cautious/curious observer theo context, không human dialogue hoặc chase |
 | Defensive behavior | Bám khuất/né ngắn về anchor valid, không teleport |

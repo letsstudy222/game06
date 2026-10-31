@@ -2,7 +2,7 @@
 
 **PROPOSED Q21-P08**, dựa [S05 E04/E05](../story/STORY_IMPLEMENTATION_HANDOFF.md), [L16 boss framework](../loadout/BOSS_LOADOUT_LOCK.md), [H19 boss area](CHAPTER1_BOSS_AREA_HANDOFF.md). D06 membership lock và D41 no full-three early là CONFIRMED; detailed entry/snapshot/config/recovery vẫn proposals. Không final boss identity/moveset/stats/policy mới.
 
-| Encounter boundary | Quest/status interaction | Membership/switch / save | Failure/recovery |
+| Encounter boundary | Quest/status interaction | Membership/switch / save | Thất bại/phục hồi |
 | --- | --- | --- | --- |
 | OUTSIDE / PREPARATION | mq_04 ACTIVE sau E03, đọc stakes/goal, H prep ngoài threat; có thể quay G | Có thể chuẩn bị existing forms theo safe context, không đòi ba slot | Thiếu cap/geometry/source profile báo đúng lý do, giữ prep; one-Quy intended route Task23 phải bảo đảm |
 | LOADOUT_CONFIRMED | Explicit choice, chưa E04 outcome | Proposed selected membership/snapshot reservation theo L16, không tự approve freeze config/timing | Edit/cancel về prep trước start theo policy, không save bossEntered như quest complete |

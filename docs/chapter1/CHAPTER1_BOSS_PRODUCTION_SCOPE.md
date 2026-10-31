@@ -1,4 +1,4 @@
-# Scope sản xuất và khoảng cách runtime
+# Phạm vi sản xuất và khoảng cách runtime
 
 **PROPOSED B23-P12**, dùng [C14 vertical slice](../combat/COMBAT_VERTICAL_SLICE.md), [Q18 gap review](../technical/QUY_RUNTIME_GAP_ANALYSIS.md), [H19 boss handoff](CHAPTER1_BOSS_AREA_HANDOFF.md). Không boss placeholder/AI/geometry/asset/config được tạo trong Task23.
 

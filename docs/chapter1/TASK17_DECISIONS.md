@@ -18,11 +18,11 @@ Nguồn: [PROJECT_DECISIONS](../PROJECT_DECISIONS.md), [OPEN_QUESTIONS](../OPEN_
 
 | ID / trạng thái | Nội dung và tài liệu owner | Khi nào cần duyệt |
 | --- | --- | --- |
-| O17-P01 PROPOSED | Mười beat chơi gom D29, giả thuyết pacing, b09 chỉ replay; [beat sheet](OPENING_BEAT_SHEET.md) | Trước script/prototype nhịp mở đầu |
-| O17-P02 PROPOSED | Tương hợp và xác nhận một action, phản hồi thức trung tính; [resonance](FIRST_QUY_RESONANCE.md) | Trước triển khai bootstrap |
+| O17-P01 PROPOSED | Mười beat chơi gom D29, giả thuyết pacing, b09 chỉ replay; [bảng nhịp](OPENING_BEAT_SHEET.md) | Trước script/prototype nhịp mở đầu |
+| O17-P02 PROPOSED | Tương hợp và xác nhận một action, phản hồi thức trung tính; [cộng hưởng](FIRST_QUY_RESONANCE.md) | Trước triển khai bootstrap |
 | O17-P03 PROPOSED | Diễn xuất Quy và motifs/clue giới hạn; [appearance](QUY_FIRST_APPEARANCE.md), [environment](OPENING_ENVIRONMENTAL_STORYTELLING.md) | Trước art/audio brief |
 | O17-P04 PROPOSED | Học bơi/hãm, contextual receiver không combat; [tutorial](OPENING_TUTORIAL_FLOW.md) | Trước input/movement/receiver prototype |
-| O17-P05 PROPOSED | Toàn bộ first-pass lời văn và bản ngắn; [dialogue](OPENING_DIALOGUE.md) | Trước localization/voice/script chốt |
+| O17-P05 PROPOSED | Toàn bộ first-pass lời văn và bản ngắn; [thoại](OPENING_DIALOGUE.md) | Trước localization/voice/script chốt |
 | O17-P06 PROPOSED | Objective detail E01, ownership và boundaries; [quest](OPENING_QUEST_AND_EVENTS.md), [save](../technical/OPENING_STATE_AND_SAVE_CONTRACT.md) | Trước quest/save implementation |
 | O17-P07 PROPOSED | Topology sáu zones, safe anchor/cửa cục bộ; [level](OPENING_LEVEL_HANDOFF.md) | Task19 duyệt spatial detail trước map |
 | O17-P08 PROPOSED | Skip/focus/reload/accessibility và 30 ca nghiệm thu; [cutscene](OPENING_CUTSCENE_REQUIREMENTS.md), [QA](../technical/OPENING_TEST_CASES.md) | Trước cinematic/persistence integration |

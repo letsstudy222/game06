@@ -1,6 +1,6 @@
-# Decision register boss Task23
+# Sổ quyết định boss Task23
 
-## Canon và authority giữ
+## Canon và nguồn có thẩm quyền được giữ
 
 | Status | Scope |
 | --- | --- |
@@ -11,7 +11,7 @@
 
 [S05 boss brief](../story/MAJOR_CONFLICTS_AND_BOSSES.md), [PROJECT_DECISIONS](../PROJECT_DECISIONS.md), [OPEN_QUESTIONS](../OPEN_QUESTIONS.md) giữ records. Candidate IDs mới không rename actor/profile/event, không approved species/playable/foreign origin hoặc new D-record.
 
-## B23 proposals
+## Các đề xuất B23
 
 | ID / status | Nội dung/owner | Cần approve trước |
 | --- | --- | --- |
@@ -26,9 +26,9 @@
 | B23-P09 PROPOSED | Same file two environment recipes, receiver test/cover | Source/outlet/trial/refuge/LOS/reset/permission bindings, no E05 mutation |
 | B23-P10 PROPOSED | [Story/12text cues](CHAPTER1_BOSS_STORY_PRESENTATION.md), nondeath immediate outcome proposal | Intro/cognition/voice/yield/replay/skip/Task24 boundary review |
 | B23-P11 PROPOSED | [Lock/retry](CHAPTER1_BOSS_RETRY_AND_LOCK.md), reuse R03/C14/L16 | Scoped entry/HP0/continuation/defeat/abort/reset/checkpoint/save policy approval, no automatic emergency transfer |
-| B23-P12 PROPOSED | [Rewards](CHAPTER1_BOSS_REWARDS_AND_STATES.md), [scope](CHAPTER1_BOSS_PRODUCTION_SCOPE.md), [art](../art/CHAPTER1_BOSS_ART_HANDOFF.md), [12entities](../technical/CHAPTER1_BOSS_DATA_SPEC.md), [40future QA](../technical/CHAPTER1_BOSS_TEST_CASES.md) | W07/P15 outcome/recipient/ledger/placement/migration and actual production/test evidence |
+| B23-P12 PROPOSED | [Rewards](CHAPTER1_BOSS_REWARDS_AND_STATES.md), [scope](CHAPTER1_BOSS_PRODUCTION_SCOPE.md), [art](../art/CHAPTER1_BOSS_ART_HANDOFF.md), [12entities](../technical/CHAPTER1_BOSS_DATA_SPEC.md), [40 ca QA tương lai](../technical/CHAPTER1_BOSS_TEST_CASES.md) | W07/P15 outcome/recipient/ledger/placement/migration and actual production/test evidence |
 
-## Unresolved gates
+## Các điều kiện chưa giải quyết
 
 | ID / status | Decision/dependency | Blocker và neutral handoff |
 | --- | --- | --- |

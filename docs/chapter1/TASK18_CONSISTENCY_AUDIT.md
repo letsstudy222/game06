@@ -10,10 +10,10 @@ Scope Task18: 17 tài liệu mới, append chỉ mục ở README/GDD/PROJECT_DE
 
 | Nhóm | Tài liệu / code |
 | --- | --- |
-| Master/canon/questions | [GDD](../GAME_DESIGN_DOCUMENT.md), [decisions](../PROJECT_DECISIONS.md), [open questions](../OPEN_QUESTIONS.md) |
+| Master/canon/questions | [GDD](../GAME_DESIGN_DOCUMENT.md), [quyết định](../PROJECT_DECISIONS.md), [open questions](../OPEN_QUESTIONS.md) |
 | Creature/roster | [Quy](../creatures/QUY_HAI_UYEN.md), [stage matrix](../creatures/SACRED_EVOLUTION_MATRIX.md), [bible](../creatures/CREATURE_DESIGN_BIBLE.md), [roster](../creatures/CREATURE_ROSTER_REGISTER.md), [abilities](../gameplay/SACRED_CREATURE_ABILITIES.md) |
 | Resonance/story | [R03](../lore/RESONANCE_RULES.md), [memory](../lore/ANCESTRAL_MEMORY.md), [Chapter I](../story/CHAPTER_01_QUY.md), [S05 events](../story/STORY_IMPLEMENTATION_HANDOFF.md), [opening Task17](CHAPTER1_OPENING_OVERVIEW.md), [E01 objectives](OPENING_QUEST_AND_EVENTS.md), [opening save](../technical/OPENING_STATE_AND_SAVE_CONTRACT.md) |
-| Elements | [overview](../elements/ELEMENTAL_SYSTEM_OVERVIEW.md), [statuses](../elements/STATUS_EFFECTS.md), [reactions](../elements/ELEMENTAL_REACTIONS.md) |
+| Elements | [tổng quan](../elements/ELEMENTAL_SYSTEM_OVERVIEW.md), [statuses](../elements/STATUS_EFFECTS.md), [reactions](../elements/ELEMENTAL_REACTIONS.md) |
 | Evolution/progression | [V13](../evolution/EVOLUTION_SYSTEM_OVERVIEW.md), [triggers](../evolution/EVOLUTION_TRIGGER_MODELS.md), [P15](../progression/PROGRESSION_SYSTEM_OVERVIEW.md), [mastery](../progression/SKILL_MASTERY.md), [progression data](../technical/PROGRESSION_DATA_SPEC.md) |
 | Combat/loadout | [C14](../combat/COMBAT_SYSTEM_OVERVIEW.md), [movement/defense](../combat/MOVEMENT_AND_DEFENSE.md), [HP/recovery](../combat/INCAPACITATION_AND_RECOVERY.md), [L16](../loadout/LOADOUT_SYSTEM_OVERVIEW.md), [ownership](../loadout/FORM_STATE_OWNERSHIP.md), [boss guard](../loadout/BOSS_LOADOUT_LOCK.md) |
 | Data/reward | [R03 data](../technical/RESONANCE_DATA_MODEL.md), [V13 data](../technical/EVOLUTION_DATA_SPEC.md), [W07](../world/WORLD_STATE_TRANSITIONS.md), [P15 receipts](../economy/REWARD_CONSISTENCY.md), [pipeline](../technical/CREATURE_CONTENT_PIPELINE.md) |
@@ -51,6 +51,6 @@ Quy Thủy không auto Wet/immune, không toàn biển reaction chain; status/re
 
 **CONDITIONAL PASS cho Task19 thiết kế sau khi có yêu cầu riêng; chưa production/gameplay-ready.** Q18-U01–U06 phải giải theo thời điểm triển khai tương ứng. Task19 có thể thiết kế topology/receiver tier trung tính, nhưng không chốt production dimensions/clearance hoặc gate skill II/III chưa có đường progression bảo đảm. Reference/asset, current/input/geometry/camera, combat health/resource/guard policies, save/memory receipt/migration và progression thresholds đều còn dependencies rõ.
 
-Đủ 17 deliverables được liên kết từ [overview](QUY_DESIGN_OVERVIEW.md). 30 ca [QA](../technical/QUY_TEST_CASES.md) là **PLANNED / NOT EXECUTED**, không kết quả chạy gameplay. Validation tĩnh chỉ kiểm tệp/link/Markdown/identity và diff; không claim browser playback, performance hoặc device support. Không tự bắt đầu Task19 hay Tasks25–48, không tự commit/push docs Task17/18.
+Đủ 17 deliverables được liên kết từ [tổng quan](QUY_DESIGN_OVERVIEW.md). 30 ca [QA](../technical/QUY_TEST_CASES.md) là **PLANNED / NOT EXECUTED**, không kết quả chạy gameplay. Validation tĩnh chỉ kiểm tệp/link/Markdown/identity và diff; không claim browser playback, performance hoặc device support. Không tự bắt đầu Task19 hay Tasks25–48, không tự commit/push docs Task17/18.
 
 Kết quả validation tĩnh đã thực hiện: đủ 17 tài liệu mới; 173 relative links hợp lệ trong phần Task18; bảng/code fences và whitespace đạt; đủ 18 trường mô tả mỗi stage và 30 ca QA PLANNED. Hash comparison xác nhận mọi tệp trước Task18 giữ nguyên, ngoại trừ sáu tệp chỉ append phần điều hướng/backlink; 14 tài liệu Task17 không bị sửa. Git cuối vẫn HEAD 387b29d trên work, không staged changes/commit/push mới; có sáu tracked files modified và 31 tài liệu untracked tổng cộng của Task17–18.

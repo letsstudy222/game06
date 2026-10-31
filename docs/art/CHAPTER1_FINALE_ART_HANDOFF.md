@@ -22,7 +22,7 @@ Base map + conditional objects/overlays/collision/hazard/nav/habitat projection 
 
 Body/visual envelope/footprint/hurt/action/FX bounds tách; props/occluders không che source/exit/hazard/Quy head. Nearest-neighbor/integer sampling/material clusters/provenance/source-export/alpha/gutter/frame rect/anchors/markers theo existing standards, no whole-sprite scale/crop để fit evolved form. All creature ref assets cần anatomy/approval riêng, không concept sheet thành atlas.
 
-## Readiness và missing assets
+## Mức sẵn sàng và asset còn thiếu
 
 F24 có text/layout requirements, chưa verified full restoration/finale/travel assets, no created cinematic/source files. Boss LamGiáp/source nature còn proposal, Quy/wildlife/world/bờ arrival kit Missing/Unverified theo upstream handoffs; Phoenix prototype không ChapterII production completed. Cần explicit concept/art/source approval, production export metadata, playback/interruption/FXoff/muted/grayscale/small-screen/physical-device/latency/performance evidence sau implement.
 

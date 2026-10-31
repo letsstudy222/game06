@@ -2,7 +2,7 @@
 
 **PROPOSED S22-P02/P04/P08**, [Task19 graph](CHAPTER1_WORLD_GRAPH.md) vẫn authority13connectors. [Q21 main register](CHAPTER1_MAIN_QUEST_REGISTER.md)/[main DAG](CHAPTER1_QUEST_DEPENDENCY_GRAPH.md) không sửa. Source prerequisites chưa production approved giữ gate; table reachability là conceptual, không navmesh/playtest.
 
-| Quest/activity | Starting zone | Objective zones | Return route | Required movement | Environmental gate | After E05 |
+| Quest/activity | Vùng bắt đầu | Vùng chứa mục tiêu | Đường quay lại | Di chuyển bắt buộc | Điều kiện môi trường | Sau E05 |
 | --- | --- | --- | --- | --- | --- | --- |
 | opt_c1_quiet_refuge | hy_zone_reef B | B near niche | ab về A, B safe pocket | Quy I swim/brake/context receiver | E01 parent; niche side source không main object | Adapted verify variant, same source/claim |
 | opt_01_reef_observation | hy_zone_reef B | B hoặc hy_zone_habitat D approved equivalent | bd về B, ab/A | Quy I movement/observe, không optional form | E02 done giữ S05; source behavior/catalog/coverage | Secondary/source variant giữ, prior proof eligible |

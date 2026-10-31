@@ -24,7 +24,7 @@ flowchart LR
 
 VA/VB output cùng K nghĩa **AllOf**, không một cái đủ; edge diagram không event IDs mới hoặc cho skip relevant checks. E04 closure source includes E01 parent/E02/E03 facts. P không cạnh vào D/R/T, finale movie/reprise không gate chapter/travel. C/D semantic khác nhưng **same E05 durable unit** theo inherited S05/W07, no transaction split. E06 N khác E05 R.
 
-| Suggested view | Source/valid transition | Save/load/recovery / duplicate handling |
+| Khung nhìn đề xuất | Source/valid transition | Save/load/recovery / duplicate handling |
 | --- | --- | --- |
 | BOSS_UNRESOLVED | E04 chưa committed hoặc qualification chưa đủ | Existing attempt/last-good rules B23, no fake E04 from HP/UI/loot |
 | BOSS_RESOLVED | E04 accepted source/outcome durable, tiếp tới B khi close/body/context safe | Keep actor/outcome/receipt; UI stale rebuild, no boss reset/regrant |

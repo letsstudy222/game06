@@ -15,18 +15,18 @@ Nguồn [PROJECT_DECISIONS](../PROJECT_DECISIONS.md), [OPEN_QUESTIONS](../OPEN_Q
 
 | ID / status | Nội dung / owner | Duyệt trước |
 | --- | --- | --- |
-| Q21-P01 PROPOSED | [Overview](CHAPTER1_MAIN_QUEST_OVERVIEW.md), [six acts](CHAPTER1_MAIN_QUEST_ACTS.md), giữ sáu source quests | Narrative structure/scope freeze; acts không tạo quest/event mới |
-| Q21-P02 PROPOSED | [Register](CHAPTER1_MAIN_QUEST_REGISTER.md), [objectives](CHAPTER1_QUEST_OBJECTIVES.md), explicit proof contracts | Objective/source predicates và instance binding trước production |
+| Q21-P01 PROPOSED | [Tổng quan](CHAPTER1_MAIN_QUEST_OVERVIEW.md), [six acts](CHAPTER1_MAIN_QUEST_ACTS.md), giữ sáu source quests | Narrative structure/scope freeze; acts không tạo quest/event mới |
+| Q21-P02 PROPOSED | [Sổ đăng ký](CHAPTER1_MAIN_QUEST_REGISTER.md), [objectives](CHAPTER1_QUEST_OBJECTIVES.md), explicit proof contracts | Objective/source predicates và instance binding trước production |
 | Q21-P03 PROPOSED | [Dependency DAG](CHAPTER1_QUEST_DEPENDENCY_GRAPH.md), [zone matrix](CHAPTER1_QUEST_ZONE_MATRIX.md) | Quest/world gate/route/return validation, không override H19 graph |
-| Q21-P04 PROPOSED | Derived five-state model và three overlays ở [world states](CHAPTER1_QUEST_WORLD_STATES.md) | Quest adapter/acceptance/evidence/query/cache/recovery policy |
+| Q21-P04 PROPOSED | Derived five-state model và three overlays ở [trạng thái thế giới](CHAPTER1_QUEST_WORLD_STATES.md) | Quest adapter/acceptance/evidence/query/cache/recovery policy |
 | Q21-P05 PROPOSED | [Pacing/tutorial](CHAPTER1_QUEST_PACING.md), Quy I lessons/caps trước dùng | Input/geometry/lesson/encounter prototype, không numbers false playtest |
-| Q21-P06 PROPOSED | [Dialogue](CHAPTER1_QUEST_DIALOGUE.md), [memory distribution](CHAPTER1_MEMORY_DISTRIBUTION.md), typed content refs | Speaker-role/voice/source/art/localization approval, lore boundaries |
+| Q21-P06 PROPOSED | [Dialogue](CHAPTER1_QUEST_DIALOGUE.md), [phân bố ký ức](CHAPTER1_MEMORY_DISTRIBUTION.md), typed content refs | Speaker-role/voice/source/art/localization approval, lore boundaries |
 | Q21-P07 PROPOSED | Permanent event/reward binding W07/P15 và same source identity | Durable adapter/recipient/source manifest/migration; không new quest ledger |
 | Q21-P08 PROPOSED | [Boss handoff](CHAPTER1_QUEST_BOSS_HANDOFF.md), Task23 outcome và Task24 aftermath boundaries | Boss encounter/entry/abort/retry/profile/staging trước production |
 | Q21-P09 PROPOSED | [First quest slice](CHAPTER1_FIRST_QUEST_SLICE.md), E01 completed + partial E02 | Source/assets/atomic save/receiver/lifecycle demo integration |
-| Q21-P10 PROPOSED | [12entity data](../technical/CHAPTER1_QUEST_DATA_SPEC.md), [40future QA](../technical/CHAPTER1_QUEST_TEST_CASES.md) | Content validation/schema/loader/runtime nghiệm thu sau này |
+| Q21-P10 PROPOSED | [12 thực thể dữ liệu](../technical/CHAPTER1_QUEST_DATA_SPEC.md), [40 ca QA tương lai](../technical/CHAPTER1_QUEST_TEST_CASES.md) | Content validation/schema/loader/runtime nghiệm thu sau này |
 
-## Gates chưa giải quyết
+## Các điều kiện chặn chưa giải quyết
 
 | ID / status | Cần quyết định / dependency | Chặn gì / neutral handoff |
 | --- | --- | --- |

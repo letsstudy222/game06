@@ -14,20 +14,20 @@
 
 [PROJECT_DECISIONS](../PROJECT_DECISIONS.md) là nguồn canon; Task18 không thêm D-record gameplay confirmed. “Hồ sơ hoàn chỉnh” không đồng nghĩa approval hoặc code hoạt động.
 
-## Q18 proposals
+## Các đề xuất Q18
 
 | ID / trạng thái | Phạm vi / owner tài liệu | Duyệt trước |
 | --- | --- | --- |
-| Q18-P01 PROPOSED | [Forms](QUY_EVOLUTION_FORMS.md), [visual matrix](QUY_VISUAL_DIFFERENTIATION.md), anatomy continuity C04 | Reference/model sheet/export từng stage |
-| Q18-P02 PROPOSED | [Movement](QUY_UNDERWATER_MOVEMENT.md), khuyến nghị accessible x–y prototype | Controller/current/camera integration |
-| Q18-P03 PROPOSED | [Combat](QUY_COMBAT_DESIGN.md), Chấn Mai minimal phased action | Hit/action implementation và tuning |
+| Q18-P01 PROPOSED | [Các dạng](QUY_EVOLUTION_FORMS.md), [visual matrix](QUY_VISUAL_DIFFERENTIATION.md), anatomy continuity C04 | Reference/model sheet/export từng stage |
+| Q18-P02 PROPOSED | [Di chuyển](QUY_UNDERWATER_MOVEMENT.md), khuyến nghị accessible x–y prototype | Controller/current/camera integration |
+| Q18-P03 PROPOSED | [Chiến đấu](QUY_COMBAT_DESIGN.md), Chấn Mai minimal phased action | Hit/action implementation và tuning |
 | Q18-P04 PROPOSED | [Skills](QUY_SIGNATURE_SKILLS.md), finite short brace I khác S2 II | Defense/resources/cooldown/status/clip production |
 | Q18-P05 PROPOSED | Áp dụng E09 cho Quy, bounded conductivity/steam/ownership | Elemental resolver/receiver definitions |
 | Q18-P06 PROPOSED | [Environment](QUY_ENVIRONMENTAL_ABILITIES.md), tiered receivers và safe return | Task19 level gates và persistent patches |
 | Q18-P07 PROPOSED | [Ecology/lore](QUY_ECOLOGY_AND_LORE.md), Task17 mapping | Narrative placement; không đổi chronology |
-| Q18-P08 PROPOSED | [Progression](QUY_PROGRESSION.md), [loadout](QUY_LOADOUT_INTEGRATION.md), graph/ownership | Evolution thresholds/trials/config/save mapping |
+| Q18-P08 PROPOSED | [Progression](QUY_PROGRESSION.md), [bộ dạng](QUY_LOADOUT_INTEGRATION.md), graph/ownership | Evolution thresholds/trials/config/save mapping |
 | Q18-P09 PROPOSED | [Scope](QUY_FIRST_PLAYABLE_SCOPE.md), [art spec](../art/QUY_ART_PRODUCTION_SPEC.md) | First playable asset/production freeze |
-| Q18-P10 PROPOSED | [Data](../technical/QUY_DATA_SPEC.md), chín views/extensions và typed refs | Catalog/schema/runtime binding |
+| Q18-P10 PROPOSED | [Dữ liệu](../technical/QUY_DATA_SPEC.md), chín views/extensions và typed refs | Catalog/schema/runtime binding |
 | Q18-P11 PROPOSED | [Gaps](../technical/QUY_RUNTIME_GAP_ANALYSIS.md), [30future QA](../technical/QUY_TEST_CASES.md) | Kế hoạch triển khai/nghiệm thu sau, không chạy ngay |
 
 ## Gate còn mở

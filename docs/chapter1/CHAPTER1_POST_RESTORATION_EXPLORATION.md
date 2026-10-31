@@ -19,7 +19,7 @@
 
 Ecological assistance, exploration, ruins/memory, resonance/knowledge, movement puzzles và optional defense đều covered bởi entries trên. S22 hiện **không** intentionally missable core event; finale không tự tạo missable scene/reward. Presentation transient có thể không còn nguyên cảnh cũ, nhưng important proof/optional memory/collection intended sources có equivalent/refuge/archive đúng loại. Archive không thay living resonance source.
 
-## Return route và cải thiện nhìn được
+## Đường quay lại và cải thiện nhìn được
 
 Sau E05 existing gi nối G–I và ib shortcut I–B, eb E–B từ E03, cùng main A/B/C/E/G/H giữ source gates. E06 arrival commit mới durable return N→I→G/B/A; chỉ đi tới I chưa nghĩa đã tới Nhật Diệm. Cơ cấu/panel/local niches dùng cùng owned settings/persistent world projection, không replay patch quá khứ làm mất variant chọn sau.
 

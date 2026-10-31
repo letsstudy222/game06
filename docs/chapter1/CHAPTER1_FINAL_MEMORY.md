@@ -12,7 +12,7 @@
 
 ## Proposed short echo package
 
-Environmental observation: “Dòng đi qua nơi trú, rồi còn một lối để trở về.” Memory reprise: “Giữ một dòng… không phải giữ tất cả đứng yên.” Spirit perception: “Phía cuối nhịp nước, vẫn còn một khoảng ấm chưa rõ.” Đây là lời diễn giải/recap PROPOSED cho presentation của existing source, không thêm fact lịch sử vào original memory catalog âm thầm. Full player-facing IDs ở [dialogue](CHAPTER1_FINALE_DIALOGUE.md).
+Environmental observation: “Dòng đi qua nơi trú, rồi còn một lối để trở về.” Memory reprise: “Giữ một dòng… không phải giữ tất cả đứng yên.” Spirit perception: “Phía cuối nhịp nước, vẫn còn một khoảng ấm chưa rõ.” Đây là lời diễn giải/recap PROPOSED cho presentation của existing source, không thêm fact lịch sử vào original memory catalog âm thầm. Full player-facing IDs ở [thoại](CHAPTER1_FINALE_DIALOGUE.md).
 
 mem_quy_first_sense/CL05 vẫn ở trước first resonance theo D29, không replay thành lần đầu hoặc giải ba nhịp mất là tự nguyện hiến tế. mem_quy_current vẫn E03 payload. mem_quy_refuge_margin là optional S22 draft sau E03, không auto awarded khi E05. mem_phuong_cutback dành chươngII/E09 theo S05, **không** kéo lên finale để giải Phượng toàn history; no physical Phoenix apparition required.
 

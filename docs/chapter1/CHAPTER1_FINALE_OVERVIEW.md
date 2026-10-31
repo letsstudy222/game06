@@ -1,29 +1,29 @@
 # Kết Chương I — Dòng nước có lối về
 
-**CONFIRMED:** Quy/Thủy mở Chương I, Phượng/Hỏa thuộc Nhật Diệm/Chương II, Long/Phong, Ly/Mộc với Sinh Mệnh riêng; return exploration/persistent consequences, D29/D41 giữ. **PROPOSED F24-P01–P11:** nhịp kết/playable restoration/presentation/zone effects/travel/data mới dưới đây. Exact S05/W07 IDs/predicates, B23 boss/nature/outcomes và Q18/H19/E20/Q21/S22 details vẫn status gốc, không approve bằng lặp lại. Q01–Q05/health/retry/manifestation/storage/assets còn **UNRESOLVED**, historical **SUPERSEDED** giữ nguyên.
+**CONFIRMED:** Quy/Thủy mở Chương I, Phượng/Hỏa thuộc Nhật Diệm/Chương II, Long/Phong, Ly/Mộc với Sinh Mệnh riêng; giữ khả năng quay lại khám phá và hệ quả bền vững, D29/D41 không đổi. **PROPOSED F24-P01–P11:** nhịp kết, phục hồi bằng hành động, trình bày, tác động theo vùng, di chuyển và dữ liệu mới dưới đây. Các ID/điều kiện logic S05/W07, bản chất/kết quả boss B23 và chi tiết Q18/H19/E20/Q21/S22 giữ trạng thái gốc, không được duyệt chỉ vì lặp lại. Q01–Q05 cùng chính sách HP/thử lại/hiện thân/lưu trữ/asset còn **UNRESOLVED**; các bản ghi lịch sử **SUPERSEDED** giữ nguyên.
 
-Cảm xúc kết: người chơi thấy có thể mở một đường mà không cuốn mất nơi trú, Quy cảm lại công năng giữ dòng thay khóa kín; nước ở hạ lưu có nhịp sống mới nhưng không mọi vấn đề đã biến mất. Tín hiệu nhiệt còn yếu cho lý do đi tới bờ Nhật Diệm. Không spirit origin/catastrophe chronology/Tinh Môn full reveal, không fifth Sacred/foreign evil/auto evolution.
+Cảm xúc kết: người chơi thấy có thể mở một đường mà không cuốn mất nơi trú; Quy cảm lại công năng giữ dòng thay vì khóa kín. Nước ở hạ lưu có nhịp sống mới nhưng không phải mọi vấn đề đã biến mất. Tín hiệu nhiệt yếu tạo lý do đi tới bờ Nhật Diệm. Không tiết lộ trọn nguồn gốc cổ linh, trình tự biến cố hoặc Tinh Môn; không thêm Sacred thứ năm, không coi ngoại lai là xấu và không tự tiến hóa.
 
-## Bốn milestones, không bốn stores/events mới
+## Bốn mốc, không tạo thêm bốn kho/sự kiện
 
-| Conceptual milestone | Existing source/meaning | Khác biệt và persistence |
+| Mốc khái niệm | Nguồn hiện hữu/ý nghĩa | Khác biệt và lưu bền vững |
 | --- | --- | --- |
-| A — Boss resolved | evt_04_guardian_conflict accepted qualifying outcome durable | E04 outcome/receipt/actor permission; failed/abandoned attempt không A. B23 actual resolution policy còn PROPOSED |
-| B — Restoration available | Derived E04 permission **và** accepted attempt close/valid exploration body/context/source | Không độc lập saved unlock; có A nhưng lock/recovery/content chưa safe thì B tạm unavailable, không rollback A |
-| C — Restoration committed | evt_05_restore_water durable sau actual operation/checks/refuge/coverage/confirm | World patches/route/ecology/quest evidence/recipients+ledger atomic, không VFX hoặc boss death |
-| D — Chapter I completed | chapter_01_complete alias từ E05 theo existing S05/W07 contract | Semantic story closure khác hydrology/property mutation nhưng C/D **cùng E05 commit hiện có**. Không new finale completion flag/grant hoặc bắt xem thoại trước D |
+| A — Xung đột boss đã được giải quyết | evt_04_guardian_conflict ghi nhận kết quả đủ điều kiện và đã lưu bền vững | Kết quả/receipt/quyền từ thực thể của E04; lần thử thất bại hoặc bỏ dở không đạt A. Chính sách xử lý cụ thể B23 còn PROPOSED |
+| B — Có thể bắt đầu phục hồi | Suy ra từ quyền E04 **và** kết thúc lần thử được chấp nhận, cơ thể/ngữ cảnh/nguồn khám phá hợp lệ | Không lưu mở khóa độc lập; có A nhưng khóa/phục hồi/nội dung chưa an toàn thì B tạm không khả dụng, không đảo ngược A |
+| C — Phục hồi đã commit | evt_05_restore_water được lưu bền vững sau thao tác thực, kiểm chứng, bảo vệ nơi trú, kiểm độ bao phủ và xác nhận | Patch thế giới/tuyến/sinh thái/bằng chứng nhiệm vụ/người nhận+ledger cùng giao dịch nguyên tử, không suy từ VFX hoặc boss chết |
+| D — Chương I hoàn tất | chapter_01_complete là alias từ E05 theo hợp đồng S05/W07 hiện hữu | Kết thúc tuyến truyện khác nghĩa với thay đổi thủy văn/thuộc tính nhưng C/D **cùng E05 commit hiện có**. Không tạo cờ hoàn tất/phần thưởng riêng cho finale hoặc bắt xem thoại trước D |
 
-Existing [S05](../story/STORY_IMPLEMENTATION_HANDOFF.md)/[W07 architecture](../world/WORLD_STATE_ARCHITECTURE.md) gán water_stable/refuge_preserved/chapter_01_complete từ E05; giữ như **inherited proposal**, không silently split thành event mới. E06 arrival/return riêng sau C/D, không prerequisite E05 closure. NEXT_ROUTE available sau E05 khác route_sea_open/arrived_nhat_diem aliases của E06. Nếu sau muốn D là event/dialogue gate riêng, cần explicit source decision/migration, chưa thực hiện ở Task24.
+[S05](../story/STORY_IMPLEMENTATION_HANDOFF.md)/[kiến trúc W07](../world/WORLD_STATE_ARCHITECTURE.md) hiện gán water_stable/refuge_preserved/chapter_01_complete từ E05; giữ như **đề xuất kế thừa**, không âm thầm tách thành sự kiện mới. E06 ghi nhận đến nơi và đường về riêng sau C/D, không là điều kiện để E05 hoàn tất. NEXT_ROUTE khả dụng sau E05 khác với các alias route_sea_open/arrived_nhat_diem của E06. Nếu muốn D trở thành sự kiện hoặc điều kiện thoại riêng, cần quyết định nguồn và phương án chuyển đổi dữ liệu được duyệt tường minh; Task24 chưa thực hiện việc đó.
 
-## Ending philosophy và scope
+## Nguyên tắc và phạm vi kết chương
 
-Boss aftermath→player inspect/operate G→test outlet→quay A/B kiểm refuge/rạn→confirm E05→short optional payoff/recall→chọn ở lại hoặc đi I/E06. Player agency và local accepted steps không thế bằng passive cinematic. Preview FX có thể sớm, nhưng chỉ publish permanent map/collision/habitat/state sau durable acknowledgement. Postboss/E05/E06 chỉ trả unique sources của chính chúng, không duplicate E04 rewards.
+Sau boss → người chơi khảo sát/vận hành G → thử đầu thoát → quay A/B kiểm nơi trú/rạn → xác nhận E05 → đoạn kết/hồi tưởng ngắn tùy chọn → chọn ở lại hoặc đi I/E06. Quyền chủ động và các bước thao tác cục bộ đã được chấp nhận không bị thay bằng phim thụ động. FX xem trước có thể xuất hiện sớm, nhưng chỉ công bố thay đổi bền vững của map/va chạm/sinh cảnh/trạng thái sau xác nhận lưu bền vững. Các kết quả sau boss/E05/E06 chỉ cấp phần thưởng từ nguồn độc nhất của chính chúng, không cấp trùng thưởng E04.
 
-## 19deliverables
+## 19 tài liệu bàn giao
 
-- [Boss resolution](CHAPTER1_BOSS_RESOLUTION.md), [playable restoration](CHAPTER1_HYDROLOGICAL_RESTORATION.md), [zone before/after](CHAPTER1_RESTORATION_ZONE_MATRIX.md), [ecology aftermath](CHAPTER1_ECOLOGICAL_AFTERMATH.md).
-- [Quy finale](CHAPTER1_QUY_FINALE.md), [final memory/clue](CHAPTER1_FINAL_MEMORY.md), [completion conditions](CHAPTER1_COMPLETION_CONDITIONS.md), [post-restoration exploration](CHAPTER1_POST_RESTORATION_EXPLORATION.md).
-- [Phượng foreshadowing](CHAPTER1_PHOENIX_FORESHADOWING.md), [cross-chapter travel](CHAPTER1_CROSS_CHAPTER_TRAVEL.md), [dialogue/cinematic controls](CHAPTER1_FINALE_DIALOGUE.md), [events/state/rewards](CHAPTER1_FINALE_EVENTS_AND_REWARDS.md).
-- [Production scope](CHAPTER1_FINALE_PRODUCTION_SCOPE.md), [art handoff](../art/CHAPTER1_FINALE_ART_HANDOFF.md), [12entity data](../technical/CHAPTER1_FINALE_DATA_SPEC.md), [45future QA](../technical/CHAPTER1_FINALE_TEST_CASES.md), [decisions](TASK24_DECISIONS.md), [local audit](TASK24_CONSISTENCY_AUDIT.md).
+- [Xử lý kết quả boss](CHAPTER1_BOSS_RESOLUTION.md), [phục hồi bằng hành động](CHAPTER1_HYDROLOGICAL_RESTORATION.md), [vùng trước/sau](CHAPTER1_RESTORATION_ZONE_MATRIX.md), [hệ quả sinh thái](CHAPTER1_ECOLOGICAL_AFTERMATH.md).
+- [kết chương của Quy](CHAPTER1_QUY_FINALE.md), [ký ức/manh mối kết chương](CHAPTER1_FINAL_MEMORY.md), [điều kiện hoàn thành](CHAPTER1_COMPLETION_CONDITIONS.md), [khám phá sau phục hồi](CHAPTER1_POST_RESTORATION_EXPLORATION.md).
+- [Gợi báo Phượng](CHAPTER1_PHOENIX_FORESHADOWING.md), [di chuyển liên chương](CHAPTER1_CROSS_CHAPTER_TRAVEL.md), [quyền điều khiển trong thoại/cảnh](CHAPTER1_FINALE_DIALOGUE.md), [sự kiện/trạng thái/phần thưởng](CHAPTER1_FINALE_EVENTS_AND_REWARDS.md).
+- [Phạm vi sản xuất](CHAPTER1_FINALE_PRODUCTION_SCOPE.md), [bàn giao art](../art/CHAPTER1_FINALE_ART_HANDOFF.md), [12 thực thể dữ liệu](../technical/CHAPTER1_FINALE_DATA_SPEC.md), [45 ca QA tương lai](../technical/CHAPTER1_FINALE_TEST_CASES.md), [quyết định](TASK24_DECISIONS.md), [kiểm tra cục bộ](TASK24_CONSISTENCY_AUDIT.md).
 
-Chỉ tài liệu; không runtime/save/UI/map/art/production data hoặc Task25/PhaseIII-wide audit tự chạy. Design handoff đủ review không đồng nghĩa full ChapterI gameplay đã có.
+Chỉ tài liệu; không triển khai runtime/save/UI/map/art/dữ liệu sản xuất hoặc tự chạy Task25/audit toàn Phase III. Gói thiết kế đủ để bàn giao review không đồng nghĩa toàn Chương I đã có gameplay hoạt động.

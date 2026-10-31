@@ -4,7 +4,7 @@
 
 ## Hình, vật liệu và continuity
 
-Khối chính là mai thấp, đầu nêm/hàm rùa, bốn chi/vây có gốc đúng và đuôi lái. Tỷ lệ stage theo [forms](../chapter1/QUY_EVOLUTION_FORMS.md), không enlarge ảnh I thành II/III. Mai là mảng sinh học/kháng vật hóa có tổ chức, rãnh vào–ra gắn công năng; không áo giáp rời hay kim loại tự sinh affiliation Kim. Ngọc/jade/turquoise và xanh sâu là họ màu, không hex palette cuối. Ngà cho hàm/bụng, vàng tiết chế ở điểm nối; mắt và mặt đọc hơn bloom.
+Khối chính là mai thấp, đầu nêm/hàm rùa, bốn chi/vây có gốc đúng và đuôi lái. Tỷ lệ stage theo [các dạng](../chapter1/QUY_EVOLUTION_FORMS.md), không enlarge ảnh I thành II/III. Mai là mảng sinh học/kháng vật hóa có tổ chức, rãnh vào–ra gắn công năng; không áo giáp rời hay kim loại tự sinh affiliation Kim. Ngọc/jade/turquoise và xanh sâu là họ màu, không hex palette cuối. Ngà cho hàm/bụng, vàng tiết chế ở điểm nối; mắt và mặt đọc hơn bloom.
 
 Dùng pixel clusters theo mặt mai/vây, outline có chủ đích đủ tương phản trên nền nước sáng/tối; không noise vảy lẻ hoặc blur để giả chi tiết. Shading tuân nguồn sáng scene, phản quang nước là lớp tùy chọn không đảo anatomy. Body alpha rõ, không rectangle nền; màng/FX translucent phải tách để còn thấy chi và hurt region. Không sao chép creature concept bên ngoài hoặc coi việc có PNG là đã có quyền sử dụng.
 

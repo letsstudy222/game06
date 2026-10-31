@@ -4,33 +4,33 @@
 
 ## c1_phase_hold — Giữ mạch
 
-| Field | Phase contract |
+| Trường | Phase contract |
 | --- | --- |
-| Purpose | Giới thiệu guardian giữ hướng và giải nghĩa sweep/pressure/recovery |
-| Behavior | Lựa pattern đơn theo perceived position/LOS/source/cooldown, no instant punish mọi input |
-| Available actions | c1_keeper_sweep, c1_keeper_pressure, c1_keeper_brace; no split/current surprise |
-| Arena changes | Weak base current/cover/lane ổn định, receiver có cue nhưng không puzzle overload |
-| Movement changes | Boss reposition hữu hạn có path/turn clearance, player Quy I bơi/hãm kiểm soát |
-| Visual feedback | Forearms/vent/sector và recovery gaps, outline khi FX off |
-| Learning objective | Đọc lock vector, đổi lane/flank/chờ recovery rồi Chấn Mai |
-| Counterplay | Tất cả bằng movement/basic; guard là eligible optional, no stun/hidden affinity prerequisite |
-| Transition condition | Queue phaseII khi approved combatProgressBandRuleRef hoặc accepted trial-induced pressure-shift evidence đủ. Chưa numerical HP thresholds. HP0/outcome xử coordinator, không ép evolve/phase để hồi boss |
-| Persistence | Attempt-local phase/cursors; chưa chọn midfight resume, recommended reload abort/reset theo L16, no permanent phase event |
+| Mục đích | Giới thiệu guardian giữ hướng và giải nghĩa sweep/pressure/recovery |
+| Hành vi | Lựa pattern đơn theo perceived position/LOS/source/cooldown, no instant punish mọi input |
+| Hành động khả dụng | c1_keeper_sweep, c1_keeper_pressure, c1_keeper_brace; no split/current surprise |
+| Thay đổi đấu trường | Weak base current/cover/lane ổn định, receiver có cue nhưng không puzzle overload |
+| Thay đổi di chuyển | Boss reposition hữu hạn có path/turn clearance, player Quy I bơi/hãm kiểm soát |
+| Phản hồi hình ảnh | Forearms/vent/sector và recovery gaps, outline khi FX off |
+| Mục tiêu học | Đọc lock vector, đổi lane/flank/chờ recovery rồi Chấn Mai |
+| Cách đối phó | Tất cả bằng movement/basic; guard là eligible optional, no stun/hidden affinity prerequisite |
+| Điều kiện chuyển tiếp | Queue phaseII khi approved combatProgressBandRuleRef hoặc accepted trial-induced pressure-shift evidence đủ. Chưa numerical HP thresholds. HP0/outcome xử coordinator, không ép evolve/phase để hồi boss |
+| Lưu bền vững | Attempt-local phase/cursors; chưa chọn midfight resume, recommended reload abort/reset theo L16, no permanent phase event |
 
 ## c1_phase_rebalance — Đổi nhịp hồi
 
-| Field | Phase contract |
+| Trường | Phase contract |
 | --- | --- |
-| Purpose | Thay cách giữ/đổi dòng trên cơ chế đã biết, không chỉ nhanh/mạnh hơn |
-| Behavior | Giới thiệu local current band có clear gap, pressure so-le sau preview; vẫn compulsory recovery/miss windows |
-| Available actions | Giữ sweep/pressure/brace, thêm c1_keeper_recirculate và c1_keeper_split_release; không xả cùng offensive effects khi safe response mất |
-| Arena changes | Một current lane hữu hạn đổi pattern có warning/source/refuge, không permanent arena-wall change hoặc tắt return |
-| Movement changes | Body reposition quanh valid anchors, field compose/sweep một lần; no teleport/pin player |
-| Visual feedback | Vent/rãnh vào–ra đổi posture, same anatomy/size/element, phase cue tĩnh thay flash |
-| Learning objective | Đọc safe lane/order rồi counter basic, dùng optional receiver nếu chọn; no full3/II/III |
-| Counterplay | Movement-safe corridor/cover luôn có, split lane locked upfront và recovery đủ; field expire trước unsafe new pattern |
-| Transition condition | Accepted qualifying combat defeat hoặc approved trial proof + threat stopped/operation permission/refuge valid dẫn RESOLUTION_PENDING. Simultaneous defeat arbitration chưa approve, no callback victory-first |
-| Persistence | Same attempt/lock/HP/cooldown/status/hit ledgers, no phase reset debt/heal/regrant; E04 commit mới permanent outcome |
+| Mục đích | Thay cách giữ/đổi dòng trên cơ chế đã biết, không chỉ nhanh/mạnh hơn |
+| Hành vi | Giới thiệu local current band có clear gap, pressure so-le sau preview; vẫn compulsory recovery/miss windows |
+| Hành động khả dụng | Giữ sweep/pressure/brace, thêm c1_keeper_recirculate và c1_keeper_split_release; không xả cùng offensive effects khi safe response mất |
+| Thay đổi đấu trường | Một current lane hữu hạn đổi pattern có warning/source/refuge, không permanent arena-wall change hoặc tắt return |
+| Thay đổi di chuyển | Body reposition quanh valid anchors, field compose/sweep một lần; no teleport/pin player |
+| Phản hồi hình ảnh | Vent/rãnh vào–ra đổi posture, same anatomy/size/element, phase cue tĩnh thay flash |
+| Mục tiêu học | Đọc safe lane/order rồi counter basic, dùng optional receiver nếu chọn; no full3/II/III |
+| Cách đối phó | Movement-safe corridor/cover luôn có, split lane locked upfront và recovery đủ; field expire trước unsafe new pattern |
+| Điều kiện chuyển tiếp | Accepted qualifying combat defeat hoặc approved trial proof + threat stopped/operation permission/refuge valid dẫn RESOLUTION_PENDING. Simultaneous defeat arbitration chưa approve, no callback victory-first |
+| Lưu bền vững | Same attempt/lock/HP/cooldown/status/hit ledgers, no phase reset debt/heal/regrant; E04 commit mới permanent outcome |
 
 ## Transition safety
 

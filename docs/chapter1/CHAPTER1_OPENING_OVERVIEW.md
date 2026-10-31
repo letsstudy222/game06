@@ -12,7 +12,7 @@ Mục tiêu cảm xúc: từ một đáp ứng rất nhỏ, nhận ra có điề
 
 Im lặng có tín hiệu → đáp ứng đầu → dấu dòng đứt → vật mang Quy → giác quan từng phần và ký ức thiếu → chủ động cộng hưởng, cấu trúc sống đáp, Quy thức → tự bơi/hãm → thao tác cơ cấu cục bộ → có thể nhìn lại cùng tiếng vọng → đi ra rạn. Nhịp 09 của đề bài được điều chỉnh thành **đọc lại**, không dời ký ức đầu ra sau cơ thể và không tạo mảnh thưởng thứ hai.
 
-Ngân sách giả thuyết: khoảng 6–10 phút lượt đầu, tự điều chỉnh theo người chơi; thử đáp ứng đầu trong khoảng 5–15 giây. Đây là mục tiêu thử nghiệm chưa playtest, không thời hạn thất bại. Xem [beat sheet](OPENING_BEAT_SHEET.md).
+Ngân sách giả thuyết: khoảng 6–10 phút lượt đầu, tự điều chỉnh theo người chơi; thử đáp ứng đầu trong khoảng 5–15 giây. Đây là mục tiêu thử nghiệm chưa playtest, không thời hạn thất bại. Xem [bảng nhịp](OPENING_BEAT_SHEET.md).
 
 Phạm vi kết thúc ở cửa khám phá: E01 hoàn thành luyện tập và đưa ra mục tiêu E02; không hoàn thành E02, không phục hồi toàn mạng nước E05, không thêm boss, combat, oxygen, EXP, tiến hóa hoặc menu bộ ba. Một dạng Quy đủ đi hết tuyến. Không cần thông số HP, cost hay ngưỡng stage để hiểu thiết kế này.
 

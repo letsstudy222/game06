@@ -16,7 +16,7 @@ Hành động môi trường là **ứng viên tương tác theo ngữ cảnh**,
 
 ## Trình bày và khả năng tiếp cận
 
-Nhãn phím lấy từ mapping đang dùng; văn bản ở [dialogue](OPENING_DIALOGUE.md) dùng `{interact}`, `{move}`, `{brake}` như token kỹ thuật phải thay bằng nhãn tiếng Việt/mapping phù hợp, không để token thô lọt ra màn hình. Keyboard thử nghiệm hướng có thể kế thừa WASD/mũi tên; interact/brake chưa chốt. Mobile dùng action tương đương bằng vùng chạm/điều hướng ảo, không đòi hover, multi-touch hoặc bàn phím để qua tuyến; kích thước và layout chờ thiết kế UI riêng.
+Nhãn phím lấy từ mapping đang dùng; văn bản ở [thoại](OPENING_DIALOGUE.md) dùng `{interact}`, `{move}`, `{brake}` như token kỹ thuật phải thay bằng nhãn tiếng Việt/mapping phù hợp, không để token thô lọt ra màn hình. Keyboard thử nghiệm hướng có thể kế thừa WASD/mũi tên; interact/brake chưa chốt. Mobile dùng action tương đương bằng vùng chạm/điều hướng ảo, không đòi hover, multi-touch hoặc bàn phím để qua tuyến; kích thước và layout chờ thiết kế UI riêng.
 
 Mỗi prompt một ý, chữ tương phản trên nền yên, không chỉ màu. Remap cập nhật tức thời và không làm mất evidence. Cues thiết yếu có nhãn/hình; tắt âm vẫn đủ. Reduced motion giữ camera tĩnh/cắt cảnh, bỏ rung/nhấp nháy. Thiết bị yếu có thể bỏ bloom, particle, caustic và lớp nền; silhouette, hướng dòng và receiver vẫn hiện. Không có tuyên bố FPS hay thiết bị tối thiểu đã được test.
 

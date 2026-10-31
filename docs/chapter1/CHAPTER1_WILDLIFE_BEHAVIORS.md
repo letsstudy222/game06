@@ -2,7 +2,7 @@
 
 **PROPOSED E20-P05**, recipes tái dùng từ [F06 behavior views](../ecology/CREATURE_BEHAVIOR_CLASSIFICATION.md), không species enum hoặc AI code. Pattern/cognition/adaptation/assimilation/disposition là các trục khác nhau; không mỗi loài cần mọi state. X–y prototype là Q18/H19 recommendation dựa runtime, production plane/depth chưa approved; không full3D pathfinding.
 
-| archetypeId / role | Entry conditions | Movement logic | Detection / aggression | Reaction to player | Currents | Return to habitat | Performance expectation |
+| archetypeId / role | Điều kiện bắt đầu | Logic di chuyển | Phát hiện / mức gây hấn | Phản ứng với người chơi | Dòng chảy | Trở về sinh cảnh | Yêu cầu hiệu năng |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | hy_beh_drifter / passive drifter | Source/habitat viable, actor còn available | Drift có self-correction/pulse nhỏ theo anatomy | Local stimulus/overlap bounds, không global target; default no aggro | Giữ khoảng/co thân/rút, không chase sau mọi touch | Bounded force compose qua shared motion, không đẩy khỏi allowed volume | Rút refuge reachable, source lost thì queue relocation/fallback | Simple local query theo cadence policy; no full fluid simulation |
 | hy_beh_grazer / cautious grazer | Có food/substrate patch viable | Chọn điểm ăn gần, crawl/swim theo body plan | Threat local/LOS, no element-based aggression | Dừng ăn/né/co chân, optional warning nếu có defense | Ốc bám có tolerance, fish có vector; không cùng motion profile | Về source/refuge hợp lệ, no teleport while visible | Ít goals, không recompute global path mỗi frame |

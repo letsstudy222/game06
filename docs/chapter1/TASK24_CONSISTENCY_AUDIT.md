@@ -12,11 +12,11 @@ Task24 thêm19docs và append bốn navigation files, không đổi old S05/W07/
 
 | Nhóm | Paths |
 | --- | --- |
-| Master/lore/status | [GDD](../GAME_DESIGN_DOCUMENT.md), [decisions](../PROJECT_DECISIONS.md), [questions](../OPEN_QUESTIONS.md), [ChapterI](../story/CHAPTER_01_QUY.md), [ChapterII](../story/CHAPTER_02_PHUONG.md), [S05 E04–06](../story/STORY_IMPLEMENTATION_HANDOFF.md), [revelations](../story/NARRATIVE_REVELATION_MATRIX.md) |
+| Master/lore/status | [GDD](../GAME_DESIGN_DOCUMENT.md), [quyết định](../PROJECT_DECISIONS.md), [questions](../OPEN_QUESTIONS.md), [ChapterI](../story/CHAPTER_01_QUY.md), [ChapterII](../story/CHAPTER_02_PHUONG.md), [S05 E04–06](../story/STORY_IMPLEMENTATION_HANDOFF.md), [revelations](../story/NARRATIVE_REVELATION_MATRIX.md) |
 | World/rewards | [W07 architecture](../world/WORLD_STATE_ARCHITECTURE.md), [transitions](../world/WORLD_STATE_TRANSITIONS.md), [ChapterI states](../world/CHAPTER_01_WORLD_STATES.md), [ChapterII states](../world/CHAPTER_02_WORLD_STATES.md), [ecology coverage](../world/ECOLOGY_AND_SPAWN_STATES.md), [P15 consistency](../economy/REWARD_CONSISTENCY.md), [persistent data](../technical/PERSISTENT_WORLD_DATA_SPEC.md) |
 | Opening/Quy/Phượng | [O17 opening](CHAPTER1_OPENING_OVERVIEW.md), [R03 rules](../lore/RESONANCE_RULES.md), [ancestral memory](../lore/ANCESTRAL_MEMORY.md), [Quy progression](QUY_PROGRESSION.md), [environment](QUY_ENVIRONMENTAL_ABILITIES.md), [Phượng profile](../creatures/PHUONG_HOANG_NHAT_DIEM.md) |
 | H19/E20/Q21/S22 | [Graph](CHAPTER1_WORLD_GRAPH.md), [route](CHAPTER1_MAIN_ROUTE.md), [persistent environment](CHAPTER1_PERSISTENT_ENVIRONMENT.md), [ecology states](CHAPTER1_ECOLOGICAL_WORLD_STATES.md), [quest register](CHAPTER1_MAIN_QUEST_REGISTER.md), [quest world states](CHAPTER1_QUEST_WORLD_STATES.md), [memory placement](CHAPTER1_MEMORY_DISTRIBUTION.md), [side availability](CHAPTER1_SIDE_QUEST_AVAILABILITY.md) |
-| B23/assets/runtime | [Boss overview](CHAPTER1_BOSS_OVERVIEW.md), [phases](CHAPTER1_BOSS_PHASES.md), [retry/lock](CHAPTER1_BOSS_RETRY_AND_LOCK.md), [outcomes/rewards](CHAPTER1_BOSS_REWARDS_AND_STATES.md), [asset register](../ASSET_REFERENCE_REGISTER.md), [Q18 runtime gaps](../technical/QUY_RUNTIME_GAP_ANALYSIS.md) |
+| B23/assets/runtime | [Boss overview](CHAPTER1_BOSS_OVERVIEW.md), [phases](CHAPTER1_BOSS_PHASES.md), [thử lại/khóa](CHAPTER1_BOSS_RETRY_AND_LOCK.md), [outcomes/rewards](CHAPTER1_BOSS_REWARDS_AND_STATES.md), [asset register](../ASSET_REFERENCE_REGISTER.md), [Q18 runtime gaps](../technical/QUY_RUNTIME_GAP_ANALYSIS.md) |
 
 Phượng profile có approved broad ivory/gold/crimson direction nhưng no fresh image/playback/certification Task24; Phoenix web prototype ≠ complete ChapterII gameplay/map, dawn relation D24 still unresolved. B23 recommended Lam Giáp chưa final approved identity/art/HP/trial policy, Task24 không redesign hay promote.
 
@@ -45,7 +45,7 @@ Phượng profile có approved broad ivory/gold/crimson direction nhưng no fres
 | 19 | Đạt asset honesty | Requirements not files, world/creature/boss/finale/shore assets unverified/missing, no game-ready playback/device claims |
 | 20 | Đạt edit scope | Nineteen docs/four navigation appends only, existing code/art/map/UI/save/config unchanged |
 
-## Reconciliation và risks
+## Đối soát và rủi ro
 
 User conceptual A/B/C/D không tự bốn new events: S05/W07 already E05 aliases water_stable/refuge_preserved/chapter_01_complete. Giữ C/D cùng source/durable transaction, tách meanings/read models; future request split D cần explicit source decision/migration. No extra final dialogue/memory or E06 prerequisite E05 causing route cycle. Valid historical E05 source interpreted theo accepted source/payload version, not new catalog optional deficits; corrupt cache alias khác actual missing authority.
 
@@ -57,7 +57,7 @@ Boss close/health continuation/loadout/recovery/subdued outcome unchanged B23 pr
 
 **CONDITIONAL PASS cho documentation handoff; đủ các gói Task17–24 để được audit thiết kế khi có yêu cầu riêng. Chưa implementation/production freeze.** F24-U01–U07 còn source/predicate/alias/coverage, physical caps/geometry/camera/current, body/HP/lock recovery, W07/P15 adapter/atomicity/migration, species/art/source provenance, ChapterII scene/return anchors và narrative/cue/device budgets. PhaseIII-wide audit chưa thực hiện, Task25 chưa bắt đầu.
 
-[Overview](CHAPTER1_FINALE_OVERVIEW.md) linked19deliverables, nine restoration steps/two nine-zone matrices,25text cues/12conceptual entities/45future QA. Checks là static file/link/table/ID/state-dependency/owner-preservation, không gameplay/save/device/animation tests; future QA toàn bộ PLANNED/NOT EXECUTED. Current uncommitted docs cần preservation/Git handoff theo chỉ dẫn riêng, không tự commit/push.
+[Tổng quan](CHAPTER1_FINALE_OVERVIEW.md) linked19deliverables, nine restoration steps/two nine-zone matrices,25text cues/12conceptual entities/45future QA. Checks là static file/link/table/ID/state-dependency/owner-preservation, không gameplay/save/device/animation tests; future QA toàn bộ PLANNED/NOT EXECUTED. Current uncommitted docs cần preservation/Git handoff theo chỉ dẫn riêng, không tự commit/push.
 
 ## Kết quả xác thực tĩnh tại bàn giao
 

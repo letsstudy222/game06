@@ -1,6 +1,6 @@
 # Các sinh cảnh và ngôn ngữ môi trường
 
-**PROPOSED H19-P05.** Tám nhóm sinh cảnh, không tám scene bắt buộc. Nguồn roster [B12](../creatures/CREATURE_DESIGN_BIBLE.md)/[register](../creatures/CREATURE_ROSTER_REGISTER.md), placements chỉ giả thuyết tại [habitats](CHAPTER1_CREATURE_HABITATS.md). Không ảnh hoặc wildlife đã duyệt mới.
+**PROPOSED H19-P05.** Tám nhóm sinh cảnh, không tám scene bắt buộc. Nguồn roster [B12](../creatures/CREATURE_DESIGN_BIBLE.md)/[sổ đăng ký](../creatures/CREATURE_ROSTER_REGISTER.md), placements chỉ giả thuyết tại [sinh cảnh](CHAPTER1_CREATURE_HABITATS.md). Không ảnh hoặc wildlife đã duyệt mới.
 
 | Biome / zone | Màu/ánh sáng | Vật liệu / thực vật | Visibility / chuyển động nền | Wildlife type / âm môi trường | Khám phá / complexity |
 | --- | --- | --- | --- | --- | --- |
@@ -13,4 +13,4 @@
 | Rãnh áp sâu / F | Xanh sâu/tím xám, viền landmark trung tính | Vách dựng và nền ít cây, không palette “evil” | Low visibility có cue đường về, không black screen | Loài chịu áp chưa duyệt; âm nén tùy chọn | Advanced optional navigation có refuge, cao vì tolerance/clearance |
 | Habitat gián đoạn/phục hồi / G/I/B variant | Trước: tương phản vệt bồi; sau: ánh dịu phân vùng | Phù sa/rãnh nghẽn, outlet và mầm còn sống | Vệt trôi đổi hướng theo state, không đồng loạt rực sáng | Relocate sang refuge/secondary habitat theo W07, không tất cả neutral | So trước/sau, kiểm chứng dòng/habitat; cao ở binding/coverage |
 
-Bắt buộc đọc đường/hazard bằng hình nét, nhịp/shape và nhãn chứ không chỉ màu hoặc âm. Tắt optional particle/caustic/ambient fauna không thay geometry/objectives. Không gán một loài vào mọi biome chỉ vì tên Thủy. Phục hồi không xóa thảm tảo thích nghi hoặc mọi nơi cư trú ngoại lai. [Art handoff](../art/CHAPTER1_WORLD_ART_HANDOFF.md) chỉ định asset families và [currents](CHAPTER1_CURRENTS_AND_HAZARDS.md) giữ gameplay effects riêng với scenery.
+Bắt buộc đọc đường/hazard bằng hình nét, nhịp/shape và nhãn chứ không chỉ màu hoặc âm. Tắt optional particle/caustic/ambient fauna không thay geometry/objectives. Không gán một loài vào mọi biome chỉ vì tên Thủy. Phục hồi không xóa thảm tảo thích nghi hoặc mọi nơi cư trú ngoại lai. [Bàn giao art](../art/CHAPTER1_WORLD_ART_HANDOFF.md) chỉ định asset families và [currents](CHAPTER1_CURRENTS_AND_HAZARDS.md) giữ gameplay effects riêng với scenery.

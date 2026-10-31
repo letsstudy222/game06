@@ -2,7 +2,7 @@
 
 **PROPOSED F24-P03**, cùng [mq_05 source](CHAPTER1_MAIN_QUEST_REGISTER.md), [Quy environment](QUY_ENVIRONMENTAL_ABILITIES.md), [W07 transitions](../world/WORLD_STATE_TRANSITIONS.md). Sequence definition ID finale_c1_restore_sequence và c1_restore_* là draft content/step refs, không new evt_/quest/grant IDs. E05 source/title/prerequisites/write-set vẫn S05/W07.
 
-## Prerequisites và objects
+## Điều kiện tiên quyết và objects
 
 E01 practice/E02/E03/E04 dependency closure valid; E04 qualifying outcome durable/attempt closed; active exploration body usable và CAP_QUY_READ_FLOW/CAP_STRUCTURE_OPERATE I, safe route/placement/return. Không cần S2/III/Phượng/all memories/full3/rare optional species/stat reward. Boss field/test overlay B23 reset/retire theo close rules, không lấy temporary receiver test làm regional restoration fact.
 

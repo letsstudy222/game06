@@ -6,7 +6,7 @@
 
 | abilityId / tên tiếng Việt | Category / minimum stage ứng viên | Vai trò combat / activation | Môi trường / status |
 | --- | --- | --- | --- |
-| quy_basic / Chấn Mai | Basic / I | Active usable, startup→contact→recovery, giành khoảng gần | Không mở cửa tự động; không auto Wet/CC; [combat](QUY_COMBAT_DESIGN.md) |
+| quy_basic / Chấn Mai | Basic / I | Active usable, startup→contact→recovery, giành khoảng gần | Không mở cửa tự động; không auto Wet/CC; [chiến đấu](QUY_COMBAT_DESIGN.md) |
 | quy_mobility / Mượn Dòng | Movement / I | Có dòng hợp lệ và hướng/endpoint an toàn; tăng tốc hữu hạn rồi hãm, không i-frame mặc định | Mượn dòng đã có, không tạo nước trên đất; status không được cleanse |
 | quy_s1 / Vành Nước | Water control / I | Nhấn skill, cone trước ngắn không homing; đẩy/chậm mục tiêu eligible theo budget | Chỉ pressure receiver đã author; Wet/slow nếu definition gán rõ, không suy mọi hit gây cả hai |
 | quy_s2 / Mai Định Áp | Defense / II | Đủ unlock, facing/điểm tựa và sector hợp lệ, hold hữu hạn | Giữ vị trí trong nhịp áp hợp lệ; mitigation không all-hazard immunity; status modifier qua E09 |

@@ -1,6 +1,6 @@
 # Quest-to-system matrix — dùng chung kiến trúc Q21
 
-**PROPOSED S22-P08/P09**. Event refs evt_opt_* là proposed adapter definitions tại [world states](CHAPTER1_SIDE_QUEST_WORLD_STATES.md); actual production content còn gate. Existing S05 optional logical IDs/legacy grant names không đổi. [Q21 data spec](../technical/CHAPTER1_QUEST_DATA_SPEC.md), [W07](../world/WORLD_STATE_TRANSITIONS.md), [P15](../economy/REWARD_CONSISTENCY.md) giữ owners.
+**PROPOSED S22-P08/P09**. Event refs evt_opt_* là proposed adapter definitions tại [trạng thái thế giới](CHAPTER1_SIDE_QUEST_WORLD_STATES.md); actual production content còn gate. Existing S05 optional logical IDs/legacy grant names không đổi. [Q21 data spec](../technical/CHAPTER1_QUEST_DATA_SPEC.md), [W07](../world/WORLD_STATE_TRANSITIONS.md), [P15](../economy/REWARD_CONSISTENCY.md) giữ owners.
 
 | Quest/activity | Main dependency | Creature dependency | Interaction | World event/binding | Reward type/owner | Modules |
 | --- | --- | --- | --- | --- | --- | --- |

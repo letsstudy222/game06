@@ -1,6 +1,6 @@
 # Gating, lối tắt và chống kẹt
 
-**PROPOSED H19-P08.** Predicates ở [graph](CHAPTER1_WORLD_GRAPH.md) là authority connectivity; bảng này giải thích cue/repair, không tạo gate flags khác. Main dựa guaranteed Quy I, không optional species/full3/stage II/III.
+**PROPOSED H19-P08.** Predicates ở [đồ thị](CHAPTER1_WORLD_GRAPH.md) là authority connectivity; bảng này giải thích cue/repair, không tạo gate flags khác. Main dựa guaranteed Quy I, không optional species/full3/stage II/III.
 
 | Loại / cạnh | Biểu hiện đọc được | Điều kiện và giải pháp | Return/revisit invariant |
 | --- | --- | --- | --- |
