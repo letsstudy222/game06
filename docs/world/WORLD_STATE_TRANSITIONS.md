@@ -23,8 +23,13 @@ Thứ tự 5–7 là xây candidate, không chuỗi mutate độc lập. Không 
 | Story một lần | saveId + eventId + targetId (nếu scoped); cùng key trả committed result, không chạy reward manifest hiện tại |
 | Awakening | eventId + source_validated/form_committed/practice_complete; sub-grant `_form` và parent grant riêng như Task05 |
 | Lựa chọn mutable | operationId duy nhất cho yêu cầu được chấp nhận, expected owner revision; retry giữ cùng ID/payload, lựa chọn mới có ID mới |
-| Unique reward | stable grantId + recipientId trong save; không thêm contentVersion để lách dedupe; grant và recipient update cùng commit |
+| Unique reward — source-level claim | saveId + canonical event/encounter + targetId nếu scoped + reward component định danh một unique reward source; stable grantId tham chiếu identity này. Không đưa recipientId hoặc contentVersion vào source claim key để nhận lại cùng nguồn |
+| Recipient-level grant | stable source grantId + recipientId định danh phần payload phân bổ cho recipient trong cùng source claim; đây không phải một nguồn thưởng mới. Source claim, toàn bộ recipient grants và recipient updates cùng commit |
 | Repeatable | encounterId + occurrenceId được reset policy cho phép; story grant vẫn key độc nhất không theo occurrence |
+
+Hai cấp identity dùng **cùng RewardGrantLedger**: source-level receipt giữ resolved payload và tập recipients đã chốt; recipient-level grants là components của receipt đó. Trước khi áp delta cho recipient phải tra source claim: nếu nguồn đã committed thì trả lại toàn bộ committed result, không cấp tiếp cho recipient mới do đổi dạng hoặc gửi lại request. `UniqueRewardClaim` chỉ là projection/lookup của source-level receipt, không ledger/claimed flag có authority riêng. Tên `canonicalGrantKey`/`canonicalSourceRewardKey` trong đặc tả progression cùng tham chiếu source identity; `grantId + recipientId` chỉ là dedupe ở cấp phân bổ, không thay source-level dedupe. Quy tắc này làm rõ same-owner/atomic-grant proposal hiện có, không quyết định EXP shares hoặc recipients mới.
+
+Content/schema/payload versions là metadata để pin định nghĩa và migration, không tự tạo logical reward identity mới. Rename/alias giữ claim history; replay cùng source lookup receipt thay vì chạy manifest phiên bản mới. Việc diễn giải source-level claim và recipient-level grants phải nhất quán với same ledger/transaction contract, không tách hai writer độc lập.
 
 Random reward nếu sau này duyệt phải chốt payload/seed trong candidate và retry cùng kết quả; không roll lại khi animation hay mạng chậm. Không dùng timestamp/notification order làm thứ tự nội dung.
 
