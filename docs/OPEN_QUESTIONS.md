@@ -101,3 +101,18 @@ Task10 chưa bắt đầu: dual resistance composition/damage bonus/primary-seco
 ## Task13 — evolution decisions còn mở
 
 [Evolution overview](evolution/EVOLUTION_SYSTEM_OVERVIEW.md), [V13-P01–P13/U01–U10](evolution/TASK13_DECISIONS.md) và [audit/delivery map](evolution/TASK13_CONSISTENCY_AUDIT.md) giữ Model D recommendation,12stage supplements tại [C04 matrix](creatures/SACRED_EVOLUTION_MATRIX.md), visual/gameplay/memory/loadout/UI/asset contracts, eight conceptual entities và22future QA cases. Safe explicit transition và state/config freeze vẫn PROPOSED, không phê duyệt HP/resources/recovery/catch-up/storage hoặc nguyên tố mới; exact curves/thresholds để Task15. Sacred4×3/approved visual identity/stable IDs và D41 no-three early giữ; A08-05 trigger/capability/snapshot/retry còn mở. Existing E09/E10/K11/B12 proposals và PhaseI PARTIAL không đổi. Task14 chưa bắt đầu; câu Task13 chưa bắt đầu ở handoff Task12 là mốc lịch sử.
+
+
+## Task14 — combat decision queue, không tự đóng Q
+
+[C14-U01–U10](combat/TASK14_DECISIONS.md) nối Q07/Q09/Q10/Q15–18: plane/swim/depth/clearance; cooldown/defense/spend; HP/incapacity/recovery; damage/input ordering/cancel markers; actual stage clips/geometry; switch/status ownership; boss trigger/snapshot/retry/outcome; focus/remap/accessibility; storage/ack/migration/performance; numeric tuning. Recommendation cooldown A và HP riêng A/brace nhỏ là PROPOSED, không số final hoặc physical-model approval. D41 no mandatory three đã giải, không hỏi lại gate đó. [Quy combat demo](combat/COMBAT_VERTICAL_SLICE.md) không cần boss/ba forms, nhưng chưa đủ toàn D40 resonance/persistence; [audit](combat/TASK14_CONSISTENCY_AUDIT.md) ghi runtime mismatches/gates. Không cosmic-origin answer, không runtime implementation hoặc full audit09–16. Task15 chưa bắt đầu.
+
+
+## Task15 — progression và reward approvals còn mở
+
+[P15-U01–U10](progression/TASK15_DECISIONS.md) nối Q09/Q10/Q11/Q13/Q16/Q17: distribution/meaningful contribution/rounding, curves/cap/overflow/migration, stat/HP/pending benefits, mastery/evolution gates, foundation milestones, source budgets/occurrences/claims, optional RNG/alternatives, resource/inventory/protection/overflow, writer/storage/ack/error/loss budget và Quy implementation scope. D participation+foundation/segmented curve/objective mastery/proof-first economy là PROPOSED, không numbers final; không reopen D41 hoặc tự approve C14/V13/R03. [Minimal progression demo](progression/FIRST_PLAYABLE_PROGRESSION.md) và [audit](progression/TASK15_CONSISTENCY_AUDIT.md) giữ dependency gaps. Task16/full audit09–16 chưa bắt đầu.
+
+
+## Task16 — loadout approvals và audit boundary
+
+[L16-U01–U10](loadout/TASK16_DECISIONS.md) nối Q07–10/Q15–18: minimum-one/detailed early entry, eligibility/uniqueness, context edit, cancel/buffer/placement/motion, HP/manifestation/recovery/stability, exact lock/snapshot, retry/invalid checkpoints/reload, safe evolution/config benefits, writer/ack/migration/loss budget, logical input/UI/device rules. D41 đã xác nhận no-compulsorythree early; **không hạ baseline này hoặc tự chốt toàn early-entry policy**. [DR01/update-after-approval plan](loadout/BOSS_ENTRY_AND_RETRY.md) giữ conflict/source scope; HP16B=C14/P15A chưa chosen. [Quy-only slice](loadout/FIRST_PLAYABLE_LOADOUT.md), [audit](loadout/TASK16_CONSISTENCY_AUDIT.md) giữ missing implementation/assets/save gates. Full PhaseII audit/Task17 chưa bắt đầu.

@@ -144,3 +144,18 @@ Origin/ultimate culprit/voluntary intervention là author mysteries chưa chốt
 ## Task13 — evolution design handoff
 
 [Evolution overview](evolution/EVOLUTION_SYSTEM_OVERVIEW.md), [V13-P01–P13/U01–U10](evolution/TASK13_DECISIONS.md) và [audit/delivery map](evolution/TASK13_CONSISTENCY_AUDIT.md) giữ Model D recommendation,12stage supplements tại [C04 matrix](creatures/SACRED_EVOLUTION_MATRIX.md), visual/gameplay/memory/loadout/UI/asset contracts, eight conceptual entities và22future QA cases. Safe explicit transition và state/config freeze vẫn PROPOSED, không phê duyệt HP/resources/recovery/catch-up/storage hoặc nguyên tố mới; exact curves/thresholds để Task15. Sacred4×3/approved visual identity/stable IDs và D41 no-three early giữ; A08-05 trigger/capability/snapshot/retry còn mở. Existing E09/E10/K11/B12 proposals và PhaseI PARTIAL không đổi. Task14 chưa bắt đầu; câu Task13 chưa bắt đầu ở handoff Task12 là mốc lịch sử.
+
+
+## Task14 — combat design handoff
+
+[Combat overview](combat/COMBAT_SYSTEM_OVERVIEW.md), [C14 decisions](combat/TASK14_DECISIONS.md), [local audit](combat/TASK14_CONSISTENCY_AUDIT.md) và [Quy combat demonstrator](combat/COMBAT_VERTICAL_SLICE.md) cụ thể hóa combat-side contracts. C14-P01–P16 đều PROPOSED: phase/cancel/debt, cooldown A cho combat slice, HP riêng theo R03, directional brace, deterministic damage/dedupe, AI/telegraphs và switch/boss boundary. Six-element/D41/independent progression giữ; R03/E09/E10/V13/W07 proposals không tự approved. Actual Canvas x–y/hover khác underwater production model còn C14-U01; 15 data contracts reuse owners và 32 QA cases chưa runtime-tested. First combat demo là subset D40, không thay resonance/persistent-progress requirements. PhaseI PARTIAL, Task15 chưa bắt đầu; Task13 handoff status là lịch sử.
+
+
+## Task15 — progression và economy handoff
+
+[Progression overview](progression/PROGRESSION_SYSTEM_OVERVIEW.md), [P15 register](progression/TASK15_DECISIONS.md), [reward consistency](economy/REWARD_CONSISTENCY.md) và [local audit](progression/TASK15_CONSISTENCY_AUDIT.md) nối cùng R03/C04/V13/C14/W07 owners. Preferred EXP D participation+milestone foundation là alternative PROPOSED cho R03 active-only, không supersede accepted rule; normalized one-to-three budget/no passive reserve share. Shared segmented curve/bounded growth/objective mastery/minimal ChapterI proof-first resources/atomic grants đều chưa approved; không final levels/curves/drop rates/material costs. 13 data contracts/34future cases, Quy progression demo subset D40, combat/save/asset readiness vẫn gated. PhaseI PARTIAL; Task16 chưa bắt đầu, Task14 handoff “Task15 chưa bắt đầu” là historical.
+
+
+## Task16 — loadout và PhaseII design handoff
+
+[Overview](loadout/LOADOUT_SYSTEM_OVERVIEW.md), [L16 register](loadout/TASK16_DECISIONS.md), [early-entry DR01](loadout/BOSS_ENTRY_AND_RETRY.md) và [local audit](loadout/TASK16_CONSISTENCY_AUDIT.md) chi tiết hóa cùng R03 loadout/transform/lock owner. D05/06/07/D41 giữ: up-to-three/one body/member lock+switchwithin/species progression/no compulsorythree early. Recommended min-one/empty snapshot/entry/retry package vẫn pending, không rewrite history. Short switch+buffer/debt, individual HP (Task16B=C14A), safe geometry/stage/config/collection/save/input contracts đều PROPOSED.13entities/18invariants/44future cases, Quy milestone không boss/multiple production forms. Task16 hoàn tất tài liệu được giao của PhaseII09–16, không comprehensive audit/freeze/implementation readiness; Task17 chưa bắt đầu, PhaseI PARTIAL không đổi.

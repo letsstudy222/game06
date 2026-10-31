@@ -111,3 +111,18 @@ Bắt đầu tại [Master GDD](docs/GAME_DESIGN_DOCUMENT.md), [completion audit
 ## Task13 — Creature evolution system
 
 [Overview](docs/evolution/EVOLUTION_SYSTEM_OVERVIEW.md), [decision register](docs/evolution/TASK13_DECISIONS.md) và [audit/file mapping](docs/evolution/TASK13_CONSISTENCY_AUDIT.md): Model D recommendation, twelve Sacred stages ở C04 source, explicit safe transition đề xuất, data/save/state contracts và22future cases. Chỉ tài liệu, không game/UI/art/manifest changes; thresholds/policies mới chưa approved. Không bắt đầu Task14; Task12 handoff nói Task13 chưa bắt đầu là lịch sử.
+
+
+## Task14 — Real-time combat system design
+
+[Combat overview](docs/combat/COMBAT_SYSTEM_OVERVIEW.md), [decision register](docs/combat/TASK14_DECISIONS.md) và [audit/delivery index](docs/combat/TASK14_CONSISTENCY_AUDIT.md): action states, abilities/resources, movement/defense, damage/geometry/feedback, enemy AI, form switching/boss/recovery, Quy combat demonstrator, 15 conceptual data contracts và 32 future QA cases. Chỉ tài liệu; resource A/HP riêng/brace/switch policies đều PROPOSED, không runtime/art/UI changes. D41 no-three early giữ, PhaseI PARTIAL, Task15 chưa bắt đầu. Các câu “Task14 chưa bắt đầu” ở handoff Task13 là mốc lịch sử.
+
+
+## Task15 — Progression, mastery và reward economy
+
+[Overview](docs/progression/PROGRESSION_SYSTEM_OVERVIEW.md), [decisions](docs/progression/TASK15_DECISIONS.md) và [audit/delivery index](docs/progression/TASK15_CONSISTENCY_AUDIT.md): EXP distribution D participation+milestone foundation, shared segmented curve, bounded growth/mastery objectives, V13 integration, sourced rewards/loot/minimal resources, atomic grant/inventory ownership; 13 conceptual contracts và34future QA cases. Tất cả mechanics mới PROPOSED, không numeric balance/code/data/save/UI/art changes. Task14 docs được giữ; các câu “Task15 chưa bắt đầu” là historical handoff. PhaseI PARTIAL, Task16 chưa bắt đầu.
+
+
+## Task16 — Three-form loadout, switching và boss locks
+
+[Loadout overview](docs/loadout/LOADOUT_SYSTEM_OVERVIEW.md), [decisions](docs/loadout/TASK16_DECISIONS.md) và [local audit/delivery](docs/loadout/TASK16_CONSISTENCY_AUDIT.md): canonical membership/active projection, edit/action matrices, single-body switch, HP ownership, boss lifecycle/entry/retry, evolution/collection/UI contracts, Quy-only milestone;13entities/18status-qualified invariants/44future QA cases. D41 no-three count constraint giữ CONFIRMED, min-one/detailed early entry package vẫn PROPOSED/UNRESOLVED. HP Task16B-individual tương ứng C14/P15A, không tự approve. Chỉ docs; không code/save/UI/assets changes. Task16 kết dải thiết kế09–16, full PhaseII audit và Task17 chưa bắt đầu.
