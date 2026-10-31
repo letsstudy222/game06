@@ -106,3 +106,8 @@ Bắt đầu tại [Master GDD](docs/GAME_DESIGN_DOCUMENT.md), [completion audit
 ## Task12 — Creature Design Bible và production standard
 
 [Bible](docs/creatures/CREATURE_DESIGN_BIBLE.md), [roster](docs/creatures/CREATURE_ROSTER_REGISTER.md), [decisions](docs/creatures/TASK12_DECISIONS.md) và [audit/file mapping](docs/creatures/TASK12_CONSISTENCY_AUDIT.md): giải phẫu/silhouette/vận động/sinh thái/animation standards, verified vs external concepts, overlap đánh giá và data hand off. Chỉ tài liệu; đã duyệt art/game/UI giữ nguyên, new roster/production tiers chưa tự đã duyệt. Không bắt đầu Task 13; “Task12 chưa bắt đầu” ở historical Task 11 hand off không là dòng status.
+
+
+## Task13 — Creature evolution system
+
+[Overview](docs/evolution/EVOLUTION_SYSTEM_OVERVIEW.md), [decision register](docs/evolution/TASK13_DECISIONS.md) và [audit/file mapping](docs/evolution/TASK13_CONSISTENCY_AUDIT.md): Model D recommendation, twelve Sacred stages ở C04 source, explicit safe transition đề xuất, data/save/state contracts và22future cases. Chỉ tài liệu, không game/UI/art/manifest changes; thresholds/policies mới chưa approved. Không bắt đầu Task14; Task12 handoff nói Task13 chưa bắt đầu là lịch sử.

@@ -48,3 +48,8 @@ XP curve, level cap, stage thresholds và milestone cụ thể; số/mức skill
 ## Liên kết Task 04
 
 [Ma trận 12 dạng](../creatures/SACRED_EVOLUTION_MATRIX.md) và hồ sơ species giữ anatomy/stage deltas; [abilities](SACRED_CREATURE_ABILITIES.md) giữ tên/ID và minimum stage ứng viên. Tên, gates chi tiết và balance vẫn PROPOSED; minimum stage không tự grant mọi skill. Quy tắc progression/formId và hoãn benefits khi boss ở đây giữ nguyên trạng thái đề xuất Task 03.
+
+
+## Task13 — evolution system handoff, vẫn PROPOSED
+
+[Overview](../evolution/EVOLUTION_SYSTEM_OVERVIEW.md), [Model D recommendation](../evolution/EVOLUTION_TRIGGER_MODELS.md), [safe loadout transition](../evolution/EVOLUTION_AND_LOADOUT.md) và [V13 decisions](../evolution/TASK13_DECISIONS.md) chi tiết hóa R03-P09/C04/E10 mà không tự duyệt. Level/skill/evolution/mastery khác nhau; đạt eligibility không same as committed stage. Recommendation ghi proof trong combat, thực hiện ở safe explicit boundary ngoài boss; exact policy/HP/cooldown/cost/catch-up và numeric thresholds vẫn cần approval, values để Task15. [State/data contracts](../technical/EVOLUTION_STATE_MACHINE.md) reuse CreatureProgression/RewardGrantLedger hiện hữu, không XP bar hoặc currentStage copy ở mỗi slot. [C04 matrix bổ sung Task13](../creatures/SACRED_EVOLUTION_MATRIX.md) vẫn nguồn đủ12forms. D41 no-three early giữ, A08-05 remaining entry/snapshot/retry không giải ngầm.
