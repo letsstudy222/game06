@@ -1,0 +1,16 @@
+# Các sinh cảnh và ngôn ngữ môi trường
+
+**PROPOSED H19-P05.** Tám nhóm sinh cảnh, không tám scene bắt buộc. Nguồn roster [B12](../creatures/CREATURE_DESIGN_BIBLE.md)/[register](../creatures/CREATURE_ROSTER_REGISTER.md), placements chỉ giả thuyết tại [habitats](CHAPTER1_CREATURE_HABITATS.md). Không ảnh hoặc wildlife đã duyệt mới.
+
+| Biome / zone | Màu/ánh sáng | Vật liệu / thực vật | Visibility / chuyển động nền | Wildlife type / âm môi trường | Khám phá / complexity |
+| --- | --- | --- | --- | --- | --- |
+| Rạn phát sáng / B | Xanh ngọc dịu, điểm sáng lệch để dẫn đường | San hô phân mảng và đá/cát, không phủ kín route | Tầm nhìn khá, polyps mở/khép chậm, hạt trôi thưa | Organisms bám nền/cá nhỏ candidate, chủ yếu non-hostile; nước/rung đá nhẹ | Observation vòng nhỏ, landmark rõ; thấp–vừa vì animation habitat |
+| Thảm tảo / D | Xanh olive sâu/ngà, ánh lọt khe | Tảo dài và chỗ bám, xen mảng cát | Occlusion tán giới hạn, đuôi tảo theo vector không che receiver | Cá bám/ốc candidate; tiếng lá nước tùy chọn | Theo dấu kiếm ăn/neo, không combat bắt buộc; vừa vì occlusion/AI |
+| Đáy cát / B/D/refuges | Cát sáng tiết chế, tương phản mai Quy | Vân cát lớn, vụn vỏ không loot mặc định | Rõ, ít hạt; ripple chỉ cosmetic | Wildlife nghỉ/tìm mồi chưa assign approved species; âm yên | Chỗ hãm/đọc journal/safe return; thấp |
+| Kênh đá / C | Đá xám xanh, đường nước sáng theo mép | Vách đá và rãnh mòn, cây thưa | Vector rõ bằng lá/nét, không dòng noise toàn màn | Wildlife tránh lane mạnh candidate; âm chảy có caption cue | Chọn lane/refuge/receiver; vừa–cao vì motion/collision |
+| Hang phát quang / E alcove | Điểm ngọc ít, silhouette cột rõ | Đá ẩm và sinh vật bám không định danh | Xa tối nhưng tuyến chính rõ, hạt chậm | Organisms chịu tối candidate; cộng hưởng đá ngắn | Side clue/memory nếu author, không giấu objective trong tối; vừa |
+| Phế tích / A/E/G/H | Đá xanh tối/ngà, vàng trầm hiếm ở dấu chức năng | Mảng đá ghép, rãnh cấp–hồi và khoáng bảo tồn | Occluder roof/lớp xa không chắn cue bắt buộc, dòng theo rãnh | Nơi trú có wildlife khác tùy phase; tiếng áp/rãnh | Đọc cơ cấu/provenance, persistent layers; cao ở state/geometry |
+| Rãnh áp sâu / F | Xanh sâu/tím xám, viền landmark trung tính | Vách dựng và nền ít cây, không palette “evil” | Low visibility có cue đường về, không black screen | Loài chịu áp chưa duyệt; âm nén tùy chọn | Advanced optional navigation có refuge, cao vì tolerance/clearance |
+| Habitat gián đoạn/phục hồi / G/I/B variant | Trước: tương phản vệt bồi; sau: ánh dịu phân vùng | Phù sa/rãnh nghẽn, outlet và mầm còn sống | Vệt trôi đổi hướng theo state, không đồng loạt rực sáng | Relocate sang refuge/secondary habitat theo W07, không tất cả neutral | So trước/sau, kiểm chứng dòng/habitat; cao ở binding/coverage |
+
+Bắt buộc đọc đường/hazard bằng hình nét, nhịp/shape và nhãn chứ không chỉ màu hoặc âm. Tắt optional particle/caustic/ambient fauna không thay geometry/objectives. Không gán một loài vào mọi biome chỉ vì tên Thủy. Phục hồi không xóa thảm tảo thích nghi hoặc mọi nơi cư trú ngoại lai. [Art handoff](../art/CHAPTER1_WORLD_ART_HANDOFF.md) chỉ định asset families và [currents](CHAPTER1_CURRENTS_AND_HAZARDS.md) giữ gameplay effects riêng với scenery.
