@@ -1,0 +1,17 @@
+# Quan hệ liên loài và hành vi quan sát
+
+**PROPOSED E20-P03.** Ma trận sau là thiết kế giả thuyết, không confirmed history/biology. Refs thuộc [register](CHAPTER1_SPECIES_REGISTER.md), zone topology thuộc Task19. Optional relevance không mint quest/event mới; E02/E03/E05 chỉ consumer proof khi rules/manifest được author, không hoàn thành tự động từ proximity.
+
+| Hai bên / loại quan hệ | Context | Hành vi thấy được | Player interaction / optional relevance | World-state effect |
+| --- | --- | --- | --- | --- |
+| Sứa–polyp / competition | B cùng hạt nguồn nhưng sứa ở cột nước, polyp ở substrate | Pulse drift tới vùng hạt, tua bám mở ở luồng phù hợp, không combat hai loài bắt buộc | Quan sát khác niche; thử đưa dòng nhẹ qua cả hai, không chọn diệt một bên | Disruption làm source phân bố lệch; E05 giữ lane và substrate viable |
+| Ốc–cá chép / grazing competition nhẹ | B/D rìa tảo đủ nền bám và nước yên | Ốc đi vệt nhỏ, đàn cá giữ khoảng/quay vòng khác tầng quan sát | Đọc source patches/migration ngắn, không giảm population thật để giải puzzle | Sau E05 tăng route tới mảng khác, không buff loot spawn |
+| Tảo–cá ngựa / environmental dependency | D có anchor trong lane yên | Neo–thả theo nhịp, thiếu chỗ bám thì rút | Giúp trả dòng về mức hợp lệ hoặc mở chỗ bám nếu objective author; không bắt làm pet key | Giữ secondary B/D trước patch, không relocation vào current mạnh |
+| Polyp–ốc / habitat-sharing | B/D substrate vừa đủ | Một bên bám nhận hạt, một bên crawl, khoảng cách tránh che cue | Quan sát footprint và nơi trú, không full symbiosis lore | Patch habitat phải xét cả hai requirements, không xóa substrate vì “sạch rạn” |
+| Đuối–fauna rất nhỏ generic / predator-prey candidate | C sand pocket ngoài main refuge | Lượn thấp/rình rồi kiếm ăn ngắt quãng, không đuổi player toàn map | Nhìn dấu rình/chọn bypass hoặc encounter nếu approved; không required kill food chain | E05 vẫn predator, chỉ đổi nơi source/hide hợp lệ |
+| Đuối–người chơi / territorial conflict | C/B nơi trú được author, không A/H prep | Warning hình/hướng rồi cơ hội rút; short chase trong bounds nếu xâm phạm | Rút/giữ khoảng hoặc combat bounded C14; không bắt giết để E02 collection | E05 có thể giảm stress/context, không neutralize mọi cá thể |
+| Cá chép–sứa / neutral coexistence | B lane giao nhưng khác nhịp/tầng cue | Đàn tránh chuông/tua, không chase hoặc telefrag nhau | Theo hướng current và body-plan distinction; optional observation | Dòng mới cho đổi route, không merged species/XP |
+| Filter feeders–microorganisms / food dependency | B/E nguồn hạt có provenance | Tua/chuông mở theo nguồn, glow chỉ cue | Khôi phục nhánh/habitat nếu activity author, không feeding currency | Không auto spawn prey vô hạn hoặc drops khi mở/tắt dòng |
+| Quy–habitats / mutual support gián tiếp | E/G thao tác hồi lưu giữ refuge | Fauna quay nhịp ăn/neo khi điều kiện sống phù hợp | Kiểm chứng E05 từ nhiều nguồn, không “thần thú ra lệnh muôn loài” | Permanent facts/projection W07, no global allegiance/harmless flag |
+
+Các cặp còn lại chưa cần quan hệ đặc biệt; neutral/unknown tốt hơn bịa đầy mọi ô. “Mutual support” trong gói này là điều kiện habitat có lợi, không khẳng định symbiosis hay giao tiếp người giữa các loài. Không bắt AI sim mọi cạnh food web; chọn ít observable cues dùng trong content slice. [Food web](CHAPTER1_FOOD_WEB.md) là network chức năng, matrix này là context thiết kế, không hai state owners.
