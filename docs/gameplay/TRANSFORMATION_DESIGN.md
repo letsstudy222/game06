@@ -67,3 +67,8 @@ Nhóm tương tác khác nhau có thể dùng cùng phím contextual sau này nh
 ## Task09 — current early-entry constraint
 
 [Story S05-P02](../story/MAJOR_CONFLICTS_AND_BOSSES.md) đã khuyến nghị entry sớm với empty slots. Task09/D41 nay xác nhận không mandatory three-member/three-element gate, nên không tiếp tục coi full-three là alternative hợp lệ để chặn boss đầu. Đây là source mới explicit, không approval toàn bộ S05-P02. Selected membership vẫn khóa theo D06; snapshot cả empty, entry trigger, stage/config snapshot, atomic/reload/defeat và resource mechanics khác vẫn PROPOSED. [Task09 decisions](../elements/TASK09_DECISIONS.md) ghi phạm vi cập nhật và không tự chọn recovery model.
+
+
+## Task16 — detailed loadout contracts, vẫn PROPOSED
+
+[Overview](../loadout/LOADOUT_SYSTEM_OVERVIEW.md), [management](../loadout/LOADOUT_MANAGEMENT.md), [switch](../loadout/FORM_SWITCHING_RULES.md), [lock](../loadout/BOSS_LOADOUT_LOCK.md) và [L16 decisions](../loadout/TASK16_DECISIONS.md) mở rộng **cùng** EquippedFormLoadout/TransformationState/EncounterLockState R03, không new membership/HP/XP/active store. Active-first slots là display projection, immutable locked member identities khác active selection. [DR01](../loadout/BOSS_ENTRY_AND_RETRY.md) giữ D41 count constraint confirmed nhưng minimum-one/detailed entry/snapshot/retry pending và plan đồng bộ source sau approval. Same individual HP recommendation mang label B ở Task16/A ở C14, chưa approval. No automatic B+C/resource/geometry/config/health/save policy confirmation; không gameplay/UI/art changes.
