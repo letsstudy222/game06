@@ -2,6 +2,12 @@
 
 **PROPOSED Q18-P09**, không ảnh/atlas/clip được tạo trong Task18. [C04 anatomy](../creatures/QUY_HAI_UYEN.md), [animation standard](CREATURE_ANIMATION_REQUIREMENTS.md), [visual standards](../creatures/CREATURE_VISUAL_STANDARDS.md), [asset register](../ASSET_REFERENCE_REGISTER.md) giữ hướng và provenance. Không tìm thấy Art Bible tên riêng trong tài liệu đã kiểm; dùng các nguồn hiện hữu này, không giả định có art bible hoặc ảnh Quy đã duyệt.
 
+## Chú giải phạm vi Task33 — 01/11/2026
+
+Câu chưa tìm thấy Art Bible ở trên ghi nhận thời điểm Task18. Nay xem [Art Bible](ART_BIBLE_MASTER.md) và [brief Quy I](QUY_STAGE1_TASK34_HANDOFF.md). Đề xuất bốn hướng blocking bên dưới giữ **PROPOSED Q18-P09** như lịch sử, không là target art mới: yêu cầu tám hướng hiện đã **CONFIRMED theo chỉ dẫn người dùng**; fallback ít hướng cho S0 vẫn cần duyệt riêng, không đổi tên thành full tám hướng. Không tự đánh dấu đề xuất chưa từng được duyệt là SUPERSEDED.
+
+Bảng coverage gốc là nhu cầu eventual Chapter I và các mốc tích hợp, không minimum S0. [Chuẩn animation33](EIGHT_DIRECTION_ANIMATION_STANDARDS.md) tách S0 idle/swim và phản hồi tương tác khỏi S1 combat/cộng hưởng và full chapter. Anatomy, palette, kích thước, frame-count và chính sách combat gốc vẫn **PROPOSED/UNRESOLVED**; không được phê duyệt qua chú giải này. Không thay atlas Phượng hoặc tạo asset Quy.
+
 ## Hình, vật liệu và continuity
 
 Khối chính là mai thấp, đầu nêm/hàm rùa, bốn chi/vây có gốc đúng và đuôi lái. Tỷ lệ stage theo [các dạng](../chapter1/QUY_EVOLUTION_FORMS.md), không enlarge ảnh I thành II/III. Mai là mảng sinh học/kháng vật hóa có tổ chức, rãnh vào–ra gắn công năng; không áo giáp rời hay kim loại tự sinh affiliation Kim. Ngọc/jade/turquoise và xanh sâu là họ màu, không hex palette cuối. Ngà cho hàm/bụng, vàng tiết chế ở điểm nối; mắt và mặt đọc hơn bloom.
