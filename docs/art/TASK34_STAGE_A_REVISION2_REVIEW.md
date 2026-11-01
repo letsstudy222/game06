@@ -1,5 +1,7 @@
 # Task34 Stage A — Revision2: cùng một dòng Linh Quy qua ba bậc
 
+**Cập nhật:** hướng concept/bộ ảnh thứ hai đã được người dùng duyệt về nguyên tắc. [Lượt pixel study cuối StageA](TASK34_STAGE_A_FINAL_PIXEL_REVIEW.md) là gói hiện hành; không phê duyệt production hoặc Task34B.
+
 01/11/2026 (Asia/Saigon). **READY_FOR_USER_REVIEW**, chưa duyệt hình cuối/StageB. Baseline audit b2c84c1943dd22c04e43ed29deed15dd9902ee3b trên work đã được kiểm trên origin/work. [Audit](../reviews/POST_TASK33_COMPREHENSIVE_AUDIT.md) cho phép StageA; không mở lại audit01–33. Bản đầu được giữ để đối chiếu, R2 là gói hình hiện hành.
 
 ## Phạm vi được giao và trạng thái
