@@ -7,7 +7,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "test": "node tests/island.test.mjs && node tests/ui.test.mjs && node tests/sample.test.mjs && node tests/assets.test.cjs && node tests/renderer.test.mjs && node tests/map.test.mjs && node tests/input.test.mjs",
+    "test": "node tests/island.test.mjs && node tests/ui.test.mjs && node tests/sample.test.mjs && node tests/assets.test.cjs && node tests/renderer.test.mjs && node tests/map.test.mjs && node tests/input.test.mjs && node tests/persistence.test.mjs",
     "test:browser": "node tests/island.browser.cjs",
     "art:dawn": "node scripts/build-dawn-environment.cjs",
     "art:build": "node scripts/build-tileset.cjs",
@@ -22,7 +22,9 @@
     "test:map": "node tests/map.test.mjs",
     "test:map:browser": "node tests/map.browser.cjs",
     "test:input": "node tests/input.test.mjs",
-    "test:input:browser": "node tests/input.browser.cjs"
+    "test:input:browser": "node tests/input.browser.cjs",
+    "test:persistence": "node tests/persistence.test.mjs",
+    "test:persistence:browser": "node tests/persistence.browser.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
