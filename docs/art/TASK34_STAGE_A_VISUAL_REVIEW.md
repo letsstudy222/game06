@@ -1,5 +1,7 @@
 # Task34 Stage A — gói hình Quy Hải Uyên I chờ duyệt
 
+**Bản nghiên cứu R1 được giữ làm lịch sử.** Gói hiện hành theo phản hồi người dùng là [Revision2](TASK34_STAGE_A_REVISION2_REVIEW.md), bổ sung linh tính xuyên ba bậc và số đo native mới; không coi R1 hoặc R2 là hình đã được duyệt.
+
 01/11/2026 (Asia/Saigon). **READY_FOR_USER_REVIEW**, không phải Task34 hoàn tất hoặc StageB được duyệt. Baseline work **b2c84c1943dd22c04e43ed29deed15dd9902ee3b**, worktree sạch trước tạo hình; truy vấn GitHub xác nhận origin/work cùng SHA, main **5ad5678d1fc8b991c0a35d1ffd80f3e816e8624d**. [Audit chính thức](../reviews/POST_TASK33_COMPREHENSIVE_AUDIT.md) ghi TASK34_STAGE_A_READY,0 P0;8 gate P1 cho hình cuối/integration/gameplay, không chặn StageA. Không tái audit01–33.
 
 ## Quyền phê duyệt và nguồn

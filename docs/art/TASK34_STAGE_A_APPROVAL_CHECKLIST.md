@@ -1,5 +1,7 @@
 # Task34 Stage A — checklist duyệt gói hình
 
+**Bản nghiên cứu R1 được giữ làm lịch sử.** Gói hiện hành theo phản hồi người dùng là [Revision2](TASK34_STAGE_A_REVISION2_REVIEW.md), bổ sung linh tính xuyên ba bậc và số đo native mới; không coi R1 hoặc R2 là hình đã được duyệt.
+
 **READY_FOR_USER_REVIEW / PROPOSED.** Tài liệu này không ghi nhận người dùng đã duyệt các ảnh mới. **CONFIRMED:** hướng kết hợp và scope trong [brief](QUY_STAGE1_TASK34_HANDOFF.md); **UNRESOLVED:** các quyết định hình cuối bên dưới. **SUPERSEDED:** không tự thay quyết định lịch sử. Sau khi hoàn tất StageA phải dừng, chỉ StageB khi có chỉ dẫn phê duyệt tường minh sau đó.
 
 ## Gói cần mở trước khi trả lời

@@ -1,5 +1,7 @@
 # Task34 Stage A — giữ trần hình ảnh ba dạng Quy
 
+**Bản nghiên cứu R1 được giữ làm lịch sử.** Gói hiện hành theo phản hồi người dùng là [Revision2](TASK34_STAGE_A_REVISION2_REVIEW.md), bổ sung linh tính xuyên ba bậc và số đo native mới; không coi R1 hoặc R2 là hình đã được duyệt.
+
 **CONFIRMED:** I nhỏ và đơn giản nhất; II lớn/nổi bật hơn; III lớn/uy nghi nhất, có thể có vùng sáng kiểm soát. Nguồn: yêu cầu StageA hiện tại, [audit33](../reviews/POST_TASK33_COMPREHENSIVE_AUDIT.md), [forms18](../chapter1/QUY_EVOLUTION_FORMS.md), [visual language](CREATURE_VISUAL_LANGUAGE.md). **PROPOSED:** giải pháp diễn đạt cụ thể bên dưới. **UNRESOLVED:** hình cuối của mọi stage. **SUPERSEDED:** không thay lịch sử hoặc tự duyệt hồ sơ anatomy cũ.
 
 ## Những gì có hình trong gói này

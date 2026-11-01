@@ -1,5 +1,7 @@
 # Task34 Stage A — khung pixel, hướng và kế hoạch animation
 
+**Bản nghiên cứu R1 được giữ làm lịch sử.** Gói hiện hành theo phản hồi người dùng là [Revision2](TASK34_STAGE_A_REVISION2_REVIEW.md), bổ sung linh tính xuyên ba bậc và số đo native mới; không coi R1 hoặc R2 là hình đã được duyệt.
+
 **CONFIRMED:** so64×64/64×80; hỗ trợ hướng tới8 hướng, năm nhóm S0 idle/swim/turn/brake/interaction. **PROPOSED:**2px khoảng đệm thăm dò, khung đối chứng và mọi số frame bên dưới. **UNRESOLVED:** khung cuối, mirror/fallback, timing và sản xuất. **SUPERSEDED:** không đổi lịch sử nguồn. Xem [review hình](TASK34_STAGE_A_VISUAL_REVIEW.md), [pixel contract28](../technical/TASK28_PIXEL_SCALING.md), [manifest27](../technical/TASK27_MANIFEST_CONTRACT.md).
 
 ## Cách dựng và đo
