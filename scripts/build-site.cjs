@@ -4,6 +4,7 @@ const fs = require("node:fs"),
   crypto = require("node:crypto");
 const root = path.resolve(__dirname, ".."),
   out = path.join(root, "_site");
+require("./validate-assets.cjs").assertProjectAssets({ root });
 const modules = fs
   .readdirSync(path.join(root, "src/island"))
   .filter((n) => n.endsWith(".mjs"))
@@ -27,6 +28,9 @@ const revision = crypto
   .update(fs.readFileSync(path.join(root, "assets/environments/dawn/terrain.png")))
   .update(fs.readFileSync(path.join(root, "assets/environments/dawn/objects.png")))
   .update(fs.readFileSync(path.join(root, "assets/environments/dawn/shadows.png")))
+  .update(fs.readFileSync(path.join(root, "assets/production/phoenix/atlas.png")))
+  .update(fs.readFileSync(path.join(root, "assets/fonts/VT323-Regular.ttf")))
+  .update(fs.readFileSync(path.join(root, "assets/favicon.svg")))
   .digest("hex")
   .slice(0, 12);
 fs.rmSync(out, { recursive: true, force: true });
