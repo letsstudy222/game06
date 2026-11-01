@@ -58,3 +58,11 @@ export function foregroundAlpha(object, actor, { height, halfWidth, fadedAlpha =
   if (!finite(object.x, object.y, actor.x, actor.y, height, halfWidth, fadedAlpha) || height < 0 || halfWidth < 0 || fadedAlpha < 0 || fadedAlpha > 1) throw new Error('Occlusion metadata không hợp lệ');
   return actor.y < object.y && actor.y > object.y - height && Math.abs(actor.x - object.x) < halfWidth ? fadedAlpha : 1;
 }
+/** Đảo Canvas CSS→logical→world theo camera snap hiện hữu, không nhân DPR lần hai. */
+export function screenToWorld(pointer, rect, canvasSize, camera) {
+  if (!finite(pointer.x, pointer.y, rect.left, rect.top, rect.width, rect.height, canvasSize.width, canvasSize.height, camera.x, camera.y) || rect.width <= 0 || rect.height <= 0 || canvasSize.width <= 0 || canvasSize.height <= 0) throw Error('SCREEN_TO_WORLD: hình học Canvas không hợp lệ');
+  return {
+    x: (pointer.x - rect.left) * canvasSize.width / rect.width + Math.round(camera.x),
+    y: (pointer.y - rect.top) * canvasSize.height / rect.height + Math.round(camera.y),
+  };
+}
