@@ -12,7 +12,7 @@
 | `enc_stabilize_source` | Có evidence source bất ổn/viable habitat và permission cần thiết | Dừng exposure và kiểm chứng cá thể/mạng quanh, outcome có mức chắc chắn | Không heal một lần là stable toàn biome/resonated; fail không bắt giết nạn nhân |
 | `enc_faction_interception` | Nhiệm vụ/concern địa phương được cảnh báo | Evidence/access/retreat hoặc đối đầu có kết quả rõ, không tự war với cả phe | Membership không quyết định aggro toàn map; hoàn tất optional không gate Sacred |
 | `enc_optional_elite` | Challenge tự chọn có route tránh/quay lại và briefing | Thử movement/combat đặc trưng, ghi completion/material proof một lần theo manifest | Không main gate unannounced species/key; bỏ qua vẫn xong chương; replay không farm unique grant |
-| `enc_chapter_confrontation` | Bốn narrative briefs hiện hữu và attempt policy được duyệt trước | Conflict mở cửa sổ kiểm chứng; event restore riêng mới stable system | Không win=capture/cleansing/restoration tự động; giữ empty-slot vs full-three policy là quyết định chưa chốt |
+| `enc_chapter_confrontation` | Bốn narrative briefs hiện hữu và attempt policy được duyệt trước | Conflict mở cửa sổ kiểm chứng; event restore riêng mới stable system | Không win=capture/cleansing/restoration tự động; D41 CONFIRMED không bắt đủ ba dạng/ba nguyên tố cho boss đầu; chi tiết empty-slot snapshot, entry và retry vẫn PROPOSED/UNRESOLVED theo [entry record](../loadout/BOSS_ENTRY_AND_RETRY.md) |
 
 Entry không sinh enemy/hazard ngay trên điểm arrival/save trú. Encounter camera/FX phải cho đọc telegraph ở viewport mobile, không bắt biết form chưa có. Damage/target khi biến hình theo boundary R03, không xóa encounter identity khi đổi form. Các labels behavior là vocabulary thiết kế, không AI executable được thêm.
 

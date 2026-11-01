@@ -4,6 +4,8 @@ Nguồn: [AB33-S01–S04/S08–S12](ART_BIBLE_MASTER.md), [hồ sơ Quy](../crea
 
 **Cổng bắt buộc:** thực hiện review01–33 theo [handoff](TASK33_POST_COMPLETION_REVIEW_HANDOFF.md) trước Task34; xử lý vấn đề chặn sản xuất và nhận phê duyệt visual cần thiết. Task33 chỉ chuẩn bị brief, **không bắt đầu Task34**, không vẽ hoặc xuất sprite.
 
+Các trạng thái ở phần brief gốc bên trên/dưới ghi theo mốc Task33; phần “Cập nhật trạng thái khi audit sau Task33” cuối tệp ghi phạm vi phê duyệt mới nhất.
+
 ## Mục tiêu brief
 
 Quy I là cơ thể còn tương đối khiêm tốn, có sức bền và cảm giác cổ xưa tiềm ẩn, không boss khổng lồ hoặc bản stage III thu nhỏ. Đầu và bốn gốc chi phải đọc trong góc3/4, mai khác giáp xác và vỏ ốc. Chuyển động có pha đẩy–thu–hãm, đáp ứng gameplay về sau nhưng chưa duyệt speed/inertia/collision/timing. Đặc điểm thủy văn/ký ức diễn đạt bằng hướng dòng và cấu trúc mai đề xuất, không kể nguồn gốc Tinh Linh trên hoa văn.
@@ -59,7 +61,7 @@ Concept source/provenance, quyết định chọn silhouette/anatomy/palette; sh
 
 Preview sau duyệt trên nền sáng/tối/rối và mobile dọc/ngang, nhiều foreground, FX off, DPR1/2; kiểm thêm máy thật trước cam kết hiệu năng. Hiện **chưa có** sprite, animation playback hoặc visual production QA Quy.
 
-## Câu hỏi phê duyệt trước sản xuất — tất cả UNRESOLVED
+## Câu hỏi tại mốc Task33 — lịch sử, xem cập nhật audit bên dưới
 
 1. Chọn Q33-SIL-01/02/03 hay yêu cầu vòng silhouette khác; mức độ khiêm tốn/cổ xưa của Quy I mong muốn?
 2. Duyệt tỷ lệ đầu/cổ, dạng chi có màng hay vây mái chèo và biểu cảm; chi tiết nào cần bất đối xứng?
@@ -70,3 +72,19 @@ Preview sau duyệt trên nền sáng/tối/rối và mobile dọc/ngang, nhiề
 7. Duyệt minimum idle/swim và phản hồi interaction bằng reuse pose hay cần clip riêng; turn/brake có trong ngân sách đợt đầu?
 
 Trả lời các câu hỏi không tự khởi động Task34. Cần review01–33 và chốt phạm vi sản xuất rõ; HP, tuning, collision và combat timing không nằm trong quyền phê duyệt của palette/anatomy.
+
+## Cập nhật trạng thái khi audit sau Task33 — 01/11/2026
+
+Nguồn phê duyệt: yêu cầu người dùng “TASK 34/96 — QUY HẢI UYÊN STAGE I VISUAL EXPLORATION…” đã gửi trước audit này, cùng chỉ dẫn POST-TASK-33 COMPREHENSIVE AUDIT. Đây là ghi nhận chỉ dẫn có sẵn, không triển khai Task34 hoặc phê duyệt hình chưa được tạo. Mô tả/ba phương án và câu hỏi phía trên là snapshot Task33, không còn ba lựa chọn ngang nhau cho vòng tiếp theo.
+
+| Phạm vi | Trạng thái hiện tại và giới hạn |
+| --- | --- |
+| Hướng kết hợp Quy I | **CONFIRMED:** mai oval thấp, rộng và vững; vây bơi trước rõ, chi sau lái nhỏ, đuôi nhỏ; đầu gọn hơi nêm/tam giác bo, mắt tiết chế, bình tĩnh/cổ xưa, không quá dễ thương hoặc hung dữ. Tỷ lệ và hình vẽ cuối chưa được duyệt |
+| Màu và hoa văn | **CONFIRMED:** họ xanh ngọc + xanh biển sâu, ngà/xám nhạt hỗ trợ; cấu trúc mai tự nhiên, mô-típ nước cổ vừa phải. HEX/ramp, vị trí dấu và hình cuối vẫn **PROPOSED/UNRESOLVED**, không mặc định phát sáng Quy I |
+| Thử kích thước | **CONFIRMED phạm vi so:**64×64 với64×80, khung chữ nhật khác chỉ khi có lý do. **UNRESOLVED:** khung cuối; đề xuất48 ở snapshot33 không là yêu cầu vòng so hiện hành |
+| S0 | **CONFIRMED phạm vi:** idle, swim, turn, brake, phản hồi tương tác đơn giản; Stage A chỉ lập kế hoạch, chưa atlas production. Số frame/timing, cách reuse pose và coverage hướng vẫn cần đánh giá/duyệt |
+| Tám hướng | **CONFIRMED:** hướng tới8-direction support. Dedicated frames/fallback/mirroring cụ thể vẫn **PROPOSED/UNRESOLVED**; không tự duyệt mirror |
+| Trần tiến hóa | **CONFIRMED:** I nhỏ, đơn giản, ít trang trí, sức mạnh tiết chế; II lớn hơn và nổi bật hơn về cấu trúc/mai; III lớn nhất, uy nghi nhất, có thể có vùng sáng kiểm soát. Không dùng hết trần hình ảnh ở I; chưa duyệt tỷ lệ số, anatomy II/III hoặc hiệu ứng gameplay |
+| Cổng thực hiện | Review01–33 là điều kiện trước Task34; xem [báo cáo chính thức](../reviews/POST_TASK33_COMPREHENSIVE_AUDIT.md). Readiness không là lệnh bắt đầu. Stage B vẫn cần người dùng duyệt gói hình Stage A trong chỉ dẫn sau |
+
+Trước Stage B còn phải duyệt bằng hình: silhouette/tỷ lệ cuối, mặt, mật độ hoa văn, palette cụ thể, frame size, chiến lược hướng/mirror/fallback và phạm vi/frame-count animation. Giữ **SUPERSEDED** chỉ cho quyết định đã được thay bằng approval mới theo nguồn; không gắn nhãn đó cho mọi phương án cũ chưa từng được chọn. Task34 Stage A/B chưa được thực hiện trong audit này.

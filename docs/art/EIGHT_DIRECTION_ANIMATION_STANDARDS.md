@@ -25,11 +25,13 @@ Góc3/4 thuộc cách vẽ mặt trên và mặt bên, không xoay cả Canvas h
 
 Mirroring chỉ được phép khi giải phẫu, hoa văn, thứ tự chi, ánh sáng và điểm phát hiệu ứng tương thích, có art review và metadata rõ. Dấu bất đối xứng/receiver nằm một bên hoặc pose đánh khác cần frame riêng. Helper có fallback tường minh; không tự chọn hướng gần nhất, không tự mirror chỉ vì thiếu ảnh. Mapping hướng của helper chưa phải schema manifest production hoàn chỉnh.
 
-## Phạm vi theo milestone — PROPOSED
+## Phạm vi theo milestone — phân biệt scope và cách sản xuất
+
+Cập nhật audit01/11/2026: năm nhóm phản hồi S0 đã **CONFIRMED** trong yêu cầu Task34 người dùng gửi; xem [cập nhật brief](QUY_STAGE1_TASK34_HANDOFF.md). Cách vẽ, số frame, timing và cách reuse vẫn **PROPOSED/UNRESOLVED**. Bảng không phê duyệt atlas hoặc bắt đầu sản xuất.
 
 | Mốc | Bắt buộc để nghiệm thu mốc tương ứng | Khuyến nghị | Hoãn |
 | --- | --- | --- | --- |
-| S0 | Idle và swim thể hiện hướng; anchor/frame/bounds hợp lệ; phân biệt đứng/bơi và phản hồi interaction đọc được | Turn/brake riêng, idle có nhịp, biểu cảm chạm cơ cấu; có thể reuse pose khi được duyệt | Combat, hurt/defeat, resonance cinematic, evolution, boss |
+| S0 | Idle, swim, turn, brake và phản hồi tương tác đơn giản theo phạm vi người dùng đã duyệt; anchor/frame/bounds hợp lệ và hướng đọc được | Idle có nhịp, biểu cảm tinh tế; cách reuse pose/clip và số frame phải được duyệt, không bỏ phản hồi turn/brake | Combat, hurt/defeat, resonance cinematic, evolution, boss |
 | S1 | Coverage hành động thực được duyệt: anticipation/execution/recovery, defense, hurt/incapacitation nếu dùng; cộng hưởng đúng thứ tự | Chuyển pose mượt, recovery tương thích interruption | Chiêu/chuyển dạng chưa có cơ chế, full stages |
 | Chương I đầy đủ | Hành động của Quy và encounter đã được phê duyệt; môi trường/đoạn truyện cần clip thật | Biến thể idles và phản ứng sinh thái | Không bắt mọi loài ambient có attack hoặc mọi loài playable |
 
