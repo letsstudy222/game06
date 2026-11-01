@@ -1,3 +1,4 @@
+import { prepareSpriteFrame, drawPreparedSprite, compareRenderDepth, foregroundAlpha } from "./RenderPrimitives.mjs";
 import { WorldLayer } from "./WorldLayer.mjs";
 import { drawEnvironmentShadows } from "./EnvironmentShadows.mjs";
 import { distance } from "./geometry.mjs";
@@ -17,6 +18,20 @@ export class IslandScene {
     );
     this.idleCache = new Map();
     this.prepareIdle();
+    // Adapter Phượng giữ nguyên hai pose/row và origin hiện hữu.
+    this.spriteFrames = new Map();
+    const hero = this.meta.phoenix;
+    for (const d of Object.values(hero.directions)) {
+      const frames = [];
+      for (let pose = 0; pose < hero.posesPerDirection; pose++) {
+        frames.push(prepareSpriteFrame({
+          rect: [pose * hero.frameSize, d.row * hero.frameSize, hero.frameSize, hero.frameSize],
+          anchor: d.origin,
+          bounds: hero.bounds?.[d.row * hero.columns + pose],
+        }, { width: this.sprite.naturalWidth, height: this.sprite.naturalHeight }));
+      }
+      this.spriteFrames.set(d, frames);
+    }
   }
   attach(canvas) {
     this.canvas = canvas;
@@ -129,21 +144,21 @@ export class IslandScene {
       ...this.island.hazards,
       ...this.island.props,
       ...this.island.trees,
-    ].map((t) => ({
+    ].map((t, renderOrder) => ({
       y: t.y,
+      renderOrder,
       draw: () => {
         const p = state.player,
           canopy = this.meta.environment.definitions.find((d) => d.id === t.asset)?.canopy || ["palm", "broadleaf"].includes(t.asset),
-          behind =
-            canopy &&
-            p.y < t.y &&
-            p.y > t.y - (this.island.artProfile ? 96 : 70) &&
-            Math.abs(p.x - t.x) < (this.island.artProfile ? 76 : 38);
-        this.prop(c, t.asset, t.x, t.y, behind ? 0.48 : 1, t.size || 1);
+          alpha = canopy ? foregroundAlpha(t, p, {
+            height: this.island.artProfile ? 96 : 70,
+            halfWidth: this.island.artProfile ? 76 : 38,
+          }) : 1;
+        this.prop(c, t.asset, t.x, t.y, alpha, t.size || 1);
       },
     }));
-    layers.push({ y: state.player.y, draw: () => this.drawPlayer(state) });
-    layers.sort((a, b) => a.y - b.y);
+    layers.push({ y: state.player.y, renderOrder: layers.length, draw: () => this.drawPlayer(state) });
+    layers.sort(compareRenderDepth);
     for (const l of layers) l.draw();
     this.drawSkills(state);
     this.drawShrine(state);
@@ -236,17 +251,9 @@ export class IslandScene {
         -d.origin[1],
       );
     else
-      c.drawImage(
-        this.sprite,
-        pose * 96,
-        d.row * 96,
-        96,
-        96,
-        -d.origin[0],
-        -d.origin[1],
-        96,
-        96,
-      );
+      drawPreparedSprite(c, this.sprite,
+        this.spriteFrames.get(d)[pose],
+        { x: 0, y: 0 });
     c.restore();
   }
   drawSkills(state) {
