@@ -23,10 +23,18 @@ const revision = crypto
   .update(fs.readFileSync(path.join(root, "assets/samples/dawn/terrain.png")))
   .update(fs.readFileSync(path.join(root, "assets/samples/dawn/objects.png")))
   .update(fs.readFileSync(path.join(root, "assets/samples/dawn/shadows.png")))
-  .update(fs.readFileSync(path.join(root, "assets/environments/dawn/manifest.json")))
-  .update(fs.readFileSync(path.join(root, "assets/environments/dawn/terrain.png")))
-  .update(fs.readFileSync(path.join(root, "assets/environments/dawn/objects.png")))
-  .update(fs.readFileSync(path.join(root, "assets/environments/dawn/shadows.png")))
+  .update(
+    fs.readFileSync(path.join(root, "assets/environments/dawn/manifest.json")),
+  )
+  .update(
+    fs.readFileSync(path.join(root, "assets/environments/dawn/terrain.png")),
+  )
+  .update(
+    fs.readFileSync(path.join(root, "assets/environments/dawn/objects.png")),
+  )
+  .update(
+    fs.readFileSync(path.join(root, "assets/environments/dawn/shadows.png")),
+  )
   .digest("hex")
   .slice(0, 12);
 fs.rmSync(out, { recursive: true, force: true });
@@ -80,3 +88,44 @@ for (const name of ["meadow", "forest", "ruins", "beach", "fire"])
 for (const name of ["ui-before", "ui-after", "tilemap", "sample"])
   copy("artifacts/" + name, "screenshots/" + name);
 console.log("Static Pages package ready:", revision);
+
+// Additive sandbox entry with a separate revision for its complete module/data graph.
+const sandboxDir = path.join(root, "src/hai-uyen");
+const sandboxFiles = fs.readdirSync(sandboxDir).sort();
+const mapFiles = fs.readdirSync(path.join(root, "data/hai-uyen")).sort();
+const sandboxRevision = crypto
+  .createHash("sha256")
+  .update(read("hai-uyen.html"))
+  .update(sandboxFiles.map((n) => read("src/hai-uyen/" + n)).join("\n"))
+  .update(mapFiles.map((n) => read("data/hai-uyen/" + n)).join("\n"))
+  .digest("hex")
+  .slice(0, 12);
+copy("src/hai-uyen");
+copy("data/hai-uyen");
+for (const name of sandboxFiles.filter((n) => n.endsWith(".mjs"))) {
+  fs.writeFileSync(
+    path.join(out, "src/hai-uyen", name),
+    read("src/hai-uyen/" + name)
+      .replace(
+        /(from\s+["'])(\.\/[^"'?]+\.mjs)(["'])/g,
+        `$1$2?v=${sandboxRevision}$3`,
+      )
+      .replace(
+        /fetch\(`data\/hai-uyen\/\$\{f\}`\)/g,
+        "fetch(`data/hai-uyen/${f}?v=" + sandboxRevision + "`)",
+      ),
+  );
+}
+fs.writeFileSync(
+  path.join(out, "hai-uyen.html"),
+  read("hai-uyen.html")
+    .replace(
+      "src/hai-uyen/style.css",
+      "src/hai-uyen/style.css?v=" + sandboxRevision,
+    )
+    .replace(
+      "src/hai-uyen/main.mjs",
+      "src/hai-uyen/main.mjs?v=" + sandboxRevision,
+    ),
+);
+console.log("Hai Uyen sandbox package ready:", sandboxRevision);

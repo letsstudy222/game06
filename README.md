@@ -19,6 +19,14 @@ Các tài liệu trên định hướng thiết kế; hướng dẫn chạy và 
 
 Pixel adventure chạy trực tiếp bằng HTML/CSS, ES modules và Canvas 2D. Phượng Hoàng Legend là nhân vật điều khiển trên đảo gồm đồng cỏ, rừng phía Bắc, đền cổ và biển phía Nam. Đây là vertical slice khám phá; mã nông trại cũ được lưu trong `legacy/tiny-farm/`.
 
+## Hải Uyên Vertical Slice v1.0 — sandbox web
+
+Bản thử nghiệm riêng tại **`/hai-uyen.html`**, chạy bằng cùng HTTP server bên dưới. Quy bậc I solo đi qua bốn phòng M4 A1 ↔ B1 ↔ LAB ↔ ARENA: chiến đấu, van K1/K2, miniboss hai phase, checkpoint và ba hồ sơ lưu. Không thay tuyến canon Chương I hoặc game Dawn mặc định. Quy, quái và môi trường dùng **art tạm trong engine**, không phải sprite production cắt từ concept.
+
+WASD/mũi tên di chuyển; chuột ngắm; chuột trái/J đánh; 1–4 kỹ năng; Space Thủ Mai; E tương tác/nghỉ ở ◆; Esc menu. Trên điện thoại: cần trái, kéo nền để ngắm và chạm nút kỹ năng. `npm run test:hai-uyen` kiểm thử hành trình bằng input thật (giữ HTTP server cổng 8000). Có thể đặt `GAME_URL` trỏ thẳng tới entry Hải Uyên và `ARTIFACT_DIR` cho ảnh kiểm thử.
+
+[Audit tương thích](docs/hai-uyen/AUDIT.md) · [Hướng dẫn và báo cáo kiểm chứng](docs/hai-uyen/DELIVERY.md).
+
 ## Chạy thử
 
 Từ thư mục repository, chạy:
