@@ -1,0 +1,15 @@
+# Năm archetype cơ cấu và quan sát
+
+**PROPOSED H19-P07**, không giant puzzle roster. IDs `hy_puzzle_*` chỉ archetype refs ứng viên, không event/reward sources mới. [E09 receiver](../elements/ENVIRONMENTAL_INTERACTIONS.md), [Quy environment](QUY_ENVIRONMENTAL_ABILITIES.md) và W07 giữ permissions. Skill damage không tự chuyển thành world patch.
+
+| Archetype / nơi | Prerequisite / action có sẵn | Feedback / failure | Persistent outcome / source | Assets / components tương lai |
+| --- | --- | --- | --- | --- |
+| hy_puzzle_redirect / A rồi E | A contextual receiver I, E thao tác nhánh đơn có outlet; quan sát hướng rồi tương tác | Rãnh vào–ra rõ, sai hướng dừng ở setting an toàn, retry không phạt item | A local exit trong E01; E bypass proof/patch trong E03; không env_quy_route II bắt buộc | Receiver/rãnh/cửa, source graph, input semantic, W07 transaction/route checks |
+| hy_puzzle_pressure / C/E | Quy I đọc dòng/nhịp đơn và receiver đã author; chọn lúc dòng ổn | Cue nhịp bằng hình/nhãn, không QTE frame-perfect hoặc nghe bắt buộc; sai chỉ giữ closed safe | Local setting/evidence E03 nếu manifest khai báo; chưa E05 water_stable | Pressure indicator/static-safe outlet, local current profile/capability validator |
+| hy_puzzle_passage / C/E | Có obstacle với bypass/manual release hoặc Vành Nước I đúng receiver nếu được unlock trước | Preview đối tượng chịu lực và đường mở, hit miss không phá, path obstruction không xóa collider bừa | Object patch qua E03/local owner, same logical target; repeat không reward | Blocked/open variants, collision patch, clearance/safe-return validator; không universal wall break |
+| hy_puzzle_observe / B/D | Quy I quan sát hành vi khi giữ khoảng, không cần optional form | Dấu hành vi đủ thấy, disturb cho chờ lại, không giết để lấy proof | E02 observation/journal proof theo rules; D optional chưa event mới | Wildlife approved/behavior cues, objective evidence owner/habitat fallback; assets hiện chưa đủ |
+| hy_puzzle_memory / A/E | Đúng nguồn/story gate, chủ động tiếp xúc; A prebody memory, E E03 | Short sensory fragment/caption, retry cùng memory key, skip bản dài không nhân unlock | MemoryRecord/receipt R03 và E01/E03 proof theo boundary; không XP/stage mặc định | Source marker/overlay/audio optional, memory provenance/identity, W07 durable mapping |
+
+Mọi archetype có required capability ref + allowed receiver + completion evidence + fail/reset policy + write-set permission. A không cần Quy trước để mở Quy; E03 không cần G/F sau gate hoặc S2 trước tiến hóa. Một context receiver I khác capability II/III chỉnh nhánh nâng cao; chưa dùng skill thì không gate main bằng skill đó.
+
+Nếu hành động chỉ preview/transient, không lưu permanent fact; patch durable phải kiểm habitat/refuge/route/checkpoint và expected revision. Revisit dựng setting đích, không gọi toggle hoặc award lại. Archive/memory cùng species không thay living resonance requirement. Puzzle content ở đây cần final approval/assets/script sau, không đã implement hoặc chốt force/timing numbers.

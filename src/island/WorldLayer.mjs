@@ -27,28 +27,11 @@ export class WorldLayer {
     );
   }
   visibleTiles(camera, w, h) {
-    const s = this.tileSize,
-      result = [];
-    for (
-      let y = Math.max(0, Math.floor(camera.y / s));
-      y < Math.min(this.map.rows, Math.ceil((camera.y + h) / s));
-      y++
-    )
-      for (
-        let x = Math.max(0, Math.floor(camera.x / s));
-        x < Math.min(this.map.columns, Math.ceil((camera.x + w) / s));
-        x++
-      )
-        result.push({
-          x: x * s,
-          y: y * s,
-          width: s,
-          height: s,
-          column: x,
-          row: y,
-        });
-    return result;
+    const s = this.tileSize;
+    return Array.from(visibleCells(this.map.columns, this.map.rows, s, s, camera, w, h),
+      ({ column, row }) => ({ x: column * s, y: row * s, width: s, height: s, column, row }));
   }
+
   tile(ctx, id, x, y) {
     const def = this.meta.tileDefinitions[id];
     if (!def) throw Error("Missing tile " + id);
@@ -169,4 +152,11 @@ export class WorldLayer {
       }
     }
   }
+}
+
+/** Culling dùng chung cho grid vuông hoặc chữ nhật; camera ở world space. */
+export function* visibleCells(columns, rows, tileWidth, tileHeight, camera, width, height) {
+  for (let row = Math.max(0, Math.floor(camera.y / tileHeight)); row < Math.min(rows, Math.ceil((camera.y + height) / tileHeight)); row++)
+    for (let column = Math.max(0, Math.floor(camera.x / tileWidth)); column < Math.min(columns, Math.ceil((camera.x + width) / tileWidth)); column++)
+      yield { column, row };
 }

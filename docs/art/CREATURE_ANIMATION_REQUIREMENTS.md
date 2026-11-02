@@ -40,3 +40,7 @@ Số frames/timing không fixed mọi species; approvedpixelclusters/giải ph�
 Read metadata/dimensions/alpha/bounds, compare anatomy từng frame/direction; playback loop/switch/interrupt/turn/attack/hurt/action transition trong scene thật, nguồn release khớp geometry/marker, ground shadow không bob foot anchor. Xem small gameplay display + bright/dark/busybackground, FXon/off, occlusion/culling/large form turn/narrow passage. Báo riêng emulator/physical device, không final FPS/device budget. Default combat body/status/cost/save boundary theo R03/E09/E10 proposals, không animation cue quyết reward/world event.
 
 Phoenix hiện hữu được xem static trong Task12 và đọc nguồn: 192×288,96 cell,2 poses×3 rows, right mirror; AnimationController6states phối pose qua IslandScene. Chưa fresh browser playback hoặc chấp nhận đủ full clips/stages. Không overwrite assets để đạt standard trong Task12.
+
+## Chú giải Task33 — phạm vi và hướng
+
+[Chuẩn tám hướng](EIGHT_DIRECTION_ANIMATION_STANDARDS.md) và [Art Bible](ART_BIBLE_MASTER.md) bổ sung authoring cho art mới. Yêu cầu trình bày tám hướng là **CONFIRMED theo người dùng**; frame-count, timing, anatomy/mirroring và fallback vẫn theo phê duyệt cụ thể. Action coverage gốc không bắt mọi loài hoặc S0 có đủ combat/tiến hóa. S0 minimum idle/swim + phản hồi tương tác khác S1 và full Chapter I; [brief Quy I](QUY_STAGE1_TASK34_HANDOFF.md) giữ câu hỏi duyệt. Nhận xét Phoenix “chưa fresh playback trong Task12” vẫn là lịch sử; regression nền được chạy lại ở [biên bản33](TASK33_CONSISTENCY_AUDIT.md), không phải QA sprite Quy.

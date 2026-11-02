@@ -119,3 +119,50 @@ Bắt đầu tại [Master GDD](docs/GAME_DESIGN_DOCUMENT.md), [completion audit
 ## Task13 — Creature evolution system
 
 [Overview](docs/evolution/EVOLUTION_SYSTEM_OVERVIEW.md), [decision register](docs/evolution/TASK13_DECISIONS.md) và [audit/file mapping](docs/evolution/TASK13_CONSISTENCY_AUDIT.md): Model D recommendation, twelve Sacred stages ở C04 source, explicit safe transition đề xuất, data/save/state contracts và22future cases. Chỉ tài liệu, không game/UI/art/manifest changes; thresholds/policies mới chưa approved. Không bắt đầu Task14; Task12 handoff nói Task13 chưa bắt đầu là lịch sử.
+
+
+## Task14 — Real-time combat system design
+
+[Combat overview](docs/combat/COMBAT_SYSTEM_OVERVIEW.md), [decision register](docs/combat/TASK14_DECISIONS.md) và [audit/delivery index](docs/combat/TASK14_CONSISTENCY_AUDIT.md): action states, abilities/resources, movement/defense, damage/geometry/feedback, enemy AI, form switching/boss/recovery, Quy combat demonstrator, 15 conceptual data contracts và 32 future QA cases. Chỉ tài liệu; resource A/HP riêng/brace/switch policies đều PROPOSED, không runtime/art/UI changes. D41 no-three early giữ, PhaseI PARTIAL, Task15 chưa bắt đầu. Các câu “Task14 chưa bắt đầu” ở handoff Task13 là mốc lịch sử.
+
+
+## Task15 — Progression, mastery và reward economy
+
+[Overview](docs/progression/PROGRESSION_SYSTEM_OVERVIEW.md), [decisions](docs/progression/TASK15_DECISIONS.md) và [audit/delivery index](docs/progression/TASK15_CONSISTENCY_AUDIT.md): EXP distribution D participation+milestone foundation, shared segmented curve, bounded growth/mastery objectives, V13 integration, sourced rewards/loot/minimal resources, atomic grant/inventory ownership; 13 conceptual contracts và34future QA cases. Tất cả mechanics mới PROPOSED, không numeric balance/code/data/save/UI/art changes. Task14 docs được giữ; các câu “Task15 chưa bắt đầu” là historical handoff. PhaseI PARTIAL, Task16 chưa bắt đầu.
+
+
+## Task16 — Three-form loadout, switching và boss locks
+
+[Loadout overview](docs/loadout/LOADOUT_SYSTEM_OVERVIEW.md), [decisions](docs/loadout/TASK16_DECISIONS.md) và [local audit/delivery](docs/loadout/TASK16_CONSISTENCY_AUDIT.md): canonical membership/active projection, edit/action matrices, single-body switch, HP ownership, boss lifecycle/entry/retry, evolution/collection/UI contracts, Quy-only milestone;13entities/18status-qualified invariants/44future QA cases. D41 no-three count constraint giữ CONFIRMED, min-one/detailed early entry package vẫn PROPOSED/UNRESOLVED. HP Task16B-individual tương ứng C14/P15A, không tự approve. Chỉ docs; không code/save/UI/assets changes. Task16 kết dải thiết kế09–16, full PhaseII audit và Task17 chưa bắt đầu.
+
+## Task17 — Tài liệu mở đầu Chương I
+
+[Overview](docs/chapter1/CHAPTER1_OPENING_OVERVIEW.md), [sổ quyết định](docs/chapter1/TASK17_DECISIONS.md) và [kiểm tra cục bộ](docs/chapter1/TASK17_CONSISTENCY_AUDIT.md): bản đề xuất trải nghiệm từ nhận cảm ban đầu tới Quy và cửa khám phá. Chỉ tài liệu; chưa gameplay, chưa bắt đầu Task18.
+
+## Task18 — Hồ sơ Quy Hải Uyên
+
+[Overview](docs/chapter1/QUY_DESIGN_OVERVIEW.md), [decisions](docs/chapter1/TASK18_DECISIONS.md) và [local audit](docs/chapter1/TASK18_CONSISTENCY_AUDIT.md): ba stage, movement/combat/môi trường, art/data/runtime handoff và 30 ca QA tương lai. Chỉ tài liệu đề xuất; không runtime/art mới hoặc Task19 tự bắt đầu.
+
+## Task19 — Thế giới và bản đồ Hải Uyên
+
+[Overview](docs/chapter1/VUC_HAI_UYEN_WORLD_OVERVIEW.md), [graph](docs/chapter1/CHAPTER1_WORLD_GRAPH.md) và [audit](docs/chapter1/TASK19_CONSISTENCY_AUDIT.md) bàn giao 9 vùng chức năng/13 connectors, tuyến Quy I và các nhánh tùy chọn. Chỉ tài liệu đề xuất, không map/code/art/save mới, không Task20 tự bắt đầu.
+
+## Task20 — Ecology và wildlife Hải Uyên
+
+[Overview](docs/chapter1/CHAPTER1_ECOLOGY_OVERVIEW.md), [species register view](docs/chapter1/CHAPTER1_SPECIES_REGISTER.md) và [audit](docs/chapter1/TASK20_CONSISTENCY_AUDIT.md) ghi7dossiers/8behavior recipes, habitats đúng graph Task19, observation/resonance candidates và35future QA. Sáu wildlife references chưa approved species/art; chỉ tài liệu, không Task21 tự bắt đầu.
+
+## Task21 — Tuyến nhiệm vụ chính Hải Uyên
+
+[Overview](docs/chapter1/CHAPTER1_MAIN_QUEST_OVERVIEW.md), [register](docs/chapter1/CHAPTER1_MAIN_QUEST_REGISTER.md) và [audit](docs/chapter1/TASK21_CONSISTENCY_AUDIT.md) chi tiết hóa sáu quests S05 với DAG/objectives/dialogue/state/save/reward contracts và40future QA. Chỉ docs PROPOSED, không quest runtime mới, không Task22 tự bắt đầu.
+
+## Task22 — Nhiệm vụ phụ Hải Uyên
+
+[Overview](docs/chapter1/CHAPTER1_SIDE_QUEST_OVERVIEW.md), [portfolio](docs/chapter1/CHAPTER1_SIDE_QUEST_REGISTER.md) và [audit](docs/chapter1/TASK22_CONSISTENCY_AUDIT.md) ghi4major quests/4light activities/2expansions, independent mainline, pre/post restoration và40future QA. Chỉ docs PROPOSED, không gameplay/map/art/save hoặc Task23 tự bắt đầu.
+
+## Task23 — Boss đầu Hải Uyên
+
+[Overview](docs/chapter1/CHAPTER1_BOSS_OVERVIEW.md), [counterplay Quy I](docs/chapter1/CHAPTER1_BOSS_QUY_COUNTERPLAY.md), [audit](docs/chapter1/TASK23_CONSISTENCY_AUDIT.md): two identity candidates, recommend Lam Giáp PROPOSED, five actions/two phases/lock-retry/outcome và40future QA. Existing S05 actor/profile/E04 giữ; chỉ docs, không Task24 tự bắt đầu.
+
+## Task24 — Finale, restoration và đường sang Nhật Diệm
+
+[Overview](docs/chapter1/CHAPTER1_FINALE_OVERVIEW.md), [completion rules](docs/chapter1/CHAPTER1_COMPLETION_CONDITIONS.md), [audit](docs/chapter1/TASK24_CONSISTENCY_AUDIT.md) giữ E04/E05/E06 boundaries, playable QuyI restore/zone-ecology/side continuity/earned-memory reprise/Phượng hint/travel và45future QA. Chỉ docs PROPOSED, no Task25 hoặc PhaseIII audit auto start.

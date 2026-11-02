@@ -74,3 +74,8 @@ Task09 đã được user giao, chỉ documentation/system design. [Task09 decis
 ## Task13 — nguồn tiến hóa cần đọc
 
 [Evolution overview](evolution/EVOLUTION_SYSTEM_OVERVIEW.md), [V13-P01–P13/U01–U10](evolution/TASK13_DECISIONS.md) và [audit/delivery map](evolution/TASK13_CONSISTENCY_AUDIT.md) giữ Model D recommendation,12stage supplements tại [C04 matrix](creatures/SACRED_EVOLUTION_MATRIX.md), visual/gameplay/memory/loadout/UI/asset contracts, eight conceptual entities và22future QA cases. Safe explicit transition và state/config freeze vẫn PROPOSED, không phê duyệt HP/resources/recovery/catch-up/storage hoặc nguyên tố mới; exact curves/thresholds để Task15. Sacred4×3/approved visual identity/stable IDs và D41 no-three early giữ; A08-05 trigger/capability/snapshot/retry còn mở. Existing E09/E10/K11/B12 proposals và PhaseI PARTIAL không đổi. Task14 chưa bắt đầu; câu Task13 chưa bắt đầu ở handoff Task12 là mốc lịch sử.
+
+
+## Task16 — nguồn loadout và readiness cho audit được giao
+
+[Loadout overview](loadout/LOADOUT_SYSTEM_OVERVIEW.md), [decision register](loadout/TASK16_DECISIONS.md), [local audit](loadout/TASK16_CONSISTENCY_AUDIT.md) và [entry/retry DR01](loadout/BOSS_ENTRY_AND_RETRY.md) nối R03/V13/C14/P15/W07 owners. D41 current no-three count constraint không bị historical PhaseI full-three question ghi đè; minimum-one/detailed entry/lock-empty/retry policy vẫn pending. Task16 là package cuối trong dải design09–16, không thay PhaseI PARTIAL hoặc chứng nhận PhaseII audit/production freeze. Phải có yêu cầu riêng cho full PhaseII audit/Task17. Actual runtime vẫn Phoenix/Canvas, chưa generic loadout/switch/save; implementation gates/approvals/assets/modules không tự đóng bởi docs.

@@ -37,3 +37,7 @@ Mạnh trước lực đẩy không miễn xuyên giáp, đòn sau lưng, hazard
 ## Bảo tồn trong production
 
 Các skill `quy_basic`, `quy_mobility`, `quy_s1`, `quy_s2`, `quy_s3`, `quy_passive` chỉ định nghĩa tại abilities. `form_quy_hai_uyen` là ID ứng viên ổn định xuyên ba stage, không ba slot. Footprint thấp và vây gập cần clearance cho cả visual thân, không cho rùa to lọt khe qua FX thu nhỏ giả. Cần reference/model sheet, ba stage anatomy, hướng, anchors, clip và playback; chưa có tài nguyên đó.
+
+## Task18 — bổ sung bàn giao, không thay profile authority
+
+[Quy design package](../chapter1/QUY_DESIGN_OVERVIEW.md) chi tiết hóa ba stage, combat/movement/environment và production/data requirements. [Q18 decisions](../chapter1/TASK18_DECISIONS.md) giữ chi tiết PROPOSED/UNRESOLVED; anatomy/ID/tên ứng viên C04 ở đây vẫn nguồn gốc, không xác nhận art Quy đã có hoặc mechanics đã duyệt.

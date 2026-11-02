@@ -1,0 +1,46 @@
+# Quest status, event ownership và phần thưởng
+
+**PROPOSED Q21-P04/P07**. [W07 quest rules](../world/QUEST_WORLD_STATE_RULES.md), [architecture](../world/WORLD_STATE_ARCHITECTURE.md), [transitions](../world/WORLD_STATE_TRANSITIONS.md), [Task19 bindings](CHAPTER1_PERSISTENT_ENVIRONMENT.md) giữ authoritative facts. Không second quest database, saved questComplete flags hoặc ledger mới.
+
+## State model được khuyến nghị
+
+Giữ năm status read-model LOCKED/AVAILABLE/ACTIVE/READY_TO_COMPLETE/COMPLETED. `OBJECTIVE_PARTIAL` là progress của ACTIVE, `FAILED_TEMPORARILY`/`SUSPENDED` là reason overlays của quest chưa complete, không terminal/persistent states cạnh tranh. Acceptance/selected objective được lưu trong existing quest record **chỉ nếu cần**, còn completed đọc WorldEventCompletion. Availability/evidence query khi mở UI/load, không chỉ listen future notification.
+
+| State/view | Allowed transitions / source | Save behavior | UI feedback | Reload / recovery |
+| --- | --- | --- | --- | --- |
+| LOCKED | Prerequisite facts chưa đủ; →AVAILABLE khi accepted predecessor/caps/context đủ | Không saved locked enum; derive từ source owners | “Cần hoàn thành mục tiêu trước.” hoặc giấu nội dung chưa biết | Recompute, không unlock từ phase cache/quest text; nếu unknown source thì pending |
+| AVAILABLE | Có thể bắt đầu; →ACTIVE khi accepted start/guide activation; →COMPLETED nếu source đã durable và prior proof đủ | Start/acceptance nếu policy cần ở existing record; không grant | Mục tiêu và source cue ngắn | Query prior proofs ngay, không bắt hành động lại hoặc accept sidequest để main xong |
+| ACTIVE | →READY_TO_COMPLETE khi mandatory evidence/current preflight đủ; progress update cùng state; temporary block giữ ACTIVE | Durable evidence/accepted intent tại đúng owners; không save mỗi prompt | Mục tiêu còn thiếu, reason retry/context | Restore evidence/target từ owners, không reset journal/form hoặc raw half-hit |
+| READY_TO_COMPLETE | Candidate hợp lệ; →COMPLETED sau source commit; →ACTIVE nếu condition/revision không còn đủ; pending ack reconcile | Không save ready flag làm authority, source candidate/intent theo W07 nếu cần | “Xác nhận” chỉ event cần action confirm; đang lưu không báo complete | Chưa committed về state từ facts, sau committed phải COMPLETED; retry same identity |
+| COMPLETED | Source parent event/outcome durable; không ordinary reactivation; presentation/revisit riêng | WorldEventCompletion/receipts là source, QuestCompletionRecord chỉ view/ref | Hoàn tất/next objective derived | Rebuild view, không regrant/undo completion; migration aliases giữ logic |
+| OBJECTIVE_PARTIAL overlay | ACTIVE có một phần evidence, không additional enum | Proofs/acceptance owners cũ | Chỉ rõ phần còn thiếu | Evidence đủ ở trước active được revalidate, không reset để đếm lại |
+| FAILED_TEMPORARILY overlay | Attempt/test fail hoặc route/source temporarily invalid, retry→ACTIVE reason clear | Attempt/outcome/last-good boundary riêng; không permanent questFailed | “Có thể thử lại.” và điều kiện thật | Loss/abort không xóa completion/earned proofs hoặc tự unlock boss lock |
+| SUSPENDED overlay | Content/storage/region/context unavailable; resume→state từ facts | Lưu accepted step/intent nếu schema cần, không hidden failure truth | Lý do chờ/đường quay lại | Unique source/alias unsupported giữ facts/recovery, không default success/reset |
+
+Projection precedence: durable COMPLETED thắng cache/overlays; nếu predecessor thiếu thì LOCKED, unknown source/content thì pending reason chứ không tự complete; phần còn lại đọc acceptance/evidence/context. Form E01 committed **không** tự parent quest complete: tiếp tục ACTIVE practice nếu parent chưa có. Chuẩn guided main activation khi đủ nguồn là proposal Q21, không side-quest click gating mới.
+
+## Permanent consequences theo source event
+
+| EventId / source scope | Preconditions / trigger | Authoritative owner / guaranteed write-set | Kết quả, dependent quests và map | Replay / save-load |
+| --- | --- | --- | --- | --- |
+| evt_01_quy_awakes source/memory/form | Task17 D29/source/compatibility/safe placement; explicit contact/resonance | E01 sub-completions + R03 MemoryRecord/unlock/active placement + form sub-grant cùng W07; memory attribution trước form O17-U04 vẫn unresolved | quy_awake/first_body_acquired từ form_committed; mở body practice, chưa mq_02 | Trước form last-good prebody, sau form resume Quy; no regrant bằng animation/quest alias |
+| evt_01_quy_awakes parent practice | Form có, mandatory practice/context receiver/exit evidence và placement đủ | E01 practice_complete/parent R0 + required local exit setting/quest evidence theo Task17 | mq_01 complete→mq_02, ab/B, không E02 fact | Same parent result không mở form lần hai; skip prompt không practice_complete |
+| evt_02_read_reef | E01 parent, eligible observation/clue/journal/territorial refuge proof, source accepted | E02 completion + relevant journal/knowledge/quest evidence + R0 recipient receipt trong W07 | reef_observed/journal_introduced aliases; bc/C/mq_03 | UI missing rederive, repeated observe không source reward mới; actor relocation có approved fallback |
+| evt_03_trace_returns | E02, required E evidence/bypass/outlet/refuge, explicit receiver/test | E03 outcome/proof + required bypass/shortcut patches + mem_quy_current component R03 + R0, property một owner | water_bypass_ready/water_evidence_recorded derived; eg/G/eb/gh và mq_04; chưa water_stable | Reconstruction target patch, no toggle/reward replay; mutable branch command khác parent completion vẫn same source permissions |
+| evt_04_guardian_conflict | E03, accepted qualifying outcome/attempt và operation permission, refuge constraint | E04 completion/outcome + actor disposition + accepted encounter/lock boundary refs + R0 atomically theo L16/W07 | water_conflict_resolved/tide_keeper_neutral aliases, mq_05/permission G; không gi/I/E05 | Loss/abandon không grant outcome; committed victory không đấu lại để khôi phục UI; retry policy chưa chốt |
+| evt_05_restore_water | E04 và valid current/outlet/sanctuary/reef/refuge/coverage proof, confirm | E05 completion + specified world/nav/current/habitat/critical placement patches + R0 receipts same revision | water_stable/refuge_preserved/chapter_01_complete derived; gi/I/ib/mq_06 available, không arrived | Storage/preflight fail giữ E04/last-good, retry E05 không regrant boss; predators/adapted habitat không wipe |
+| evt_06_surface_route | E05, traversal + destination/return/checkpoint valid | E06 completion/arrival + placement + return edge + R0 same transaction | route_sea_open/arrived_nhat_diem derived, N có return I/G/B/A; next chapter handoff | Before commit source I, after destination N; return/replay không new arrival reward |
+
+Một quest/event consequence chỉ guaranteed nếu source write-set liệt kê. Quest complete không tự mọi optional ecology variant, all wildlife discovery, memory khác hoặc skill/evolution/HP refill. Local mutable settings sau completion có commands/operationId/expected revision ở RegionState/LocalObjectState đúng owner, không replay parent và không tạo second permanent ledger. Sea_* phase W07 derived, không QuestProgressProjection viết region phase.
+
+## Rewards và idempotency
+
+Theo [P15](../economy/REWARD_CONSISTENCY.md), source-level unique claim = saveId + canonical source event/target khi scoped + reward component, stable grantId tham chiếu nguồn. Recipient-level allocations `grantId + recipientId` là components của **cùng RewardGrantLedger receipt**, không nguồn mới hoặc ledgers riêng. Source lookup trước recipient dedupe; source đã claimed trả frozen payload/recipients, không thêm recipient vì active form đổi. Quest/source consumer không double-pay cùng outcome; first-clear/knowledge/memory/access/EXP cần manifest stacking/exclusion rõ.
+
+E01 `grant_evt_01_quy_awakes_form` khác parent `grant_evt_01_quy_awakes` vì logical sub-result đã có S05, không version trick. Các E02–06 dùng existing `grant_<eventId>` source; không add second quest-completion grant cho cùng main event. XP attribution/amounts/resources chỉ P15 approved policy, không final quantities/loot grind/passive reserve XP mới. Content/schema/payload/display-name version không grant identity mới, migration aliases giữ claims.
+
+## Failure, storage và concurrency
+
+Candidate gồm source proof/outcome + required patches/quest evidence + recipients/ledger + route/checkpoint/coverage → atomic-equivalent durable commit → publish projection/dialogue/UI. Không báo đã lưu trước ack; mất ack lookup receipt, cùng source payload/revision không chạy lần hai. Two commands cùng update serialize/revalidate, conflict báo lý do; không callback order/last-writer-wins.
+
+Load validate references/integrity/latest valid generation, rebuild derived status, reconcile pending intent; raw UI flag thiếu không mint event/grant. Missing authority/contradictory receipt cần last-good/quarantine/migration, không suy parent E01 từ form hoặc E05 từ boss loot. Unknown newer schema không downgrade/xóa save. Prior objective eligible proof được công nhận, nhưng không bỏ prerequisite/source predicates; đã sửa cơ cấu không buộc tắt E05 để “nhìn hỏng”. Storage/adapter/recovery UX và memory boundary chưa approved, vẫn implementation blockers.

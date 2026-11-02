@@ -1,0 +1,74 @@
+{
+  "nonproduction": true,
+  "revision": "task34-stage-a-r2",
+  "paletteHex": {
+    "jade": [
+      "#101F2B",
+      "#173542",
+      "#214C55",
+      "#2D6163",
+      "#3C7570",
+      "#578E7D",
+      "#7DAA91",
+      "#A5BCA2",
+      "#C8C9AD",
+      "#3E5F61",
+      "#1B354B",
+      "#244A62",
+      "#37657B",
+      "#527F8C",
+      "#89AAA8",
+      "#67C6B3"
+    ],
+    "ocean": [
+      "#101F2B",
+      "#182E42",
+      "#20465A",
+      "#2A5A6E",
+      "#367184",
+      "#538E91",
+      "#7BAAA2",
+      "#A4BCAD",
+      "#C4C9B9",
+      "#3D596B",
+      "#192F4B",
+      "#244763",
+      "#365F7C",
+      "#507D92",
+      "#8CA9B8",
+      "#68BACA"
+    ]
+  },
+  "envelopes": {
+    "64x64": {
+      "margin_px": 2,
+      "cases": 24,
+      "outside_margin": [],
+      "clipped": []
+    },
+    "64x80": {
+      "margin_px": 2,
+      "cases": 24,
+      "outside_margin": [],
+      "clipped": []
+    },
+    "80x64": {
+      "margin_px": 2,
+      "cases": 24,
+      "outside_margin": [],
+      "clipped": []
+    },
+    "80x72": {
+      "margin_px": 2,
+      "cases": 24,
+      "outside_margin": [],
+      "clipped": []
+    },
+    "80x80": {
+      "margin_px": 2,
+      "cases": 24,
+      "outside_margin": [],
+      "clipped": []
+    }
+  }
+}

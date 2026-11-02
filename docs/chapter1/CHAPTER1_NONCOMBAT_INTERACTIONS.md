@@ -1,0 +1,21 @@
+# Quan sát và hỗ trợ không buộc chiến đấu
+
+**PROPOSED E20-P06**, theo [collection value](../gameplay/CREATURE_COLLECTION_VALUE.md), [P15 rewards](../economy/REWARD_CONSISTENCY.md), [mastery](../progression/SKILL_MASTERY.md). `hy_interact_*` là definition IDs nháp, không quest/event/grant đã đăng ký. Bind source/target/evidence/reward component qua owner hiện hữu trước implementation; không ledger ecology riêng.
+
+| Interaction / nơi | Action / điều kiện | Success evidence / retry | Reward concept / restraint | World/persistence |
+| --- | --- | --- | --- | --- |
+| hy_interact_observe_pulse / B | Giữ khoảng và quan sát sứa hoặc ambient feeder qua một nhịp đủ cue | Evidence context/source/cycle hợp lệ; bị gián đoạn thì thử lại, không cần frame-perfect | Knowledge/observation proof một lần; không mỗi lần nhìn đều EXP | Journal chỉ khi approved species; generic source là interaction knowledge, không fake species discovery |
+| hy_interact_follow_lane / B/C | Theo đàn carp/nhịp drift trên đoạn có refuge và return | Tới mốc nguồn sau đọc hành vi, không cần chạm/đuổi/giết | Route clue/meaningful-use evidence khi authored, không unlock mọi map | Tham chiếu E02 evidence nếu được bind, không complete E02/E03 từ proximity |
+| hy_interact_clear_refuge / D/B | Thấy actor mắc do obstruction context; mở đường bằng receiver baseline Quy I hợp lệ | Source ổn/đường trú và actor safe; fail giữ last-good/cho retry | Knowledge/assistance outcome, không tự XP/item/affinity cleanse | Quest-critical instance/placement + patch cùng W07; không spawn bản copy sau cứu |
+| hy_interact_restore_substrate / E/G | Tìm nguồn/đường hồi, chỉnh nhánh và kiểm habitat viable | Tua mở/anchor/feeding trở lại theo conditions thật; không full heal bằng click | Research/proof hoặc sourced EXP nếu reward manifest duyệt | E03/E05 consumer theo rules, không duplicate reward habitat+quest ngoài budget |
+| hy_interact_read_signals / D | Quan sát nhịp neo–thả/cảnh báo từ khoảng safe | Ghi behavior context, phân biệt warning và distress; chưa hiểu thì confidence chưa đủ | Knowledge về local behavior, không khẳng định dịch tiếng người hay origin | Interpretation/provenance tách facts, repeat chỉ feedback |
+| hy_interact_resonance_trial / B/D | Chỉ với designatedPlayable sau approval/source/compatibility, không bắt giết | Species-specific challenge và nguồn đủ ổn; ngắt giữ proof durable/retry | Form unlock một lần nếu eligible, không reward cho every wildlife | R03/RewardGrantLedger same writer, không capture item hoặc ghost body |
+| hy_interact_ecological_clue / B/E | Đọc lớp cư trú/habitat/flow evidence theo CL03/04 | Corroborate current state; không gán blame từ affinity | Narrative knowledge/quest proof khi đủ, không full memory/skill auto | Reuse source S05/R03, không clue boolean thứ hai |
+
+## Reward fairness và chống farm
+
+Combat hostile, nonlethal resolution, observation và exploration có thể là nguồn tiến trình có ý nghĩa nếu P15 author eligibility/budget/stacking. Không buộc peaceful kills để tối ưu main progression; không loot mọi actor. Attacking peaceful wildlife không tự nhận reward chỉ vì damage/kill callback; retaliation/retreat không đổi taxonomy/morality vĩnh viễn. Không thêm karma meter hoặc cấm mọi interaction ngoài scope.
+
+Một logical source/target/objective + reward component có source claim ổn định; recipient allocations nằm trong cùng RewardGrantLedger, source lookup trước recipient dedupe. Đổi active form/revisit/contentVersion không nhận lại. Observation replay/mở–khép dòng/tự gây hại rồi cứu không mint EXP/mastery/loot. Quest consumer có thể công nhận proof đã làm trước, không bắt đảo E05 để làm lại; manifest phải nói rõ stacking/exclusion khi nhiều consumer cùng proof.
+
+Payload/recipients/source snapshot đóng tại boundary theo policy P15, chưa số XP/drop/material. Source outcome + memory/knowledge/progression/route nếu có + ledger cùng W07 logical transaction; UI/audio không grant authority. Before durable fail giữ last-good/retry same identity, after durable restore receipt không trao lần nữa. Generic ambient không cần species collection record nếu chỉ đưa một knowledge proof từ interaction; source scope/reward definition phải được author trước prototype.

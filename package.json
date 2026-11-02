@@ -7,7 +7,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "test": "node tests/island.test.mjs && node tests/ui.test.mjs && node tests/sample.test.mjs && node tests/hai-uyen.test.mjs",
+    "test": "node tests/island.test.mjs && node tests/ui.test.mjs && node tests/sample.test.mjs && node tests/assets.test.cjs && node tests/renderer.test.mjs && node tests/map.test.mjs && node tests/input.test.mjs && node tests/persistence.test.mjs && node tests/diagnostics.test.mjs && node tests/hai-uyen.test.mjs",
     "test:browser": "node tests/island.browser.cjs",
     "art:dawn": "node scripts/build-dawn-environment.cjs",
     "art:build": "node scripts/build-tileset.cjs",
@@ -15,6 +15,20 @@
     "build": "node scripts/build-site.cjs",
     "art:sample": "node scripts/normalize-sample-props.cjs && node scripts/normalize-sample-materials.cjs && node scripts/build-sample-art.cjs",
     "test:sample": "node tests/sample.browser.cjs",
+    "test:assets": "node tests/assets.test.cjs",
+    "validate:assets": "node scripts/validate-assets.cjs",
+    "test:renderer": "node tests/renderer.test.mjs",
+    "test:renderer:browser": "node tests/renderer.browser.cjs",
+    "test:map": "node tests/map.test.mjs",
+    "test:map:browser": "node tests/map.browser.cjs",
+    "test:input": "node tests/input.test.mjs",
+    "test:input:browser": "node tests/input.browser.cjs",
+    "test:persistence": "node tests/persistence.test.mjs",
+    "test:persistence:browser": "node tests/persistence.browser.cjs",
+    "check:syntax": "node scripts/check-syntax.cjs",
+    "test:diagnostics": "node tests/diagnostics.test.mjs",
+    "test:debug:browser": "node tests/debug.browser.cjs",
+    "test:regression": "node scripts/run-regression.cjs",
     "test:hai-uyen": "node tests/hai-uyen.browser.cjs"
   },
   "devDependencies": {

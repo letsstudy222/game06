@@ -1,0 +1,141 @@
+{
+  "nonproduction": true,
+  "palette": [
+    "#112C38",
+    "#173F4A",
+    "#215665",
+    "#286B76",
+    "#35818B",
+    "#469A9C",
+    "#66B2A7",
+    "#90C9B7",
+    "#C0D0BA",
+    "#526F72",
+    "#243B53",
+    "#2B506B",
+    "#3B7088",
+    "#5597AC",
+    "#70C6C6",
+    "#A3E2D7",
+    "#D3F3E1",
+    "#3BB5C1",
+    "#6DE2E7",
+    "#B5F8EE"
+  ],
+  "studies": [
+    {
+      "file": "stage1-s-64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "bounds": [
+        8,
+        14,
+        57,
+        58
+      ],
+      "opaqueColors": 12,
+      "margin2": true
+    },
+    {
+      "file": "stage1-se-64x64.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "bounds": [
+        6,
+        10,
+        61,
+        57
+      ],
+      "opaqueColors": 12,
+      "margin2": true
+    },
+    {
+      "file": "stage1-se-64x80.png",
+      "size": [
+        64,
+        80
+      ],
+      "anchor": [
+        32,
+        40
+      ],
+      "bounds": [
+        6,
+        18,
+        61,
+        65
+      ],
+      "opaqueColors": 12,
+      "margin2": true
+    },
+    {
+      "file": "stage1-swim-key-64x80.png",
+      "size": [
+        64,
+        80
+      ],
+      "anchor": [
+        32,
+        40
+      ],
+      "bounds": [
+        6,
+        18,
+        61,
+        65
+      ],
+      "opaqueColors": 12,
+      "margin2": true
+    },
+    {
+      "file": "stage2-lineage-preview.png",
+      "size": [
+        96,
+        88
+      ],
+      "anchor": [
+        48,
+        44
+      ],
+      "bounds": [
+        11,
+        12,
+        89,
+        79
+      ],
+      "opaqueColors": 15,
+      "margin2": true
+    },
+    {
+      "file": "stage3-lineage-preview.png",
+      "size": [
+        112,
+        104
+      ],
+      "anchor": [
+        56,
+        52
+      ],
+      "bounds": [
+        9,
+        12,
+        106,
+        94
+      ],
+      "opaqueColors": 16,
+      "margin2": true
+    }
+  ]
+}
