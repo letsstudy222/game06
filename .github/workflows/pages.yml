@@ -1,4 +1,4 @@
-name: Publish Dawn Island
+name: Publish Dawn Island and Hai Uyen
 on:
   push:
     branches: [main]
@@ -21,12 +21,41 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: "24"
-      - name: Verify island
+      - run: npm ci
+      - name: Verify both games
         run: |
-          for file in src/island/*.mjs scripts/*.cjs; do node --check "$file"; done
+          for file in src/island/*.mjs src/hai-uyen/*.mjs scripts/*.cjs tests/*.cjs tests/*.mjs; do node --check "$file"; done
           npm test
-      - name: Prepare island-only site
+      - name: Prepare static site
         run: node scripts/build-site.cjs
+      - name: Install Chromium for release checks
+        run: npx playwright install --with-deps chromium
+      - name: Verify published layout under /game06/ before deploying
+        shell: bash
+        run: |
+          set -euo pipefail
+          RELEASE_ROOT="$RUNNER_TEMP/game06-release-prefix"
+          mkdir -p "$RELEASE_ROOT"
+          ln -s "$GITHUB_WORKSPACE/_site" "$RELEASE_ROOT/game06"
+          python3 -m http.server 8016 --bind 127.0.0.1 --directory "$RELEASE_ROOT" > "$RUNNER_TEMP/game06-release-server.log" 2>&1 &
+          RELEASE_SERVER_PID=$!
+          trap 'kill "$RELEASE_SERVER_PID" 2>/dev/null || true' EXIT
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8016/game06/hai-uyen.html > /dev/null; then break; fi
+            sleep 1
+          done
+          export CHROMIUM_PATH="$(node -e 'process.stdout.write(require("playwright").chromium.executablePath())')"
+          export SITE_URL=http://127.0.0.1:8016/game06
+          ARTIFACT_DIR="$RUNNER_TEMP/game06-site-checks" node tests/site-integration.browser.cjs
+          ARTIFACT_DIR="$RUNNER_TEMP/game06-smoke-checks" node tests/hai-uyen.smoke.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-checks-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/game06-site-checks
+            ${{ runner.temp }}/game06-smoke-checks
+          if-no-files-found: error
+          retention-days: 14
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

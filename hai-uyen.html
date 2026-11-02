@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0b2439" />
+    <title>Hải Uyên · Thử thách hồi lưu</title>
+    <link rel="icon" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="src/hai-uyen/style.css" />
+  </head>
+  <body>
+    <canvas
+      id="hai-uyen"
+      tabindex="0"
+      aria-label="Hải Uyên: di chuyển WASD, ngắm chuột, kỹ năng 1 đến 4, Space phòng thủ, E tương tác"
+    ></canvas>
+    <div id="loading" role="status">Đang khơi dòng Hải Uyên…</div>
+    <header>
+      <section class="spirit panel">
+        <div class="identity">
+          <span class="sigil">◎</span>
+          <div>
+            <strong>QUY HẢI UYÊN</strong><small>BẬC I · THỦY · SOLO</small>
+          </div>
+        </div>
+        <div
+          id="hp"
+          role="meter"
+          aria-label="Sinh lực linh thể"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <i></i><span></span>
+        </div>
+        <div id="buff">Trầm Hải Chi Thể · phòng ngự cơ bản</div>
+      </section>
+      <section class="place panel">
+        <span class="eyebrow">HẢI UYÊN / VERTICAL SLICE 1.0</span>
+        <h1 id="room-name">Buồng Thức Mai Cổ</h1>
+        <div class="room-line">
+          <span id="room-code">VS-A1</span
+          ><button id="menu-button" aria-label="Mở menu">☰</button>
+        </div>
+      </section>
+    </header>
+    <section class="mission panel">
+      <span class="eyebrow">DẤU DẪN LƯU</span>
+      <div id="objective"></div>
+    </section>
+    <div id="boss-hud" hidden>
+      <strong>Cua Giáp Thủy <span>MINIBOSS THỬ NGHIỆM</span></strong>
+      <div><i></i></div>
+      <small id="boss-state"></small>
+    </div>
+    <canvas
+      id="minimap"
+      width="128"
+      height="100"
+      aria-label="Bản đồ phòng: chấm Quy, cổng và checkpoint"
+    ></canvas>
+    <div id="notice" role="status"></div>
+    <div id="save-warning" role="alert" hidden></div>
+    <div id="joystick" aria-label="Cần di chuyển cảm ứng"><span></span></div>
+    <nav id="actions" aria-label="Kỹ năng Quy">
+      <button data-action="basic" aria-label="Đánh thường">
+        <b>J / Chuột</b><span>Vây kích</span><i></i>
+      </button>
+      <button data-action="k1" aria-label="K1 Thủy Kích">
+        <b>1</b><span>Thủy Kích</span><i></i>
+      </button>
+      <button data-action="k2" aria-label="K2 Hồi Lưu Toàn">
+        <b>2</b><span>Hồi Lưu</span><i></i>
+      </button>
+      <button data-action="k3" aria-label="K3 Thủy Mạch Ấn">
+        <b>3</b><span>Thủy Mạch</span><i></i>
+      </button>
+      <button data-action="k4" aria-label="K4 Trấn Hải Ba">
+        <b>4</b><span>Trấn Hải</span><i></i>
+      </button>
+      <button data-action="guard" aria-label="Space Thủ Mai">
+        <b>Space</b><span>Thủ Mai</span><i></i>
+      </button>
+      <button id="interact"><b>E</b><span>Tương tác</span></button>
+    </nav>
+    <footer>
+      <span
+        >WASD di chuyển · Chuột ngắm · 1–4 kỹ năng · Space phòng thủ · E tương
+        tác · Esc menu</span
+      ><small
+        >ART TẠM TRONG ENGINE · SANDBOX, KHÔNG PHẢI CHƯƠNG I HOÀN CHỈNH</small
+      >
+    </footer>
+    <dialog id="menu">
+      <form method="dialog">
+        <div class="eyebrow">TRỤ LƯU KÝ</div>
+        <h2>Giữ nhịp, mở dòng.</h2>
+        <p>
+          Một Quy bậc I, bốn phòng thử nghiệm. Đọc cảnh báo, tìm lối về; không
+          cần đồng đội hay tiến hóa.
+        </p>
+        <label
+          >Hồ sơ lưu
+          <select id="slot">
+            <option value="1">Hồ sơ 1</option>
+            <option value="2">Hồ sơ 2</option>
+            <option value="3">Hồ sơ 3</option>
+          </select></label
+        >
+        <p class="hint">
+          Chỉ đổi hồ sơ ngoài giao tranh. Khi tải lại giữa trận, trở về
+          checkpoint với sinh lực hiện tại; trận chưa thắng bắt đầu lại. Van, ký
+          ức và biên nhận được giữ.
+        </p>
+        <label
+          >Hiệu ứng môi trường
+          <select id="environment">
+            <option value="underwater">Dưới nước</option>
+            <option value="land">Trên cạn (đối chiếu VFX)</option>
+          </select></label
+        >
+        <p class="hint">
+          Chỉ đổi hạt nước; tầm, va chạm, sát thương và cooldown giữ nguyên.
+        </p>
+        <details open>
+          <summary>Điều khiển & kỹ năng</summary>
+          <p>
+            WASD / mũi tên: di chuyển. Chuột: ngắm; nhấp trái hoặc J: đánh gần.
+            1: đạn Thủy Kích. 2: đặt tâm hút Hồi Lưu tại điểm ngắm, tối đa
+            190px. 3: Thủy Mạch tăng cường 8 giây trên mai. 4: Trấn Hải lan vòng
+            tròn. Space: Thủ Mai; chặn đúng nhịp nhận Hồi Thủy. E: tương tác /
+            nghỉ tại ◆.
+          </p>
+          <p>
+            Cảm ứng: cần trái di chuyển, kéo trên nền bên phải để ngắm, chạm nút
+            kỹ năng. Chạm nền không tự bắn. Dùng cần di chuyển khi chưa ngắm để
+            chọn hướng đánh.
+          </p>
+        </details>
+        <p class="hint">
+          Cổng Tây luôn cho quay lại. Cổng cuối chưa liên kết. Đồ họa Quy và môi
+          trường là placeholder, không cắt từ concept. Tiến trình sandbox tách
+          biệt với Dawn.
+        </p>
+        <div class="menu-actions">
+          <button id="save-button" type="button">Ghi tiến trình</button
+          ><button value="resume" class="primary">Tiếp tục</button>
+        </div>
+        <a href="index.html">Về Đảo Bình Minh</a>
+      </form>
+    </dialog>
+    <script type="module" src="src/hai-uyen/main.mjs"></script>
+  </body>
+</html>

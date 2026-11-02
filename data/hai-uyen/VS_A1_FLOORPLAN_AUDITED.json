@@ -1,0 +1,165 @@
+{
+  "schema": "prototype_tilemap.v0.1",
+  "status": "proposal_audited_not_runtime",
+  "id": "VS-A1",
+  "size_tiles": [
+    36,
+    32
+  ],
+  "tile_px": 32,
+  "coordinate_system": "x east, y south, origin northwest, 0 based",
+  "legend": {
+    "#": "solid_stone",
+    ".": "walkable_floor"
+  },
+  "collision_rows": [
+    "####################################",
+    "#..................................#",
+    "#..................................#",
+    "#..######..................######..#",
+    "#..######..................######..#",
+    "#..######..................######..#",
+    "#..................................#",
+    "#..................................#",
+    "#...................................",
+    "#...................................",
+    "#..####......................####...",
+    "#..####......................####..#",
+    "#..####......................####..#",
+    "#..####......................####..#",
+    "#..####......................####..#",
+    "#..####......................####..#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "#..#####....................#####..#",
+    "#..#####....................#####..#",
+    "#..#####....................#####..#",
+    "#..#####.###.............########..#",
+    "#........###.............###.......#",
+    "#........###.............###.......#",
+    "#..................................#",
+    "#..................................#",
+    "#..................................#",
+    "####################################"
+  ],
+  "entities": [
+    {
+      "id": "spawn_quy",
+      "type": "spawn",
+      "x": 18,
+      "y": 26,
+      "facing": "N",
+      "persistent": false
+    },
+    {
+      "id": "cp_a1",
+      "type": "checkpoint",
+      "x": 22,
+      "y": 21,
+      "interact_radius_tiles": 2,
+      "state_flag": "vs.cp.a1",
+      "persistent": true
+    },
+    {
+      "id": "shrine_shell",
+      "type": "lore_shrine",
+      "x": 18,
+      "y": 8,
+      "interact_radius_tiles": 2,
+      "state_flag": "vs.lore.shrine_seen",
+      "persistent": true
+    },
+    {
+      "id": "lore_fragment_a",
+      "type": "optional_lore",
+      "x": 10,
+      "y": 19,
+      "interact_radius_tiles": 1.5,
+      "state_flag": "vs.lore.fragment_a",
+      "persistent": true
+    },
+    {
+      "id": "gate_b1",
+      "type": "transition",
+      "x": 34,
+      "y": 9,
+      "width_tiles": 2,
+      "target": "VS-B1",
+      "entry_anchor": "b1_from_a1",
+      "state_flag": "vs.gate.a1_b1",
+      "persistent": false,
+      "transition_policy": {
+        "arrival_rearm": "exit_source_trigger_before_reactivation",
+        "cooldown_ms_candidate": 250,
+        "restore_facing": true
+      }
+    },
+    {
+      "id": "decor_corals_west",
+      "type": "decor",
+      "x": 8,
+      "y": 16,
+      "collision": false
+    },
+    {
+      "id": "decor_corals_east",
+      "type": "decor",
+      "x": 27,
+      "y": 17,
+      "collision": false
+    },
+    {
+      "id": "a1_from_b1",
+      "type": "entry_anchor",
+      "x": 31,
+      "y": 8,
+      "facing": "W",
+      "sandbox_only": true,
+      "note": "Arrival point outside transition trigger; 2D hitbox and runtime rearm still require tests"
+    }
+  ],
+  "exits": [
+    {
+      "id": "gate_b1",
+      "direction": "E",
+      "edge_cells": [
+        [
+          35,
+          8
+        ],
+        [
+          35,
+          9
+        ],
+        [
+          35,
+          10
+        ]
+      ],
+      "target": "VS-B1",
+      "note": "sandbox only, not canon graph A-I",
+      "target_anchor": "b1_from_a1"
+    }
+  ],
+  "walkability_test": {
+    "checkpoint": true,
+    "shrine": true,
+    "lore": true,
+    "exit": true
+  },
+  "notes": [
+    "No hostile enemies in A1",
+    "visual tiles and pixel art still TBD",
+    "use fallback procedural stone tiles until atlas ready"
+  ],
+  "audit_revision": "M4 static revision, 2026-11-02",
+  "validation": {
+    "grid_shape": "pass",
+    "transitions": "static_checked",
+    "runtime": "not_tested"
+  }
+}

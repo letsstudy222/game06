@@ -666,3 +666,29 @@ select {
     transition: none !important;
   }
 }
+
+/* Additive launch link: Dawn remains the default game on the home page. */
+.hai-uyen-launch {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 168px;
+  min-height: 48px;
+  padding: 6px 12px;
+  color: #ffe4a5;
+  font-size: 22px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  background: rgb(19 34 42 / var(--ui-opacity));
+  border: 1px solid #b58d52;
+  box-shadow: 0 2px 5px #0e1c2940;
+  pointer-events: auto;
+}
+.hai-uyen-launch span { font-size: 13px; color: #b8e4d8; margin-top: 3px; }
+.hai-uyen-launch:hover { background: #204d55; }
+.hai-uyen-launch:focus-visible { outline: 3px solid #fff0bc; outline-offset: 3px; }
+@media (max-width: 600px) { .hai-uyen-launch { top: 110px; } }
