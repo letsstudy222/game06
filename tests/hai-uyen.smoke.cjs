@@ -5,6 +5,7 @@ const { chromium } = require("playwright");
 const root = process.env.SITE_URL || "http://127.0.0.1:8001";
 const out = process.env.ARTIFACT_DIR || "artifacts/hai-uyen";
 (async () => {
+  fs.rmSync(path.join(out, "smoke-results.json"), { force: true });
   const browser = await chromium.launch({
     executablePath: process.env.CHROMIUM_PATH || "/usr/bin/chromium",
     args: ["--no-sandbox"],

@@ -52,6 +52,7 @@ export class HaiUyenGame {
     this.checkpoint = { room: this.room, x: this.player.x, y: this.player.y };
     this.restEpoch = 0;
     this.roomEnemies = {};
+    this.nextSpawnId = 0;
     this.paused = false;
     this.environment = "underwater";
     this.message = "Quy đã thức. Đến trụ ◆ và nhấn E để ghi checkpoint.";
@@ -195,6 +196,7 @@ export class HaiUyenGame {
         timer: 1,
         cycle: 0,
         attackId: 0,
+        instance: ++this.nextSpawnId,
         angle: 0,
         phase: 1,
         navKey: "",
@@ -746,7 +748,7 @@ export class HaiUyenGame {
         if (this.attackHits(e, this.player))
           this.damage(
             e.boss ? 22 : 12,
-            `${this.room}:${e.id}:${e.cycle}:${e.attackId}`,
+            `${this.room}:${e.instance}:${e.id}:${e.cycle}:${e.attackId}`,
           );
         if (e.timer <= 0) {
           e.state = "recover";

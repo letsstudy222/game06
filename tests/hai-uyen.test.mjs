@@ -432,3 +432,20 @@ test("Hoi Thuy is reserved for K1/K2/K4/Space, never wasted by basic or self buf
   assert(!g.empowered);
   assert(g.projectiles[0].enhanced);
 });
+
+test("new encounter incarnations cannot reuse damage receipts and grant accidental retry immunity", () => {
+  const g = new HaiUyenGame(maps);
+  at(g, "VS-ARENA", "arena_from_lab");
+  const boss = g.enemies[0],
+    source = (e) => `${g.room}:${e.instance}:${e.id}:1:1`;
+  g.damage(10, source(boss));
+  const hp = g.player.hp;
+  delete g.roomEnemies[g.room];
+  g.spawnEnemies();
+  const retry = g.enemies[0];
+  assert.notEqual(boss.instance, retry.instance);
+  tick(g, 0.6);
+  g.damage(10, source(retry));
+  assert(g.player.hp < hp);
+  assert.equal(g.metrics.hits, 2);
+});
