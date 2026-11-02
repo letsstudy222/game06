@@ -1,0 +1,280 @@
+{
+  "schema": "prototype_tilemap.v0.1",
+  "status": "proposal_audited_not_runtime",
+  "id": "VS-B1",
+  "region_canon": "B — Rạn Ánh Dịu",
+  "size_tiles": [
+    64,
+    48
+  ],
+  "tile_px": 32,
+  "coordinate_system": "x east, y south, origin northwest, 0 based",
+  "legend": {
+    "#": "solid_reef_or_rock",
+    ".": "walkable_reef_floor"
+  },
+  "collision_rows": [
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "#########..........###............##############################",
+    "#########..........###............##############################",
+    "#########.........................##############################",
+    "#########.........................##############################",
+    "#########.........................##############################",
+    "#########.........................##############################",
+    "#########.........................##############################",
+    "#########.......###########.......##############################",
+    "#########.......###########.......####...........###############",
+    "######....................#.......####...........###############",
+    "#........................................###...................#",
+    "#...................###..................###...................#",
+    "#...................###........................................#",
+    "................................................................",
+    "................................................................",
+    "................................................................",
+    "#..............................................................#",
+    "#..............................................................#",
+    "#....................###...................###.................#",
+    "######.........#.....###..######...........###...#.......#######",
+    "################..........######.................#.......#######",
+    "################################.......###########.......#######",
+    "################################.......###########.......#######",
+    "################################.......###########.......#######",
+    "################################.......###########.......#######",
+    "################################...........###...........#######",
+    "################################...........###...........#######",
+    "################################.........................#######",
+    "################################.........................#######",
+    "################################.........................#######",
+    "################################.........................#######",
+    "################################.........................#######",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################",
+    "################################################################"
+  ],
+  "entities": [
+    {
+      "id": "b1_from_a1",
+      "type": "entry_anchor",
+      "x": 3,
+      "y": 23,
+      "facing": "E",
+      "persistent": false
+    },
+    {
+      "id": "b1_to_lab",
+      "type": "transition",
+      "x": 62,
+      "y": 23,
+      "edge_cells": [
+        [
+          63,
+          22
+        ],
+        [
+          63,
+          23
+        ],
+        [
+          63,
+          24
+        ]
+      ],
+      "target": "VS-LAB",
+      "entry_anchor": "lab_from_b1",
+      "sandbox_only": true,
+      "transition_policy": {
+        "arrival_rearm": "exit_source_trigger_before_reactivation",
+        "cooldown_ms_candidate": 250,
+        "restore_facing": true
+      }
+    },
+    {
+      "id": "b1_back_a1",
+      "type": "transition",
+      "x": 1,
+      "y": 23,
+      "edge_cells": [
+        [
+          0,
+          22
+        ],
+        [
+          0,
+          23
+        ],
+        [
+          0,
+          24
+        ]
+      ],
+      "target": "VS-A1",
+      "entry_anchor": "a1_from_b1",
+      "sandbox_only": true,
+      "transition_policy": {
+        "arrival_rearm": "exit_source_trigger_before_reactivation",
+        "cooldown_ms_candidate": 250,
+        "restore_facing": true
+      }
+    },
+    {
+      "id": "enemy_reef_01",
+      "type": "enemy_spawn",
+      "archetype": "ca_kem_ran",
+      "x": 20,
+      "y": 24,
+      "aggro_radius_tiles": 6,
+      "leash_radius_tiles": 9,
+      "respawn_policy": "on_reentry_after_rest",
+      "persistent": false
+    },
+    {
+      "id": "enemy_jelly_01",
+      "type": "enemy_spawn",
+      "archetype": "sua_hoi_luu",
+      "x": 44,
+      "y": 23,
+      "aggro_radius_tiles": 6,
+      "leash_radius_tiles": 8,
+      "respawn_policy": "on_reentry_after_rest",
+      "persistent": false
+    },
+    {
+      "id": "optional_lore_north",
+      "type": "optional_lore",
+      "x": 28,
+      "y": 12,
+      "state_flag": "vs.b1.lore_north",
+      "persistent": true
+    },
+    {
+      "id": "secret_cache_south",
+      "type": "secret_cache",
+      "x": 47,
+      "y": 37,
+      "state_flag": "vs.b1.cache_south_claimed",
+      "persistent": true,
+      "receipt_id": "vs.reward.b1.cache_south.v1"
+    },
+    {
+      "id": "current_tutorial",
+      "type": "flow_visual",
+      "x": 34,
+      "y": 23,
+      "direction": "E",
+      "force": "visual_only_first_pass",
+      "persistent": false
+    },
+    {
+      "id": "coral_landmark",
+      "type": "landmark",
+      "x": 13,
+      "y": 11,
+      "collision": false
+    },
+    {
+      "id": "sign_main_route",
+      "type": "guidance_marker",
+      "x": 31,
+      "y": 20,
+      "direction": "E",
+      "collision": false
+    },
+    {
+      "id": "b1_from_lab",
+      "type": "entry_anchor",
+      "x": 59,
+      "y": 23,
+      "facing": "W",
+      "sandbox_only": true,
+      "note": "Arrival point outside transition trigger; 2D hitbox and runtime rearm still require tests"
+    }
+  ],
+  "exits": [
+    {
+      "id": "b1_back_a1",
+      "direction": "W",
+      "target": "VS-A1",
+      "target_anchor": "a1_from_b1",
+      "sandbox_only": true
+    },
+    {
+      "id": "b1_to_lab",
+      "direction": "E",
+      "target": "VS-LAB",
+      "target_anchor": "lab_from_b1",
+      "sandbox_only": true
+    }
+  ],
+  "art_zones": [
+    {
+      "id": "start_reef",
+      "rect": [
+        2,
+        18,
+        17,
+        29
+      ],
+      "palette": "light_turquoise"
+    },
+    {
+      "id": "northern_coral",
+      "rect": [
+        8,
+        8,
+        34,
+        18
+      ],
+      "palette": "pink_coral"
+    },
+    {
+      "id": "central_channel",
+      "rect": [
+        27,
+        19,
+        41,
+        28
+      ],
+      "palette": "cyan_flow"
+    },
+    {
+      "id": "southern_secrets",
+      "rect": [
+        31,
+        32,
+        57,
+        41
+      ],
+      "palette": "deep_teal"
+    }
+  ],
+  "walkability_test": {
+    "all_entities_reachable": true,
+    "main_spine_2tiles_clear": true,
+    "reachable_cells": 1088
+  },
+  "notes": [
+    "No mandatory puzzle or unlock in B1; solo Quy stage I can pass",
+    "North and south branches are optional loops, not main story gates",
+    "Transitions sandbox only and must be matched to canon graph before production",
+    "Sứa and cá are candidate enemy archetypes, not approved canon",
+    "No actual native tileset; image is technical drawing"
+  ],
+  "audit_revision": "M4 static revision, 2026-11-02",
+  "validation": {
+    "grid_shape": "pass",
+    "transitions": "static_checked",
+    "runtime": "not_tested"
+  }
+}

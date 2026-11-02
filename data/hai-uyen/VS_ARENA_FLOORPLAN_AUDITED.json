@@ -1,0 +1,294 @@
+{
+  "schema": "prototype_tilemap.v0.1",
+  "status": "proposal_audited_not_runtime",
+  "id": "VS-ARENA",
+  "region_canon": "Sandbox miniboss, NOT canonical H — Thềm Giữ Nước",
+  "size_tiles": [
+    48,
+    48
+  ],
+  "tile_px": 32,
+  "coordinate_system": "x east, y south, origin northwest, 0 based",
+  "legend": {
+    "#": "solid_ancient_rock_or_pillar",
+    ".": "walkable_floor"
+  },
+  "collision_rows": [
+    "################################################",
+    "#.......................................#......#",
+    "#.......................................#......#",
+    "#.......................................#......#",
+    "#.......................................#......#",
+    "#....######################################....#",
+    "#....###################.##################....#",
+    "#....#############.............############....#",
+    "#....###########.................##########....#",
+    "#....#########.....................########....#",
+    "#....########.......................#######....#",
+    "#....######...........................#####....#",
+    "#....#####..###...................###..####....#",
+    "#....####...###...................###...###....#",
+    "#....####...###...................###...###....#",
+    "#....###................................###....#",
+    "#....##.................................#.#....#",
+    "#....##.................................#.#....#",
+    "#....##.................................#.#....#",
+    "#....#..................................#......#",
+    "#....#..................................#......#",
+    "#.......................................#......#",
+    "#.......................................#......#",
+    "#..............................................#",
+    "#..............................................#",
+    "#..............................................#",
+    "#.......................................#......#",
+    "#.......................................#......#",
+    "#....#..................................#......#",
+    "#....#..................................#......#",
+    "#....##.................................#.#....#",
+    "#....##.................................#.#....#",
+    "#....##.................................#.#....#",
+    "#....###................................###....#",
+    "#....####...###...................###...###....#",
+    "#....####...###...................###...###....#",
+    "#....#####..###...................###..####....#",
+    "#....######...........................#####....#",
+    "#....########.......................#######....#",
+    "#....#########.....................########....#",
+    "#....###########.................##########....#",
+    "#....#############.............############....#",
+    "#....###################.##################....#",
+    "#.......................................#......#",
+    "#.......................................#......#",
+    "#.......................................#......#",
+    "#.......................................#......#",
+    "################################################"
+  ],
+  "entities": [
+    {
+      "id": "arena_from_lab",
+      "type": "entry_anchor",
+      "x": 4,
+      "y": 24,
+      "facing": "E"
+    },
+    {
+      "id": "arena_back_lab",
+      "type": "transition",
+      "x": 1,
+      "y": 24,
+      "target": "VS-LAB",
+      "entry_anchor": "lab_from_arena",
+      "edge_cells": [
+        [
+          0,
+          23
+        ],
+        [
+          0,
+          24
+        ],
+        [
+          0,
+          25
+        ]
+      ],
+      "sandbox_only": true,
+      "transition_policy": {
+        "arrival_rearm": "exit_source_trigger_before_reactivation",
+        "cooldown_ms_candidate": 250,
+        "restore_facing": true
+      }
+    },
+    {
+      "id": "preboss_rest",
+      "type": "rest_marker",
+      "x": 9,
+      "y": 24,
+      "state_flag": "vs.arena.rest_seen",
+      "persistent": true,
+      "note": "no automatic HP refill on repeated entry; intentional checkpoint behavior subject to save contract"
+    },
+    {
+      "id": "boss_cua_giap_thuy",
+      "type": "boss_spawn",
+      "archetype": "cua_giap_thuy",
+      "x": 24,
+      "y": 24,
+      "arena_rect": [
+        10,
+        9,
+        29,
+        30
+      ],
+      "active_when": "player_crosses_trigger",
+      "defeat_flag": "vs.arena.boss_defeated",
+      "persistent": false,
+      "encounter_id": "vs.arena.cua_giap_thuy.v1",
+      "respawn_policy": "no_respawn_after_defeat_flag"
+    },
+    {
+      "id": "boss_start_trigger",
+      "type": "encounter_trigger",
+      "rect": [
+        17,
+        19,
+        5,
+        10
+      ],
+      "triggers": "vs.arena.boss_engaged",
+      "once_per_life": true
+    },
+    {
+      "id": "arena_exit_gate",
+      "type": "dynamic_gate",
+      "x": 40,
+      "y": 24,
+      "affected_cells": [
+        [
+          40,
+          23
+        ],
+        [
+          40,
+          24
+        ],
+        [
+          40,
+          25
+        ]
+      ],
+      "open_when": "vs.arena.boss_defeated",
+      "persistent": true
+    },
+    {
+      "id": "memorial_tablet",
+      "type": "optional_lore",
+      "x": 44,
+      "y": 23,
+      "state_flag": "vs.arena.memorial_seen",
+      "persistent": true
+    },
+    {
+      "id": "one_time_reward",
+      "type": "secret_cache",
+      "x": 44,
+      "y": 26,
+      "state_flag": "vs.arena.reward_claimed",
+      "receipt_id": "vs.reward.arena.first_clear.v1",
+      "persistent": true
+    },
+    {
+      "id": "exit_portal_stub",
+      "type": "future_portal_stub",
+      "x": 45,
+      "y": 24,
+      "target": null,
+      "behavior": "visually_inactive",
+      "note": "never advertise unavailable transition"
+    },
+    {
+      "id": "boss_boundary_hint",
+      "type": "guidance_marker",
+      "x": 15,
+      "y": 24,
+      "collision": false,
+      "message": "Watch the claw tell; brace at the pulse"
+    }
+  ],
+  "exits": [
+    {
+      "id": "arena_back_lab",
+      "direction": "W",
+      "target": "VS-LAB",
+      "target_anchor": "lab_from_arena",
+      "sandbox_only": true
+    },
+    {
+      "id": "exit_portal_stub",
+      "direction": "E",
+      "target": null,
+      "disabled": true,
+      "requires_flag": "vs.arena.boss_defeated"
+    }
+  ],
+  "state_machine": {
+    "states": [
+      "IDLE",
+      "ENGAGED",
+      "DEFEATED"
+    ],
+    "events": [
+      {
+        "when": "boss_start_trigger_and_not_defeated",
+        "from": "IDLE",
+        "to": "ENGAGED"
+      },
+      {
+        "when": "hp_reaches_zero_and_receipt_recorded",
+        "from": "ENGAGED",
+        "to": "DEFEATED",
+        "set_flag": "vs.arena.boss_defeated"
+      }
+    ],
+    "reload": "restore defeat flag, gate and one-time receipt before spawning enemies",
+    "failure": "return to latest valid checkpoint; preserve puzzle and defeated flags; arena encounter resets only if not defeated"
+  },
+  "boss_design": {
+    "name": "Cua Giáp Thủy",
+    "role": "test miniboss, not canonical chapter boss",
+    "phases": [
+      {
+        "phase": 1,
+        "hp_ratio": "100–55%",
+        "actions": [
+          "claw_sweep_telegraph_cone",
+          "straight_charge_telegraph_lane"
+        ],
+        "punish_window": "after charged move"
+      },
+      {
+        "phase": 2,
+        "hp_ratio": "55–0%",
+        "actions": [
+          "claw_sweep_telegraph_cone",
+          "straight_charge_telegraph_lane",
+          "pressure_ring_telegraph_annulus"
+        ],
+        "punish_window": "after pressure ring"
+      }
+    ],
+    "fairness": [
+      "telegraph precedes collision",
+      "windup/cooldown clearly visible",
+      "no unavoidable hit when spawn entry",
+      "boss immune to forced displacement, not necessarily to all effects",
+      "Space defense works for valid attack without mandated i-frames",
+      "readable with and without Thuy Mach",
+      "no second ally appears"
+    ]
+  },
+  "walkability_test": {
+    "dimensions_valid": true,
+    "entry_to_boss_pre_defeat": true,
+    "entry_to_backtrack": true,
+    "memorial_blocked_pre_defeat": true,
+    "memorial_reachable_post_defeat": true,
+    "reachable_pre": 1457,
+    "reachable_post": 1688
+  },
+  "notes": [
+    "Build as sandbox-only encounter; no canonical story boss assumption.",
+    "Do not import concept art as native sprite atlas.",
+    "Portal stub is unlinked until next authored map exists.",
+    "Prototype gate collision is dynamic and state dependent; affected_cells override static floor on load.",
+    "Boss trigger must not lock west exit without intentional fail-safe.",
+    "One-time reward requires receipt journal and atomic save, not a bare flag.",
+    "Numeric windups, HP, attacks are deliberately unspecified pending playtest."
+  ],
+  "audit_revision": "M4 static revision, 2026-11-02",
+  "validation": {
+    "grid_shape": "pass",
+    "transitions": "static_checked",
+    "runtime": "not_tested"
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "schema": "prototype_tilemap.v0.1",
+  "status": "proposal_audited_not_runtime",
+  "id": "VS-LAB",
+  "region_canon": "C — Khe Dẫn Lưu (sandbox challenge, not canonical placement)",
+  "size_tiles": [
+    48,
+    40
+  ],
+  "tile_px": 32,
+  "coordinate_system": "x east, y south, origin northwest, 0 based",
+  "legend": {
+    "#": "solid_ancient_stone",
+    ".": "walkable_floor"
+  },
+  "collision_rows": [
+    "################################################",
+    "#......................................##......#",
+    "#......................................##......#",
+    "#......................................##......#",
+    "#......................................##......#",
+    "#.......#####................######....##......#",
+    "#.......#####................######....##......#",
+    "#.......#####................######....##......#",
+    "#.......#####.....######.....######....##......#",
+    "#.......#####.....######.....######....##......#",
+    "#.......#####.....######...............##......#",
+    "#.......#####.....######...............##......#",
+    "#.......#####.....######...............##......#",
+    "#.......#####......................##..##......#",
+    "#.......#####......................##..##......#",
+    "#.......#####..........................##......#",
+    "#......................................##......#",
+    "#..............##..........##..........##......#",
+    "#..............##..........##..................#",
+    "................................................",
+    "................................................",
+    "................................................",
+    "#..............................................#",
+    "#..............##..........##..........##......#",
+    "#..............##..........##..........##......#",
+    "#......................................##......#",
+    "#.......#####..........................##......#",
+    "#.......#####....########..........##..##......#",
+    "#.......#####....########..........##..##......#",
+    "#.......#####....########..............##......#",
+    "#.......#####....########..............##......#",
+    "#.......#####....########....######....##......#",
+    "#.......#####................######....##......#",
+    "#.......#####................######....##......#",
+    "#.......#####................######....##......#",
+    "#............................######....##......#",
+    "#......................................##......#",
+    "#......................................##......#",
+    "#......................................##......#",
+    "################################################"
+  ],
+  "entities": [
+    {
+      "id": "lab_from_b1",
+      "type": "entry_anchor",
+      "x": 3,
+      "y": 20,
+      "facing": "E"
+    },
+    {
+      "id": "lab_back_b1",
+      "type": "transition",
+      "x": 1,
+      "y": 20,
+      "target": "VS-B1",
+      "entry_anchor": "b1_from_lab",
+      "edge_cells": [
+        [
+          0,
+          19
+        ],
+        [
+          0,
+          20
+        ],
+        [
+          0,
+          21
+        ]
+      ],
+      "sandbox_only": true,
+      "transition_policy": {
+        "arrival_rearm": "exit_source_trigger_before_reactivation",
+        "cooldown_ms_candidate": 250,
+        "restore_facing": true
+      }
+    },
+    {
+      "id": "valve_pressure_a",
+      "type": "puzzle_valve",
+      "x": 15,
+      "y": 10,
+      "required_action": "quy.k1.water_impact",
+      "state_flag": "vs.lab.valve_a_primed",
+      "persistent": true,
+      "feedback": "channel_cyan_lights"
+    },
+    {
+      "id": "control_stabilizer_b",
+      "type": "puzzle_valve",
+      "x": 31,
+      "y": 26,
+      "required_action": "quy.k2.area_center_over_target",
+      "requires_flag": "vs.lab.valve_a_primed",
+      "state_flag": "vs.lab.valve_b_stable",
+      "persistent": true,
+      "feedback": "vortex_flattens_flow"
+    },
+    {
+      "id": "water_gate",
+      "type": "dynamic_gate",
+      "x": 39,
+      "y": 20,
+      "affected_cells": [
+        [
+          39,
+          18
+        ],
+        [
+          39,
+          19
+        ],
+        [
+          39,
+          20
+        ],
+        [
+          39,
+          21
+        ],
+        [
+          39,
+          22
+        ],
+        [
+          40,
+          18
+        ],
+        [
+          40,
+          19
+        ],
+        [
+          40,
+          20
+        ],
+        [
+          40,
+          21
+        ],
+        [
+          40,
+          22
+        ]
+      ],
+      "open_when": "vs.lab.valve_b_stable",
+      "persistent": true
+    },
+    {
+      "id": "lab_checkpoint",
+      "type": "checkpoint",
+      "x": 34,
+      "y": 20,
+      "state_flag": "vs.cp.lab",
+      "persistent": true
+    },
+    {
+      "id": "lab_to_arena",
+      "type": "transition",
+      "x": 46,
+      "y": 20,
+      "target": "VS-ARENA",
+      "entry_anchor": "arena_from_lab",
+      "edge_cells": [
+        [
+          47,
+          19
+        ],
+        [
+          47,
+          20
+        ],
+        [
+          47,
+          21
+        ]
+      ],
+      "sandbox_only": true,
+      "transition_policy": {
+        "arrival_rearm": "exit_source_trigger_before_reactivation",
+        "cooldown_ms_candidate": 250,
+        "restore_facing": true
+      }
+    },
+    {
+      "id": "water_current_lane",
+      "type": "current_zone",
+      "rect": [
+        24,
+        19,
+        9,
+        3
+      ],
+      "direction": "E",
+      "mode": "visual_then_low_push",
+      "disable_when": "vs.lab.valve_b_stable",
+      "no_forced_softlock": true
+    },
+    {
+      "id": "lore_pressure_log",
+      "type": "optional_lore",
+      "x": 20,
+      "y": 34,
+      "state_flag": "vs.lab.lore_pressure_log",
+      "persistent": true
+    },
+    {
+      "id": "puzzle_hint",
+      "type": "guidance_marker",
+      "x": 17,
+      "y": 20,
+      "message": "Water impact first; calm the downstream whirlpool next",
+      "collision": false
+    },
+    {
+      "id": "lab_from_arena",
+      "type": "entry_anchor",
+      "x": 43,
+      "y": 20,
+      "facing": "W",
+      "sandbox_only": true,
+      "note": "Arrival point outside transition trigger; 2D hitbox and runtime rearm still require tests"
+    }
+  ],
+  "exits": [
+    {
+      "id": "lab_back_b1",
+      "target": "VS-B1",
+      "target_anchor": "b1_from_lab",
+      "sandbox_only": true
+    },
+    {
+      "id": "lab_to_arena",
+      "target": "VS-ARENA",
+      "target_anchor": "arena_from_lab",
+      "requires_flag": "vs.lab.valve_b_stable",
+      "sandbox_only": true
+    }
+  ],
+  "state_machine": {
+    "start": "UNPRIMED",
+    "transitions": [
+      {
+        "from": "UNPRIMED",
+        "action": "k1_hits_valve_a",
+        "to": "PRIMED",
+        "set_flag": "vs.lab.valve_a_primed"
+      },
+      {
+        "from": "PRIMED",
+        "action": "k2_center_over_stabilizer_b",
+        "to": "STABILIZED",
+        "set_flag": "vs.lab.valve_b_stable"
+      }
+    ],
+    "reload": "restore_flags_before_collision",
+    "revisit": "gate_remains_open_when_stable",
+    "sandbox_only": true
+  },
+  "entry_contract": {
+    "required_skills": [
+      "K1 Thủy Kích",
+      "K2 Hồi Lưu Toàn"
+    ],
+    "fallback": "debug trial loadout grants K1/K2 if story unlock sequence not yet implemented"
+  },
+  "walkability_test": {
+    "pre_gate_exit_reachable": false,
+    "pre_gate_backtrack": true,
+    "pre_gate_valves_reachable": true,
+    "post_gate_exit_reachable": true,
+    "pre_gate_reachable_cells": 1193,
+    "post_gate_reachable_cells": 1434
+  },
+  "notes": [
+    "Gate is dynamic, not static collision; store state in save flags.",
+    "No skill beyond Quy stage I.",
+    "K2 must be flat whirlpool/vortex sink on floor, not vertical tornado.",
+    "Links into B1 require new safe anchor b1_from_lab; do not reuse B1 entry from A1.",
+    "Do not insert as canon Chapter I path without graph review."
+  ],
+  "audit_revision": "M4 static revision, 2026-11-02",
+  "validation": {
+    "grid_shape": "pass",
+    "transitions": "static_checked",
+    "runtime": "not_tested"
+  }
+}
