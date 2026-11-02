@@ -1,0 +1,33 @@
+# REVIEW ONLY. Install in a separate repository AFTER explicit approval.
+# Proposed repository: letsstudy222/game06-hai-uyen-preview
+# Copy the tested _site contents into site/ on branch preview.
+# Configure Pages source=GitHub Actions in the NEW repository only.
+name: Publish isolated Hai Uyen preview
+on:
+  push:
+    branches: [preview]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: isolated-hai-uyen-pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/preview'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Verify compiled site exists
+        run: test -f site/hai-uyen.html && test -f site/src/hai-uyen/main.mjs && test -f site/data/hai-uyen/VS_A1_FLOORPLAN_AUDITED.json
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deploy

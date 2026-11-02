@@ -1,0 +1,70 @@
+name: Build Hai Uyen preview
+on:
+  push:
+    branches: [work]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: hai-uyen-preview-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-preview:
+    if: github.ref == 'refs/heads/work'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check:syntax && npm test && npm run build
+      - name: Install browser for prefix smoke check
+        run: npx playwright install --with-deps chromium
+      - name: Verify /game06/ prefix without publishing
+        shell: bash
+        run: |
+          set -euo pipefail
+          PREVIEW_ROOT="$RUNNER_TEMP/hai-uyen-preview-prefix"
+          mkdir -p "$PREVIEW_ROOT" "$RUNNER_TEMP/hai-uyen-preview-evidence"
+          ln -s "$GITHUB_WORKSPACE/_site" "$PREVIEW_ROOT/game06"
+          python3 -m http.server 8016 --bind 127.0.0.1 --directory "$PREVIEW_ROOT" > "$RUNNER_TEMP/hai-uyen-preview-server.log" 2>&1 &
+          PREVIEW_PID=$!
+          trap 'kill "$PREVIEW_PID" 2>/dev/null || true' EXIT
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8016/game06/hai-uyen.html > /dev/null; then break; fi
+            sleep 1
+          done
+          CHROMIUM_PATH="$(node -e 'process.stdout.write(require("playwright").chromium.executablePath())')" \
+          SITE_URL=http://127.0.0.1:8016/game06 \
+          ARTIFACT_DIR="$RUNNER_TEMP/hai-uyen-preview-evidence" \
+          node tests/hai-uyen.smoke.cjs
+      - uses: actions/upload-artifact@v4
+        id: site
+        with:
+          name: hai-uyen-preview-${{ github.sha }}
+          path: _site
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hai-uyen-prefix-evidence-${{ github.sha }}
+          path: ${{ runner.temp }}/hai-uyen-preview-evidence
+          if-no-files-found: error
+          retention-days: 14
+      - name: Preview information
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_REPOSITORY: ${{ github.repository }}
+          ARTIFACT_URL: ${{ steps.site.outputs.artifact-url }}
+        run: |
+          {
+            echo '## Hải Uyên preview build'
+            echo "Commit: $SOURCE_SHA"
+            echo "Downloadable static site artifact (not a hosted website): $ARTIFACT_URL"
+            echo 'Entry: hai-uyen.html. Prefix /game06/ verified by headless Chromium.'
+            echo 'No Pages deployment, Pages Settings change, production environment, or main push performed.'
+            echo "Optional public-source CDN candidate (availability not verified by this workflow): https://raw.githack.com/$SOURCE_REPOSITORY/$SOURCE_SHA/hai-uyen.html"
+          } >> "$GITHUB_STEP_SUMMARY"
