@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-02T07:42:30.318Z",
+  "url": "http://127.0.0.1:8001/hai-uyen.html",
+  "results": [
+    "8 aim facings captured, NE distinct from E",
+    "gate_b1 → VS-B1 safe arrival/no bounce",
+    "reef fish defeated by actual input and hitboxes",
+    "b1_to_lab → VS-LAB safe arrival/no bounce",
+    "refresh between valves preserves primed A",
+    "lab_to_arena → VS-ARENA safe arrival/no bounce",
+    "K2 cooldown preserved across transition",
+    "solo boss defeated, both phases and all three telegraphs observed",
+    "victory and reward persist on refresh, no duplicate",
+    "arena_back_lab → VS-LAB safe arrival/no bounce",
+    "lab_back_b1 → VS-B1 safe arrival/no bounce",
+    "b1_back_a1 → VS-A1 safe arrival/no bounce",
+    "full reverse route preserves restoration and receipts",
+    "three save slots isolated through menu",
+    "legacy storage preserved and zero page/asset errors",
+    "mobile portrait layout, multitouch movement+skill and release",
+    "mobile small layout, multitouch movement+skill and release",
+    "mobile landscape layout, multitouch movement+skill and release",
+    "future save remains untouched and user can switch to another slot"
+  ],
+  "performance": {
+    "samples": 120,
+    "medianMs": 16.69999999999709,
+    "p95Ms": 16.80000000000291
+  },
+  "errors": []
+}

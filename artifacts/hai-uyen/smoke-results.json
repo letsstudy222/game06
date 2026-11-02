@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-02T09:40:51.472Z",
+  "root": "http://127.0.0.1:8001",
+  "revision": "9ea52f9ed807",
+  "checks": [
+    "Dawn ready and movement",
+    "Hai Uyen K3/K1",
+    "refresh preserves buff/CD",
+    "uniform revision on module/data graph",
+    "zero page/asset errors"
+  ],
+  "errors": []
+}

@@ -1,0 +1,84 @@
+
+> nhat-diem-dawn-island@0.9.0 test
+> node tests/island.test.mjs && node tests/ui.test.mjs && node tests/sample.test.mjs && node tests/hai-uyen.test.mjs
+
+✔ all four authored zones are connected by walkable tile routes and stairs (171.193712ms)
+✔ movement is normalized and idle/move transitions preserve facing (1.98887ms)
+✔ cliffs, water, rocks and trunks block even a long movement step (4.093104ms)
+✔ hover is faster but cannot bypass terrain collision (7.89597ms)
+✔ six animation states include a one-shot hurt reaction (0.387916ms)
+✔ basic attack respects direction, range and cooldown (1.194872ms)
+✔ fire charges before launch, hits once and does not tunnel (0.458502ms)
+✔ projectiles expire at terrain or range (0.509829ms)
+✔ damage triggers hurt, invulnerability and hover immunity; HP recovers (5.01924ms)
+✔ death respawns safely and pause freezes the complete simulation (0.762921ms)
+✔ the altar only interacts at close range and its state toggles (0.229275ms)
+✔ camera interpolates, clamps, and rounds only at render boundaries (0.422738ms)
+✔ tile culling covers the camera and never reads beyond the authored grid (0.554416ms)
+✔ frame delta is bounded and another island can use the same controller (0.212531ms)
+✔ production hero frames have real alpha and safe gutters, no clipped concept extraction (6.376468ms)
+✔ new environment atlas is a reusable 32px tile set with a shared pixel palette (30.27352ms)
+✔ visible solid tiles and collision share one grid, with stairs as the only terrace passage (0.641677ms)
+✔ full Dawn uses the approved layered kit at original scale and all used assets exist (194.708648ms)
+✔ expanded object atlas retains palette, clean gutters, anchors and discrete shadows (31.502153ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 467.933713
+✔ integer zoom covers portrait/landscape/desktop without world overscan at every setting (2.731785ms)
+✔ 8-way joystick dead zone and normalized diagonal retain keyboard movement speed (1.321714ms)
+✔ settings validate corrupt values, bound positions, persist and reset without touching farm saves (3.482613ms)
+✔ unavailable persistent storage does not prevent settings working for current session (0.2252ms)
+✔ camera reaches bounds at shore and stays within original map across rotation (5.153433ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 22.160828
+✔ sample is a separate 32px map with three heights and connected coast/forest/stairs/shrine (78.93917ms)
+✔ sample cliffs and perimeter rims block; both broad stair runs remain passable (0.569319ms)
+✔ sample atlas covers corner/side/landing and cool forest materials without a world illustration (9.073745ms)
+✔ sample props and terrain use shared palette and clean alpha; props have safe gutters and distinct foot/shadow anchors (87.145673ms)
+✔ cast shadow atlas has discrete low alpha levels, not blurred opaque textures (13.882548ms)
+✔ the existing player and shrine system work on sample data with pixel tile culling (1.358319ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 199.549264
+✔ M4 dimensions, IDs, row lengths and every reciprocal anchor validate (3.780757ms)
+✔ actual Quy collider reaches all required receivers; gates block then open before BFS (32.810797ms)
+✔ swept collision prevents tunnelling and diagonal corner penetration for multiple radii (2.882868ms)
+✔ six directed portals preserve cooldown, safe facing, no idle bounce and permit return (15.245074ms)
+✔ K1 projectile primes A, K2 sequence opens LAB, refresh preserves puzzle before collision (2.879152ms)
+✔ projectile hits once per enemy, wall stops K1, enhanced limited pierce; K3 self buff and radial K4 (5.94076ms)
+✔ guard only heals capped prevented real damage; one attack source cannot multi-hit or farm (1.249945ms)
+✔ two-phase boss tells precede hit, ring has safe center, boss immune to vortex pull (2.204645ms)
+✔ victory + chest receipts atomic, idempotent across reload and three isolated slots (0.767958ms)
+✔ storage errors, future schema, corrupted input and stale tab cannot silently overwrite progress (0.633215ms)
+✔ death resets unfinished boss at safe checkpoint, retains puzzle/rewards/CD and no partner (0.333262ms)
+✔ enhanced K1 pierces at most three distinct targets and never repeated hitboxes (0.485232ms)
+✔ K4 damages each target once per concentric pulse on all sides, not once per frame (0.385842ms)
+✔ flat vortex pulls ordinary enemies inward without wall clipping, boss takes damage only (0.319101ms)
+✔ jelly telegraphs a locked target pool, leashes home and cannot walk through reef walls (3.378265ms)
+✔ cooldown obligations and active K3 survive immediate refresh; invalid damage cannot heal (0.294133ms)
+✔ Hoi Thuy is reserved for K1/K2/K4/Space, never wasted by basic or self buff (0.23891ms)
+✔ new encounter incarnations cannot reuse damage receipts and grant accidental retry immunity (0.430199ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 82.620416
