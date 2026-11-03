@@ -1,0 +1,11 @@
+PASS html and relative links: index.html
+PASS html and relative links: hai-uyen.html
+PASS html and relative links: thu-vien.html
+PASS html and relative links: huong-dan.html
+PASS asset image decode: 15 PNG
+PASS 10 reference gallery JPEGs
+PASS playable JavaScript syntax with Node.js
+PASS scene manifest references resolved
+PASS site includes index.html and playable hai-uyen.html
+UNVERIFIED browser gameplay (Chromium ERR_BLOCKED_BY_ADMINISTRATOR for localhost)
+NOT FULL GAME — one-room step14 technical prototype, no A1/B1/LAB/ARENA combat

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "quy-3-bac",
+    "title": "Quy Hải Uyên — Thiết kế 3 bậc",
+    "file": "tham-chieu/quy-3-bac.jpg",
+    "role": "canon reference",
+    "source_file": "bảng_thiết_kế_quy_hải_uyên.png",
+    "sha256_source": "f9714eef013dd6fd1ebf23b48b4455e9e8c94c23f374a78cc611b2d3b1136472"
+  },
+  {
+    "id": "quy-huong-va-ky-nang",
+    "title": "Quy — 8 hướng và kỹ năng",
+    "file": "tham-chieu/quy-huong-va-ky-nang.jpg",
+    "role": "poses reference only",
+    "source_file": "bảng_tham_chiếu_sản_xuất_quy_hải_uyên.png",
+    "sha256_source": "9ebc2f0ee728d1a7a377cd25ef318d644382da5275c852255b0c3ca89cf196ba"
+  },
+  {
+    "id": "vfx-moi-truong",
+    "title": "Quy — VFX dưới nước và trên cạn",
+    "file": "tham-chieu/vfx-moi-truong.jpg",
+    "role": "VFX reference only",
+    "source_file": "infographic_vfx_quy_hải_uyên_theo_môi_trường.png",
+    "sha256_source": "f752a2e7015250e2a403c0cbf92edc0230a714e6cfd109d67418056af171ae0d"
+  },
+  {
+    "id": "hai-uyen-map",
+    "title": "Hải Uyên — Bản đồ mỹ thuật",
+    "file": "tham-chieu/hai-uyen-map.jpg",
+    "role": "map concept",
+    "source_file": "bản_đồ_pixel_hải_uyên_quy_hải_uyên.png",
+    "sha256_source": "faffab1e21190e1895c6f3306ee3d918445755316e0eb9987568040560826918"
+  },
+  {
+    "id": "hai-uyen-the-gioi",
+    "title": "Hải Uyên — Sơ đồ khu vực",
+    "file": "tham-chieu/hai-uyen-the-gioi.jpg",
+    "role": "layout concept",
+    "source_file": "bản_đồ_mẫu_quy_hải_uyên.png",
+    "sha256_source": "2858d72bea1e9188d6c91c0b29e3e4cbc921008494f23f5ed5d7121a743f945b"
+  },
+  {
+    "id": "phuong",
+    "title": "Phượng Hoàng Nhật Diệm",
+    "file": "tham-chieu/phuong.jpg",
+    "role": "future beast reference",
+    "source_file": "bảng_sprite_phượng_hoàng_nhật_diệm.png",
+    "sha256_source": "36683aad7a03f54d68536353d407dc6ef4dc8de18a3599303b46eaf5eee63172"
+  },
+  {
+    "id": "long",
+    "title": "Long Thiên Phong",
+    "file": "tham-chieu/long.jpg",
+    "role": "future beast reference",
+    "source_file": "long_thiên_phong_sprite_rồng_pixel.png",
+    "sha256_source": "5fc4fc7d1af7226edaed94467d77838c2d1123c86140402fc06e57cf28131d81"
+  },
+  {
+    "id": "ly",
+    "title": "Ly Vạn Sinh",
+    "file": "tham-chieu/ly.jpg",
+    "role": "future beast reference",
+    "source_file": "bảng_sprite_tiến_hóa_ly_vạn_sinh.png",
+    "sha256_source": "75ebea54f206ba753dfc5db996682fe2d2fb2ade38f1715fa178026ade13443e"
+  },
+  {
+    "id": "tu-linh",
+    "title": "Bốn Linh thú và tiến hóa",
+    "file": "tham-chieu/tu-linh.jpg",
+    "role": "group concept",
+    "source_file": "bách_thú_huyền_thoại_pixel_art.png",
+    "sha256_source": "0a9a9a603d81e6f2f7884fbe99b65be24751f5f1807f25e441bd81f7cabdb30e"
+  },
+  {
+    "id": "quy-ky-nang",
+    "title": "Bộ kỹ năng Quy",
+    "file": "tham-chieu/quy-ky-nang.jpg",
+    "role": "skill reference",
+    "source_file": "bộ_kỹ_năng_quy_hải_uyên.png",
+    "sha256_source": "7c11c291a352e458ecc122bbab1eb9fb7b17a466705e59456797760a43f2bd9a"
+  }
+]

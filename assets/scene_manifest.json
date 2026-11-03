@@ -1,0 +1,118 @@
+{
+  "name": "Hải Uyên — Clean walkable ground proof 14",
+  "status": "mechanics prototype — NOT art approved",
+  "stage": 14,
+  "canvas": [
+    512,
+    512
+  ],
+  "ground": "assets/floor_clean_512.png",
+  "spawn": [
+    256,
+    428
+  ],
+  "playable_polygon": [
+    [
+      35,
+      145
+    ],
+    [
+      148,
+      100
+    ],
+    [
+      366,
+      100
+    ],
+    [
+      477,
+      145
+    ],
+    [
+      477,
+      477
+    ],
+    [
+      35,
+      477
+    ]
+  ],
+  "player_radius": 11,
+  "speed_px_s": 133,
+  "gate": {
+    "x": 188,
+    "y": 18,
+    "size": [
+      135,
+      123
+    ],
+    "interact_center": [
+      256,
+      170
+    ],
+    "interact_radius": 52,
+    "frames": [
+      "assets/gate_open_00.png",
+      "assets/gate_open_01.png",
+      "assets/gate_open_02.png",
+      "assets/gate_open_03.png",
+      "assets/gate_open_04.png",
+      "assets/gate_open_05.png",
+      "assets/gate_open_06.png",
+      "assets/gate_open_07.png",
+      "assets/gate_open_08.png"
+    ]
+  },
+  "props": [
+    {
+      "id": "pillar_w",
+      "asset": "pillar_moss.png",
+      "x": 66,
+      "y": 190,
+      "footY": 318,
+      "r": 22
+    },
+    {
+      "id": "pillar_e",
+      "asset": "pillar_intact.png",
+      "x": 348,
+      "y": 190,
+      "footY": 318,
+      "r": 22
+    },
+    {
+      "id": "pillar_nw",
+      "asset": "pillar_damaged.png",
+      "x": 90,
+      "y": 42,
+      "footY": 170,
+      "r": 22
+    },
+    {
+      "id": "rubble",
+      "asset": "pillar_fallen.png",
+      "x": 330,
+      "y": 362,
+      "footY": 458,
+      "r": 31
+    }
+  ],
+  "player": {
+    "asset": "assets/quy_reference_one_direction.png",
+    "draw_size": [
+      66,
+      66
+    ],
+    "anchor": [
+      33,
+      55
+    ]
+  },
+  "limitations": [
+    "Floor is a 16x16 fixed-layout metatile, not shuffleable autotile",
+    "One-direction cutout for Quy, no 8-way sprite",
+    "Walk polygon is authored for this 512px test scene; not Chapter I canon geometry",
+    "Gate animation art sourced from concept cutout, not final mechanical doors",
+    "No engine game06 integration or browser automation verification"
+  ]
+}
